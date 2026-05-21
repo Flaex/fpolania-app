@@ -1,0 +1,261 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>FLAEX | STRATEGIC PRECISION</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "carbon": "#1A1B1A",
+                        "surface-variant": "#353434",
+                        "background": "#141313",
+                        "on-secondary-container": "#b8b8b8",
+                        "on-background": "#e5e2e1",
+                        "inverse-primary": "#5d5f5f",
+                        "on-primary-container": "#636565",
+                        "on-secondary-fixed-variant": "#464747",
+                        "tertiary-container": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-error": "#690005",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-bright": "#3a3939",
+                        "outline-variant": "#444748",
+                        "on-tertiary": "#2f3131",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-fixed": "#e2e2e2",
+                        "inverse-on-surface": "#313030",
+                        "surface-dim": "#141313",
+                        "primary-container": "#e2e2e2",
+                        "tertiary": "#ffffff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary-fixed-variant": "#454747",
+                        "secondary": "#c6c6c6",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-primary-fixed": "#1a1c1c",
+                        "outline": "#8e9192",
+                        "error-container": "#93000a",
+                        "dim-grey": "#666666",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-container": "#484949",
+                        "surface": "#141313",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#c6c6c7",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-secondary": "#2f3131",
+                        "primary": "#ffffff",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "alabaster": "#E0E0E0",
+                        "on-primary": "#2f3131",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-tertiary-container": "#636565",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "error": "#ffb4ab",
+                        "surface-container": "#201f1f",
+                        "surface-container-highest": "#353434",
+                        "on-surface": "#e5e2e1",
+                        "on-surface-variant": "#c4c7c8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px",
+                        "container-max": "1280px",
+                        "unit": "4px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Libre Caslon Text"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "label-technical": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Libre Caslon Text"],
+                        "body-md": ["Geist", "sans-serif"],
+                        "display": ["Libre Caslon Text"],
+                        "body-lg": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-technical": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #1A1B1A;
+            color: #ffffff;
+            font-family: 'Geist', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-carbon">
+<!-- TopNavBar -->
+<header class="bg-carbon border-b border-dim-grey docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<a class="block" href="#">
+<img alt="Fredy Polania Logo" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU9jlY6LdyNluPNP_7ILb9dVBBa-_dsqkGs5wHlxzwp8nL5wYuQVqQE6r-lB3XJmhlH-s_uejl2KVDlUJsg4BMhzYLxRms53TPHifBGfYo_m2stL15lgLu5y6WIecSWvlxLGX2IRwckDpNW8Fgydq0Sn7ygX1rdxBa5CgaUZfrRAAJjzKrE4uCd80fGLOB3WBdMoNUwpCuw4dfDz_xTumuGXGe_MHOgxbwe2_Q7QSRdQlmdtpIQUGrGJJiXu6obmW7hfnQSeR6E8zP">
+</a>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-dim-grey font-label-technical uppercase tracking-widest hover:text-primary transition-colors duration-200" href="#">Strategy</a>
+<a class="text-primary font-label-technical uppercase tracking-widest border-b border-primary hover:text-primary transition-colors duration-200 pb-1" href="#">Work</a>
+<a class="text-dim-grey font-label-technical uppercase tracking-widest hover:text-primary transition-colors duration-200" href="#">Insight</a>
+</nav>
+<button class="bg-primary text-carbon font-label-technical uppercase tracking-widest px-6 py-2 hover:bg-secondary transition-colors">
+                Contact
+            </button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-gutter space-y-gutter">
+<!-- Hero Bento Section -->
+<section class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-unit bg-dim-grey/10 border border-dim-grey overflow-hidden">
+<!-- Large Focus Cell -->
+<div class="md:col-span-3 md:row-span-2 p-12 flex flex-col justify-end bg-carbon border-r border-dim-grey relative group overflow-hidden">
+<div class="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="A high-contrast, black and white aerial photograph of a complex urban grid with sharp shadows and architectural precision. The lighting is dramatic, highlighting the structural integrity and strategic layout of the city. The overall mood is authoritative and visionary, reflecting a sense of corporate minimalism and technical mastery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX6MjUVWkSDjZsmrL7pg_D06LcCEaLyh9Y7HuGxXFX0ngzaMPe-mFr-LlU5nbPYAlGrSm2XtZaUSe_UqcXV7VeLwYo1eXZBr9rA9o8xIVWZ5MjHCgaabI8m02YVuVoYdC50Tsj-g4sTE9wOvQdIE7Y4nUSlTRenvg_6Y92xnYmb9R0wjqJx3j6RFQczWw9cCc0_bswDV6-fiX-vsecZZYboGL5U5sPxLt4_13f1k5W6EEQrTrZHV8hL8nfM5zwkQir9VQ0FUCGDUch">
+</div>
+<div class="relative z-10">
+<span class="font-label-technical text-label-technical text-dim-grey uppercase tracking-widest mb-4 block">Product Strategy &amp; Leadership</span>
+<h1 class="font-display text-display text-primary max-w-2xl mb-6">Strategic Precision for the Digital Vanguard.</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-xl">Architecting high-stakes digital products through the lens of technical alchemy and sovereign authority.</p>
+</div>
+</div>
+<!-- Action Cell -->
+<div class="md:col-span-1 p-8 bg-carbon border-b border-dim-grey flex flex-col justify-between hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary text-4xl">architecture</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Systems Design</h3>
+<p class="font-body-md text-body-md text-dim-grey">Scaling complex architectures with meticulous detail.</p>
+</div>
+</div>
+<!-- Metric Cell -->
+<div class="md:col-span-1 p-8 bg-carbon flex flex-col justify-between hover:bg-surface-container transition-colors">
+<div class="space-y-1">
+<span class="font-label-technical text-label-technical text-dim-grey">PROJECT SUCCESS</span>
+<div class="text-4xl font-headline-lg text-primary">98.4%</div>
+</div>
+<button class="text-left font-label-technical text-label-technical text-primary hover:underline flex items-center gap-2">
+                    VIEW PORTFOLIO <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Secondary Bento: Frameworks -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-unit bg-dim-grey/10 border border-dim-grey overflow-hidden">
+<!-- Problem Space Card -->
+<div class="p-10 bg-carbon border-r border-dim-grey flex flex-col gap-8">
+<div class="flex items-start justify-between">
+<span class="font-label-technical text-label-technical px-3 py-1 border border-dim-grey text-dim-grey uppercase">Pillar 01: Strategy</span>
+<span class="material-symbols-outlined text-dim-grey">tactic</span>
+</div>
+<div class="space-y-4">
+<h2 class="font-headline-lg text-headline-lg text-primary">The Visionary Blueprint.</h2>
+<p class="font-body-md text-body-md text-secondary">In a landscape of noise, clarity is the ultimate leverage. I translate nebulous founder visions into executable product roadmaps that prioritize long-term sovereignty over short-term trends.</p>
+</div>
+<ul class="space-y-3 font-body-md text-body-md text-dim-grey border-t border-dim-grey pt-6">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Market Entry Analysis</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Product-Market Fit Iteration</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Competitive Moat Engineering</li>
+</ul>
+</div>
+<!-- Solution Space Card -->
+<div class="p-10 bg-carbon flex flex-col gap-8">
+<div class="flex items-start justify-between">
+<span class="font-label-technical text-label-technical px-3 py-1 border border-dim-grey text-dim-grey uppercase">Pillar 02: Execution</span>
+<span class="material-symbols-outlined text-dim-grey">precision_manufacturing</span>
+</div>
+<div class="space-y-4">
+<h2 class="font-headline-lg text-headline-lg text-primary">Technical Alchemy.</h2>
+<p class="font-body-md text-body-md text-secondary">The gap between idea and impact is engineering. I bridge this divide by overseeing the development of robust, scalable systems that embody the precision of master craft.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 border border-dim-grey bg-surface-container-low">
+<span class="font-label-technical text-label-technical text-primary block mb-2">CORE TECH</span>
+<p class="font-body-md text-body-md text-dim-grey">TypeScript, Rust, Cloud Native</p>
+</div>
+<div class="p-4 border border-dim-grey bg-surface-container-low">
+<span class="font-label-technical text-label-technical text-primary block mb-2">DESIGN OPS</span>
+<p class="font-body-md text-body-md text-dim-grey">Atomic Systems, Figma API</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Quote / Authority Section -->
+<section class="py-20 flex flex-col items-center text-center space-y-8 border-y border-dim-grey">
+<span class="material-symbols-outlined text-dim-grey text-5xl">format_quote</span>
+<blockquote class="font-display text-headline-lg max-w-4xl text-primary leading-tight italic">
+                "Precision is not just a metric; it is a philosophy of leadership that transforms technical complexity into market dominance."
+            </blockquote>
+<div class="flex flex-col items-center">
+<div class="w-16 h-1 w-16 bg-primary mb-4"></div>
+<p class="font-label-technical text-label-technical text-primary uppercase">Chief Product Strategist, @FLAEX_</p>
+</div>
+</section>
+<!-- Insights Bento -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-unit bg-dim-grey/10 border border-dim-grey">
+<div class="md:col-span-1 p-8 bg-carbon border-r border-dim-grey group cursor-pointer overflow-hidden">
+<div class="aspect-video mb-6 bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sophisticated digital visualization of data streams flowing through a dark, ethereal space. The aesthetic is monochromatic and futuristic, with fine lines and glowing nodes representing technical interconnectedness. The lighting is low-key with subtle silver highlights, maintaining a professional and editorial feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU4mUGeRE7ZL0fBjjRbhXJZ47CvzMCLDB3H9g50icARmplG6h804_uUUTOJmVunDggrQdbpVqSr57BJnibNN1CJhUvIo1wG8zQ_WQyL1xRHh1NO3hQ9B4xBI_rtaKd8TNNXQgXdL-Jea1JFeuDu7hYD4vfD3kJB5nRGGc_J8tyaWZdfYwi8V0JsceZH1_O92PviAVvtalvSJ6htYsVAvR_2FK0pUgIoJCD_4A4SDWaEufzWlXsW_gZetyJuyHXwp-nTc7yV5Pq0sob">
+</div>
+<span class="font-label-technical text-label-technical text-dim-grey mb-2 block">JUNE 2024</span>
+<h4 class="font-headline-md text-headline-md text-primary mb-4">The Architecture of Sovereign Systems</h4>
+<p class="font-body-md text-body-md text-dim-grey line-clamp-3">Exploring the move away from monolithic architectures towards distributed, resilient infrastructure for enterprise SaaS.</p>
+</div>
+<div class="md:col-span-1 p-8 bg-carbon border-r border-dim-grey group cursor-pointer overflow-hidden">
+<div class="aspect-video mb-6 bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-tech close-up of a circuit board illuminated by a sharp, cool white light. The shadows are deep and defined, emphasizing the intricate layout and geometric precision of the hardware. The style is minimalist and corporate, focusing on the beauty of technical engineering and craft." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZqDdJIpdiLi-qv9AslukpHwJHV7QxY2a5nO2N3PctHflSyUZnQbGn2MaWgtl34NTZzemjGAfh70U19KGJKxR8HjuX4qNKeoa5DNKm-7o0rpqBWvZjnzJyK7VW21p7Bc27WCMGUEctBztHv4Kob8d7Ay1yxj2ElDOextGG7lgMWZgWwGGbyKtm_en_Sf59uteZwYsshoCIMtjqdwYx5dOro3jd-NPnKm4BHpRUEBKG7T7lYdbg4lhT3mhrCCtpUm55JH56wYe-8MTy">
+</div>
+<span class="font-label-technical text-label-technical text-dim-grey mb-2 block">MAY 2024</span>
+<h4 class="font-headline-md text-headline-md text-primary mb-4">Engineering for Product-Led Growth</h4>
+<p class="font-body-md text-body-md text-dim-grey line-clamp-3">How to align engineering velocity with growth experiments without sacrificing long-term technical debt.</p>
+</div>
+<div class="md:col-span-1 p-8 bg-carbon group cursor-pointer overflow-hidden">
+<div class="aspect-video mb-6 bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, minimalist desk setup featuring a high-end laptop and a notebook with geometric sketches. The scene is bathed in soft, natural daylight filtered through a window, creating an atmosphere of focused strategic planning. The color palette is strictly monochromatic, reinforcing the sovereign and editorial brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_kUD2k_jj6FaJVSEbyqxFE0O5peFSE6R-lzFwlkaht_RMTAuiKV3G-BMnFLX4lQt1Ka9sg9752OGqY76fszc_EcgncsXGBnboYpyafTvrzl5dJqgIoTEaWL-IINmS6zLmd_kwvzeWu4JLzBxh_MBCLy_zlFXeEEZkwDS2Oakq1W0DymF5jZrwsKZ2DCujZyftS9Lkl6mvXoNIFa7ltpbRzJQHqNeP2FJqBm7lPuvxxrEOwjYgbsmghbUhhFUcWpR6Q3iGMOsS3bY2">
+</div>
+<span class="font-label-technical text-label-technical text-dim-grey mb-2 block">APRIL 2024</span>
+<h4 class="font-headline-md text-headline-md text-primary mb-4">The Founder-Visionary Manual</h4>
+<p class="font-body-md text-body-md text-dim-grey line-clamp-3">Bridging the communication gap between high-level ambition and ground-level execution realities.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-carbon dark:bg-carbon border-t border-dim-grey dark:border-dim-grey full-width bottom mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py- gutter max-w-container-max mx-auto py-12">
+<div class="flex flex-col items-center md:items-start gap-4 mb-8 md:mb-0">
+<img alt="Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQf8HNtqXMs2_HoIjSQsGvFXpZQIjYGo9gHAtFhV3TadQSMkjmnRNRIpOq9LCR3_7lLvCaBtRwYUnnXYN1kQBd_rugNxUY_uEjNAs47I2-NZw8z8v26GOJowwjGK_2cxn5T4AWZTUsDFjnG0JDglVVU4CAA5IU8XovuobU9zUlhnXPIvBN7w0_2NunWudDXX0QU7fPXlxtzjG2pVqecLObYnNQxl_OgW3VMN2yQQr2irQ8S0Z-MIChi3TZBIndbZDX1JJrB0PwygMW">
+<span class="font-label-technical text-label-technical text-dim-grey">© 2024 FLAEX. STRATEGIC PRECISION.</span>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="flex gap-6">
+<a class="text-dim-grey dark:text-dim-grey font-body-md text-body-md hover:text-white dark:hover:text-white transition-opacity opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+<a class="text-dim-grey dark:text-dim-grey font-body-md text-body-md hover:text-white dark:hover:text-white transition-opacity opacity-80 hover:opacity-100" href="#">GitHub</a>
+<a class="text-dim-grey dark:text-dim-grey font-body-md text-body-md hover:text-white dark:hover:text-white transition-opacity opacity-80 hover:opacity-100" href="#">Read.cv</a>
+</div>
+<div class="h-px w-12 bg-dim-grey hidden md:block"></div>
+<div class="text-primary font-headline-md text-headline-md">STRATEGIC PRECISION.</div>
+</div>
+</div>
+</footer>
+</body></html>

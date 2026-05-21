@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Strategist — Executive Summary</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Libre+Caslon+Text:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#353434",
+                    "secondary": "#c6c6c6",
+                    "dim-grey": "#666666",
+                    "inverse-surface": "#e5e2e1",
+                    "secondary-container": "#484949",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-tertiary": "#2f3131",
+                    "on-secondary-container": "#b8b8b8",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "surface-container": "#201f1f",
+                    "on-secondary-fixed-variant": "#464747",
+                    "error-container": "#93000a",
+                    "on-secondary": "#2f3131",
+                    "error": "#ffb4ab",
+                    "tertiary": "#ffffff",
+                    "surface-container-high": "#2a2a2a",
+                    "primary-container": "#e2e2e2",
+                    "outline-variant": "#444748",
+                    "tertiary-fixed": "#e2e2e2",
+                    "inverse-on-surface": "#313030",
+                    "secondary-fixed": "#e3e2e2",
+                    "on-tertiary-container": "#636565",
+                    "primary": "#ffffff",
+                    "on-error-container": "#ffdad6",
+                    "surface-variant": "#353434",
+                    "on-primary-container": "#636565",
+                    "surface": "#141313",
+                    "on-error": "#690005",
+                    "surface-container-low": "#1c1b1b",
+                    "primary-fixed": "#e2e2e2",
+                    "surface-container-lowest": "#0e0e0e",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "on-primary-fixed": "#1a1c1c",
+                    "surface-dim": "#141313",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "primary-fixed-dim": "#c6c6c7",
+                    "on-background": "#e5e2e1",
+                    "surface-tint": "#c6c6c7",
+                    "background": "#141313",
+                    "inverse-primary": "#5d5f5f",
+                    "tertiary-container": "#e2e2e2",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "outline": "#8e9192",
+                    "on-primary-fixed-variant": "#454747",
+                    "on-primary": "#2f3131",
+                    "on-surface-variant": "#c4c7c8",
+                    "alabaster": "#E0E0E0",
+                    "surface-bright": "#3a3939",
+                    "on-surface": "#e5e2e1",
+                    "carbon": "#1A1B1A"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "margin-desktop": "48px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": [
+                            "Libre Caslon Text"
+                    ],
+                    "headline-lg": [
+                            "Libre Caslon Text"
+                    ],
+                    "display": [
+                            "Libre Caslon Text"
+                    ],
+                    "headline-lg-mobile": [
+                            "Libre Caslon Text"
+                    ],
+                    "body-lg": [
+                            "Geist"
+                    ],
+                    "label-technical": [
+                            "JetBrains Mono"
+                    ],
+                    "body-md": [
+                            "Geist"
+                    ]
+            },
+            "fontSize": {
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-technical": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+      body {
+        background-color: theme('colors.background');
+        color: theme('colors.on-background');
+      }
+      .bento-cell {
+        background-color: theme('colors.carbon');
+        border: 1px solid theme('colors.dim-grey');
+        border-radius: theme('borderRadius.lg');
+      }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="w-full sticky top-0 z-50 bg-background dark:bg-background border-b border-dim-grey dark:border-dim-grey">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<img alt="Founder-Visionary Brand Logo" class="h-8" height="32" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0idXVpZC1lYTYzOTI3ZS01ZTMwLTQyNjYtOTVkMC0zNDg4OWMxNjM1NDkiIGRhdGEtbmFtZT0iTGF5ZXIgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNjAxLjI3IDE2Ni4xIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLnV1aWQtMDYzMGUxMjYtZTJjMC00YWIwLThhYjYtMzcxZjBhNDQ4MzY0IHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICB9CgogICAgICAudXVpZC1iNDExYTU1Mi0wYmU4LTRhNjYtYmJhZi00MzBhN2U0Y2M3MGQgewogICAgICAgIGZpbGw6ICMxYTFiMWE7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxjaXJjbGUgY2xhc3M9InV1aWQtMDYzMGUxMjYtZTJjMC00YWIwLThhYjYtMzcxZjBhNDQ4MzY0IiBjeD0iODMuMDUiIGN5PSI4My4wNSIgcj0iODMuMDUiLz4KICA8Zz4KICAgIDxwYXRoIGNsYXNzPSJ1dWlkLTA2MzBlMTI2LWUyYzAtNGFiMC04YWI2LTM3MWYwYTQ0ODM2NCIgZD0iTTE5Mi4yNCw2MC45NWgyNS4wOXY2Ljc2aC0xNy40MnYxNC4wNGgxNy4xNnY2LjdoLTE3LjE2djIwLjYxaC03LjY3di00OC4xWiIvPgogICAgPHBhdGggY2xhc3M9InV1aWQtMDYzMGUxMjYtZTJjMC00YWIwLThhYjYtMzcxZjBhNDQ4ODM2NCIgZD0iTTIyMi40NSw3My42OWg2LjM3djUuMmMyLjAyLTQuMTYsNS43Mi02LjE3LDEwLjUzLTYuMjR2Ni43NmgtLjQ2Yy02LjM3LDAtOS42OSwzLjUxLTkuNjksMTAuNTN2MTkuMTEoLTYuNzZ2LTM1LjM2WiIvPgogICAgPHBhdGggY2xhc3M9InV1aWQtMDYzMGUxMjYtZTJjMC00YWIwLThhYjYtMzcxZjBhNDQ4ODM2NCIgZD0iTTI0Ni42NCw5My41MWMuMzMsNy4xNSw2LjU3LDEwLjc5LDExLjksMTAuNzksNC43NSwwLDguMjUtMi4yOCwxMC4yMS01Ljk4aDcuMDJjLTEuNjksMy45LTQuMTYsNi44My03LjE1LDguNzgtMi45OSwyLjAyLTYuNSwyLjk5LTEwLjA4LDIuOTktMTEuNTcsMC0xOC43Mi05LjI5LTE4LjcyLTE4LjY2LDAtMTAuMTQsNy45My0xOC43OSwxOC42Ni0xOC43OSw1LjA3LDAsOS42OSwxLjg4LDEzLjA3LDUuMiw0LjE2LDQuMjMsNS45Miw5Ljc1LDUuMzMsMTUuNjdoLTMwLjIzWk0yNzAuMTcsODguMjVjLS4zMy00LjY4LTUuMDEtOS45NS0xMS43LTkuODItNi44OSwwLTExLjM4LDUtMTEuNyw5LjgyaDIzLjRaIi8+CiAgICA8cGF0aCBjbGFzcz0idXVpZC0wNjMwZTEyNi1lMmMwLTRhYjAtOGFiNi0zNzFmMGE0NDgzNjQiIGQ9Ik0zMTcuMzYsMTA5LjA1aC02LjVdi02LjE3Yy0xLjk1LDMuNjQtNS45Miw3LjIxLTEzLjIsNy4yMS0xMS4xMiwwLTE4LjE0LTguNTgtMTguMTQtMTguNzksMC0xMC45OSw3LjkzLTE4LjY2LDE4LjAxLTE4LjY2LDcuMjEsMCwxMS42Myw0LjAzLDEzLjA3LDYuODN2LTE4LjUzaDYuNzZ2NDguMVpNMjg2LjI5LDkxLjM3Yy4wNyw2LjUsNC42MiwxMi40MiwxMi40MiwxMi40MiwzLjQ1LDAsNi42My0xLjQzLDguODQtMy43MSwyLjI4LTIuMjcsMy41OC01LjM5LDMuNDUtOC45MSwwLTMuNTEtMS4zNy02LjU2LTMuNTgtOC43MS0yLjIxLTIuMjEtNS4yNi0zLjUxLTguNzEtMy41MS03LjQ4LDAtMTIuNDIsNS43Mi0xMi40MiwxMi4zNXYuMDdaIi8+CiAgICA8cGF0aCBjbGFzcz0idXVpZC0wNjMwZTEyNi1lMmMwLTRhYjAtOGFiNi0zNzFmMGE0NDgzNjQiIGQ9Ik0zMzUuNzUsMTA4LjAxbC0xMy41Mi0zNC4zMmg3LjI4bDkuNzUsMjUuODcsOS44OC0yNS44N2g3LjI4bC0xOS4zMSw0OC4yM2gtNy4yMmw1Ljg1LTEzLjkxWiIvPgogICAgPHBhdGggY2xhc3M9InV1aWQtMDYzMGUxMjYtZTJjMC00YWIwLThhYjYtMzcxZjBhNDQ4MzY0IiBkPSJNMzkzLjczLDYwLjk1YzcuNDgsMCwxMC42Ni45NywxMy41MiwzLjI1LDMuMzgsMi42LDUuMzMsNy4yMSw1LjMzLDExLjgzcy0yLjAxLDkuNDMtNSwxMS44M2MtMy4yNSwyLjU0LTYuNSwzLjU4LTEzLjEzLDMuNThoLTYuNzZ2MTcuNjJoLTcuNjd2LTQ4LjFoMTMuNzFaTTM4Ny42OCw4NC42N2g2LjYzYzMuMDYsMCw1LjQtLjMzLDcuNDgtMS42MiwxLjk1LTEuMTEsMy40NS0zLjY0LDMuNDUtNi44OXMtMS41LTUuNzItMy41MS02Ljg5Yy0yLjE1LTEuMy00LjQ5LTEuNTYtNy42Ny0xLjU2aC02LjM3djE2Ljk3WiIvPgogICAgPHBhdGggY2xhc3M9InV1aWQtMDYzMGUxMjYtZTJjMC00YWIwLThhYjYtMzcxZjBhNDQ4MzY0IiBkPSJNNDEyLjk3LDkxLjNjMC05LjQyLDYuOTYtMTguNjYsMTguODUtMTguNjZzMTguODUsOS4yMywxOC44NSwxOC43Mi02Ljk2LDE4LjY2LTE4Ljg1LDE4LjY2LTE4Ljg1LTkuMTctMTguODUtMTguNjZ2LS4wN1pNNDE5LjczLDkxLjQzYzAsNy4wMiw1LjMzLDEyLjI5LDEyLjA5LDEyLjI5czEyLjA5LTUuMjcsMTIuMDktMTIuMzUtNS4zMy0xMi4zNS0xMi4wOS0xMi4zNS0xMi4wOSw1LjI3LTEyLjA5LDEyLjM1di4wN1oiLz4KICAgIDxwYXRoIGNsYXNzPSJ1dWlkLTA2MzBlMTI2LWUyYzAtNGFiMC04YWI2LTM3MWYwYTQ0ODM2NCIgZD0iTTQ1NS42MSw2MC45NWg2Ljc2djQ4LjFoLTYuNzZ2LTQ4LjFaIi8+CiAgICA8cGF0aCBjbGFzcz0idXVpZC0wNjMwZTEyNi1lMmMwLTRhYjAtOGFiNi0zNzFmMGE0NDgzNjQiIGQ9Ik01MDUuMjcsMTA5LjA1aC02Ljc2di02LjE3Yy0yLjQ3LDQuNzUtNy41NCw3LjIxLTEzLjEzLDcuMjEtMTEuMzgsMC0xOC4xNC04Ljg0LTE4LjE0LTE4LjcyLDAtMTAuNzksNy44Ny0xOC43MiwxOC4xNC0xOC43Miw3LjAyLDAsMTEuNSwzLjksMTMuMTMsNy4yOHYtNi4yNGg2Ljc2djM1LjM2Wk00NzQsOTEuNWMuMDcsNS4yNywzLjc3LDEyLjI5LDEyLjM1LDEyLjI5LDUuNCwwLDkuMjMtMi45OSwxMC45OS03LjAyLjc4LTEuNjIsMS4xNy0zLjQ1LDEuMjQtNS4yNy4wNi0xLjgyLS4yNi0zLjY0LTEuMDQtNS4yNi0xLjY5LTQuMS01LjY2LTcuMjgtMTEuMzEtNy4yOC03LjQxLDAtMTIuMjIsNS44NS0xMi4yMiwxMi40OHYuMDZaIi8+CiAgICA8cGF0aCBjbGFzcz0idXVpZC0wNjMwZTEyNi1lMmMwLTRhYjAtOGFiNi0zNzFmMGE0NDgzNjQiIGQ9Ik01MTIuMjIsNzMuNjloNi4zN3Y1LjQ2YzEuNjktMy42NCw1LjY2LTYuNTcsMTEuOTYtNi41LDExLjMxLjEzLDE0LjMsOC4zMiwxNC4zLDE1LjY3djIwLjc0aC02Ljgzdi0xOS4xOGMwLTYuMzctMi40Ny0xMC45Mi05LjM2LTEwLjg2LTYuNjMuMDctOS42OSw0LjIzLTkuNjksMTAuMzR2MTkuN2gtNi43NnYtMzUuMzZaIi8+CiAgICA8cGF0aCBjbGFzcz0idXVpZC0wNjMwZTEyNi1lMmMwLTRhYjAtOGFiNi0zNzFmMGE0NDgzNjQiIGQ9Ik01NTEuNiw2MC45NWg2Ljc2djcuMTVoLTMuMjNjLTEuOTUsMC0zLjUzLTEuNTgtMy41My0zLjUzdi0zLjYyWk01NTEuNiw3My42OWg2Ljc2djM1LjM2aC02Ljc2di0zNS4zNloiLz4KICAgIDxwYXRoIGNsYXNzPSJ1dWlkLTA2MzBlMTI2LWUyYzAtNGFiMC04YWI2LTM3MWYwYTQ0ODM2NCIgZD0iTTYwMS4yNywxMDkuMDVoLTYuNzZ2LTYuMTdjLTIuNDcsNC43NS03LjU0LDcuMjEtMTMuMTMsNy4yMS0xMS4zOCwwLTE4LjE0LTguODQtMTguMTQtMTguNzIsMC0xMC43OSw3Ljg3LTE4LjcyLDE4LjE0LTE4LjcyLDcuMDIsMCwxMS41LDMuOSwxMy4xMyw3LjI4di02LjI0aDYuNzZ2MzUuMzZaTTU3MCw5MS41Yy4wNyw1LjI3LDMuNzcsMTIuMjksMTIuMzUsMTIuMjksNS40LDAsOS4yMy0yLjk5LDEwLjk5LTcuMDIuNzgtMS42MiwxLjE3LTMuNDUsMS4yNC01LjI3cy0uMjYtMy42NC0xLjA0LTUuMjZjLTEuNjktNC4xLTUuNjYtNy4yOC0xMS4zMS03LjI4LTcuNDEsMC0xMi4yMiw1Ljg1LTEyLjIyLDEyLjQ4di4wNloiLz4KICA8L2c+CiAgPGc+CiAgICA8cGF0aCBjbGFzcz0idXVpZC1iNDExYTU1Mi0wYmU4LTRhNjYtYmJhZi00MzBhN2U0Y2M3MGQiIGQ9Ik0xMTguOTgsOTIuNzljMCwxMS4zLTEuNjIsMTUuODItNC42MSwxOS43LTMuOTcsNC44OC0xMC40OCw3LjU5LTE3LjA4LDcuNTlzLTEzLjQ3LTIuOC0xNi45LTcuMDVjLTMuNy00LjUyLTUuMzMtOS4wMy01LjMzLTE4Ljh2LTguMjJoLTIyLjk1di0xMy40N2g2Ni44N3YyMC4yNFpNODYuOSw4Ni4wMXY3Ljk1YzAsMy4wNy4yNyw2LjA1LDEuNzIsOC43NiwxLjI3LDIuNDQsNC4yNSw0LjQzLDguNSw0LjQzczcuMDUtMS45OSw4LjMxLTQuNjFjMS40NS0yLjcyLDEuNzIlNS43OCwxLjcyLTkuMTN2LTcuNDFoLTIwLjI0WiIvPgogICAgPHBhdGggY2xhc3M9InV1aWQtYjQxMWE1NTItMGJlOC00YTY2LWJiYWYtNDMwYTdlNGNjNzBkIiBkPSJNNDcuMTMsODUuOTh2LTM1LjUyaDExLjg0djIyLjA1aDE1Ljk5di0yMS41MWgxMS44NHYyMS41MWgyNy4ydjEzLjQ3SDQ3LjEzWiIvPgogIDwvZz4KPC9zdmc+"/>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-technical text-label-technical text-primary dark:text-primary font-bold border-b-2 border-primary pb-1" href="#">Strategy</a>
+<a class="font-label-technical text-label-technical text-secondary dark:text-secondary hover:text-primary dark:hover:text-primary transition-colors duration-200 pb-1" href="#">Work</a>
+<a class="font-label-technical text-label-technical text-secondary dark:text-secondary hover:text-primary dark:hover:text-primary transition-colors duration-200 pb-1" href="#">Insight</a>
+</div>
+<button class="bg-primary text-carbon font-label-technical text-label-technical px-6 py-2 rounded scale-95 active:scale-90 transition-transform">
+                Contact
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto w-full flex flex-col gap-gutter">
+<!-- ZONE 1: STRATEGIC CORE -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Hero (4x2) -->
+<div class="bento-cell md:col-span-8 md:row-span-2 p-8 flex flex-col justify-between min-h-[400px]">
+<div>
+<span class="font-label-technical text-label-technical text-secondary uppercase tracking-widest">Senior Product Strategist</span>
+<h1 class="font-display text-display text-primary mt-4 max-w-2xl">Business Strategy.<br/>Design Vision.<br/>Technical Craft.</h1>
+</div>
+<div class="mt-8 flex justify-end">
+<a class="inline-flex items-center gap-2 font-label-technical text-label-technical text-primary hover:text-secondary transition-colors" href="#">
+                        Explore the Command Center 
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Latest Insight (2x2) -->
+<div class="bento-cell md:col-span-4 md:row-span-2 p-8 flex flex-col justify-between bg-[url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] bg-cover bg-center relative overflow-hidden group" data-alt="A macro shot of intricate geometric server racks or technical circuitry bathed in deep blacks and pristine whites with subtle silver highlights. The lighting is high-contrast and dramatic, evoking a sense of advanced technical alchemy and precision execution in a corporate minimalist setting.">
+<div class="absolute inset-0 bg-carbon/80 group-hover:bg-carbon/70 transition-colors duration-300"></div>
+<div class="relative z-10">
+<span class="font-label-technical text-label-technical text-secondary uppercase border border-dim-grey px-2 py-1 rounded inline-block mb-4 bg-carbon/50 backdrop-blur-sm">Latest Insight</span>
+<h3 class="font-headline-md text-headline-md text-primary mt-2">Architecting the Future of Enterprise AI</h3>
+<p class="font-body-md text-body-md text-secondary mt-4 line-clamp-3">Bridging the gap between Strategy, Design, and Technical Execution.</p>
+</div>
+<div class="relative z-10 mt-8">
+<a class="inline-flex items-center gap-2 font-label-technical text-label-technical text-primary hover:underline underline-offset-4 decoration-dim-grey" href="#">
+                        Read Article <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Authority Stat (1x1) -->
+<div class="bento-cell md:col-span-4 p-8 flex flex-col justify-center items-center text-center">
+<span class="font-display text-display text-primary leading-none">15+</span>
+<p class="font-label-technical text-label-technical text-secondary mt-2 uppercase tracking-wide max-w-[200px]">Years of multi-disciplinary leadership.</p>
+</div>
+<!-- Strategic Cards (2x1 each) -->
+<div class="bento-cell md:col-span-4 p-8 flex flex-col justify-center">
+<h4 class="font-headline-md text-headline-md text-primary">De-risking the 'Messy Middle.'</h4>
+<p class="font-body-md text-body-md text-secondary mt-2">Bridging gaps between ambiguous business goals and concrete technical execution.</p>
+</div>
+<div class="bento-cell md:col-span-4 p-8 flex flex-col justify-center">
+<h4 class="font-headline-md text-headline-md text-primary">Created by People. Refined with AI.</h4>
+<p class="font-body-md text-body-md text-secondary mt-2">Leveraging LLMs and CLI workflows to multiply output quality without compromising craft.</p>
+</div>
+</section>
+<!-- ZONE 2: FEATURED WORKS -->
+<section class="mt-8">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Featured Works</h2>
+<div class="h-px bg-dim-grey flex-grow ml-8 hidden md:block"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Project 1 (3x2) -->
+<div class="bento-cell md:col-span-6 min-h-[300px] relative overflow-hidden group">
+<img alt="Banco del Libro Project" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60" data-alt="A sleek, minimalist editorial design spread displayed on a high-end monitor in a dark, structured studio environment. The composition features sharp typography, deep carbon blacks, and stark white contrast, embodying technical precision and corporate authority. The lighting is focused and dramatic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt3gEJY9r3hNhyV7Ms2ePpSGcVd2e1A-eD0nt3n8EWGYOqiw-zMHz43OtmUh9PPb7pqRIf6aHATny4LqnhoGmBh9na7iQVZJQf3O4F7Swga5tJ8sqOKVLcsNgo9bhx-w5SxWjSPxCnwsvTRJVM6Z9xo2tS8IXtmThTcKTuE7DK1r3iWrefpGj75tly-Kz_b7CnbZwRpk3ZVWRqtoFX9OVHxfl8uBsKkhEZKSExcu-I-xcNELV5UlQLjLuk6wELbSxNwhzy98MtgzqE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-carbon via-carbon/50 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">Banco del Libro</h3>
+<p class="font-label-technical text-label-technical text-secondary mt-2 uppercase">Selected Participant, BID</p>
+</div>
+<button class="w-10 h-10 rounded-full border border-dim-grey flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-carbon transition-colors">
+<span class="material-symbols-outlined">north_east</span>
+</button>
+</div>
+</div>
+</div>
+<div class="md:col-span-6 grid grid-rows-2 gap-gutter">
+<!-- Project 2 (2x1) -->
+<div class="bento-cell relative overflow-hidden group min-h-[200px]">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-high to-surface-container-lowest z-0"></div>
+<div class="relative z-10 p-8 flex flex-col justify-center h-full">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">Maximiza</h3>
+<p class="font-label-technical text-label-technical text-secondary mt-2 uppercase">Branding &amp; Web for finance</p>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+</div>
+</div>
+<!-- Project 3 (2x1) -->
+<div class="bento-cell relative overflow-hidden group min-h-[200px]">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-high to-surface-container-lowest z-0"></div>
+<div class="relative z-10 p-8 flex flex-col justify-center h-full">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">Novanet Studio</h3>
+<p class="font-label-technical text-label-technical text-secondary mt-2 uppercase">High-performance ecosystems</p>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ZONE 4: ACTION CLUSTER -->
+<section class="mt-8 grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Audit CTA (3x1) -->
+<div class="bento-cell md:col-span-3 p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 bg-surface-container-high">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Let's Build Together.</h2>
+<p class="font-body-md text-body-md text-secondary mt-2 max-w-lg">Available for strategic product audits, architectural design, and high-level technical consultation.</p>
+</div>
+<button class="bg-primary text-carbon font-label-technical text-label-technical px-8 py-4 rounded font-bold hover:bg-secondary transition-colors whitespace-nowrap">
+                    Request an Audit
+                </button>
+</div>
+<!-- Socials (1x1) -->
+<div class="bento-cell md:col-span-1 p-8 flex flex-col justify-center items-center gap-4">
+<span class="font-label-technical text-label-technical text-secondary uppercase w-full text-center border-b border-dim-grey pb-4">Connect</span>
+<div class="flex flex-wrap justify-center gap-4 pt-2">
+<a class="text-secondary hover:text-primary transition-colors p-2" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">work</span></a>
+<a class="text-secondary hover:text-primary transition-colors p-2" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">palette</span></a>
+<a class="text-secondary hover:text-primary transition-colors p-2" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">code</span></a>
+<a class="text-secondary hover:text-primary transition-colors p-2" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">alternate_email</span></a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-background dark:bg-background border-t border-dim-grey dark:border-dim-grey mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto space-y-4 md:space-y-0 opacity-80 hover:opacity-100 transition-opacity">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary">
+                STRATEGIST
+            </div>
+<div class="flex gap-6">
+<a class="font-label-technical text-label-technical text-secondary dark:text-secondary hover:text-primary dark:hover:text-primary transition-colors duration-200" href="#">LinkedIn</a>
+<a class="font-label-technical text-label-technical text-secondary dark:text-secondary hover:text-primary dark:hover:text-primary transition-colors duration-200" href="#">GitHub</a>
+<a class="font-label-technical text-label-technical text-secondary dark:text-secondary hover:text-primary dark:hover:text-primary transition-colors duration-200" href="#">Read.cv</a>
+</div>
+<div class="font-body-md text-body-md text-secondary dark:text-secondary">
+                © 2024 STRATEGIST. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+</body></html>

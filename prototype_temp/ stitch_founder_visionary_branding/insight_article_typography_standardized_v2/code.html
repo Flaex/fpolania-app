@@ -1,0 +1,239 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Architecting the Future of Enterprise AI | Founder-Visionary</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;600;700;900&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#c6c6c7",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "surface-container-low": "#1c1b1b",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-primary": "#2f3131",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-on-surface": "#313030",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-tertiary-container": "#636565",
+                        "on-secondary": "#2f3131",
+                        "background": "#141313",
+                        "secondary-container": "#484949",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary-container": "#636565",
+                        "primary": "#ffffff",
+                        "on-secondary-container": "#b8b8b8",
+                        "on-primary-fixed": "#1a1c1c",
+                        "surface-bright": "#3a3939",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "outline-variant": "#444748",
+                        "primary-fixed": "#e2e2e2",
+                        "secondary": "#c6c6c6",
+                        "on-surface": "#e5e2e1",
+                        "tertiary": "#ffffff",
+                        "on-tertiary": "#2f3131",
+                        "on-background": "#e5e2e1",
+                        "on-primary-fixed-variant": "#454747",
+                        "surface-dim": "#141313",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "inverse-primary": "#5d5f5f",
+                        "on-surface-variant": "#c4c7c8",
+                        "tertiary-container": "#e2e2e2",
+                        "error-container": "#93000a",
+                        "primary-container": "#e2e2e2",
+                        "surface-container-highest": "#353434",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "outline": "#8e9192",
+                        "surface-container": "#201f1f",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface": "#141313",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-variant": "#353434",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#464747"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Fraunces"],
+                        "body": ["Geist"],
+                        "headline-md": ["Fraunces"],
+                        "headline-lg-mobile": ["Fraunces"],
+                        "label-technical": ["Geist"],
+                        "body-lg": ["Geist"],
+                        "headline-lg": ["Fraunces"],
+                        "body-md": ["Geist"],
+                        "display": ["Fraunces"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-technical": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #141313;
+            color: #e5e2e1;
+            font-family: 'Geist', sans-serif;
+        }
+        .font-fraunces { font-family: 'Fraunces', serif; }
+        .font-geist { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<nav class="bg-[#191919] border-b border-white/10 sticky top-0 z-50"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-20"><div class="flex-shrink-0"><img alt="Fredy Polania Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpReV9KIJO5XjfksbJynFqk0D_6ctUMxYEdnXTnZpY1u8Uuq2LuucoAzcFWdGQQbz1Vk9fEo0kQz2J3cb42TRgFOHT2bE1VB9Jg9o3-TpW7Ok-4WWGc30IAmr6DdegbV5_zeUPEIDhMgdaEUO-vS3V2nt7-TV6zsmYb5IjdpBqDYq_ck71PAw8C1oD-00eyS1bwyL7l0yNt6fSVGqlaFfVDVlXRxhifMXkPORfokniq6YLnDfqNIp6y_z19dAYOmWx9HVXukJrzMzL"></div><div class="hidden md:flex items-center space-x-12"><a class="text-[#999999] hover:text-white transition-colors duration-200 text-sm font-geist font-medium tracking-widest" href="#">Strategy</a><a class="text-[#999999] hover:text-white transition-colors duration-200 text-sm font-geist font-medium tracking-widest" href="#">Work</a><a class="text-[#999999] hover:text-white transition-colors duration-200 text-sm font-geist font-medium tracking-widest" href="#">Insight</a></div><div><button class="bg-white text-black px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-neutral-200 transition-colors font-geist">Connect</button></div></div></div></nav>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Hero Section -->
+<section class="pt-24 pb-16 border-b border-outline-variant">
+<div class="">
+<div class="flex gap-4 mb-8">
+<span class="font-geist text-label-technical tracking-widest text-on-surface-variant uppercase">Insight / 2024</span>
+<span class="text-outline-variant font-geist">•</span>
+<span class="font-geist text-label-technical tracking-widest text-on-surface-variant uppercase">Reading Time: 8 min</span>
+</div>
+<h1 class="font-fraunces text-headline-lg md:text-display text-primary mb-8 font-black">Architecting the Future of Enterprise AI</h1>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden">
+<img alt="Professional portrait of Fredy Polania" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuwOv9V5MKMVIjzigai83p_OyBkQlGvzDCJFqtxGegiJXMc05wqOBhmdZfqag5Fe512MZGBCW2KalHUeCXccMX5VJX11UdiAJy5wV2wFaRfK1jzaK95PmcS-3RaLu-xNjMPWcjNRcy0eU7utij0IQYArtCbHDq4x65s_BxgWHjYrC7-08zVohgcH5BOrdTs4mo2Pop7UWePJVKDpZqqr_neyn96kkQzNQeN2mub1_LmWRq4Cy6tOTzOST0Zar2ICcqCKXR9HkdF4SP">
+</div>
+<div>
+<p class="font-geist text-label-technical text-on-surface-variant uppercase">By Fredy Polania</p>
+<p class="font-geist text-label-technical text-outline italic">Founder &amp; Principal Strategist</p>
+</div>
+</div><div class="mt-8 flex items-center gap-6">
+    <div class="h-px w-8 bg-outline-variant"></div>
+    <div class="flex items-center gap-6">
+        <span class="font-geist text-label-technical text-on-surface-variant tracking-widest uppercase">SHARE INSIGHT</span>
+        <div class="flex gap-4">
+            <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">share</span>
+            <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">bookmark</span>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+<!-- Body Content -->
+<article class="py-16 grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Sidebar for social/meta -->
+
+<!-- Content Canvas -->
+<div class="col-span-1 space-y-12 md:col-span-10 md:col-start-2">
+<p class="font-geist text-body-lg text-on-surface leading-relaxed first-letter:text-5xl first-letter:font-fraunces first-letter:font-black first-letter:mr-3 first-letter:float-left first-letter:text-primary">
+                    As artificial intelligence transitions from experimental curiosity to the backbone of global enterprise, the role of the visionary leader has evolved. No longer is it sufficient to simply "adopt" AI; one must architect it into the very fabric of organizational DNA. This requires a synthesis of deep business strategy and the cold, hard logic of technical execution.
+                </p>
+<h2 class="font-fraunces font-bold text-headline-md text-primary mt-16">The Sovereign Architecture</h2>
+<p class="font-geist text-body-md text-on-surface-variant">
+                    Enterprise AI is not a singular tool but a multi-layered ecosystem. Success relies on the alignment of three core pillars: Data Sovereignty, Algorithmic Transparency, and Scalable Infrastructure. Without a sovereign approach to data, organizations risk becoming beholden to third-party black boxes that offer no long-term competitive moat.
+                </p>
+<!-- Monochromatic Image Placeholder -->
+<figure class="my-16 space-y-4">
+<div class="aspect-video bg-surface-container border border-outline-variant flex items-center justify-center overflow-hidden">
+<img alt="AI neural network system diagram" class="w-full h-full object-cover opacity-80 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZyowQgm_jf9iQDFcRRF5Dy8Tn0eRAIkZ0mWzg6pUgClz-Zv1vdeRYv-QdbHL6QFP-Ej-Uh7wciRA4UfL28sRaGt1yFV20zG7SFgmsXBHj1L2A4IQIH8KVNDAaFpvpJrStOV7X7F0X-Nv2GIN3y2TVUJiHv7IouIrDV1Z0JYhwtS1ZZf8zbOGvrX6e9j8JQ_V58PN5wgAeEjr7UN4m2o9SZhvNBWXawuN_7j9WBVyIu-lLmO2zHiQIvYublnJD01FlPJ2osUzSqfk2">
+</div>
+<figcaption class="font-geist text-label-technical text-outline text-center">Fig 1.1: Schematic representation of a decentralized enterprise AI node architecture.</figcaption>
+</figure>
+<blockquote class="border-y border-outline-variant py-12 px-8 my-16">
+<p class="font-fraunces font-black text-headline-lg text-primary text-center italic leading-tight">
+                        "Precision is not just a metric; it is a philosophy of leadership."
+                    </p>
+</blockquote>
+<h2 class="font-fraunces font-bold text-headline-md text-primary mt-16">Technical Alchemies</h2>
+<p class="font-geist text-body-md text-on-surface-variant">
+                    We must move past the hype of generative interfaces and focus on the latent potential of predictive modeling within operational silos. The alchemical transformation happens when raw, unstructured enterprise data is distilled through custom-trained models into actionable strategic intelligence. This is where the "Ruler" archetype meets the "Magician"—where authority is derived from technical mastery.
+                </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter py-8">
+<div class="p-6 bg-surface-container-low border border-outline-variant rounded-DEFAULT">
+<h4 class="font-geist font-bold text-label-technical text-primary mb-2 font-fraunces">01 / INTEGRITY</h4>
+<p class="font-geist text-body-md text-on-surface-variant">Systems must be designed for non-repudiation and ethical auditability from day zero.</p>
+</div>
+<div class="p-6 bg-surface-container-low border border-outline-variant rounded-DEFAULT">
+<h4 class="font-geist font-bold text-label-technical text-primary mb-2 font-fraunces">02 / VELOCITY</h4>
+<p class="font-geist text-body-md text-on-surface-variant">Latency in decision-making is the primary friction point AI is destined to solve.</p>
+</div>
+</div>
+</div>
+</article>
+<!-- Related Insights Bento Grid -->
+<section class="py-24 border-t border-outline-variant">
+<h3 class="font-fraunces font-bold text-headline-md text-primary mb-12">Related Insights</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<a class="md:col-span-2 group relative aspect-[21/9] bg-surface-container border border-outline-variant overflow-hidden p-8 flex flex-col justify-end" href="#">
+<img alt="Graphic Design Letter G" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPPobyZFHiu94TUcjLRXSSMAEckcTzP3PJVODHXN3i5jhKRz7ScZSotEjmC7O28_bbo2IXAoC5r9va7DBZqS05MY1U4_TIlV0VBjHaitRJOapsPm-iHuJr3McFpuyGrXxie1zs4NYYmpu0UXOJA1meTT-QzXMhmRMHPYxrctXYFTbFFEvRGf5mbvG8MRj2OPqkogeYFfUUHQ2MISBjkI1sXACCzFDkBkC5tCm1cEFnH1UwxIY4vvOkhR5on679fIGX6JVfb3EsXnnA">
+<div class="relative z-10">
+<span class="font-geist font-medium text-label-technical text-primary-fixed-dim uppercase tracking-widest mb-2 block">Visual Systems</span>
+<h4 class="font-fraunces font-bold text-headline-md text-primary group-hover:underline">The Value of Graphic Design</h4>
+</div>
+</a>
+<a class="group relative aspect-square bg-surface-container border border-outline-variant overflow-hidden p-8 flex flex-col justify-end" href="#">
+<img alt="Coding Editor Monochromatic" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1az9BurkpvlBqz14MPYra2qohzNRyxaBuH_S5V1JhrTyCDw2vxT8CTw1_ZSExsY_3VlNXDYT3qZLvlnbGco8gpnjF8BrsONMLJgeTPRzhPvVm2A_OQWEGjm7-bUnivDEIghV5ZR47UHNAXvZPQyiyO3VWy4-GsiDJswB8ErfSuAfllL-YCovD02oqdGjJJX1eFxWRKPT5CvDXNeCfEKRYRHE8j3HjrimNzwvDk_uu_u9ORJfyApYPgiySLpWx-XoWxjBuyiK0M3sC">
+<div class="relative z-10">
+<span class="font-geist font-medium text-label-technical text-primary-fixed-dim uppercase tracking-widest mb-2 block">Execution</span>
+<h4 class="font-fraunces font-bold text-headline-md text-primary group-hover:underline">Design &amp; Programming</h4>
+</div>
+</a>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 text-center border-t border-outline-variant">
+<h2 class="font-fraunces font-black text-primary mb-8 text-4xl md:text-6xl">Let's Build Together</h2>
+<p class="font-geist text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+                Ready to architect your enterprise's technical future? Connect with Fredy Polania to discuss strategic intervention and technical execution.
+            </p>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<button class="bg-primary text-on-primary px-12 py-4 rounded-DEFAULT font-geist text-label-technical uppercase tracking-widest hover:bg-on-surface transition-colors">Start a Project</button>
+<button class="border border-outline text-primary px-12 py-4 rounded-DEFAULT font-geist text-label-technical uppercase tracking-widest hover:bg-surface-container transition-colors">View Methodology</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#141313] border-t border-outline-variant w-full mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-gutter max-w-container-max mx-auto gap-6 md:gap-0">
+<div class="flex-shrink-0">
+<img alt="Fredy Polania Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAsvlCD6nV0ZvM-p8Rjh2Yzzx9Y1byurGPEVB7isQqgDGdf1H1Fx3XxUFtw9AASObaD3nG57MyqmRHzGgQ62wkNjzPBMrmnzE-8EV8Mxi9cY4O7khWn28vHv213npdeqjntTMagMnQG6HOe0wQ_Lr-JZzYyGDxK0735ljJANAljZlx-NxEJzkSaQcaC9_fv1itLHEeAC6Si-SYnDGNWyriQRxsascoXf144RnH7B7iHdS8YxZfQA6yhlqi1t1HOmzKzGMYV_MOQiFg">
+</div>
+<div class="font-geist text-label-technical text-on-surface-variant text-center md:text-left"><span class="font-geist" style="font-family: Geist, sans-serif; letter-spacing: 0.6px; background-color: rgb(26, 27, 26);"><span style="color: rgb(142, 145, 146); letter-spacing: 0.6px; background-color: rgb(20, 19, 19);">© 2026 Fredy Polania</span></span></div>
+<div class="flex gap-6 items-center font-geist text-label-technical"><a class="text-on-surface-variant hover:text-on-surface transition-colors uppercase tracking-widest flex items-center gap-2 font-geist" href="#"></a><a class="text-dim-grey dark:text-dim-grey hover:text-white dark:hover:text-white transition-opacity opacity-80 hover:opacity-100" href="https://app-companion-430619.appspot.com/u/1/projects/15077661817598713108?pli=1&amp;usegapi=1&amp;jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.gSqfLc8WnvU.O%2Fd%3D1%2Frs%3DAHpOoo_cXXGArE2dtw6vkGR2NQ_1f5L3AQ%2Fm%3D__features__#" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; color: rgb(255, 255, 255); --tw-text-opacity: 1; opacity: 1; transition-property: opacity; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; font-size: 16px; letter-spacing: normal; text-transform: none; background-color: rgb(26, 27, 26); outline: none !important; box-shadow: none !important;"></a><a class="text-dim-grey dark:text-dim-grey hover:text-white dark:hover:text-white transition-opacity opacity-80 hover:opacity-100" href="https://app-companion-430619.appspot.com/u/1/projects/15077661817598713108?pli=1&amp;usegapi=1&amp;jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.gSqfLc8WnvU.O%2Fd%3D1%2Frs%3DAHpOoo_cXXGArE2dtw6vkGR2NQ_1f5L3AQ%2Fm%3D__features__#" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; color: rgb(255, 255, 255); --tw-text-opacity: 1; opacity: 1; outline: none !important; box-shadow: none !important;"></a><a class="text-outline hover:text-primary transition-opacity opacity-80 hover:opacity-100 flex items-center gap-2" href="https://app-companion-430619.appspot.com/u/1/projects/15077661817598713108?pli=1&amp;usegapi=1&amp;jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.gSqfLc8WnvU.O%2Fd%3D1%2Frs%3DAHpOoo_cXXGArE2dtw6vkGR2NQ_1f5L3AQ%2Fm%3D__features__#" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; color: rgb(255, 255, 255); --tw-text-opacity: 1; opacity: 1; font-size: 16px; letter-spacing: normal; outline: none !important; box-shadow: none !important;">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors uppercase tracking-widest flex items-center gap-2 font-geist" href="#"></a><a class="text-dim-grey dark:text-dim-grey hover:text-white dark:hover:text-white transition-opacity opacity-80 hover:opacity-100" href="https://app-companion-430619.appspot.com/u/1/projects/15077661817598713108?pli=1&amp;usegapi=1&amp;jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.gSqfLc8WnvU.O%2Fd%3D1%2Frs%3DAHpOoo_cXXGArE2dtw6vkGR2NQ_1f5L3AQ%2Fm%3D__features__#" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; color: rgb(102, 102, 102); --tw-text-opacity: 1; font-size: 16px; letter-spacing: normal; text-transform: none; background-color: rgb(26, 27, 26); outline: none !important; box-shadow: none !important;"></a><a class="text-outline hover:text-primary transition-opacity opacity-80 hover:opacity-100 flex items-center gap-2" href="https://app-companion-430619.appspot.com/u/1/projects/15077661817598713108?pli=1&amp;usegapi=1&amp;jsh=m%3B%2F_%2Fscs%2Fabc-static%2F_%2Fjs%2Fk%3Dgapi.lb.en.gSqfLc8WnvU.O%2Fd%3D1%2Frs%3DAHpOoo_cXXGArE2dtw6vkGR2NQ_1f5L3AQ%2Fm%3D__features__#" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; color: rgb(255, 255, 255); --tw-text-opacity: 1; opacity: 1; background-color: rgb(20, 19, 19); outline: none !important; box-shadow: none !important;">Behance</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors uppercase tracking-widest flex items-center gap-2 font-geist" href="#">x</a></div>
+</div>
+</footer>
+
+
+
+
+
+
+
+
+</body></html>

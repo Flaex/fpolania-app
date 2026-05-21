@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-carbon: #1A1B1A;
+  --color-dim-grey: #666666;
+  --color-silver: #C0C0C0;
+  --color-alabaster: #E0E0E0;
+  --color-white: #FFFFFF;
+
+  --font-fraunces: "Fraunces", serif;
+  --font-geist: "Geist Sans", sans-serif;
+}
+
+@layer base {
+  html {
+    @apply bg-carbon text-alabaster font-geist;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-fraunces text-white font-black;
+  }
+}
