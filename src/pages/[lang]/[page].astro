@@ -49,12 +49,12 @@ const worksGamma = allWorks
 
 function getBetaCardClass(order: number) {
   if (order === 1) {
-    return "col-span-4 md:col-span-6 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[300px]";
+    return "col-span-4 md:col-span-6 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[300px] relative overflow-hidden";
   }
   if (order === 7) {
-    return "col-span-4 md:col-span-12 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[200px]";
+    return "col-span-4 md:col-span-12 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[200px] relative overflow-hidden";
   }
-  return "col-span-4 md:col-span-6 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[150px]";
+  return "col-span-4 md:col-span-6 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[150px] relative overflow-hidden";
 }
 
 const getSlug = (id: string) => id.split('/').pop()?.replace(/\.md$/, '') || '';
@@ -246,9 +246,18 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                   const category = lang === 'en' ? work.data.categoryEn : work.data.categoryEs;
                   const behanceUrl = lang === 'en' ? work.data.behanceUrlEn : work.data.behanceUrlEs;
                   return (
-                      <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
-                          <div class="font-label-technical text-label-technical text-outline">{category}</div>
-                          <div>
+                      <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group relative overflow-hidden">
+                          {work.data.image && (
+                              <div class="absolute inset-0 z-0">
+                                  <img 
+                                      src={work.data.image} 
+                                      alt={title} 
+                                      class="w-full h-full object-cover grayscale opacity-20 group-hover:grayscale-0 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" 
+                                  />
+                              </div>
+                          )}
+                          <div class="font-label-technical text-label-technical text-outline relative z-10">{category}</div>
+                          <div class="relative z-10">
                               <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">{title}</h4>
                           </div>
                       </a>
@@ -273,8 +282,17 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                   const cardClass = getBetaCardClass(work.data.order);
                   return (
                       <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class={cardClass}>
-                          <div class="font-label-technical text-label-technical text-outline">{category}</div>
-                          <div>
+                          {work.data.image && (
+                              <div class="absolute inset-0 z-0">
+                                  <img 
+                                      src={work.data.image} 
+                                      alt={title} 
+                                      class="w-full h-full object-cover grayscale opacity-20 group-hover:grayscale-0 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" 
+                                  />
+                              </div>
+                          )}
+                          <div class="font-label-technical text-label-technical text-outline relative z-10">{category}</div>
+                          <div class="relative z-10">
                               <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">{title}</h4>
                           </div>
                       </a>
@@ -297,9 +315,18 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                   const category = lang === 'en' ? work.data.categoryEn : work.data.categoryEs;
                   const behanceUrl = lang === 'en' ? work.data.behanceUrlEn : work.data.behanceUrlEs;
                   return (
-                      <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
-                          <div class="font-label-technical text-label-technical text-outline">{category}</div>
-                          <div>
+                      <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group relative overflow-hidden">
+                          {work.data.image && (
+                              <div class="absolute inset-0 z-0">
+                                  <img 
+                                      src={work.data.image} 
+                                      alt={title} 
+                                      class="w-full h-full object-cover grayscale opacity-20 group-hover:grayscale-0 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" 
+                                  />
+                              </div>
+                          )}
+                          <div class="font-label-technical text-label-technical text-outline relative z-10">{category}</div>
+                          <div class="relative z-10">
                               <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">{title}</h4>
                           </div>
                       </a>
