@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "strategy": "Strategy",
+    "work": "Work",
+    "insight": "Insight",
+    "connect": "Connect"
+  },
+  "home": {
+    "metaTitle": "STRATEGIST | @flaex_",
+    "metaDescription": "Business Strategy. Design Vision. Technical Craft.",
+    "executiveSummary": "Executive Summary",
+    "role": "Senior Product Strategist",
+    "roleSubtitle": "Business Strategy. Design Vision. Technical Craft.",
+    "exploreCommand": "Explore the Command Center",
+    "latestInsight": "Latest Insight",
+    "readArticle": "Read Article",
+    "yearsLeadership": "Years of multi-disciplinary leadership.",
+    "messyMiddleTitle": "De-risking the 'Messy Middle.'",
+    "messyMiddleDesc": "Products fail in the gap between Business, Design, and Tech. I bridge that gap to ensure every line of code is an investment in your bottom line.",
+    "aiTitle": "Created by People. Refined with AI.",
+    "aiDesc": "Leveraging LLMs and CLI-based orchestration to amplify senior craft and accelerate speed-to-market.",
+    "featuredWorks": "Featured Works",
+    "viewAll": "View All",
+    "bancoLibroSub": "Selected Participant, Bienal Iberoamericana de Diseño (BID)",
+    "maximizaSub": "Branding & Web for a financial services leader",
+    "novanetSub": "Architecting high-performance ecosystems",
+    "ctaTitle": "Let's Build Together.",
+    "ctaDesc": "Available for strategic product audits and architectural consulting.",
+    "ctaButton": "Request an Audit"
+  },
+  "works": {
+    "metaTitle": "WORKS | @flaex_",
+    "metaDescription": "A curated archive of strategic interventions, digital architectures, and geometric truth.",
+    "title": "Selected Works.",
+    "subtitle": "A curated archive of strategic interventions, digital architectures, and geometric truth.",
+    "clusterAlpha": "Cluster Alpha: Branding & Identity",
+    "clusterAlphaSubtitle": "Forging Corporate Authority.",
+    "clusterBeta": "Cluster Beta: Web & Digital",
+    "clusterBetaSubtitle": "Architecting Digital Ecosystems.",
+    "clusterGamma": "Cluster Gamma: Atomic Design",
+    "clusterGammaSubtitle": "The Geometry of Meaning."
+  },
+  "insight": {
+    "metaTitle": "Insight Archive | Fredy Polania",
+    "metaDescription": "A rigorous examination of the intersections between business strategy ROI, visual language of authority, and high-performance engineering.",
+    "title": "The Insight Archive",
+    "subtitle": "A rigorous examination of the intersections between business strategy ROI, visual language of authority, and high-performance engineering.",
+    "archiveIntell": "Archive & Intelligence",
+    "lens01": "Lens 01",
+    "lens01Title": "CEO Lens",
+    "lens01Desc": "Strategic alignment and the business case for design as a driver of high enterprise value.",
+    "lens02": "Lens 02",
+    "lens02Title": "Visual Lens",
+    "lens02Desc": "The Language of Authority: Mastering the aesthetics of influence and the psychology of form.",
+    "lens03": "Lens 03",
+    "lens03Title": "Builder Lens",
+    "lens03Desc": "The ultimate convergence. Engineering is not a separate step; it is the final realization of vision.",
+    "ctaTitle": "Ready to evolve your vision?",
+    "ctaButton": "Request an Audit",
+    "ctaWorks": "View Success Cases"
+  },
+  "article": {
+    "metaSuffix": "STRATEGIST",
+    "readTimeSuffix": "min read",
+    "authorTitle": "Founder & Principal Strategist",
+    "relatedTitle": "Related Insights",
+    "seeAll": "See all"
+  },
+  "summaries": {
+    "everything-is-design-the-philosophy-of-utility": "Why design is not an aesthetic afterthought, but the primary architecture of product function and user utility.",
+    "graphic-design-and-branding-the-authority-system": "Differentiating brand identity from simple logos. How consistent visual systems build long-term business value.",
+    "graphic-design-and-web-programming-the-strategic-translation": "Bridging the translation gap between creative intent and technical execution. Why developer craft must align with design vision.",
+    "the-value-of-graphic-design-a-strategic-perspective": "An economic analysis of design value based on scarcity and utility, de-risking the messy middle of product development."
+  }
+}

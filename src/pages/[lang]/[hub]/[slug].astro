@@ -1,0 +1,272 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navigation from '../../../components/Navigation.astro';
+import Footer from '../../../components/Footer.astro';
+import { getCollection, render } from 'astro:content';
+import { useTranslations, reverseSlugMap } from '../../../utils/i18n';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  
+  return posts.map(post => {
+    const slug = post.id.split('/').pop()?.replace(/\.md$/, '') || '';
+    const lang = post.data.language || 'en';
+    const hub = lang === 'en' ? 'insight' : 'perspectivas';
+    return {
+      params: { lang, hub, slug },
+      props: { post },
+    };
+  });
+}
+
+const { lang } = Astro.params;
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const t = useTranslations(lang);
+
+const getSlug = (id: string) => id.split('/').pop()?.replace(/\.md$/, '') || '';
+const slug = getSlug(post.id);
+
+// Compute read time dynamically
+const wordCount = post.body ? post.body.split(/\s+/).length : 0;
+const readTime = Math.ceil(wordCount / 200) || 5;
+
+// Article metadata config mapping in both English & Spanish dynamically
+const articleMetadata: Record<string, { index: string, date: string, category: string, image: string }> = {
+  'everything-is-design-the-philosophy-of-utility': {
+    index: '01',
+    date: lang === 'en' ? 'May 10, 2026' : '10 de mayo de 2026',
+    category: lang === 'en' ? 'Strategy / Business' : 'Estrategia / Negocios',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfhcbYM5qiXlLof1n0sO4dLE_AS5id940UYNrPE_WyaoRxPt-8ZWum_5A5z_Sz7uqaahHXwGWLFV7Td9rwFplf-i3QKiPEpH_M_xdH6tfK_452P3OGxYSjJI4KQ0MuhdLiT0vffaQ-RQ9HMBVkGmjzMMN688p-9kHaFL7gNGGJYqos47k8qF8C1dSMHYps9KKLJ9FAIMR7kI9L-FktSxt5cDKu58baZA7yinxYUk7oaB8G4Ri7aBQKgkrezDd6bNw-sxySm5yg-bso'
+  },
+  'the-logo-and-the-company-the-investment-in-trust': {
+    index: '02',
+    date: lang === 'en' ? 'May 12, 2026' : '12 de mayo de 2026',
+    category: lang === 'en' ? 'Strategy / ROI' : 'Estrategia / ROI',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfhcbYM5qiXlLof1n0sO4dLE_AS5id940UYNrPE_WyaoRxPt-8ZWum_5A5z_Sz7uqaahHXwGWLFV7Td9rwFplf-i3QKiPEpH_M_xdH6tfK_452P3OGxYSjJI4KQ0MuhdLiT0vffaQ-RQ9HMBVkGmjzMMN688p-9kHaFL7gNGGJYqos47k8qF8C1dSMHYps9KKLJ9FAIMR7kI9L-FktSxt5cDKu58baZA7yinxYUk7oaB8G4Ri7aBQKgkrezDd6bNw-sxySm5yg-bso'
+  },
+  'the-value-of-graphic-design-a-strategic-perspective': {
+    index: '03',
+    date: lang === 'en' ? 'May 15, 2026' : '15 de mayo de 2026',
+    category: lang === 'en' ? 'Strategy / Economics' : 'Estrategia / Economía',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfhcbYM5qiXlLof1n0sO4dLE_AS5id940UYNrPE_WyaoRxPt-8ZWum_5A5z_Sz7uqaahHXwGWLFV7Td9rwFplf-i3QKiPEpH_M_xdH6tfK_452P3OGxYSjJI4KQ0MuhdLiT0vffaQ-RQ9HMBVkGmjzMMN688p-9kHaFL7gNGGJYqos47k8qF8C1dSMHYps9KKLJ9FAIMR7kI9L-FktSxt5cDKu58baZA7yinxYUk7oaB8G4Ri7aBQKgkrezDd6bNw-sxySm5yg-bso'
+  },
+  'graphic-design-and-branding-the-authority-system': {
+    index: '04',
+    date: lang === 'en' ? 'May 18, 2026' : '18 de mayo de 2026',
+    category: lang === 'en' ? 'Strategy / Brand' : 'Estrategia / Marca',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfhcbYM5qiXlLof1n0sO4dLE_AS5id940UYNrPE_WyaoRxPt-8ZWum_5A5z_Sz7uqaahHXwGWLFV7Td9rwFplf-i3QKiPEpH_M_xdH6tfK_452P3OGxYSjJI4KQ0MuhdLiT0vffaQ-RQ9HMBVkGmjzMMN688p-9kHaFL7gNGGJYqos47k8qF8C1dSMHYps9KKLJ9FAIMR7kI9L-FktSxt5cDKu58baZA7yinxYUk7oaB8G4Ri7aBQKgkrezDd6bNw-sxySm5yg-bso'
+  },
+  'what-is-typography-the-dna-of-information': {
+    index: '05',
+    date: lang === 'en' ? 'May 20, 2026' : '20 de mayo de 2026',
+    category: lang === 'en' ? 'Visual / Identity' : 'Visual / Identidad',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAe8tzPO0Df4dIf-YHdLYynUFhhiY_pFbukGsD5ykeH3YzD7tab_sz97jZsYfyJu6RPFE_E0yLkCQATHRkZGgsDwmrmaNwDccVqewSR86GTyCQKJE32vg7mAucrk77IKEvBTVRnsnWXkGrm6D_XuR5UvfxS13a1lPY_oA-JwEwmboVdTi-eIk4kaiK1HJVVhNxBoHKjWy1XUfmT8E_2NyMEZSS4qjEiSC2XrCMObTHiwv7NWWtICe0JYNMH3Bnd0EF2jAQIUqQRF2DH'
+  },
+  'typographic-classification-the-geometry-of-tone': {
+    index: '06',
+    date: lang === 'en' ? 'May 22, 2026' : '22 de mayo de 2026',
+    category: lang === 'en' ? 'Visual / Reference' : 'Visual / Referencia',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAe8tzPO0Df4dIf-YHdLYynUFhhiY_pFbukGsD5ykeH3YzD7tab_sz97jZsYfyJu6RPFE_E0yLkCQATHRkZGgsDwmrmaNwDccVqewSR86GTyCQKJE32vg7mAucrk77IKEvBTVRnsnWXkGrm6D_XuR5UvfxS13a1lPY_oA-JwEwmboVdTi-eIk4kaiK1HJVVhNxBoHKjWy1XUfmT8E_2NyMEZSS4qjEiSC2XrCMObTHiwv7NWWtICe0JYNMH3Bnd0EF2jAQIUqQRF2DH'
+  },
+  'the-logo-variants-strategic-adaptability': {
+    index: '07',
+    date: lang === 'en' ? 'May 24, 2026' : '24 de mayo de 2026',
+    category: lang === 'en' ? 'Visual / System' : 'Visual / Sistema',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAe8tzPO0Df4dIf-YHdLYynUFhhiY_pFbukGsD5ykeH3YzD7tab_sz97jZsYfyJu6RPFE_E0yLkCQATHRkZGgsDwmrmaNwDccVqewSR86GTyCQKJE32vg7mAucrk77IKEvBTVRnsnWXkGrm6D_XuR5UvfxS13a1lPY_oA-JwEwmboVdTi-eIk4kaiK1HJVVhNxBoHKjWy1XUfmT8E_2NyMEZSS4qjEiSC2XrCMObTHiwv7NWWtICe0JYNMH3Bnd0EF2jAQIUqQRF2DH'
+  },
+  'visual-communication-or-graphic-design': {
+    index: '08',
+    date: lang === 'en' ? 'May 26, 2026' : '26 de mayo de 2026',
+    category: lang === 'en' ? 'Visual / Philosophy' : 'Visual / Filosofía',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAe8tzPO0Df4dIf-YHdLYynUFhhiY_pFbukGsD5ykeH3YzD7tab_sz97jZsYfyJu6RPFE_E0yLkCQATHRkZGgsDwmrmaNwDccVqewSR86GTyCQKJE32vg7mAucrk77IKEvBTVRnsnWXkGrm6D_XuR5UvfxS13a1lPY_oA-JwEwmboVdTi-eIk4kaiK1HJVVhNxBoHKjWy1XUfmT8E_2NyMEZSS4qjEiSC2XrCMObTHiwv7NWWtICe0JYNMH3Bnd0EF2jAQIUqQRF2DH'
+  },
+  'illustrator-basics-precision-tools': {
+    index: '09',
+    date: lang === 'en' ? 'May 28, 2026' : '28 de mayo de 2026',
+    category: lang === 'en' ? 'Visual / Mastery' : 'Visual / Maestría',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAe8tzPO0Df4dIf-YHdLYynUFhhiY_pFbukGsD5ykeH3YzD7tab_sz97jZsYfyJu6RPFE_E0yLkCQATHRkZGgsDwmrmaNwDccVqewSR86GTyCQKJE32vg7mAucrk77IKEvBTVRnsnWXkGrm6D_XuR5UvfxS13a1lPY_oA-JwEwmboVdTi-eIk4kaiK1HJVVhNxBoHKjWy1XUfmT8E_2NyMEZSS4qjEiSC2XrCMObTHiwv7NWWtICe0JYNMH3Bnd0EF2jAQIUqQRF2DH'
+  },
+  'what-is-the-utility-of-learning-html': {
+    index: '10',
+    date: lang === 'en' ? 'June 01, 2026' : '01 de junio de 2026',
+    category: lang === 'en' ? 'Builder / Foundations' : 'Builder / Fundamentos',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNWsRtL31KvRmnCaczzSpovZf6gL2ZBRty6IB8kNqtHKO7EUHsU2ITSub61rb_yX84YF2ScKz2wRovzI4kVbEzjKnOQEMVlTlHy3cgYmt9b6-59YM6wPt55payy_QYS3DMwRV_DT9yz_GTxLRF1XRxUKcVe4IKne7pmCyyHN7oofSw9YPotglYHb2653cdZFxDs2KX8qrz3AJTK4MLbinRH9K2-i_RnBUBPntL_Ruurlqtn2KHfCqI_yWYpwflcXhykiQofUMs-o4_'
+  },
+  'what-is-html-the-structure-of-information': {
+    index: '11',
+    date: lang === 'en' ? 'June 03, 2026' : '03 de junio de 2026',
+    category: lang === 'en' ? 'Builder / HTML' : 'Builder / HTML',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNWsRtL31KvRmnCaczzSpovZf6gL2ZBRty6IB8kNqtHKO7EUHsU2ITSub61rb_yX84YF2ScKz2wRovzI4kVbEzjKnOQEMVlTlHy3cgYmt9b6-59YM6wPt55payy_QYS3DMwRV_DT9yz_GTxLRF1XRxUKcVe4IKne7pmCyyHN7oofSw9YPotglYHb2653cdZFxDs2KX8qrz3AJTK4MLbinRH9K2-i_RnBUBPntL_Ruurlqtn2KHfCqI_yWYpwflcXhykiQofUMs-o4_'
+  },
+  'what-is-css-the-visual-style-system': {
+    index: '12',
+    date: lang === 'en' ? 'June 05, 2026' : '05 de junio de 2026',
+    category: lang === 'en' ? 'Builder / CSS' : 'Builder / CSS',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNWsRtL31KvRmnCaczzSpovZf6gL2ZBRty6IB8kNqtHKO7EUHsU2ITSub61rb_yX84YF2ScKz2wRovzI4kVbEzjKnOQEMVlTlHy3cgYmt9b6-59YM6wPt55payy_QYS3DMwRV_DT9yz_GTxLRF1XRxUKcVe4IKne7pmCyyHN7oofSw9YPotglYHb2653cdZFxDs2KX8qrz3AJTK4MLbinRH9K2-i_RnBUBPntL_Ruurlqtn2KHfCqI_yWYpwflcXhykiQofUMs-o4_'
+  },
+  'graphic-design-and-web-programming-the-strategic-translation': {
+    index: '13',
+    date: lang === 'en' ? 'June 08, 2026' : '08 de junio de 2026',
+    category: lang === 'en' ? 'Builder / Execution' : 'Builder / Ejecución',
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNWsRtL31KvRmnCaczzSpovZf6gL2ZBRty6IB8kNqtHKO7EUHsU2ITSub61rb_yX84YF2ScKz2wRovzI4kVbEzjKnOQEMVlTlHy3cgYmt9b6-59YM6wPt55payy_QYS3DMwRV_DT9yz_GTxLRF1XRxUKcVe4IKne7pmCyyHN7oofSw9YPotglYHb2653cdZFxDs2KX8qrz3AJTK4MLbinRH9K2-i_RnBUBPntL_Ruurlqtn2KHfCqI_yWYpwflcXhykiQofUMs-o4_'
+  }
+};
+
+const enSlugKey = lang === 'es' ? reverseSlugMap[slug] : slug;
+const meta = articleMetadata[enSlugKey] || { index: '00', date: lang === 'en' ? 'May 2026' : 'Mayo 2026', category: lang === 'en' ? 'Insight' : 'Perspectiva', image: '' };
+
+// Fetch related posts (excluding the current one)
+const allPosts = await getCollection('blog', ({ data }) => data.language === lang);
+const relatedPosts = allPosts
+  .filter(p => getSlug(p.id) !== slug)
+  .slice(0, 2);
+
+const hubPath = lang === 'en' ? '/en/insight' : '/es/perspectivas';
+const metaTitleSuffix = t('article.metaSuffix');
+---
+
+<Layout title={`${post.data.title} | ${metaTitleSuffix}`} lang={lang}>
+  <div class="grain"></div>
+  
+  <Navigation />
+  
+  <main class="max-w-[800px] mx-auto px-margin-mobile md:px-0 py-20">
+    <!-- Header -->
+    <header class="mb-16">
+      <div class="flex items-center space-x-3 mb-6">
+        <span class="font-label-technical text-label-technical text-secondary px-2 py-1 border border-outline-variant uppercase">
+          {lang === 'en' ? 'Insight' : 'Perspectiva'} / {meta.index}
+        </span>
+        <span class="font-label-technical text-label-technical text-secondary uppercase tracking-widest">
+          {meta.date} — {readTime} {t('article.readTimeSuffix')}
+        </span>
+      </div>
+      <h1 class="font-display text-headline-lg-mobile md:text-display mb-8 text-primary font-fraunces">
+        {post.data.title}
+      </h1>
+      <div class="flex items-center pt-8 border-t border-outline-variant">
+        <img 
+          alt="Fredy Polania" 
+          class="w-12 h-12 rounded-full grayscale border border-outline" 
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYbP5ww6fowjmvP_DZtnM4pwLGU5TF-rbVGTaIysuKiAtjE72GEpoIL6CEZjiuGllBI9prGG-_Jo9j1u6S1g3gUuoPxDkel-ZlFbqr40eaCzcHex6Nx9_OMN_ejorg8CAQjmJHtKqgw4KylhGj1-qHnHJDEnpksntREQZgQPWILmBIJ9blslyRp4H9YU638q5GGgl3Vy15hB7EaK30o7b3gxPXPaO0YS-uzkoOrA95Timr1lRunrQxOhOCk6fXQukE69WbH9xQkrqQ"
+        />
+        <div class="ml-4">
+          <p class="font-label-technical text-label-technical text-primary uppercase font-bold">Fredy Polania</p>
+          <p class="font-label-technical text-label-technical text-secondary">{t('article.authorTitle')}</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Body Content -->
+    <div class="markdown-body space-y-12 text-on-surface">
+      <Content />
+    </div>
+
+    <!-- Related Insights -->
+    <section class="mt-32">
+      <div class="flex justify-between items-end mb-12 border-b border-outline-variant pb-4">
+        <h3 class="font-label-technical text-label-technical text-primary uppercase tracking-[0.3em] font-bold">
+          {t('article.relatedTitle')}
+        </h3>
+        <a class="font-label-technical text-label-technical text-secondary hover:text-primary uppercase tracking-widest transition-colors" href={hubPath}>
+          {t('article.seeAll')} &rarr;
+        </a>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+        {relatedPosts.map(relatedPost => {
+          const rSlug = getSlug(relatedPost.id);
+          const rEnSlugKey = lang === 'es' ? reverseSlugMap[rSlug] : rSlug;
+          const rMeta = articleMetadata[rEnSlugKey] || { category: lang === 'en' ? 'Insight' : 'Perspectiva', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfhcbYM5qiXlLof1n0sO4dLE_AS5id940UYNrPE_WyaoRxPt-8ZWum_5A5z_Sz7uqaahHXwGWLFV7Td9rwFplf-i3QKiPEpH_M_xdH6tfK_452P3OGxYSjJI4KQ0MuhdLiT0vffaQ-RQ9HMBVkGmjzMMN688p-9kHaFL7gNGGJYqos47k8qF8C1dSMHYps9KKLJ9FAIMR7kI9L-FktSxt5cDKu58baZA7yinxYUk7oaB8G4Ri7aBQKgkrezDd6bNw-sxySm5yg-bso' };
+          const rLink = `/${lang}/${lang === 'en' ? 'insight' : 'perspectivas'}/${rSlug}`;
+          
+          return (
+            <a class="group block space-y-4" href={rLink}>
+              <div class="aspect-[16/9] bg-surface-container overflow-hidden border border-outline-variant">
+                <img 
+                  alt={relatedPost.data.title} 
+                  class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" 
+                  src={rMeta.image}
+                />
+              </div>
+              <div>
+                <p class="font-label-technical text-label-technical text-secondary uppercase mb-2">{rMeta.category}</p>
+                <h4 class="font-headline-md text-headline-md text-primary group-hover:underline decoration-1 underline-offset-4 transition-all">{relatedPost.data.title}</h4>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  @reference "../../../styles/global.css";
+
+  .grain {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+  }
+
+  /* Style overrides for rendered markdown */
+  .markdown-body :global(p:first-of-type) {
+    @apply font-body-lg text-body-lg leading-relaxed;
+  }
+  .markdown-body :global(p:first-of-type::first-letter) {
+    float: left;
+    font-family: var(--font-fraunces), serif;
+    font-size: 5rem;
+    line-height: 1;
+    padding-right: 0.75rem;
+    color: #ffffff;
+    font-weight: 900;
+  }
+  .markdown-body :global(p) {
+    @apply font-body-md text-body-md mb-6 leading-relaxed opacity-90;
+  }
+  .markdown-body :global(h2) {
+    @apply font-headline-md text-headline-md text-primary mb-6 mt-12;
+  }
+  .markdown-body :global(h3) {
+    @apply font-headline-md text-lg text-primary mb-4 mt-8;
+  }
+  .markdown-body :global(ul) {
+    @apply list-disc list-inside space-y-2 mb-6 opacity-90;
+  }
+  .markdown-body :global(ol) {
+    @apply list-decimal list-inside space-y-2 mb-6 opacity-90;
+  }
+  .markdown-body :global(li) {
+    @apply font-body-md text-body-md leading-relaxed;
+  }
+</style>
+
+<script>
+  // Simple scroll reveal interaction
+  const observerOptions = {
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        entry.target.classList.remove('opacity-0', 'translate-y-10');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('section, figure, blockquote').forEach(el => {
+    el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+    observer.observe(el);
+  });
+</script>

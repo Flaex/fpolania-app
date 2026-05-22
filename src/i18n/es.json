@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "strategy": "Estrategia",
+    "work": "Trabajos",
+    "insight": "Perspectivas",
+    "connect": "Conectar"
+  },
+  "home": {
+    "metaTitle": "ESTRATEGA | @flaex_",
+    "metaDescription": "Estrategia de Negocios. Visión de Diseño. Oficio Técnico.",
+    "executiveSummary": "Resumen Ejecutivo",
+    "role": "Estratega Sénior de Producto",
+    "roleSubtitle": "Estrategia de Negocios. Visión de Diseño. Oficio Técnico.",
+    "exploreCommand": "Explorar el Centro de Comando",
+    "latestInsight": "Última Perspectiva",
+    "readArticle": "Leer Artículo",
+    "yearsLeadership": "Años de liderazgo multidisciplinario.",
+    "messyMiddleTitle": "Minimizando el riesgo en el 'Messy Middle'.",
+    "messyMiddleDesc": "Los productos fracasan en la brecha entre los Negocios, el Diseño y la Tecnología. Cierro esa brecha para asegurar que cada línea de código sea una inversión en su rentabilidad.",
+    "aiTitle": "Creado por Personas. Perfeccionado con IA.",
+    "aiDesc": "Aprovechando LLMs y orquestación basada en CLI para amplificar el oficio sénior y acelerar la velocidad de comercialización.",
+    "featuredWorks": "Trabajos Destacados",
+    "viewAll": "Ver Todos",
+    "bancoLibroSub": "Participante Seleccionado, Bienal Iberoamericana de Diseño (BID)",
+    "maximizaSub": "Branding y diseño web para un líder en servicios financieros",
+    "novanetSub": "Arquitectura de ecosistemas de alto rendimiento",
+    "ctaTitle": "Construyamos Juntos.",
+    "ctaDesc": "Disponible para auditorías estratégicas de producto y consultoría arquitectónica.",
+    "ctaButton": "Solicitar una Auditoría"
+  },
+  "works": {
+    "metaTitle": "TRABAJOS | @flaex_",
+    "metaDescription": "Un archivo curado de intervenciones estratégicas, arquitectura digital y precisión geométrica.",
+    "title": "Trabajos Seleccionados.",
+    "subtitle": "Un archivo curado de intervenciones estratégicas, arquitectura digital y precisión geométrica.",
+    "clusterAlpha": "Cluster Alpha: Branding e Identidad",
+    "clusterAlphaSubtitle": "Forjando Autoridad Corporativa.",
+    "clusterBeta": "Cluster Beta: Web y Digital",
+    "clusterBetaSubtitle": "Arquitectura de Ecosistemas Digitales.",
+    "clusterGamma": "Cluster Gamma: Diseño Atómico",
+    "clusterGammaSubtitle": "La Geometría del Significado."
+  },
+  "insight": {
+    "metaTitle": "Centro de Perspectivas | Fredy Polania",
+    "metaDescription": "Un examen riguroso de las intersecciones entre el ROI de la estrategia de negocios, el lenguaje visual de autoridad y la ingeniería de alto rendimiento.",
+    "title": "El Centro de Perspectivas",
+    "subtitle": "Un examen riguroso de las intersecciones entre el ROI de la estrategia de negocios, el lenguaje visual de autoridad y la ingeniería de alto rendimiento.",
+    "archiveIntell": "Archivo e Inteligencia",
+    "lens01": "Lente 01",
+    "lens01Title": "Lente CEO",
+    "lens01Desc": "Alineación estratégica y el caso de negocio para el diseño como motor de gran valor empresarial.",
+    "lens02": "Lente 02",
+    "lens02Title": "Lente Visual",
+    "lens02Desc": "El Lenguaje de la Autoridad: Dominando la estética de la influencia y la psicología de la forma.",
+    "lens03": "Lente 03",
+    "lens03Title": "Lente Builder",
+    "lens03Desc": "La convergencia final. La ingeniería no es un paso separado; es la realización final de la visión.",
+    "ctaTitle": "¿Listo para evolucionar tu visión?",
+    "ctaButton": "Solicitar una auditoría",
+    "ctaWorks": "Ver casos de éxito"
+  },
+  "article": {
+    "metaSuffix": "ESTRATEGA",
+    "readTimeSuffix": "min de lectura",
+    "authorTitle": "Fundador y Estratega Principal",
+    "relatedTitle": "Perspectivas Relacionadas",
+    "seeAll": "Ver todas"
+  },
+  "summaries": {
+    "todo-es-diseno-la-filosofia-de-la-utilidad": "Por qué el diseño no es un añadido estético, sino la arquitectura principal de la función del producto y la utilidad del usuario.",
+    "diseno-grafico-y-branding-el-sistema-de-autoridad": "Diferenciando la identidad de marca de los logotipos simples. Cómo los sistemas visuales consistentes construyen valor de negocio a largo plazo.",
+    "diseno-grafico-y-programacion-web-la-traduccion-estrategica": "Cerrando la brecha de traducción entre la intención creativa y la ejecución técnica. Por qué el oficio del desarrollador debe alinearse con la visión de diseño.",
+    "el-valor-del-diseno-grafico": "Un análisis económico del valor del diseño basado en la escasez y la utilidad, minimizando el riesgo en el \"messy middle\" del desarrollo de productos."
+  }
+}

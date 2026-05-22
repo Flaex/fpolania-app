@@ -56,3 +56,5 @@ This section maps out the completed activities aligning with the branding direct
 
 ### AI Orchestration Mandate
 - Followed the **"Created by People, Refined with AI"** mandate by using developer-led agentic tools for structuring layout templates and content organization while keeping final design authority and editorial voice fully human-crafted.
+- **Git Commit Mandate:** Every time a request is made to generate a git commit message, it must strictly follow the Conventional Commits specification (https://www.conventionalcommits.org/en/v1.0.0/).
+

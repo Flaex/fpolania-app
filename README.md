@@ -85,6 +85,14 @@ This repository hosts the code and content for Fredy Polania's (@flaex_) persona
 - Documented [bento_grid_structure.md](file:///Users/fpolania/projects/fpolania-app/web_app_blueprint/bento_grid_structure.md) listing the exact layout grids for the homepage, portfolio pages, sitemaps, and categorical lenses.
 - Authored [STITCH_WORKFLOW.md](file:///Users/fpolania/projects/fpolania-app/web_app_blueprint/STITCH_WORKFLOW.md) outlining the design-to-code export workflow using the Google Stitch web tool.
 
+### 6. Development Roadmap & Pending Work
+- **Works Hub Implementation:** Create `/works` (English) and `/trabajos` (Spanish) pages to display the full portfolio Bento Grid mapped to legacy projects from [projects_index.md](file:///Users/fpolania/projects/fpolania-app/web_app_blueprint/portfolio/projects_index.md).
+- **Insight Hub Implementation:** Build `/insight` (English) and `/perspectivas` (Spanish) pages to list blog articles grouped by their CEO, Visual, and Builder lenses.
+- **Dynamic Routing:** Create dynamic routes (`/insight/[slug]` and `/perspectivas/[slug]`) to render individual articles from content collections.
+- **Homepage Expansion (Zone 3):** Implement the "Featured Insights" card cluster on the homepage [index.astro](file:///Users/fpolania/projects/fpolania-app/src/pages/index.astro) as specified in the blueprint.
+- **Bilingual Localization Logic:** Implement routing subfolders, active language detection/toggling, and localized components.
+- **Visual Polish & Micro-interactions:** Add monochromatic transition states, hover states, icons, and background grid/question-mark patterns.
+
 ---
 
 ## 🧞 Dev commands

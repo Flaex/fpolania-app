@@ -1,0 +1,587 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations, reverseSlugMap } from '../../utils/i18n';
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en', page: 'works' } },
+    { params: { lang: 'es', page: 'trabajos' } },
+    { params: { lang: 'en', page: 'insight' } },
+    { params: { lang: 'es', page: 'perspectivas' } },
+  ];
+}
+
+const { lang, page } = Astro.params;
+const t = useTranslations(lang);
+
+const isWorksPage = page === 'works' || page === 'trabajos';
+const isInsightPage = page === 'insight' || page === 'perspectivas';
+
+// Determine link helpers based on lang
+const ctaWorksLink = lang === 'en' ? '/en/works' : '/es/trabajos';
+
+// ----------------------------------------
+// INSIGHT HUB LOGIC
+// ----------------------------------------
+const allPosts = isInsightPage 
+  ? await getCollection('blog', ({ data }) => data.language === lang) 
+  : [];
+
+const getSlug = (id: string) => id.split('/').pop()?.replace(/\.md$/, '') || '';
+
+// Sort orders
+const ceoOrder = lang === 'en' 
+  ? [
+      'everything-is-design-the-philosophy-of-utility',
+      'the-logo-and-the-company-the-investment-in-trust',
+      'the-value-of-graphic-design-a-strategic-perspective',
+      'graphic-design-and-branding-the-authority-system'
+    ]
+  : [
+      'todo-es-diseno-la-filosofia-de-la-utilidad',
+      'el-logotipo-y-la-empresa-la-inversion-en-confianza',
+      'el-valor-del-diseno-grafico',
+      'diseno-grafico-y-branding-el-sistema-de-autoridad'
+    ];
+
+const visualOrder = lang === 'en'
+  ? [
+      'what-is-typography-the-dna-of-information',
+      'typographic-classification-the-geometry-of-tone',
+      'the-logo-variants-strategic-adaptability',
+      'visual-communication-or-graphic-design',
+      'illustrator-basics-precision-tools'
+    ]
+  : [
+      'que-es-la-tipografia-el-adn-de-la-civilizacion',
+      'clasificacion-tipografica-la-geometria-del-tono',
+      'las-variantes-del-logotipo-adaptabilidad-estrategica',
+      'comunicacion-visual-o-diseno-grafico',
+      'illustrator-basico-herramientas-de-precision'
+    ];
+
+const builderOrder = lang === 'en'
+  ? [
+      'what-is-the-utility-of-learning-html',
+      'what-is-html-the-structure-of-information',
+      'what-is-css-the-visual-style-system',
+      'graphic-design-and-web-programming-the-strategic-translation'
+    ]
+  : [
+      'cual-es-la-utilidad-de-aprender-html',
+      'que-es-html-la-estructura-de-la-informacion',
+      'que-es-css-el-sistema-de-estilo-visual',
+      'diseno-grafico-y-programacion-web-la-traduccion-estrategica'
+    ];
+
+const ceoPosts = isInsightPage
+  ? allPosts
+      .filter(p => p.data.lens === 'ceo_lens')
+      .sort((a, b) => ceoOrder.indexOf(getSlug(a.id)) - ceoOrder.indexOf(getSlug(b.id)))
+  : [];
+
+const visualPosts = isInsightPage
+  ? allPosts
+      .filter(p => p.data.lens === 'visual_lens')
+      .sort((a, b) => visualOrder.indexOf(getSlug(a.id)) - visualOrder.indexOf(getSlug(b.id)))
+  : [];
+
+const builderPosts = isInsightPage
+  ? allPosts
+      .filter(p => p.data.lens === 'builder_lens')
+      .sort((a, b) => builderOrder.indexOf(getSlug(a.id)) - builderOrder.indexOf(getSlug(b.id)))
+  : [];
+
+// Card aesthetic config getter
+const getCardConfig = (postSlug: string) => {
+  const configs: Record<string, any> = {
+    // Lens 01
+    'everything-is-design-the-philosophy-of-utility': {
+      type: 'large-bg-split',
+      tag: lang === 'en' ? 'Business Strategy' : 'Estrategia de Negocios',
+      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfhcbYM5qiXlLof1n0sO4dLE_AS5id940UYNrPE_WyaoRxPt-8ZWum_5A5z_Sz7uqaahHXwGWLFV7Td9rwFplf-i3QKiPEpH_M_xdH6tfK_452P3OGxYSjJI4KQ0MuhdLiT0vffaQ-RQ9HMBVkGmjzMMN688p-9kHaFL7gNGGJYqos47k8qF8C1dSMHYps9KKLJ9FAIMR7kI9L-FktSxt5cDKu58baZA7yinxYUk7oaB8G4Ri7aBQKgkrezDd6bNw-sxySm5yg-bso',
+    },
+    'the-logo-and-the-company-the-investment-in-trust': {
+      type: 'stat-small',
+      label: '01.02 — ROI',
+      pills: lang === 'en' ? ['Identity', 'Capital'] : ['Identidad', 'Capital'],
+    },
+    'the-value-of-graphic-design-a-strategic-perspective': {
+      type: 'stat-small',
+      label: lang === 'en' ? '01.03 — IMPACT' : '01.03 — IMPACTO',
+      pills: lang === 'en' ? ['Analytics'] : ['Métricas'],
+    },
+    'graphic-design-and-branding-the-authority-system': {
+      type: 'stat-small',
+      label: lang === 'en' ? '01.04 — AUTHORITY' : '01.04 — AUTORIDAD',
+      pills: lang === 'en' ? ['Brand', 'Strategy'] : ['Marca', 'Estrategia'],
+    },
+    // Lens 02
+    'what-is-typography-the-dna-of-information': {
+      type: 'overlay-bg',
+      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAe8tzPO0Df4dIf-YHdLYynUFhhiY_pFbukGsD5ykeH3YzD7tab_sz97jZsYfyJu6RPFE_E0yLkCQATHRkZGgsDwmrmaNwDccVqewSR86GTyCQKJE32vg7mAucrk77IKEvBTVRnsnWXkGrm6D_XuR5UvfxS13a1lPY_oA-JwEwmboVdTi-eIk4kaiK1HJVVhNxBoHKjWy1XUfmT8E_2NyMEZSS4qjEiSC2XrCMObTHiwv7NWWtICe0JYNMH3Bnd0EF2jAQIUqQRF2DH',
+    },
+    'typographic-classification-the-geometry-of-tone': {
+      type: 'taxonomy-card',
+      description: lang === 'en' 
+        ? 'A technical taxonomy of letterforms from Humanist to Geometric Sans.' 
+        : 'Una taxonomía técnica de las formas de las letras desde las Humanistas hasta las Sans Geométricas.',
+      refLabel: lang === 'en' ? 'Reference 02.02' : 'Referencia 02.02',
+    },
+    'the-logo-variants-strategic-adaptability': {
+      type: 'icon-card',
+      icon: 'pentagon',
+      label: '02.04',
+    },
+    'visual-communication-or-graphic-design': {
+      type: 'hover-translate',
+      description: lang === 'en' 
+        ? 'Defining functional message transmission.' 
+        : 'Definiendo la transmisión funcional de mensajes.',
+    },
+    'illustrator-basics-precision-tools': {
+      type: 'banner-wide-split',
+      description: lang === 'en' 
+        ? 'Mastering precision vector systems, anchor point logic, and geometric craft.' 
+        : 'Dominando los sistemas vectoriales de precisión, la lógica de los puntos de anclaje y el oficio geométrico.',
+    },
+    // Lens 03
+    'what-is-the-utility-of-learning-html': {
+      type: 'action-card',
+      description: lang === 'en' 
+        ? 'Why every visual designer must understand the substrate of their work to achieve technical excellence.' 
+        : 'Por qué todo diseñador visual debe comprender el sustrato de su trabajo para lograr la excelencia técnica.',
+      btnText: lang === 'en' ? 'Read Whitepaper' : 'Leer Documento',
+      icon: 'code',
+    },
+    'what-is-html-the-structure-of-information': {
+      type: 'code-snippet',
+      code: '<section id="html">',
+      description: lang === 'en' 
+        ? 'The semantic skeleton of the digital universe.' 
+        : 'El esqueleto semántico del universo digital.',
+      bottomLabel: lang === 'en' ? 'Documentation / Structure' : 'Documentación / Estructura',
+    },
+    'what-is-css-the-visual-style-system': {
+      type: 'code-snippet',
+      code: '.design { display: flex; }',
+      description: lang === 'en' 
+        ? 'The logic of visual presentation and spatial rhythm.' 
+        : 'La lógica de la presentación visual y el ritmo espacial.',
+      bottomLabel: lang === 'en' ? 'Documentation / Presentation' : 'Documentación / Presentación',
+    },
+    'graphic-design-and-web-programming-the-strategic-translation': {
+      type: 'banner-right-image',
+      description: lang === 'en' 
+        ? 'Explore the methodology of code-driven design. Where aesthetics meet algorithmic precision.' 
+        : 'Explore la metodología del diseño orientado por código. Donde la estética se encuentra con la precisión algorítmica.',
+      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNWsRtL31KvRmnCaczzSpovZf6gL2ZBRty6IB8kNqtHKO7EUHsU2ITSub61rb_yX84YF2ScKz2wRovzI4kVbEzjKnOQEMVlTlHy3cgYmt9b6-59YM6wPt55payy_QYS3DMwRV_DT9yz_GTxLRF1XRxUKcVe4IKne7pmCyyHN7oofSw9YPotglYHb2653cdZFxDs2KX8qrz3AJTK4MLbinRH9K2-i_RnBUBPntL_Ruurlqtn2KHfCqI_yWYpwflcXhykiQofUMs-o4_',
+    },
+  };
+
+  const enSlug = lang === 'es' ? reverseSlugMap[postSlug] : postSlug;
+  return configs[enSlug] || {};
+};
+
+const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
+---
+
+{isWorksPage && (
+  <Layout title={t('works.metaTitle')} description={t('works.metaDescription')} lang={lang}>
+      <Navigation />
+      
+      <main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-24 animate-fade-in">
+          <!-- Page Header -->
+          <header class="mb-16">
+              <h1 class="font-display text-display text-primary mb-4 font-black font-fraunces">{t('works.title')}</h1>
+              <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">{t('works.subtitle')}</p>
+          </header>
+
+          <!-- Bento Grid System -->
+          <div class="grid grid-cols-4 md:grid-cols-12 gap-gutter">
+              
+              <!-- CLUSTER A: BRANDING & IDENTITY -->
+              <div class="col-span-4 md:col-span-12 mb-8 mt-12">
+                  <h2 class="font-label-technical text-label-technical text-outline uppercase tracking-widest border-b border-outline-variant pb-2">{t('works.clusterAlpha')}</h2>
+              </div>
+              
+              <!-- Header Card -->
+              <div class="col-span-4 md:col-span-6 bg-surface-container-low border border-outline-variant p-8 flex flex-col justify-end min-h-[300px]">
+                  <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary leading-tight font-bold font-fraunces">{t('works.clusterAlphaSubtitle')}</h3>
+              </div>
+              
+              <!-- 1x1 Grid Items -->
+              <a href="https://www.behance.net/gallery/201803207/Maximiza-Branding-y-diseno-web" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
+                  <div class="font-label-technical text-label-technical text-outline">BRANDING</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Maximiza</h4>
+                  </div>
+              </a>
+              
+              <a href="https://www.behance.net/gallery/201806885/Zuglabs-Diseno-de-Identidad-Corporativa" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
+                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'IDENTITY' : 'IDENTIDAD'}</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Zuglabs</h4>
+                  </div>
+              </a>
+              
+              <a href="https://www.behance.net/gallery/201965907/Agua-Fria-Coffee-Diseno-de-identidad-corporativa" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
+                  <div class="font-label-technical text-label-technical text-outline">BRANDING</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Agua Fría Coffee</h4>
+                  </div>
+              </a>
+              
+              <a href="https://www.behance.net/gallery/201968709/Altea-Diseno-de-identidad-visual-y-etiqueta" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
+                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'IDENTITY' : 'IDENTIDAD'}</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Altea</h4>
+                  </div>
+              </a>
+              
+              <a href="https://www.behance.net/gallery/80052541/Zaituna-Caf-branding" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
+                  <div class="font-label-technical text-label-technical text-outline">BRANDING</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Zaituna Café</h4>
+                  </div>
+              </a>
+              
+              <a href="https://www.behance.net/gallery/28402639/Take-on-Bar-branding" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
+                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'IDENTITY' : 'IDENTIDAD'}</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Take on Bar</h4>
+                  </div>
+              </a>
+              
+              <a href="https://www.behance.net/gallery/80018967/Athlos-Logo" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
+                  <div class="font-label-technical text-label-technical text-outline">BRANDING</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Athlos</h4>
+                  </div>
+              </a>
+              
+              <a href="https://www.behance.net/gallery/28402463/Gamma-Medical-branding" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
+                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'IDENTITY' : 'IDENTIDAD'}</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Gamma Medical</h4>
+                  </div>
+              </a>
+              
+              <a href="https://www.behance.net/gallery/28402541/EJ-Supply-branding" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
+                  <div class="font-label-technical text-label-technical text-outline">BRANDING</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">EJ Supply</h4>
+                  </div>
+              </a>
+              
+              <a href="https://www.behance.net/gallery/202050015/Grupo-de-Panaderias-Diseno-de-identidad-visual" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
+                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'IDENTITY' : 'IDENTIDAD'}</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Bakery Consortium</h4>
+                  </div>
+              </a>
+              
+              <!-- CLUSTER B: WEB & DIGITAL -->
+              <div class="col-span-4 md:col-span-12 mb-8 mt-16">
+                  <h2 class="font-label-technical text-label-technical text-outline uppercase tracking-widest border-b border-outline-variant pb-2">{t('works.clusterBeta')}</h2>
+              </div>
+              
+              <!-- Header Card -->
+              <div class="col-span-4 md:col-span-6 bg-surface-container-low border border-outline-variant p-8 flex flex-col justify-end min-h-[300px]">
+                  <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary leading-tight font-bold font-fraunces">{t('works.clusterBetaSubtitle')}</h3>
+              </div>
+              
+              <!-- 2x1 Grid Items -->
+              <a href="https://www.behance.net/gallery/240666733/Novanet-studio-web-app" target="_blank" rel="noopener noreferrer" class="col-span-4 md:col-span-6 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[300px]">
+                  <div class="font-label-technical text-label-technical text-outline">WEB APP / 2025</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Novanet Studio</h4>
+                  </div>
+              </a>
+              
+              <a href="https://www.behance.net/gallery/240144801/Come-2025-Sitio-web" target="_blank" rel="noopener noreferrer" class="col-span-4 md:col-span-6 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[150px]">
+                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'PLATFORM / 2025' : 'PLATAFORMA / 2025'}</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Come 2025</h4>
+                  </div>
+              </a>
+              
+              <a href="https://www.behance.net/gallery/28402277/Banco-del-Libro-web-design-anddevelopment" target="_blank" rel="noopener noreferrer" class="col-span-4 md:col-span-6 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[150px]">
+                  <div class="font-label-technical text-label-technical text-outline">E-COMMERCE / 2024</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Banco del Libro</h4>
+                  </div>
+              </a>
+              
+              <a href="https://www.behance.net/gallery/203392661/Ccs-Multisport-Diseno-web-y-branding" target="_blank" rel="noopener noreferrer" class="col-span-4 md:col-span-6 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[150px]">
+                  <div class="font-label-technical text-label-technical text-outline">PORTAL / 2023</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">CCS Multisport</h4>
+                  </div>
+              </a>
+              
+              <a href="https://www.behance.net/gallery/201800935/Diseno-Web-para-Avila-Multisport" target="_blank" rel="noopener noreferrer" class="col-span-4 md:col-span-6 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[150px]">
+                  <div class="font-label-technical text-label-technical text-outline">PORTAL / 2023</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Ávila Multisport</h4>
+                  </div>
+              </a>
+              
+              <a href="https://www.behance.net/gallery/231519213/Foot-In-Motion-brand-and-digital" target="_blank" rel="noopener noreferrer" class="col-span-4 md:col-span-6 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[150px]">
+                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'CORPORATE / 2022' : 'CORPORATIVO / 2022'}</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">KevinRoot Medical</h4>
+                  </div>
+              </a>
+              
+              <a href="https://www.behance.net/gallery/197022345/Novanet-Studio-branding-2021" target="_blank" rel="noopener noreferrer" class="col-span-4 md:col-span-12 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[200px]">
+                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'SYSTEM ARCHITECTURE / 2018-2021' : 'ARQUITECTURA DE SISTEMAS / 2018-2021'}</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Novanet Evolution</h4>
+                  </div>
+              </a>
+              
+              <!-- CLUSTER C: ATOMIC DESIGN -->
+              <div class="col-span-4 md:col-span-12 mb-8 mt-16">
+                  <h2 class="font-label-technical text-label-technical text-outline uppercase tracking-widest border-b border-outline-variant pb-2">{t('works.clusterGamma')}</h2>
+              </div>
+              
+              <!-- Header Card -->
+              <div class="col-span-4 md:col-span-6 bg-surface-container-low border border-outline-variant p-8 flex flex-col justify-end min-h-[300px]">
+                  <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary leading-tight font-bold font-fraunces">{t('works.clusterGammaSubtitle')}</h3>
+              </div>
+              
+              <!-- 1x1 Grid Items -->
+              <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
+                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'SYSTEMS' : 'SISTEMAS'}</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Novatipo</h4>
+                  </div>
+              </a>
+              
+              <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
+                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'ICONOGRAPHY' : 'ICONOGRAFÍA'}</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Novaicons</h4>
+                  </div>
+              </a>
+              
+              <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
+                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'TYPOGRAPHY' : 'TIPOGRAFÍA'}</div>
+                  <div>
+                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Barahunda Typeface</h4>
+                  </div>
+              </a>
+              
+          </div>
+      </main>
+      
+      <Footer />
+  </Layout>
+)}
+
+{isInsightPage && (
+  <Layout title={t('insight.metaTitle')} description={t('insight.metaDescription')} lang={lang}>
+    <Navigation />
+    
+    <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-16 mb-24 animate-fade-in">
+      <!-- Hero Header -->
+      <section class="mb-16">
+        <span class="font-label-technical text-label-technical text-primary uppercase tracking-[0.2em] mb-4 block">{t('insight.archiveIntell')}</span>
+        <h1 class="font-display text-display text-primary max-w-4xl font-fraunces">{t('insight.title')}</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mt-6 max-w-2xl">
+          {t('insight.subtitle')}
+        </p>
+      </section>
+
+      <!-- Bento Grid Structure -->
+      <div class="grid grid-cols-12 gap-gutter">
+        
+        <!-- ================= LENS 01 GROUP: CEO ================= -->
+        <div class="p-12 flex items-center justify-between border border-outline-variant col-span-12 md:col-span-6 bg-surface-container-lowest">
+          <div class="max-w-xl">
+            <span class="font-label-technical text-label-technical mb-2 block uppercase text-primary/60">{t('insight.lens01')}</span>
+            <h2 class="font-display text-display mb-4 text-primary font-fraunces">{t('insight.lens01Title')}</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">{t('insight.lens01Desc')}</p>
+          </div>
+          <div class="hidden md:block material-symbols-outlined text-[120px] text-primary/10" style="font-variation-settings: 'wght' 200;">corporate_fare</div>
+        </div>
+
+        {ceoPosts.map(post => {
+          const postSlug = getSlug(post.id);
+          const config = getCardConfig(postSlug);
+          
+          if (config.type === 'large-bg-split') {
+            return (
+              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-6 group relative overflow-hidden bg-surface-container border border-outline-variant flex flex-col md:flex-row min-h-[320px] hover:border-white transition-colors duration-300">
+                <div class="w-full md:w-1/2 p-8 flex flex-col justify-between h-full">
+                  <div>
+                    <div class="flex items-center gap-2 mb-4">
+                      <span class="w-2 h-2 rounded-full bg-primary"></span>
+                      <span class="font-label-technical text-label-technical uppercase text-on-surface-variant">{config.tag}</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-primary group-hover:underline">{post.data.title}</h3>
+                  </div>
+                  <div class="mt-8 font-label-technical text-label-technical text-primary flex items-center gap-2 uppercase tracking-widest">
+                    {lang === 'en' ? 'Read Article' : 'Leer Artículo'} <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                  </div>
+                </div>
+                <div class="w-full md:w-1/2 min-h-[240px] bg-cover bg-center grayscale contrast-125 group-hover:scale-105 transition-transform duration-700" style={`background-image: url('${config.image}');`}></div>
+              </a>
+            );
+          } else {
+            return (
+              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container-low border border-outline-variant p-8 hover:bg-surface-container hover:border-white transition-all duration-300 flex flex-col justify-between">
+                <div>
+                  <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{config.label}</span>
+                  <h3 class="font-headline-md text-headline-md text-primary mb-4 leading-tight">{post.data.title}</h3>
+                </div>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  {config.pills?.map((pill: string) => (
+                    <span class="bg-outline-variant/20 px-3 py-1 font-label-technical text-label-technical text-on-surface-variant">{pill}</span>
+                  ))}
+                </div>
+              </a>
+            );
+          }
+        })}
+
+        <!-- ================= LENS 02 GROUP: VISUAL ================= -->
+        <div class="p-12 flex items-center justify-between border border-outline-variant col-span-12 md:col-span-6 bg-surface-container-lowest mt-12">
+          <div class="max-w-xl">
+            <span class="font-label-technical text-label-technical mb-2 block uppercase text-primary/60">{t('insight.lens02')}</span>
+            <h2 class="font-display text-display mb-4 text-primary font-fraunces">{t('insight.lens02Title')}</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">{t('insight.lens02Desc')}</p>
+          </div>
+          <div class="hidden md:block material-symbols-outlined text-[120px] text-primary/10" style="font-variation-settings: 'wght' 200;">architecture</div>
+        </div>
+
+        {visualPosts.map(post => {
+          const postSlug = getSlug(post.id);
+          const config = getCardConfig(postSlug);
+          
+          if (config.type === 'overlay-bg') {
+            return (
+              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-6 bg-surface-container border border-outline-variant aspect-square md:aspect-auto p-8 flex flex-col justify-end relative mt-12 overflow-hidden hover:border-white transition-colors duration-300 group min-h-[320px]">
+                <div class="absolute inset-0 bg-cover bg-center opacity-30 grayscale group-hover:scale-105 transition-transform duration-700" style={`background-image: url('${config.image}');`}></div>
+                <div class="relative z-10">
+                  <h3 class="font-headline-md text-headline-md text-primary">{post.data.title}</h3>
+                  <span class="mt-4 font-label-technical text-label-technical text-primary flex items-center gap-2 uppercase tracking-widest">{lang === 'en' ? 'Learn More' : 'Aprender Más'} <span class="material-symbols-outlined text-[14px]">north_east</span></span>
+                </div>
+              </a>
+            );
+          } else if (config.type === 'taxonomy-card') {
+            return (
+              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container-high border border-outline-variant p-8 flex flex-col justify-between hover:border-white transition-colors duration-300">
+                <div>
+                  <h3 class="font-headline-md text-headline-md text-primary">{post.data.title}</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant mt-4">{config.description}</p>
+                </div>
+                <div class="mt-8 border-t border-outline-variant pt-4 font-label-technical text-label-technical text-primary uppercase">{config.refLabel}</div>
+              </a>
+            );
+          } else if (config.type === 'icon-card') {
+            return (
+              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container border border-outline-variant p-8 flex flex-col justify-between hover:border-white transition-colors duration-300">
+                <div class="flex justify-between items-start mb-6">
+                  <span class="material-symbols-outlined text-primary text-[32px]">{config.icon}</span>
+                  <span class="font-label-technical text-label-technical text-on-surface-variant">{config.label}</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-primary mb-2">{post.data.title}</h3>
+              </a>
+            );
+          } else if (config.type === 'hover-translate') {
+            return (
+              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container-high border border-outline-variant p-8 group cursor-pointer hover:border-white transition-colors duration-300 flex flex-col justify-between">
+                <div>
+                  <h3 class="font-headline-md text-headline-md text-primary transition-all group-hover:translate-x-2">{post.data.title}</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant mt-2 text-sm">{config.description}</p>
+                </div>
+              </a>
+            );
+          } else if (config.type === 'banner-wide-split') {
+            return (
+              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 bg-surface-container border border-outline-variant p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-12 group hover:border-white transition-colors duration-300">
+                <div class="max-w-xl">
+                  <h3 class="font-display text-headline-lg text-primary mb-6 italic">{post.data.title}</h3>
+                  <p class="font-body-lg text-body-lg text-on-surface-variant">{config.description}</p>
+                </div>
+                <div class="w-full md:w-48 aspect-video bg-surface-container-highest border border-outline-variant flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-700">
+                  <span class="material-symbols-outlined text-[64px] text-primary/20">architecture</span>
+                </div>
+              </a>
+            );
+          }
+        })}
+
+        <!-- ================= LENS 03 GROUP: BUILDER ================= -->
+        <div class="p-12 flex items-center justify-between border border-outline-variant col-span-12 md:col-span-6 bg-surface-container-lowest mt-12">
+          <div class="max-w-xl">
+            <span class="font-label-technical text-label-technical mb-2 block uppercase text-primary/60">{t('insight.lens03')}</span>
+            <h2 class="font-display text-display mb-4 text-primary font-fraunces">{t('insight.lens03Title')}</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">{t('insight.lens03Desc')}</p>
+          </div>
+          <div class="hidden md:block material-symbols-outlined text-[120px] text-primary/10" style="font-variation-settings: 'wght' 200;">terminal</div>
+        </div>
+
+        {builderPosts.map(post => {
+          const postSlug = getSlug(post.id);
+          const config = getCardConfig(postSlug);
+          
+          if (config.type === 'action-card') {
+            return (
+              <div class="col-span-12 md:col-span-6 bg-surface-container border border-outline-variant p-8 flex flex-col md:flex-row gap-8 mt-12">
+                <div class="flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 class="font-headline-md text-headline-md text-primary mb-4">{post.data.title}</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">{config.description}</p>
+                  </div>
+                  <a href={`${pagePathPrefix}${postSlug}`} class="mt-8 border border-primary px-4 py-2 text-primary font-label-technical text-label-technical hover:bg-primary hover:text-on-primary transition-all text-center max-w-[180px] inline-block">{config.btnText}</a>
+                </div>
+                <div class="hidden lg:flex w-1/3 bg-surface-container-highest border border-outline-variant items-center justify-center">
+                  <span class="material-symbols-outlined text-[64px] text-primary/20">{config.icon}</span>
+                </div>
+              </div>
+            );
+          } else if (config.type === 'code-snippet') {
+            return (
+              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-3 bg-surface-container border border-outline-variant p-6 hover:border-white transition-colors duration-300 flex flex-col justify-between">
+                <div>
+                  <code class="block text-primary font-label-technical mb-6 font-geist">{config.code}</code>
+                  <h3 class="font-headline-md text-headline-md text-primary mb-2">{post.data.title}</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant mb-4 text-sm">{config.description}</p>
+                </div>
+                <span class="font-label-technical text-[10px] text-primary/40 uppercase tracking-tighter block mt-auto">{config.bottomLabel}</span>
+              </a>
+            );
+          } else if (config.type === 'banner-right-image') {
+            return (
+              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-6 bg-surface-container-high border border-outline-variant p-12 flex flex-col md:flex-row items-center justify-between gap-12 group hover:border-white transition-colors duration-300">
+                <div class="max-w-xl">
+                  <h3 class="font-display text-headline-lg text-primary mb-6 italic">{post.data.title}</h3>
+                  <p class="font-body-lg text-body-lg text-on-surface-variant">{config.description}</p>
+                </div>
+                <div class="w-full md:w-48 aspect-video bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 border border-outline-variant" style={`background-image: url('${config.image}');`}></div>
+              </a>
+            );
+          }
+        })}
+
+      </div>
+
+      <!-- Call to Action -->
+      <section class="mt-32 py-24 border-t border-outline-variant text-center">
+        <h2 class="font-display text-primary mb-12 text-headline-lg font-fraunces">{t('insight.ctaTitle')}</h2>
+        <div class="flex justify-center flex-wrap gap-6">
+          <a href="mailto:contact@flaex.me" class="bg-primary text-on-primary px-10 py-4 font-label-technical text-label-technical uppercase tracking-widest hover:opacity-90 transition-opacity">{t('insight.ctaButton')}</a>
+          <a href={ctaWorksLink} class="border border-outline px-10 py-4 font-label-technical text-label-technical uppercase tracking-widest hover:bg-surface-container transition-colors text-primary">{t('insight.ctaWorks')}</a>
+        </div>
+      </section>
+    </main>
+    
+    <Footer />
+  </Layout>
+)}

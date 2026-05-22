@@ -1,21 +1,47 @@
 ---
+const { pathname } = Astro.url;
+const lang = pathname.startsWith('/es') ? 'es' : 'en';
+const homePath = `/${lang}/`;
 ---
-<footer class="bg-carbon text-primary border-t border-white/10 w-full mt-auto">
-    <div class="flex flex-col md:flex-row justify-between items-center w-full px-6 md:px-12 py-12 max-w-7xl mx-auto gap-6 md:gap-0">
+<footer class="bg-carbon border-t border-dim-grey w-full mt-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-gutter max-w-container-max mx-auto gap-6 md:gap-0">
         <div class="opacity-80 hover:opacity-100 transition-opacity">
-            <img 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU9jlY6LdyNluPNP_7ILb9dVBBa-_dsqkGs5wHlxzwp8nL5wYuQVqQE6r-lB3XJmhlH-s_uejl2KVDlUJsg4BMhzYLxRms53TPHifBGfYo_m2stL15lgLu5y6WIecSWvlxLGX2IRwckDpNW8Fgydq0Sn7ygX1rdxBa5CgaUZfrRAAJjzKrE4uCd80fGLOB3WBdMoNUwpCuw4dfDz_xTumuGXGe_MHOgxbwe2_Q7QSRdQlmdtpIQUGrGJJiXu6obmW7hfnQSeR6E8zP" 
-                alt="Fredy Polania Logo" 
-                class="h-8 w-auto"
-            />
+            <a href={homePath}>
+                <img 
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU9jlY6LdyNluPNP_7ILb9dVBBa-_dsqkGs5wHlxzwp8nL5wYuQVqQE6r-lB3XJmhlH-s_uejl2KVDlUJsg4BMhzYLxRms53TPHifBGfYo_m2stL15lgLu5y6WIecSWvlxLGX2IRwckDpNW8Fgydq0Sn7ygX1rdxBa5CgaUZfrRAAJjzKrE4uCd80fGLOB3WBdMoNUwpCuw4dfDz_xTumuGXGe_MHOgxbwe2_Q7QSRdQlmdtpIQUGrGJJiXu6obmW7hfnQSeR6E8zP" 
+                    alt="Fredy Polania Logo" 
+                    class="h-8 w-auto"
+                />
+            </a>
         </div>
-        <div class="font-geist text-[10px] text-center md:text-left text-dim-grey uppercase tracking-[0.2em]">
-            © 2026 Fredy Polania
+        <div class="font-label-technical text-label-technical text-center md:text-left text-primary uppercase">
+            <span style="letter-spacing: 0.6px;" class="text-dim-grey">© 2026 Fredy Polania</span>
         </div>
-        <div class="flex gap-10 items-center">
-            <a href="#" class="font-geist text-dim-grey hover:text-white transition-colors text-[10px] uppercase tracking-widest">LinkedIn</a>
-            <a href="#" class="font-geist text-dim-grey hover:text-white transition-colors text-[10px] uppercase tracking-widest">Behance</a>
-            <a href="#" class="font-geist text-dim-grey hover:text-white transition-colors text-[10px] uppercase tracking-widest">X</a>
+        <div class="flex gap-6 items-center font-body-md text-body-md">
+            <a 
+                href="https://www.linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="text-dim-grey hover:text-white transition-opacity opacity-80 hover:opacity-100"
+            >
+                LinkedIn
+            </a>
+            <a 
+                href="https://www.behance.net" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="text-dim-grey hover:text-white transition-opacity opacity-80 hover:opacity-100"
+            >
+                Behance
+            </a>
+            <a 
+                href="https://x.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="text-dim-grey hover:text-white transition-opacity opacity-80 hover:opacity-100"
+            >
+                X
+            </a>
         </div>
     </div>
 </footer>

@@ -1,16 +1,21 @@
 ---
 import '../styles/global.css';
+import { getAlternatePath } from '../utils/i18n';
 
 interface Props {
 	title: string;
 	description?: string;
+	lang?: string;
 }
 
-const { title, description = "Business Strategy. Design Vision. Technical Craft." } = Astro.props;
+const { title, description = "Business Strategy. Design Vision. Technical Craft.", lang = "en" } = Astro.props;
+
+const alternateLang = lang === 'en' ? 'es' : 'en';
+const alternatePath = getAlternatePath(Astro.url.pathname, alternateLang);
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang={lang} class="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -18,11 +23,13 @@ const { title, description = "Business Strategy. Design Vision. Technical Craft.
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<link rel="alternate" hreflang={lang} href={Astro.url.pathname} />
+		<link rel="alternate" hreflang={alternateLang} href={alternatePath} />
 
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Geist:wght@100..900&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 	</head>
 	<body class="bg-carbon text-alabaster selection:bg-silver selection:text-carbon overflow-x-hidden">
@@ -52,9 +59,9 @@ const { title, description = "Business Strategy. Design Vision. Technical Craft.
 	}
 
 	.bento-card {
-		@apply bg-carbon border border-dim-grey transition-all duration-300;
+		@apply bg-surface-container border border-dim-grey transition-all duration-300;
 	}
-
+	
 	.bento-card:hover {
 		@apply border-white;
 	}
