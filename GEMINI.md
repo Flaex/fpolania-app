@@ -48,6 +48,7 @@ This section maps out the completed activities aligning with the branding direct
 - **Design Tokens Codification:** Implemented the exact custom monochromatic color palette (`carbon`, `dim-grey`, `silver`, `alabaster`, `white`) and typographic fonts (`Fraunces` and `Geist Sans`) within [global.css](file:///Users/fpolania/projects/fpolania-app/src/styles/global.css).
 - **Executive Monolith Home Hub:** Developed [index.astro](file:///Users/fpolania/projects/fpolania-app/src/pages/index.astro) as a responsive 12-column Bento Grid structure using native Tailwind CSS utility classes matching the theme configuration.
 - **Navigation & Footer Layout:** Integrated persistent branding headers with the logo and the signature `Fredy Polania` command center aesthetics in [Navigation.astro](file:///Users/fpolania/projects/fpolania-app/src/components/Navigation.astro) and [Footer.astro](file:///Users/fpolania/projects/fpolania-app/src/components/Footer.astro).
+- **Works Grid Local Image System:** Migrated the portfolio cover images database into the local `/public/images/works/` directory, updated the Works Collection schema in `src/content.config.ts` to support root-relative paths, and implemented responsive high-contrast, hover-animated background cover images on all cards across the Works Hub.
 
 ### Communication & Content Strategy
 - **Thought Leadership Database:** Completed migration of 26 thought leadership articles (13 English, 13 Spanish) inside [src/content/blog/](file:///Users/fpolania/projects/fpolania-app/src/content/blog/).

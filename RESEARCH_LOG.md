@@ -54,4 +54,5 @@ The core of the brand is solving the "Translation Gap"—the space where product
 *   **Step 5:** Codification into Project Instructions (`GEMINI.md`) and migration of project memory to the repository (`.gemini/memory/`).
 *   **Step 6:** Abstraction of the process into a reusable "Professional Persona Framework" (`templates/`).
 *   **Step 7:** Integration of **Human-Led AI Orchestration** (Claude Code, Gemini CLI) into the core value prop and narrative.
+*   **Step 8:** Ported portfolio cover images from external URLs to local `/public/images/works/` assets, modified the content schemas for Zod type safety with local paths, and implemented interactive hover-revealed grayscale-to-color background image transitions on the works Bento Grid.
 
