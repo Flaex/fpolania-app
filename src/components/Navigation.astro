@@ -1,5 +1,6 @@
 ---
 import { useTranslations, getAlternatePath } from '../utils/i18n';
+import logoDark from '../assets/fredy-polania-logo-dark.svg';
 
 const { pathname } = Astro.url;
 
@@ -33,7 +34,7 @@ const inactiveClass = "font-body-md text-on-surface-variant hover:text-primary t
             <div class="flex-shrink-0">
                 <a href={homePath} class="flex items-center">
                     <img 
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2TGoeAmQT-aCgDhM3pqtOxf8DiJhnO_G6JDrLPOWHDpdxjR89MA9K2rvII9vxNM2gYAbJUa-t155f0Zn-ZK-C-jkud1-qr4aPM1eASp8Z34sNBsObrxWFe0xShr7ksTLZiBmD2_LxNR_USdTggJVs34W0_FPaw8Q4RVTLRM8Q0iITqSWr_JoMVKrBBfBs6cYyqE8ZYyfpK4PYOc5XZDiT4KzAKwu9F79h4iodcTA05nsKKPT_rew2IZkT3riabUXIDcpTZQAQjF0f" 
+                        src={logoDark.src} 
                         alt="Fredy Polania Logo" 
                         class="h-8 w-auto"
                     />

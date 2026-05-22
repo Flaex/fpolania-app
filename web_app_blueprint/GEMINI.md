@@ -20,7 +20,7 @@ This document contains the foundational mandates for the "Founder-Visionary" bra
 - **Typography:**
   - **Headings:** `Fraunces` (Bold/Black) — Signals "Editorial Authority" and "Sovereign/Ruler" archetype.
   - **Body/Technical:** `Geist Sans` — Signals "Technical Precision" and "Magician" archetype, mirroring the logo's DNA.
-- **Logotype:** The `@flaex_` wordmark is the central brand element.
+- **Logotype:** The `Fredy Polania` logo is the central brand element.
 - **Design Philosophy:** Integrated Visual Communication and Web Programming. Use of monochromatic high-contrast patterns and structured typography. Ensure "Tailwind-native" execution (no arbitrary values; use config-driven theme).
 
 ## 3. Communication Style & Marketing Tone
@@ -47,7 +47,7 @@ This section maps out the completed activities aligning with the branding direct
 ### Visual System Implementation
 - **Design Tokens Codification:** Implemented the exact custom monochromatic color palette (`carbon`, `dim-grey`, `silver`, `alabaster`, `white`) and typographic fonts (`Fraunces` and `Geist Sans`) within [global.css](file:///Users/fpolania/projects/fpolania-app/src/styles/global.css).
 - **Executive Monolith Home Hub:** Developed [index.astro](file:///Users/fpolania/projects/fpolania-app/src/pages/index.astro) as a responsive 12-column Bento Grid structure using native Tailwind CSS utility classes matching the theme configuration.
-- **Navigation & Footer Layout:** Integrated persistent branding headers with the logo and the signature `@flaex_` command center aesthetics in [Navigation.astro](file:///Users/fpolania/projects/fpolania-app/src/components/Navigation.astro) and [Footer.astro](file:///Users/fpolania/projects/fpolania-app/src/components/Footer.astro).
+- **Navigation & Footer Layout:** Integrated persistent branding headers with the logo and the signature `Fredy Polania` command center aesthetics in [Navigation.astro](file:///Users/fpolania/projects/fpolania-app/src/components/Navigation.astro) and [Footer.astro](file:///Users/fpolania/projects/fpolania-app/src/components/Footer.astro).
 
 ### Communication & Content Strategy
 - **Thought Leadership Database:** Completed migration of 26 thought leadership articles (13 English, 13 Spanish) inside [src/content/blog/](file:///Users/fpolania/projects/fpolania-app/src/content/blog/).

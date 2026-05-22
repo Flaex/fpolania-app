@@ -1,4 +1,6 @@
 ---
+import logoDark from '../assets/fredy-polania-logo-dark.svg';
+
 const { pathname } = Astro.url;
 const lang = pathname.startsWith('/es') ? 'es' : 'en';
 const homePath = `/${lang}/`;
@@ -8,7 +10,7 @@ const homePath = `/${lang}/`;
         <div class="opacity-80 hover:opacity-100 transition-opacity">
             <a href={homePath}>
                 <img 
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU9jlY6LdyNluPNP_7ILb9dVBBa-_dsqkGs5wHlxzwp8nL5wYuQVqQE6r-lB3XJmhlH-s_uejl2KVDlUJsg4BMhzYLxRms53TPHifBGfYo_m2stL15lgLu5y6WIecSWvlxLGX2IRwckDpNW8Fgydq0Sn7ygX1rdxBa5CgaUZfrRAAJjzKrE4uCd80fGLOB3WBdMoNUwpCuw4dfDz_xTumuGXGe_MHOgxbwe2_Q7QSRdQlmdtpIQUGrGJJiXu6obmW7hfnQSeR6E8zP" 
+                    src={logoDark.src} 
                     alt="Fredy Polania Logo" 
                     class="h-8 w-auto"
                 />
