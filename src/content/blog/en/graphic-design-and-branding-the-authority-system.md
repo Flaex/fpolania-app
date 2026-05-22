@@ -1,12 +1,11 @@
 ---
-title: "GRAPHIC DESIGN AND BRANDING: THE AUTHORITY SYSTEM (High-Fidelity Overhaul)"
+
+title: "GRAPHIC DESIGN AND BRANDING: THE AUTHORITY SYSTEM"
 lens: "ceo_lens"
 language: "en"
+pillar: "Strategic Foundership (The CEO Lens)"
+originalLanguage: "Spanish"
 ---
-
-# GRAPHIC DESIGN AND BRANDING: THE AUTHORITY SYSTEM (High-Fidelity Overhaul)
-**Pillar:** Strategic Foundership (The CEO Lens)
-**Original Language:** Spanish
 
 ## Definition and Scope of Branding
 Branding is the term that describes the practices used to differentiate one company from another. It is achieved through the design of graphics, stories, messages, and images. It is fundamental to understand that **designing a logo is not branding in itself**; it is only one of the components of a complex system.

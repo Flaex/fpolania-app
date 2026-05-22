@@ -30,6 +30,33 @@ const allPosts = isInsightPage
   ? await getCollection('blog', ({ data }) => data.language === lang) 
   : [];
 
+// ----------------------------------------
+// WORKS HUB LOGIC
+// ----------------------------------------
+const allWorks = isWorksPage ? await getCollection('works') : [];
+
+const worksAlpha = allWorks
+  .filter((w) => w.data.cluster === 'alpha')
+  .sort((a, b) => a.data.order - b.data.order);
+
+const worksBeta = allWorks
+  .filter((w) => w.data.cluster === 'beta')
+  .sort((a, b) => a.data.order - b.data.order);
+
+const worksGamma = allWorks
+  .filter((w) => w.data.cluster === 'gamma')
+  .sort((a, b) => a.data.order - b.data.order);
+
+function getBetaCardClass(order: number) {
+  if (order === 1) {
+    return "col-span-4 md:col-span-6 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[300px]";
+  }
+  if (order === 7) {
+    return "col-span-4 md:col-span-12 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[200px]";
+  }
+  return "col-span-4 md:col-span-6 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[150px]";
+}
+
 const getSlug = (id: string) => id.split('/').pop()?.replace(/\.md$/, '') || '';
 
 // Sort orders
@@ -214,75 +241,19 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
               </div>
               
               <!-- 1x1 Grid Items -->
-              <a href="https://www.behance.net/gallery/201803207/Maximiza-Branding-y-diseno-web" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
-                  <div class="font-label-technical text-label-technical text-outline">BRANDING</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Maximiza</h4>
-                  </div>
-              </a>
-              
-              <a href="https://www.behance.net/gallery/201806885/Zuglabs-Diseno-de-Identidad-Corporativa" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
-                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'IDENTITY' : 'IDENTIDAD'}</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Zuglabs</h4>
-                  </div>
-              </a>
-              
-              <a href="https://www.behance.net/gallery/201965907/Agua-Fria-Coffee-Diseno-de-identidad-corporativa" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
-                  <div class="font-label-technical text-label-technical text-outline">BRANDING</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Agua Fría Coffee</h4>
-                  </div>
-              </a>
-              
-              <a href="https://www.behance.net/gallery/201968709/Altea-Diseno-de-identidad-visual-y-etiqueta" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
-                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'IDENTITY' : 'IDENTIDAD'}</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Altea</h4>
-                  </div>
-              </a>
-              
-              <a href="https://www.behance.net/gallery/80052541/Zaituna-Caf-branding" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
-                  <div class="font-label-technical text-label-technical text-outline">BRANDING</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Zaituna Café</h4>
-                  </div>
-              </a>
-              
-              <a href="https://www.behance.net/gallery/28402639/Take-on-Bar-branding" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
-                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'IDENTITY' : 'IDENTIDAD'}</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Take on Bar</h4>
-                  </div>
-              </a>
-              
-              <a href="https://www.behance.net/gallery/80018967/Athlos-Logo" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
-                  <div class="font-label-technical text-label-technical text-outline">BRANDING</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Athlos</h4>
-                  </div>
-              </a>
-              
-              <a href="https://www.behance.net/gallery/28402463/Gamma-Medical-branding" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
-                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'IDENTITY' : 'IDENTIDAD'}</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Gamma Medical</h4>
-                  </div>
-              </a>
-              
-              <a href="https://www.behance.net/gallery/28402541/EJ-Supply-branding" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
-                  <div class="font-label-technical text-label-technical text-outline">BRANDING</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">EJ Supply</h4>
-                  </div>
-              </a>
-              
-              <a href="https://www.behance.net/gallery/202050015/Grupo-de-Panaderias-Diseno-de-identidad-visual" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
-                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'IDENTITY' : 'IDENTIDAD'}</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Bakery Consortium</h4>
-                  </div>
-              </a>
+              {worksAlpha.map((work) => {
+                  const title = lang === 'en' ? work.data.titleEn : work.data.titleEs;
+                  const category = lang === 'en' ? work.data.categoryEn : work.data.categoryEs;
+                  const behanceUrl = lang === 'en' ? work.data.behanceUrlEn : work.data.behanceUrlEs;
+                  return (
+                      <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
+                          <div class="font-label-technical text-label-technical text-outline">{category}</div>
+                          <div>
+                              <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">{title}</h4>
+                          </div>
+                      </a>
+                  );
+              })}
               
               <!-- CLUSTER B: WEB & DIGITAL -->
               <div class="col-span-4 md:col-span-12 mb-8 mt-16">
@@ -295,54 +266,20 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
               </div>
               
               <!-- 2x1 Grid Items -->
-              <a href="https://www.behance.net/gallery/240666733/Novanet-studio-web-app" target="_blank" rel="noopener noreferrer" class="col-span-4 md:col-span-6 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[300px]">
-                  <div class="font-label-technical text-label-technical text-outline">WEB APP / 2025</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Novanet Studio</h4>
-                  </div>
-              </a>
-              
-              <a href="https://www.behance.net/gallery/240144801/Come-2025-Sitio-web" target="_blank" rel="noopener noreferrer" class="col-span-4 md:col-span-6 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[150px]">
-                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'PLATFORM / 2025' : 'PLATAFORMA / 2025'}</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Come 2025</h4>
-                  </div>
-              </a>
-              
-              <a href="https://www.behance.net/gallery/28402277/Banco-del-Libro-web-design-anddevelopment" target="_blank" rel="noopener noreferrer" class="col-span-4 md:col-span-6 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[150px]">
-                  <div class="font-label-technical text-label-technical text-outline">E-COMMERCE / 2024</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Banco del Libro</h4>
-                  </div>
-              </a>
-              
-              <a href="https://www.behance.net/gallery/203392661/Ccs-Multisport-Diseno-web-y-branding" target="_blank" rel="noopener noreferrer" class="col-span-4 md:col-span-6 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[150px]">
-                  <div class="font-label-technical text-label-technical text-outline">PORTAL / 2023</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">CCS Multisport</h4>
-                  </div>
-              </a>
-              
-              <a href="https://www.behance.net/gallery/201800935/Diseno-Web-para-Avila-Multisport" target="_blank" rel="noopener noreferrer" class="col-span-4 md:col-span-6 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[150px]">
-                  <div class="font-label-technical text-label-technical text-outline">PORTAL / 2023</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Ávila Multisport</h4>
-                  </div>
-              </a>
-              
-              <a href="https://www.behance.net/gallery/231519213/Foot-In-Motion-brand-and-digital" target="_blank" rel="noopener noreferrer" class="col-span-4 md:col-span-6 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[150px]">
-                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'CORPORATE / 2022' : 'CORPORATIVO / 2022'}</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">KevinRoot Medical</h4>
-                  </div>
-              </a>
-              
-              <a href="https://www.behance.net/gallery/197022345/Novanet-Studio-branding-2021" target="_blank" rel="noopener noreferrer" class="col-span-4 md:col-span-12 bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group min-h-[200px]">
-                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'SYSTEM ARCHITECTURE / 2018-2021' : 'ARQUITECTURA DE SISTEMAS / 2018-2021'}</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Novanet Evolution</h4>
-                  </div>
-              </a>
+              {worksBeta.map((work) => {
+                  const title = lang === 'en' ? work.data.titleEn : work.data.titleEs;
+                  const category = lang === 'en' ? work.data.categoryEn : work.data.categoryEs;
+                  const behanceUrl = lang === 'en' ? work.data.behanceUrlEn : work.data.behanceUrlEs;
+                  const cardClass = getBetaCardClass(work.data.order);
+                  return (
+                      <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class={cardClass}>
+                          <div class="font-label-technical text-label-technical text-outline">{category}</div>
+                          <div>
+                              <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">{title}</h4>
+                          </div>
+                      </a>
+                  );
+              })}
               
               <!-- CLUSTER C: ATOMIC DESIGN -->
               <div class="col-span-4 md:col-span-12 mb-8 mt-16">
@@ -355,26 +292,19 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
               </div>
               
               <!-- 1x1 Grid Items -->
-              <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
-                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'SYSTEMS' : 'SISTEMAS'}</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Novatipo</h4>
-                  </div>
-              </a>
-              
-              <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
-                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'ICONOGRAPHY' : 'ICONOGRAFÍA'}</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Novaicons</h4>
-                  </div>
-              </a>
-              
-              <a href="https://www.behance.net" target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
-                  <div class="font-label-technical text-label-technical text-outline">{lang === 'en' ? 'TYPOGRAPHY' : 'TIPOGRAFÍA'}</div>
-                  <div>
-                      <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">Barahunda Typeface</h4>
-                  </div>
-              </a>
+              {worksGamma.map((work) => {
+                  const title = lang === 'en' ? work.data.titleEn : work.data.titleEs;
+                  const category = lang === 'en' ? work.data.categoryEn : work.data.categoryEs;
+                  const behanceUrl = lang === 'en' ? work.data.behanceUrlEn : work.data.behanceUrlEs;
+                  return (
+                      <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group">
+                          <div class="font-label-technical text-label-technical text-outline">{category}</div>
+                          <div>
+                              <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">{title}</h4>
+                          </div>
+                      </a>
+                  );
+              })}
               
           </div>
       </main>

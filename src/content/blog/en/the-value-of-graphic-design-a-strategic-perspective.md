@@ -1,12 +1,11 @@
 ---
-title: "THE VALUE OF GRAPHIC DESIGN: A STRATEGIC PERSPECTIVE (Overhaul)"
+
+title: "THE VALUE OF GRAPHIC DESIGN: A STRATEGIC PERSPECTIVE"
 lens: "ceo_lens"
 language: "en"
+pillar: "Strategic Foundership (The CEO Lens)"
+originalLanguage: "Spanish"
 ---
-
-# THE VALUE OF GRAPHIC DESIGN: A STRATEGIC PERSPECTIVE (Overhaul)
-**Pillar:** Strategic Foundership (The CEO Lens)
-**Original Language:** Spanish
 
 ## Introduction: Design in the Age of Automation
 As a Senior Product Strategist and Founder of Novanet Studio, I have witnessed the radical transformation of our industry. Graphic design has evolved from a manual, tedious craft into a discipline empowered by computers. However, this technical agility has brought with it a dangerous confusion: mistaking speed for **value**. In this analysis, we will explore why design, when understood as a strategic investment, is one of the most valuable assets of any company.

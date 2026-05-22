@@ -1,12 +1,11 @@
 ---
-title: "LAS VARIANTES DEL LOGOTIPO: ADAPTABILIDAD ESTRATÉGICA (High-Fidelity Overhaul)"
+
+title: "LAS VARIANTES DEL LOGOTIPO: ADAPTABILIDAD ESTRATÉGICA"
 lens: "visual_lens"
 language: "es"
+pillar: "Integrated Design (The Visual Lens)"
+originalLanguage: "Spanish"
 ---
-
-# LAS VARIANTES DEL LOGOTIPO: ADAPTABILIDAD ESTRATÉGICA (High-Fidelity Overhaul)
-**Pillar:** Integrated Design (The Visual Lens)
-**Original Language:** Spanish
 
 ## La Identidad Visual como Sistema Líquido
 En la era digital, un logotipo estático es un activo limitado. Como fundador, veo las variantes del logo como la **infraestructura líquida** de la marca, permitiendo que la identidad sea coherente en cualquier soporte, desde un favicon de 16px hasta una valla publicitaria.

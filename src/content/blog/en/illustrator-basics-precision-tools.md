@@ -1,12 +1,11 @@
 ---
-title: "ILLUSTRATOR BASICS: PRECISION TOOLS (High-Fidelity Overhaul)"
+
+title: "ILLUSTRATOR BASICS: PRECISION TOOLS"
 lens: "visual_lens"
 language: "en"
+pillar: "Integrated Design (The Visual Lens)"
+originalLanguage: "Spanish"
 ---
-
-# ILLUSTRATOR BASICS: PRECISION TOOLS (High-Fidelity Overhaul)
-**Pillar:** Integrated Design (The Visual Lens)
-**Original Language:** Spanish
 
 ## Introduction: Visual Engineering with Adobe Illustrator
 Adobe Illustrator is the industry standard for vector graphics creation. In this tutorial, we address the most basic aspects of the program from a **professional production** perspective, focusing on the work environment and the tools that allow you to take the first steps with technical mastery.

@@ -1,12 +1,11 @@
 ---
-title: "THE LOGO VARIANTS: STRATEGIC ADAPTABILITY (High-Fidelity Overhaul)"
+
+title: "THE LOGO VARIANTS: STRATEGIC ADAPTABILITY"
 lens: "visual_lens"
 language: "en"
+pillar: "Integrated Design (The Visual Lens)"
+originalLanguage: "Spanish"
 ---
-
-# THE LOGO VARIANTS: STRATEGIC ADAPTABILITY (High-Fidelity Overhaul)
-**Pillar:** Integrated Design (The Visual Lens)
-**Original Language:** Spanish
 
 ## The Visual Identity as a Liquid System
 In the digital age, a static logo is a limited asset. As a founder, I see the logo variants as the **liquid infrastructure** of the brand, allowing the identity to be coherent on any medium, from a 16px favicon to a billboard.

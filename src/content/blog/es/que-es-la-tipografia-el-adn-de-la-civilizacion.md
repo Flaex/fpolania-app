@@ -1,12 +1,11 @@
 ---
-title: "¿QUÉ ES LA TIPOGRAFÍA? EL ADN DE LA CIVILIZACIÓN (High-Fidelity Overhaul)"
+
+title: "¿QUÉ ES LA TIPOGRAFÍA? EL ADN DE LA CIVILIZACIÓN"
 lens: "visual_lens"
 language: "es"
+pillar: "Integrated Design (The Visual Lens)"
+originalLanguage: "Spanish"
 ---
-
-# ¿QUÉ ES LA TIPOGRAFÍA? EL ADN DE LA CIVILIZACIÓN (High-Fidelity Overhaul)
-**Pillar:** Integrated Design (The Visual Lens)
-**Original Language:** Spanish
 
 ## Introducción: Mucho más que "Letras"
 La tipografía es otro nombre para referirse a las letras del alfabeto, pero su peso real es incalculable. Es uno de los elementos fundamentales no sólo en la comunicación visual, sino también en el desarrollo de la civilización humana.

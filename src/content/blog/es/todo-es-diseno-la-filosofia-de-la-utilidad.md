@@ -1,12 +1,11 @@
 ---
-title: "TODO ES DISEÑO: LA FILOSOFÍA DE LA UTILIDAD (High-Fidelity Overhaul)"
+
+title: "TODO ES DISEÑO: LA FILOSOFÍA DE LA UTILIDAD"
 lens: "ceo_lens"
 language: "es"
+pillar: "Strategic Foundership (The CEO Lens)"
+originalLanguage: "Spanish"
 ---
-
-# TODO ES DISEÑO: LA FILOSOFÍA DE LA UTILIDAD (High-Fidelity Overhaul)
-**Pillar:** Strategic Foundership (The CEO Lens)
-**Original Language:** Spanish
 
 ## "Everything is Design"
 La frase de Paul Rand, "Todo es diseño", resume la realidad de nuestra interacción con el mundo. Casi todos los objetos que nos rodean han sido, en algún punto, procesados por la mente de un diseñador.

@@ -1,12 +1,11 @@
 ---
-title: "CLASIFICACIÓN TIPOGRÁFICA: LA GEOMETRÍA DEL TONO (High-Fidelity Overhaul)"
+
+title: "CLASIFICACIÓN TIPOGRÁFICA: LA GEOMETRÍA DEL TONO"
 lens: "visual_lens"
 language: "es"
+pillar: "Integrated Design (The Visual Lens)"
+originalLanguage: "Spanish"
 ---
-
-# CLASIFICACIÓN TIPOGRÁFICA: LA GEOMETRÍA DEL TONO (High-Fidelity Overhaul)
-**Pillar:** Integrated Design (The Visual Lens)
-**Original Language:** Spanish
 
 ## La Técnica de la Selección Intencionada
 La tipografía se define como el arte y la técnica de seleccionar familias de letras, tamaños, longitudes y espaciados de línea. No es una elección decorativa; es una decisión de **arquitectura de información**.

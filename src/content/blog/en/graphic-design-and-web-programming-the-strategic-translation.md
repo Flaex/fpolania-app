@@ -1,12 +1,11 @@
 ---
-title: "GRAPHIC DESIGN AND WEB PROGRAMMING: THE STRATEGIC TRANSLATION (High-Fidelity Overhaul)"
+
+title: "GRAPHIC DESIGN AND WEB PROGRAMMING: THE STRATEGIC TRANSLATION"
 lens: "builder_lens"
 language: "en"
+pillar: "Technical Alchemy (The Builder Lens)"
+originalLanguage: "Spanish"
 ---
-
-# GRAPHIC DESIGN AND WEB PROGRAMMING: THE STRATEGIC TRANSLATION (High-Fidelity Overhaul)
-**Pillar:** Technical Alchemy (The Builder Lens)
-**Original Language:** Spanish
 
 ## Introduction: The Bridge Between the Visual and the Abstract
 Approaching web programming from a graphic designer's point of view is a challenge of **strategic translation**. In traditional graphic design, most elements are visible, the content is known, and the size of the piece is predefined. We operate in a direct visual environment. In contrast, web development requires **abstract thinking** to solve dynamic requirements.

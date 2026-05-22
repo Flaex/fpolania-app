@@ -1,12 +1,11 @@
 ---
-title: "VISUAL COMMUNICATION OR GRAPHIC DESIGN? (High-Fidelity Overhaul)"
+
+title: "VISUAL COMMUNICATION OR GRAPHIC DESIGN?"
 lens: "visual_lens"
 language: "en"
+pillar: "Integrated Design (The Visual Lens)"
+originalLanguage: "Spanish"
 ---
-
-# VISUAL COMMUNICATION OR GRAPHIC DESIGN? (High-Fidelity Overhaul)
-**Pillar:** Integrated Design (The Visual Lens)
-**Original Language:** Spanish
 
 ## Introduction: The Message vs. The Tool
 In the business world, terminology is often used interchangeably, which dilutes the strategic importance of each discipline. Confusing communication with design is a common mistake. For a product architect, understanding the distinction is key to flawless execution.

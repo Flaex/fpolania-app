@@ -1,12 +1,11 @@
 ---
-title: "¿QUÉ ES HTML? LA ESTRUCTURA DE LA INFORMACIÓN (High-Fidelity Overhaul)"
+
+title: "¿QUÉ ES HTML? LA ESTRUCTURA DE LA INFORMACIÓN"
 lens: "builder_lens"
 language: "es"
+pillar: "Technical Alchemy (The Builder Lens)"
+originalLanguage: "Spanish"
 ---
-
-# ¿QUÉ ES HTML? LA ESTRUCTURA DE LA INFORMACIÓN (High-Fidelity Overhaul)
-**Pillar:** Technical Alchemy (The Builder Lens)
-**Original Language:** Spanish
 
 ## Definición y Especificación
 HTML (HyperText Markup Language) es el componente principal de la web. Según el **World Wide Web Consortium (W3C)**, es el lenguaje para describir la **estructura** de las páginas web. Provee a los autores los medios para:

@@ -1,12 +1,11 @@
 ---
-title: "¿COMUNICACIÓN VISUAL O DISEÑO GRÁFICO? (High-Fidelity Overhaul)"
+
+title: "¿COMUNICACIÓN VISUAL O DISEÑO GRÁFICO?"
 lens: "visual_lens"
 language: "es"
+pillar: "Integrated Design (The Visual Lens)"
+originalLanguage: "Spanish"
 ---
-
-# ¿COMUNICACIÓN VISUAL O DISEÑO GRÁFICO? (High-Fidelity Overhaul)
-**Pillar:** Integrated Design (The Visual Lens)
-**Original Language:** Spanish
 
 ## Introducción: El Mensaje vs. La Herramienta
 En el mundo de los negocios, la terminología a menudo se utiliza de forma intercambiable, lo que diluye la importancia estratégica de cada disciplina. Confundir la comunicación con el diseño es un error común. Para un arquitecto de producto, entender la distinción es clave para una ejecución impecable.

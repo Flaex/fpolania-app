@@ -1,12 +1,11 @@
 ---
-title: "EVERYTHING IS DESIGN: THE PHILOSOPHY OF UTILITY (High-Fidelity Overhaul)"
+
+title: "EVERYTHING IS DESIGN: THE PHILOSOPHY OF UTILITY"
 lens: "ceo_lens"
 language: "en"
+pillar: "Strategic Foundership (The CEO Lens)"
+originalLanguage: "Spanish"
 ---
-
-# EVERYTHING IS DESIGN: THE PHILOSOPHY OF UTILITY (High-Fidelity Overhaul)
-**Pillar:** Strategic Foundership (The CEO Lens)
-**Original Language:** Spanish
 
 ## "Everything is Design"
 Paul Rand's famous phrase, "Everything is design," summarizes the reality of our interaction with the world. Almost all the objects that surround us have been, at some point, processed by the mind of a designer.

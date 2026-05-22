@@ -1,12 +1,11 @@
 ---
-title: "DISEÑO GRÁFICO Y BRANDING: EL SISTEMA DE AUTORIDAD (High-Fidelity Overhaul)"
+
+title: "DISEÑO GRÁFICO Y BRANDING: EL SISTEMA DE AUTORIDAD"
 lens: "ceo_lens"
 language: "es"
+pillar: "Strategic Foundership (The CEO Lens)"
+originalLanguage: "Spanish"
 ---
-
-# DISEÑO GRÁFICO Y BRANDING: EL SISTEMA DE AUTORIDAD (High-Fidelity Overhaul)
-**Pillar:** Strategic Foundership (The CEO Lens)
-**Original Language:** Spanish
 
 ## Definición y Alcance del Branding
 Branding es el término que describe las prácticas utilizadas para diferenciar una empresa de otra. Se logra a través del diseño de gráficos, historias, mensajes e imágenes. Es fundamental entender que **diseñar un logo no es hacer branding en sí mismo**; es solo uno de los componentes de un sistema complejo.

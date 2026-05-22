@@ -1,12 +1,11 @@
 ---
-title: "DISEÑO GRÁFICO Y PROGRAMACIÓN WEB: LA TRADUCCIÓN ESTRATÉGICA (High-Fidelity Overhaul)"
+
+title: "DISEÑO GRÁFICO Y PROGRAMACIÓN WEB: LA TRADUCCIÓN ESTRATÉGICA"
 lens: "builder_lens"
 language: "es"
+pillar: "Technical Alchemy (The Builder Lens)"
+originalLanguage: "Spanish"
 ---
-
-# DISEÑO GRÁFICO Y PROGRAMACIÓN WEB: LA TRADUCCIÓN ESTRATÉGICA (High-Fidelity Overhaul)
-**Pillar:** Technical Alchemy (The Builder Lens)
-**Original Language:** Spanish
 
 ## Introducción: El Puente entre lo Visual y lo Abstracto
 Abordar la programación web desde el punto de vista de un diseñador gráfico es un reto de **traducción estratégica**. En el diseño gráfico tradicional, la mayoría de los elementos son visibles, el contenido es conocido y el tamaño de la pieza está predefinido. Operamos en un entorno visual directo. En contraste, el desarrollo web exige un **pensamiento abstracto** para resolver requerimientos dinámicos.

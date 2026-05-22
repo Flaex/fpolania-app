@@ -18,6 +18,10 @@ const t = useTranslations(lang);
 // Get the blog posts matching the active language
 const posts = await getCollection('blog', ({ data }) => data.language === lang);
 
+// Get the featured works
+const featuredWorks = await getCollection('works', ({ data }) => data.featured);
+featuredWorks.sort((a, b) => (a.data.featuredOrder || 0) - (b.data.featuredOrder || 0));
+
 // Find the primary strategic translation article or default to first
 const targetIdPart = lang === 'en' 
   ? 'graphic-design-and-web-programming-the-strategic-translation' 
@@ -111,38 +115,32 @@ const worksPath = lang === 'en' ? '/en/works' : '/es/trabajos';
                 </a>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-gutter auto-rows-[minmax(240px,auto)]">
-                <!-- Project 1 (3x2) -->
-                <a class="bento-card col-span-1 md:col-span-4 lg:col-span-6 lg:row-span-2 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[400px] lg:h-auto" href="https://www.behance.net/gallery/28402277/Banco-del-Libro-web-design-anddevelopment" target="_blank" rel="noopener noreferrer">
-                    <div class="absolute inset-0 z-0">
-                        <img 
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt3gEJY9r3hNhyV7Ms2ePpSGcVd2e1A-eD0nt3n8EWGYOqiw-zMHz43OtmUh9PPb7pqRIf6aHATny4LqnhoGmBh9na7iQVZJQf3O4F7Swga5tJ8sqOKVLcsNgo9bhx-w5SxWjSPxCnwsvTRJVM6Z9xo2tS8IXtmThTcKTuE7DK1r3iWrefpGj75tly-Kz_b7CnbZwRpk3ZVWRqtoFX9OVHxfl8uBsKkhEZKSExcu-I-xcNELV5UlQLjLuk6wELbSxNwhzy98MtgzqE" 
-                            alt="Banco del Libro" 
-                            class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
-                        />
-                    </div>
-                    <div class="relative z-10 p-4 border border-dim-grey bg-carbon/90 backdrop-blur-sm rounded">
-                        <h3 class="font-headline-md text-headline-md mb-2 text-white font-bold">Banco del Libro</h3>
-                        <p class="font-body-md text-body-md text-on-surface-variant">{t('home.bancoLibroSub')}</p>
-                    </div>
-                </a>
-                
-                <!-- Project 2 (2x1) -->
-                <a class="bento-card col-span-1 md:col-span-2 lg:col-span-6 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[240px]" href="https://www.behance.net/gallery/201803207/Maximiza-Branding-y-diseno-web" target="_blank" rel="noopener noreferrer">
-                    <div class="absolute inset-0 bg-surface-container-highest opacity-50 transition-opacity group-hover:opacity-30 z-0"></div>
-                    <div class="relative z-10 p-4 border border-dim-grey bg-carbon/90 backdrop-blur-sm rounded w-full">
-                        <h3 class="font-headline-md text-headline-md mb-1 text-lg text-white font-bold">Maximiza</h3>
-                        <p class="font-body-md text-body-md text-on-surface-variant text-sm">{t('home.maximizaSub')}</p>
-                    </div>
-                </a>
-                
-                <!-- Project 3 (2x1) -->
-                <a class="bento-card col-span-1 md:col-span-2 lg:col-span-6 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[240px]" href="https://www.behance.net/gallery/240666733/Novanet-studio-web-app" target="_blank" rel="noopener noreferrer">
-                    <div class="absolute inset-0 bg-surface-container-highest opacity-50 transition-opacity group-hover:opacity-30 z-0"></div>
-                    <div class="relative z-10 p-4 border border-dim-grey bg-carbon/90 backdrop-blur-sm rounded w-full">
-                        <h3 class="font-headline-md text-headline-md mb-1 text-lg text-white font-bold">Novanet Studio</h3>
-                        <p class="font-body-md text-body-md text-on-surface-variant text-sm">{t('home.novanetSub')}</p>
-                    </div>
-                </a>
+                {featuredWorks.map((project) => {
+                    const title = lang === 'en' ? project.data.titleEn : project.data.titleEs;
+                    const desc = lang === 'en' ? project.data.descriptionEn : project.data.descriptionEs;
+                    const behanceUrl = lang === 'en' ? project.data.behanceUrlEn : project.data.behanceUrlEs;
+                    const spanClass = `bento-card ${project.data.featuredSpan || "col-span-1 md:col-span-2 lg:col-span-6 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[240px]"}`;
+                    
+                    return (
+                        <a class={spanClass} href={behanceUrl} target="_blank" rel="noopener noreferrer">
+                            {project.data.image ? (
+                                <div class="absolute inset-0 z-0">
+                                    <img 
+                                        src={project.data.image} 
+                                        alt={title} 
+                                        class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
+                                    />
+                                </div>
+                            ) : (
+                                <div class="absolute inset-0 bg-surface-container-highest opacity-50 transition-opacity group-hover:opacity-30 z-0"></div>
+                            )}
+                            <div class="relative z-10 p-4 border border-dim-grey bg-carbon/90 backdrop-blur-sm rounded w-full">
+                                <h3 class="font-headline-md text-headline-md mb-1 text-lg text-white font-bold">{title}</h3>
+                                <p class="font-body-md text-body-md text-on-surface-variant text-sm">{desc}</p>
+                            </div>
+                        </a>
+                    );
+                })}
             </div>
         </section>
 

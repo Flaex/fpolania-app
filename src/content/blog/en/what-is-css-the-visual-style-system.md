@@ -1,12 +1,11 @@
 ---
-title: "WHAT IS CSS? THE VISUAL STYLE SYSTEM (High-Fidelity Overhaul)"
+
+title: "WHAT IS CSS? THE VISUAL STYLE SYSTEM"
 lens: "builder_lens"
 language: "en"
+pillar: "Technical Alchemy (The Builder Lens)"
+originalLanguage: "Spanish"
 ---
-
-# WHAT IS CSS? THE VISUAL STYLE SYSTEM (High-Fidelity Overhaul)
-**Pillar:** Technical Alchemy (The Builder Lens)
-**Original Language:** Spanish
 
 ## Definition and Function
 CSS (Cascading Style Sheets) is the standard language that allows visual attributes to be given to HTML elements. The **W3C** defines it as a simple mechanism for adding style (fonts, colors, spacing) to documents. **MDN Web Docs** adds that it is the language that describes how elements should be represented on screen, paper, or voice assistants.

@@ -1,12 +1,11 @@
 ---
-title: "TYPOGRAPHIC CLASSIFICATION: THE GEOMETRY OF TONE (High-Fidelity Overhaul)"
+
+title: "TYPOGRAPHIC CLASSIFICATION: THE GEOMETRY OF TONE"
 lens: "visual_lens"
 language: "en"
+pillar: "Integrated Design (The Visual Lens)"
+originalLanguage: "Spanish"
 ---
-
-# TYPOGRAPHIC CLASSIFICATION: THE GEOMETRY OF TONE (High-Fidelity Overhaul)
-**Pillar:** Integrated Design (The Visual Lens)
-**Original Language:** Spanish
 
 ## The Technique of Intentional Selection
 Typography is defined as the art and technique of selecting font families, sizes, lengths, and line spacings. It is not a decorative choice; it is a decision of **information architecture**.
