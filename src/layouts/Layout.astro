@@ -20,6 +20,8 @@ const alternatePath = getAlternatePath(Astro.url.pathname, alternateLang);
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="/favicon-dark.svg" />
 		<!-- FOUC Prevention: resolve theme and favicon before first paint -->
 		<script is:inline>
 			(function() {
@@ -33,15 +35,14 @@ const alternatePath = getAlternatePath(Astro.url.pathname, alternateLang);
 					d.classList.add('dark');
 					d.classList.remove('light');
 				}
-				// Set favicon to match the resolved theme
+				// Set favicon to match the resolved theme with a cache-buster
 				var favicon = document.getElementById('dynamic-favicon');
 				if (favicon) {
-					favicon.href = theme === 'light' ? '/favicon-light.svg' : '/favicon-dark.svg';
+					var href = theme === 'light' ? '/favicon-light.svg' : '/favicon-dark.svg';
+					favicon.href = href + '?t=' + new Date().getTime();
 				}
 			})();
 		</script>
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="/favicon-dark.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<link rel="alternate" hreflang={lang} href={Astro.url.pathname} />

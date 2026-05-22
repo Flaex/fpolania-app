@@ -99,17 +99,29 @@ const inactiveClass = "font-body-md text-on-surface-variant hover:text-primary t
         
         toggleBtn.addEventListener('click', () => {
             const isLight = document.documentElement.classList.contains('light');
-            const favicon = document.getElementById('dynamic-favicon');
+            const favicon = document.getElementById('dynamic-favicon') as HTMLLinkElement | null;
+            
+            let newTheme = 'dark';
             if (isLight) {
                 document.documentElement.classList.remove('light');
                 document.documentElement.classList.add('dark');
                 localStorage.setItem('theme', 'dark');
-                if (favicon) favicon.href = '/favicon-dark.svg';
+                newTheme = 'dark';
             } else {
                 document.documentElement.classList.remove('dark');
                 document.documentElement.classList.add('light');
                 localStorage.setItem('theme', 'light');
-                if (favicon) favicon.href = '/favicon-light.svg';
+                newTheme = 'light';
+            }
+
+            if (favicon) {
+                // To force browser favicon reload: recreate the link element and add a timestamp cache-buster
+                const newFavicon = favicon.cloneNode(true) as HTMLLinkElement;
+                const baseHref = newTheme === 'light' ? '/favicon-light.svg' : '/favicon-dark.svg';
+                newFavicon.href = `${baseHref}?t=${new Date().getTime()}`;
+                if (favicon.parentNode) {
+                    favicon.parentNode.replaceChild(newFavicon, favicon);
+                }
             }
         });
     };
