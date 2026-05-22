@@ -99,14 +99,17 @@ const inactiveClass = "font-body-md text-on-surface-variant hover:text-primary t
         
         toggleBtn.addEventListener('click', () => {
             const isLight = document.documentElement.classList.contains('light');
+            const favicon = document.getElementById('dynamic-favicon');
             if (isLight) {
                 document.documentElement.classList.remove('light');
                 document.documentElement.classList.add('dark');
                 localStorage.setItem('theme', 'dark');
+                if (favicon) favicon.href = '/favicon-dark.svg';
             } else {
                 document.documentElement.classList.remove('dark');
                 document.documentElement.classList.add('light');
                 localStorage.setItem('theme', 'light');
+                if (favicon) favicon.href = '/favicon-light.svg';
             }
         });
     };
