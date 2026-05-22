@@ -95,9 +95,20 @@ const inactiveClass = "font-body-md text-on-surface-variant hover:text-primary t
 <script>
     const setupThemeToggle = () => {
         const toggleBtn = document.getElementById('theme-toggle');
+        
+        // Dynamic cleanup of legacy favicon element to force SVG usage
+        const cleanLegacy = () => {
+            const legacy = document.getElementById('legacy-favicon');
+            if (legacy && legacy.parentNode) {
+                legacy.parentNode.removeChild(legacy);
+            }
+        };
+        cleanLegacy();
+
         if (!toggleBtn) return;
         
         toggleBtn.addEventListener('click', () => {
+            cleanLegacy();
             const isLight = document.documentElement.classList.contains('light');
             const favicon = document.getElementById('dynamic-favicon') as HTMLLinkElement | null;
             

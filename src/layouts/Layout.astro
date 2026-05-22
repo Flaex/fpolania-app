@@ -20,7 +20,7 @@ const alternatePath = getAlternatePath(Astro.url.pathname, alternateLang);
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link id="legacy-favicon" rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="/favicon-dark.svg" />
 		<!-- FOUC Prevention: resolve theme and favicon before first paint -->
 		<script is:inline>
@@ -34,6 +34,11 @@ const alternatePath = getAlternatePath(Astro.url.pathname, alternateLang);
 				} else {
 					d.classList.add('dark');
 					d.classList.remove('light');
+				}
+				// Remove legacy favicon to force browser to use the dynamic SVG icon
+				var legacy = document.getElementById('legacy-favicon');
+				if (legacy && legacy.parentNode) {
+					legacy.parentNode.removeChild(legacy);
 				}
 				// Set favicon to match the resolved theme with a cache-buster
 				var favicon = document.getElementById('dynamic-favicon');
