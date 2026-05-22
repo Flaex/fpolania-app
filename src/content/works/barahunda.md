@@ -7,6 +7,7 @@ categoryEn: "TYPOGRAPHY"
 categoryEs: "TIPOGRAFÍA"
 behanceUrlEn: "https://www.behance.net"
 behanceUrlEs: "https://www.behance.net"
+image: "/images/works/fpolania-barahunda.jpg"
 order: 3
 cluster: "gamma"
 featured: false

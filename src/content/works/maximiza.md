@@ -7,6 +7,7 @@ categoryEn: "BRANDING"
 categoryEs: "BRANDING"
 behanceUrlEn: "https://www.behance.net/gallery/201803207/Maximiza-Branding-y-diseno-web"
 behanceUrlEs: "https://www.behance.net/gallery/201803207/Maximiza-Branding-y-diseno-web"
+image: "/images/works/fpolania-maximiza.png"
 order: 1
 cluster: "alpha"
 featured: true

@@ -23,7 +23,7 @@ const works = defineCollection({
         categoryEs: z.string(),
         behanceUrlEn: z.string().url(),
         behanceUrlEs: z.string().url(),
-        image: z.string().url().optional(),
+        image: z.string().optional(),
         order: z.number(),
         cluster: z.enum(['alpha', 'beta', 'gamma']),
         featured: z.boolean().default(false),

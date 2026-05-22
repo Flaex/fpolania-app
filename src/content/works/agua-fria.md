@@ -7,6 +7,7 @@ categoryEn: "BRANDING"
 categoryEs: "BRANDING"
 behanceUrlEn: "https://www.behance.net/gallery/201965907/Agua-Fria-Coffee-Diseno-de-identidad-corporativa"
 behanceUrlEs: "https://www.behance.net/gallery/201965907/Agua-Fria-Coffee-Diseno-de-identidad-corporativa"
+image: "/images/works/fpolania-agua-fria-coffee.png"
 order: 3
 cluster: "alpha"
 featured: false

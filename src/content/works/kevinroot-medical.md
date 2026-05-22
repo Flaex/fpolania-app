@@ -7,6 +7,7 @@ categoryEn: "CORPORATE / 2022"
 categoryEs: "CORPORATIVO / 2022"
 behanceUrlEn: "https://www.behance.net/gallery/231519213/Foot-In-Motion-brand-and-digital"
 behanceUrlEs: "https://www.behance.net/gallery/231519213/Foot-In-Motion-brand-and-digital"
+image: "/images/works/fpolania-kevin-root-medical.png"
 order: 6
 cluster: "beta"
 featured: false

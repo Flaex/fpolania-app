@@ -7,6 +7,7 @@ categoryEn: "IDENTITY"
 categoryEs: "IDENTIDAD"
 behanceUrlEn: "https://www.behance.net/gallery/202050015/Grupo-de-Panaderias-Diseno-de-identidad-visual"
 behanceUrlEs: "https://www.behance.net/gallery/202050015/Grupo-de-Panaderias-Diseno-de-identidad-visual"
+image: "/images/works/fpolania-grupo-panaderias.png"
 order: 10
 cluster: "alpha"
 featured: false

@@ -7,6 +7,7 @@ categoryEn: "WEB APP / 2025"
 categoryEs: "WEB APP / 2025"
 behanceUrlEn: "https://www.behance.net/gallery/240666733/Novanet-studio-web-app"
 behanceUrlEs: "https://www.behance.net/gallery/240666733/Novanet-studio-web-app"
+image: "/images/works/fpolania-novanet-studio-2025.png"
 order: 1
 cluster: "beta"
 featured: true

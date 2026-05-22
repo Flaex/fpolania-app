@@ -7,7 +7,7 @@ categoryEn: "E-COMMERCE / 2024"
 categoryEs: "E-COMMERCE / 2024"
 behanceUrlEn: "https://www.behance.net/gallery/28402277/Banco-del-Libro-web-design-anddevelopment"
 behanceUrlEs: "https://www.behance.net/gallery/28402277/Banco-del-Libro-web-design-anddevelopment"
-image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBt3gEJY9r3hNhyV7Ms2ePpSGcVd2e1A-eD0nt3n8EWGYOqiw-zMHz43OtmUh9PPb7pqRIf6aHATny4LqnhoGmBh9na7iQVZJQf3O4F7Swga5tJ8sqOKVLcsNgo9bhx-w5SxWjSPxCnwsvTRJVM6Z9xo2tS8IXtmThTcKTuE7DK1r3iWrefpGj75tly-Kz_b7CnbZwRpk3ZVWRqtoFX9OVHxfl8uBsKkhEZKSExcu-I-xcNELV5UlQLjLuk6wELbSxNwhzy98MtgzqE"
+image: "/images/works/fpolania-banco-del-libro.png"
 order: 3
 cluster: "beta"
 featured: true
