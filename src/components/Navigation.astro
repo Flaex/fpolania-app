@@ -1,6 +1,7 @@
 ---
 import { useTranslations, getAlternatePath } from '../utils/i18n';
 import logoDark from '../assets/fredy-polania-logo-dark.svg';
+import logoLight from '../assets/fredy-polania-logo-light.svg';
 
 const { pathname } = Astro.url;
 
@@ -28,7 +29,7 @@ const activeClass = "font-body-md text-primary relative py-1 text-sm font-medium
 const inactiveClass = "font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200 text-sm font-medium tracking-wide";
 ---
 
-<nav class="bg-carbon border-b border-white/10 sticky top-0 z-50">
+<nav class="bg-surface border-b border-outline-variant/35 sticky top-0 z-50 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
             <div class="flex-shrink-0">
@@ -36,7 +37,12 @@ const inactiveClass = "font-body-md text-on-surface-variant hover:text-primary t
                     <img 
                         src={logoDark.src} 
                         alt="Fredy Polania Logo" 
-                        class="h-8 w-auto"
+                        class="h-8 w-auto dark-only"
+                    />
+                    <img 
+                        src={logoLight.src} 
+                        alt="Fredy Polania Logo" 
+                        class="h-8 w-auto light-only"
                     />
                 </a>
             </div>
@@ -45,20 +51,30 @@ const inactiveClass = "font-body-md text-on-surface-variant hover:text-primary t
                 <a href={worksPath} class={isWork ? activeClass : inactiveClass}>{t('nav.work')}</a>
                 <a href={insightPath} class={isInsight ? activeClass : inactiveClass}>{t('nav.insight')}</a>
             </div>
-            <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-4">
+                <!-- Theme Toggle -->
+                <button 
+                    id="theme-toggle" 
+                    aria-label="Toggle Theme"
+                    class="w-9 h-9 flex items-center justify-center border border-outline-variant rounded-full text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-200 cursor-pointer"
+                >
+                    <span class="material-symbols-outlined text-lg dark-only">light_mode</span>
+                    <span class="material-symbols-outlined text-lg light-only">dark_mode</span>
+                </button>
+
                 <!-- Language Switcher EN | ES -->
                 <div class="font-label-technical text-label-technical flex space-x-2 items-center text-xs tracking-wider">
                     <a 
                         href={lang === 'en' ? '#' : alternatePath} 
-                        class={`lang-btn hover:text-white transition-colors py-1 ${lang === 'en' ? 'text-primary font-bold pointer-events-none' : 'text-dim-grey'}`}
+                        class={`lang-btn hover:text-primary transition-colors py-1 ${lang === 'en' ? 'text-primary font-bold pointer-events-none' : 'text-on-surface-variant'}`}
                         data-lang="en"
                     >
                         EN
                     </a>
-                    <span class="text-dim-grey/40">|</span>
+                    <span class="text-outline-variant">|</span>
                     <a 
                         href={lang === 'es' ? '#' : alternatePath} 
-                        class={`lang-btn hover:text-white transition-colors py-1 ${lang === 'es' ? 'text-primary font-bold pointer-events-none' : 'text-dim-grey'}`}
+                        class={`lang-btn hover:text-primary transition-colors py-1 ${lang === 'es' ? 'text-primary font-bold pointer-events-none' : 'text-on-surface-variant'}`}
                         data-lang="es"
                     >
                         ES
@@ -67,7 +83,7 @@ const inactiveClass = "font-body-md text-on-surface-variant hover:text-primary t
                 
                 <a 
                     href="mailto:fpolania@gmail.com" 
-                    class="font-body-md bg-white text-black px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-neutral-200 transition-colors inline-block rounded-sm"
+                    class="font-body-md bg-primary text-on-primary px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:opacity-85 transition-all inline-block rounded-sm"
                 >
                     {t('nav.connect')}
                 </a>
@@ -77,7 +93,30 @@ const inactiveClass = "font-body-md text-on-surface-variant hover:text-primary t
 </nav>
 
 <script>
-    // Add client-side logic to save preference in localStorage when a language selector is clicked
+    const setupThemeToggle = () => {
+        const toggleBtn = document.getElementById('theme-toggle');
+        if (!toggleBtn) return;
+        
+        toggleBtn.addEventListener('click', () => {
+            const isLight = document.documentElement.classList.contains('light');
+            if (isLight) {
+                document.documentElement.classList.remove('light');
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    };
+
+    // Run setup immediately
+    setupThemeToggle();
+    // Re-bind on Astro page transitions
+    document.addEventListener('astro:after-swap', setupThemeToggle);
+
+    // Language preference persistence
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const targetLang = btn.getAttribute('data-lang');
