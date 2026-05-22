@@ -23,7 +23,8 @@
     "viewAll": "Ver Todos",
     "ctaTitle": "Construyamos Juntos.",
     "ctaDesc": "Disponible para auditorías estratégicas de producto y consultoría arquitectónica.",
-    "ctaButton": "Solicitar una Auditoría"
+    "ctaButton": "Solicitar una Auditoría",
+    "ctaSubject": "Solicitud de Auditoría de Producto"
   },
   "works": {
     "metaTitle": "TRABAJOS | Fredy Polania",
@@ -54,6 +55,7 @@
     "lens03Desc": "La convergencia final. La ingeniería no es un paso separado; es la realización final de la visión.",
     "ctaTitle": "¿Listo para evolucionar tu visión?",
     "ctaButton": "Solicitar una auditoría",
+    "ctaSubject": "Solicitud de Auditoría de Producto",
     "ctaWorks": "Ver casos de éxito"
   },
   "article": {

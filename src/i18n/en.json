@@ -23,7 +23,8 @@
     "viewAll": "View All",
     "ctaTitle": "Let's Build Together.",
     "ctaDesc": "Available for strategic product audits and architectural consulting.",
-    "ctaButton": "Request an Audit"
+    "ctaButton": "Request an Audit",
+    "ctaSubject": "Strategic Product Audit Request"
   },
   "works": {
     "metaTitle": "WORKS | Fredy Polania",
@@ -54,6 +55,7 @@
     "lens03Desc": "The ultimate convergence. Engineering is not a separate step; it is the final realization of vision.",
     "ctaTitle": "Ready to evolve your vision?",
     "ctaButton": "Request an Audit",
+    "ctaSubject": "Strategic Product Audit Request",
     "ctaWorks": "View Success Cases"
   },
   "article": {

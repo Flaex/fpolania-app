@@ -153,7 +153,7 @@ const worksPath = lang === 'en' ? '/en/works' : '/es/trabajos';
                         <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-white font-black">{t('home.ctaTitle')}</h2>
                         <p class="font-body-lg text-body-lg text-on-surface-variant">{t('home.ctaDesc')}</p>
                     </div>
-                    <a class="whitespace-nowrap inline-flex items-center justify-center bg-primary text-carbon font-body-md text-body-md font-bold px-8 py-4 rounded-lg hover:bg-silver transition-colors" href="mailto:fpolania@gmail.com?subject=Strategic%20Product%20Audit%20Request">
+                    <a class="whitespace-nowrap inline-flex items-center justify-center bg-primary text-carbon font-body-md text-body-md font-bold px-8 py-4 rounded-lg hover:bg-silver transition-colors" href={`mailto:fpolania@gmail.com?subject=${encodeURIComponent(t('home.ctaSubject'))}`}>
                         {t('home.ctaButton')}
                     </a>
                 </div>

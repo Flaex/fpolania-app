@@ -506,7 +506,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
       <section class="mt-32 py-24 border-t border-outline-variant text-center">
         <h2 class="font-display text-primary mb-12 text-headline-lg font-fraunces">{t('insight.ctaTitle')}</h2>
         <div class="flex justify-center flex-wrap gap-6">
-          <a href="mailto:fpolania@gmail.com?subject=Strategic%20Product%20Audit%20Request" class="bg-primary text-on-primary px-10 py-4 font-label-technical text-label-technical uppercase tracking-widest hover:opacity-90 transition-opacity">{t('insight.ctaButton')}</a>
+          <a href={`mailto:fpolania@gmail.com?subject=${encodeURIComponent(t('insight.ctaSubject'))}`} class="bg-primary text-on-primary px-10 py-4 font-label-technical text-label-technical uppercase tracking-widest hover:opacity-90 transition-opacity">{t('insight.ctaButton')}</a>
           <a href={ctaWorksLink} class="border border-outline px-10 py-4 font-label-technical text-label-technical uppercase tracking-widest hover:bg-surface-container transition-colors text-primary">{t('insight.ctaWorks')}</a>
         </div>
       </section>
