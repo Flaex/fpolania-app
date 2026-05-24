@@ -7,7 +7,7 @@ categoryEn: "BRANDING"
 categoryEs: "BRANDING"
 behanceUrlEn: "https://www.behance.net/gallery/80052541/Zaituna-Caf-branding"
 behanceUrlEs: "https://www.behance.net/gallery/80052541/Zaituna-Caf-branding"
-image: "/images/works/fpolania-zaituna.png"
+image: "https://res.cloudinary.com/flaex/image/upload/f_auto,q_auto,c_fill,g_auto,w_1200/fpolania-app/works/fpolania-zaituna.png"
 order: 5
 cluster: "alpha"
 featured: false

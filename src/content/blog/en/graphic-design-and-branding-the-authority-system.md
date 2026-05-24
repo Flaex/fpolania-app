@@ -27,7 +27,7 @@ Also known as a style guide, this manual allows for the validation of the visual
 The manual is not just restrictive; it offers implementation examples so that the brand is recognizable regardless of the medium in which it is presented.
 
 ## 3. Consistency in the Design System
-As a Senior Architect, my job is to audit the consistency so as not to weaken the brand's presence. The critical factors are:
+As an Architect, my job is to audit the consistency so as not to weaken the brand's presence. The critical factors are:
 1.  **Hierarchy:** Is the logo application legible and does it have the correct weight?
 2.  **Visual Tone:** Do the corporate colors harmonize with the images?
 3.  **Readability:** Do the font families work in long texts?

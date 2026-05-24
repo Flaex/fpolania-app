@@ -7,7 +7,7 @@ categoryEn: "BRANDING"
 categoryEs: "BRANDING"
 behanceUrlEn: "https://www.behance.net/gallery/28402541/EJ-Supply-branding"
 behanceUrlEs: "https://www.behance.net/gallery/28402541/EJ-Supply-branding"
-image: "/images/works/fpolania-ej-supply.jpg"
+image: "https://res.cloudinary.com/flaex/image/upload/f_auto,q_auto,c_fill,g_auto,w_1200/fpolania-app/works/fpolania-ej-supply.png"
 order: 9
 cluster: "alpha"
 featured: false

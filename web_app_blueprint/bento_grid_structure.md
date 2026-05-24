@@ -21,7 +21,7 @@ The V3 structure utilizes a **Split Architecture** tailored for Astro to maximiz
 ### **HOMEPAGE STRUCTURE: The Executive Summary**
 
 #### **ZONE 1: The Strategic Core**
-*   **Hero (4x2):** "Business Strategy. Design Vision. Technical Craft." High-contrast center-piece.
+*   **Hero (4x2):** "Business Strategy. Design Vision. Technologic craft." High-contrast center-piece.
 *   **Latest Insight (2x2):** Dynamic card showing the most recent thought leadership piece.
 *   **Stats (1x1):** "15+ Years." Minimalist authority counter.
 *   **Strategic Cards (2x1):** The "Why" (De-risking the Messy Middle) and the "Edge" (AI Orchestration).
@@ -67,7 +67,7 @@ The V3 structure utilizes a **Split Architecture** tailored for Astro to maximiz
 *   **Header Card (2x1):** "The Language of Authority."
 *   **Article Cards (2x2 or 2x1):** Visual Communication or Graphic Design, Typographic Classification, What is Typography?, The Logo Variants, Illustrator Basics.
 
-#### **CLUSTER 3: The Builder Lens (Technical Craft)**
+#### **CLUSTER 3: The Builder Lens (Technologic craft)**
 *   **Header Card (2x1):** "The Engineering of Experience."
 *   **Article Cards (2x2 or 2x1):** What is HTML?, What is CSS?, The Utility of Learning HTML, Design & Programming.
 

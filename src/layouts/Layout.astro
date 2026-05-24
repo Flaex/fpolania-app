@@ -8,7 +8,7 @@ interface Props {
 	lang?: string;
 }
 
-const { title, description = "Business Strategy. Design Vision. Technical Craft.", lang = "en" } = Astro.props;
+const { title, description = "Business Strategy. Design Vision. Technologic craft.", lang = "en" } = Astro.props;
 
 const alternateLang = lang === 'en' ? 'es' : 'en';
 const alternatePath = getAlternatePath(Astro.url.pathname, alternateLang);

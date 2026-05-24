@@ -8,7 +8,7 @@ originalLanguage: "Spanish"
 ---
 
 ## Introduction: Design in the Age of Automation
-As a Senior Product Strategist and Founder of Novanet Studio, I have witnessed the radical transformation of our industry. Graphic design has evolved from a manual, tedious craft into a discipline empowered by computers. However, this technical agility has brought with it a dangerous confusion: mistaking speed for **value**. In this analysis, we will explore why design, when understood as a strategic investment, is one of the most valuable assets of any company.
+As a Product Strategist and Founder of Novanet Studio, I have witnessed the radical transformation of our industry. Graphic design has evolved from a manual, tedious craft into a discipline empowered by computers. However, this technical agility has brought with it a dangerous confusion: mistaking speed for **value**. In this analysis, we will explore why design, when understood as a strategic investment, is one of the most valuable assets of any company.
 
 ## 1. What is Value? (The Economic Perspective)
 To talk about design, we must first talk about economics. Value, as defined by Carl Menger in his fundamental work *Principles of Political Economy*, is not something intrinsic to the object, but rather:

@@ -7,22 +7,22 @@
   },
   "home": {
     "metaTitle": "ESTRATEGA | Fredy Polania",
-    "metaDescription": "Estrategia de Negocios. Visión de Diseño. Oficio Técnico.",
+    "metaDescription": "Estrategia de Negocios. Visión de Diseño. Experiencia técnica.",
     "executiveSummary": "Resumen Ejecutivo",
-    "role": "Estratega Sénior de Producto",
-    "roleSubtitle": "Estrategia de Negocios. Visión de Diseño. Oficio Técnico.",
-    "exploreCommand": "Explorar el Centro de Comando",
+    "role": "Estratega de Producto",
+    "roleSubtitle": "Estrategia de Negocios. Visión de Diseño. Experiencia técnica.",
+    "exploreCommand": "Explorar Perspectivas",
     "latestInsight": "Última Perspectiva",
     "readArticle": "Leer Artículo",
-    "yearsLeadership": "Años de liderazgo multidisciplinario.",
-    "messyMiddleTitle": "Minimizando el riesgo en el 'Messy Middle'.",
+    "yearsLeadership": "Años de experiencia multidisciplinaria.",
+    "messyMiddleTitle": "Minimizando el riesgo en la fase de convergencia.",
     "messyMiddleDesc": "Los productos fracasan en la brecha entre los Negocios, el Diseño y la Tecnología. Cierro esa brecha para asegurar que cada línea de código sea una inversión en su rentabilidad.",
-    "aiTitle": "Creado por Personas. Perfeccionado con IA.",
-    "aiDesc": "Aprovechando LLMs y orquestación basada en CLI para amplificar el oficio sénior y acelerar la velocidad de comercialización.",
+    "aiTitle": "Creado por Personas. Optimizados con IA.",
+    "aiDesc": "Aprovechando LLMs y orquestación basada en CLI para amplificar el oficio y acelerar la velocidad de comercialización.",
     "featuredWorks": "Trabajos Destacados",
     "viewAll": "Ver Todos",
     "ctaTitle": "Construyamos Juntos.",
-    "ctaDesc": "Disponible para auditorías estratégicas de producto y consultoría arquitectónica.",
+    "ctaDesc": "Disponible para auditorías estratégicas de producto y consultoría tecnológica.",
     "ctaButton": "Solicitar una Auditoría",
     "ctaSubject": "Solicitud de Auditoría de Producto"
   },
@@ -69,6 +69,6 @@
     "todo-es-diseno-la-filosofia-de-la-utilidad": "Por qué el diseño no es un añadido estético, sino la arquitectura principal de la función del producto y la utilidad del usuario.",
     "diseno-grafico-y-branding-el-sistema-de-autoridad": "Diferenciando la identidad de marca de los logotipos simples. Cómo los sistemas visuales consistentes construyen valor de negocio a largo plazo.",
     "diseno-grafico-y-programacion-web-la-traduccion-estrategica": "Cerrando la brecha de traducción entre la intención creativa y la ejecución técnica. Por qué el oficio del desarrollador debe alinearse con la visión de diseño.",
-    "el-valor-del-diseno-grafico": "Un análisis económico del valor del diseño basado en la escasez y la utilidad, minimizando el riesgo en el \"messy middle\" del desarrollo de productos."
+    "el-valor-del-diseno-grafico": "Un análisis económico del valor del diseño basado en la escasez y la utilidad, minimizando el riesgo en la fase de convergencia del desarrollo de productos."
   }
 }

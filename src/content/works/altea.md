@@ -7,7 +7,7 @@ categoryEn: "IDENTITY"
 categoryEs: "IDENTIDAD"
 behanceUrlEn: "https://www.behance.net/gallery/201968709/Altea-Diseno-de-identidad-visual-y-etiqueta"
 behanceUrlEs: "https://www.behance.net/gallery/201968709/Altea-Diseno-de-identidad-visual-y-etiqueta"
-image: "/images/works/fpolania-altea.png"
+image: "https://res.cloudinary.com/flaex/image/upload/f_auto,q_auto,c_fill,g_auto,w_1200/fpolania-app/works/fpolania-altea.png"
 order: 4
 cluster: "alpha"
 featured: false

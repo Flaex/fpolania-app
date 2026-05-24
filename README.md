@@ -1,6 +1,6 @@
 # Fredy Polania — Founder-Visionary Digital HQ (2026)
 > **Brand Anthem:** *Reliable Visionary Execution*  
-> **Core Value Proposition:** *"Business Strategy. Design Vision. Technical Craft."* — Bridging 15+ years of CEO experience with deep design and front-end craftsmanship.
+> **Core Value Proposition:** *"Business Strategy. Design Vision. Technologic craft."* — Bridging 15+ years of CEO experience with deep design and front-end craftsmanship.
 
 This repository hosts the code and content for Fredy Polania's personal digital command center. It is structured as an **"Executive Monolith" Bento Grid** system, demonstrating the high-precision intersection of strategic thinking, visual design, and software engineering.
 

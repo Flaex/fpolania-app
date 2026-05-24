@@ -7,7 +7,7 @@ categoryEn: "IDENTITY"
 categoryEs: "IDENTIDAD"
 behanceUrlEn: "https://www.behance.net/gallery/28402463/Gamma-Medical-branding"
 behanceUrlEs: "https://www.behance.net/gallery/28402463/Gamma-Medical-branding"
-image: "/images/works/fpolania-gamma-medical.png"
+image: "https://res.cloudinary.com/flaex/image/upload/f_auto,q_auto,c_fill,g_auto,w_1200/fpolania-app/works/fpolania-gamma-medical.png"
 order: 8
 cluster: "alpha"
 featured: false

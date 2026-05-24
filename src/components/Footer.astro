@@ -23,7 +23,7 @@ const homePath = `/${lang}/`;
             </a>
         </div>
         <div class="font-label-technical text-label-technical text-center md:text-left text-primary uppercase">
-            <span style="letter-spacing: 0.6px;" class="text-on-surface-variant">© 2026 Fredy Polania</span>
+            <span style="letter-spacing: 0.6px;" class="text-on-surface-variant">© <span id="current-year">2026</span> Fredy Polania</span>
         </div>
         <div class="flex gap-6 items-center font-body-md text-body-md">
             <a 
@@ -53,3 +53,10 @@ const homePath = `/${lang}/`;
         </div>
     </div>
 </footer>
+
+<script>
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear().toString();
+    }
+</script>

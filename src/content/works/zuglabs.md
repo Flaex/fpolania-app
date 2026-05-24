@@ -7,7 +7,7 @@ categoryEn: "IDENTITY"
 categoryEs: "IDENTIDAD"
 behanceUrlEn: "https://www.behance.net/gallery/201806885/Zuglabs-Diseno-de-Identidad-Corporativa"
 behanceUrlEs: "https://www.behance.net/gallery/201806885/Zuglabs-Diseno-de-Identidad-Corporativa"
-image: "/images/works/fpolania-zuglabs.png"
+image: "https://res.cloudinary.com/flaex/image/upload/f_auto,q_auto,c_fill,g_auto,w_1200/fpolania-app/works/fpolania-zuglabs.png"
 order: 2
 cluster: "alpha"
 featured: false

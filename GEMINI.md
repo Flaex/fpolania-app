@@ -7,7 +7,7 @@ This document contains the foundational mandates for the "Founder-Visionary" bra
 - **Jungian Archetypes:** The Ruler (Sovereign Authority) & The Magician (Technical Alchemy).
 - **Fascination Advantage:** Power (Authority) & Trust (Reliability).
 - **Brand Anthem:** Reliable Visionary Execution.
-- **Core Value Prop:** "Business Strategy. Design Vision. Technical Craft." — Bridging 15+ years of CEO experience with deep Design and Front-end craft.
+- **Core Value Prop:** "Business Strategy. Design Vision. Technologic craft." — Bridging 15+ years of CEO experience with deep Design and Front-end craft.
 
 ## 2. Visual & Technical Standards
 - **Tech Stack:** Astro (Content-First Framework) + Tailwind CSS (Utility-First Styling).
@@ -28,7 +28,7 @@ This document contains the foundational mandates for the "Founder-Visionary" bra
 - **Narrative Focus (Outcome Stories > Resume Metrics):** Avoid redundant experience metrics (e.g., "15+ years CEO experience"). Instead, frame experience through actionable stories and insights (e.g., "Building and scaling Novanet Studio taught me...").
 - **The Core Conflict (The Translation Gap):** Consistently highlight the disconnect between business (ROI), design (empathy), and development (scalability). Position yourself as the bridge who speaks all three languages.
 - **Content Framework:** Always use PAS (Problem-Agitate-Solution).
-- **Perspective:** Focus on the "Messy Middle"—show the decision-making process, not just the final result. Every piece of content should ideally touch on at least two of your three pillars: Business Strategy, Design Vision, or Technical Craft.
+- **Perspective:** Focus on the "Messy Middle"—show the decision-making process, not just the final result. Every piece of content should ideally touch on at least two of your three pillars: Business Strategy, Design Vision, or Technologic craft.
 
 ## 4. Workflows
 - **LinkedIn:** Treat as a GTM (Go-To-Market) engine. Focus on dwell time and meaningful engagement.
@@ -52,7 +52,7 @@ This section maps out the completed activities aligning with the branding direct
 
 ### Communication & Content Strategy
 - **Thought Leadership Database:** Completed migration of 26 thought leadership articles (13 English, 13 Spanish) inside [src/content/blog/](file:///Users/fpolania/projects/fpolania-app/src/content/blog/).
-- **Category Clustering (Lenses):** Grouped the articles into the three brand pillars (CEO Lens/Business, Visual Lens/Design, Builder Lens/Technical Craft) to address the *Translation Gap* and build professional authority.
+- **Category Clustering (Lenses):** Grouped the articles into the three brand pillars (CEO Lens/Business, Visual Lens/Design, Builder Lens/Technologic craft) to address the *Translation Gap* and build professional authority.
 - **PAS Strategy Execution:** Every article incorporates the Problem-Agitate-Solution copywriting framework to enhance engagement and highlight Felipe's real-world outcome stories (e.g., Novanet Studio, Banco del Libro, Maximiza) rather than basic resume metrics.
 
 ### AI Orchestration Mandate

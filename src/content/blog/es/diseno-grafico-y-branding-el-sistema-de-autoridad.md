@@ -27,7 +27,7 @@ Conocido también como guía de estilo, este manual permite validar el contexto 
 El manual no es solo restrictivo; ofrece ejemplos de implementación para que la marca sea reconocible independientemente del medio en que se presente.
 
 ## 3. Consistencia en el Sistema de Diseño
-Como Senior Architect, mi labor es auditar la consistencia para no debilitar la presencia de marca. Los factores críticos son:
+Como Architect, mi labor es auditar la consistencia para no debilitar la presencia de marca. Los factores críticos son:
 1.  **Jerarquía:** ¿La aplicación del logo es legible y tiene el peso correcto?
 2.  **Tono Visual:** ¿Los colores corporativos armonizan con las imágenes?
 3.  **Lecturabilidad:** ¿Las familias tipográficas funcionan en textos largos?

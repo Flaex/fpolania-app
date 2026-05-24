@@ -7,7 +7,7 @@ categoryEn: "IDENTITY"
 categoryEs: "IDENTIDAD"
 behanceUrlEn: "https://www.behance.net/gallery/28402639/Take-on-Bar-branding"
 behanceUrlEs: "https://www.behance.net/gallery/28402639/Take-on-Bar-branding"
-image: "/images/works/fpolania-take-on-bar.jpg"
+image: "https://res.cloudinary.com/flaex/image/upload/f_auto,q_auto,c_fill,g_auto,w_1200/fpolania-app/works/fpolania-take-on-bar.png"
 order: 6
 cluster: "alpha"
 featured: false
