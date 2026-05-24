@@ -5,6 +5,16 @@ import Footer from '../../../components/Footer.astro';
 import { getCollection, render } from 'astro:content';
 import { useTranslations, reverseSlugMap } from '../../../utils/i18n';
 
+function toPhraseCase(str: string) {
+    if (!str) return '';
+    const lower = str.toLowerCase();
+    const match = lower.match(/[a-zñáéíóúü]/i);
+    if (match) {
+        return lower.substring(0, match.index) + lower.charAt(match.index).toUpperCase() + lower.substring(match.index + 1);
+    }
+    return lower;
+}
+
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   
@@ -127,7 +137,7 @@ const hubPath = lang === 'en' ? '/en/insight' : '/es/perspectivas';
 const metaTitleSuffix = t('article.metaSuffix');
 ---
 
-<Layout title={`${post.data.title} | ${metaTitleSuffix}`} lang={lang}>
+<Layout title={`${toPhraseCase(post.data.title)} | ${metaTitleSuffix}`} lang={lang}>
   <div class="grain"></div>
   
   <Navigation />
@@ -144,7 +154,7 @@ const metaTitleSuffix = t('article.metaSuffix');
         </span>
       </div>
       <h1 class="font-display text-headline-lg-mobile md:text-display mb-8 text-primary font-fraunces">
-        {post.data.title}
+        {toPhraseCase(post.data.title)}
       </h1>
       <div class="flex items-center pt-8 border-t border-outline-variant">
         <img 
@@ -193,7 +203,7 @@ const metaTitleSuffix = t('article.metaSuffix');
               </div>
               <div>
                 <p class="font-label-technical text-label-technical text-secondary uppercase mb-2">{rMeta.category}</p>
-                <h4 class="font-headline-md text-headline-md text-primary group-hover:underline decoration-1 underline-offset-4 transition-all">{relatedPost.data.title}</h4>
+                <h4 class="font-headline-md text-headline-md text-primary group-hover:underline decoration-1 underline-offset-4 transition-all">{toPhraseCase(relatedPost.data.title)}</h4>
               </div>
             </a>
           );
