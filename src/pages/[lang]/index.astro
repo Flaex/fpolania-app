@@ -133,13 +133,8 @@ const worksPath = lang === 'en' ? '/en/works' : '/es/trabajos';
                     const spanClass = `bento-card ${project.data.featuredSpan || "col-span-1 md:col-span-2 lg:col-span-6 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[240px]"}`;
                     const projectId = extractBehanceProjectId(behanceUrl);
                     
-                    const LinkTag = projectId ? 'div' : 'a';
-                    const linkProps = projectId ? {
-                        class: spanClass,
-                    } : {
-                        href: behanceUrl,
-                        target: '_blank',
-                        rel: 'noopener noreferrer',
+                    const LinkTag = 'div';
+                    const linkProps = {
                         class: spanClass
                     };
 
@@ -159,7 +154,7 @@ const worksPath = lang === 'en' ? '/en/works' : '/es/trabajos';
                             <div class="relative z-10 p-4 border border-outline-variant bg-surface/90 backdrop-blur-sm rounded w-full">
                                 <h3 class="font-headline-md text-headline-md mb-1 text-lg text-primary font-bold">{title}</h3>
                                 <p class="font-body-md text-body-md text-on-surface-variant text-sm">{desc}</p>
-                                {projectId && (
+                                {behanceUrl && (
                                     <div class="mt-6 lg:hidden mt-auto">
                                         <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary text-center py-3 px-6 flex items-center justify-center gap-[10px] text-[.95rem] tracking-tight hover:bg-on-primary hover:text-primary transition-all duration-300">
                                             <span class="leading-none mt-[1px]">View on Behance</span>
@@ -168,7 +163,7 @@ const worksPath = lang === 'en' ? '/en/works' : '/es/trabajos';
                                     </div>
                                 )}
                             </div>
-                            {projectId && (
+                            {behanceUrl && (
                                 <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 hidden lg:flex items-center justify-center pointer-events-none backdrop-blur-md bg-black/40">
                                     <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="pointer-events-auto bg-primary text-on-primary text-center py-3 px-6 flex items-center justify-center gap-[10px] text-[.95rem] tracking-tight hover:bg-on-primary hover:text-primary transition-all duration-300">
                                         <span class="leading-none mt-[1px]">View on Behance</span>

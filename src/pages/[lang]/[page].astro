@@ -6,6 +6,16 @@ import { getCollection } from 'astro:content';
 import { useTranslations, reverseSlugMap } from '../../utils/i18n';
 import { extractBehanceProjectId } from '../../utils/behance';
 
+function toPhraseCase(str: string) {
+    if (!str) return '';
+    const lower = str.toLowerCase();
+    const match = lower.match(/[a-zñáéíóúü]/i);
+    if (match) {
+        return lower.substring(0, match.index) + lower.charAt(match.index).toUpperCase() + lower.substring(match.index + 1);
+    }
+    return lower;
+}
+
 export async function getStaticPaths() {
   return [
     { params: { lang: 'en', page: 'works' } },
@@ -52,7 +62,7 @@ function getBetaCardClass(index: number, totalCards: number) {
   const isEven = totalCards % 2 === 0;
   const isFullWidth = isEven && index === 0;
 
-  const baseClasses = "bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:bg-surface-variant transition-colors group relative overflow-hidden";
+  const baseClasses = "bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:border-primary transition-all duration-300 group relative overflow-hidden";
 
   if (isFullWidth) {
     return `col-span-4 md:col-span-12 min-h-[200px] ${baseClasses}`;
@@ -253,15 +263,9 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                   const title = lang === 'en' ? work.data.titleEn : work.data.titleEs;
                   const category = lang === 'en' ? work.data.categoryEn : work.data.categoryEs;
                   const behanceUrl = lang === 'en' ? work.data.behanceUrlEn : work.data.behanceUrlEs;
-                  const projectId = extractBehanceProjectId(behanceUrl);
-                  const LinkTag = projectId ? 'div' : 'a';
-                  const linkProps = projectId ? {
-                      class: "col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group relative overflow-hidden",
-                  } : {
-                      href: behanceUrl,
-                      target: "_blank",
-                      rel: "noopener noreferrer",
-                      class: "col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group relative overflow-hidden"
+                  const LinkTag = 'div';
+                  const linkProps = {
+                      class: "col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:border-primary transition-all duration-300 group relative overflow-hidden"
                   };
                   return (
                       <LinkTag {...linkProps}>
@@ -270,7 +274,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                                   <img 
                                       src={work.data.image} 
                                       alt={title} 
-                                      class="w-full h-full object-cover grayscale opacity-20 group-hover:grayscale-0 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" 
+                                      class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
                                   />
                               </div>
                           )}
@@ -278,7 +282,15 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                           <div class="relative z-10">
                               <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">{title}</h4>
                           </div>
-                          {projectId && (
+                          {behanceUrl && (
+                              <div class="mt-4 lg:hidden mt-auto">
+                                  <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="pointer-events-auto bg-primary text-on-primary text-center py-3 px-6 flex items-center justify-center gap-[10px] text-[.95rem] tracking-tight hover:bg-on-primary hover:text-primary transition-all duration-300">
+                                      <span class="leading-none mt-[1px]">View on Behance</span>
+                                      <svg viewBox="0 0 576 512" fill="currentColor" class="w-[1.2rem] h-[1.2rem]"><path d="M232 237.2c31.8-15.2 48.4-38.2 48.4-74 0-70.6-52.6-87.8-113.3-87.8H0v354.4h171.8c64.4 0 124.9-30.9 124.9-102.9 0-44.5-21.1-77.4-64.7-89.7zM68.3 133.5h71c32.5 0 56.9 13.8 56.9 44.8 0 38.3-29.6 44.2-61.1 44.2H68.3v-89zm75.6 237.4H68.3v-95h78.7c37.5 0 65.1 12.2 65.1 50.3 0 43.4-32 44.7-68.2 44.7zM403.6 208.4c-70.3 0-112.5 52.8-112.5 117.8 0 65 41 117.1 114 117.1 59.8 0 96.1-28.7 107.5-76.4h-61.9c-7.9 21.2-28.6 25-45.7 25-23.3 0-44-13.6-47-45.1h155.6c.9-5 1.4-11.4 1.4-19 0-66.2-39.7-119.4-111.4-119.4zm-48 76.7c7-24 25.3-31.9 45.4-31.9 20.3 0 39.5 8.9 44 31.9h-89.4zm23.9-136.2h94.9v28.2h-94.9v-28.2z"/></svg>
+                                  </a>
+                              </div>
+                          )}
+                          {behanceUrl && (
                               <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 hidden lg:flex items-center justify-center pointer-events-none backdrop-blur-md bg-black/40">
                                   <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="pointer-events-auto bg-primary text-on-primary text-center py-3 px-6 flex items-center justify-center gap-[10px] text-[.95rem] tracking-tight hover:bg-on-primary hover:text-primary transition-all duration-300">
                                       <span class="leading-none mt-[1px]">View on Behance</span>
@@ -306,15 +318,9 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                   const category = lang === 'en' ? work.data.categoryEn : work.data.categoryEs;
                   const behanceUrl = lang === 'en' ? work.data.behanceUrlEn : work.data.behanceUrlEs;
                   const cardClass = getBetaCardClass(index, worksBeta.length);
-                  const projectId = extractBehanceProjectId(behanceUrl);
-                  const LinkTag = projectId ? 'div' : 'a';
-                  const linkProps = projectId ? {
+                  const LinkTag = 'div';
+                  const linkProps = {
                       class: cardClass,
-                  } : {
-                      href: behanceUrl,
-                      target: "_blank",
-                      rel: "noopener noreferrer",
-                      class: cardClass
                   };
                   return (
                       <LinkTag {...linkProps}>
@@ -323,7 +329,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                                   <img 
                                       src={work.data.image} 
                                       alt={title} 
-                                      class="w-full h-full object-cover grayscale opacity-20 group-hover:grayscale-0 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" 
+                                      class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
                                   />
                               </div>
                           )}
@@ -331,7 +337,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                           <div class="relative z-10">
                               <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">{title}</h4>
                           </div>
-                          {projectId && (
+                          {behanceUrl && (
                               <div class="mt-4 lg:hidden mt-auto">
                                   <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="pointer-events-auto bg-primary text-on-primary text-center py-3 px-6 flex items-center justify-center gap-[10px] text-[.95rem] tracking-tight hover:bg-on-primary hover:text-primary transition-all duration-300">
                                       <span class="leading-none mt-[1px]">View on Behance</span>
@@ -339,7 +345,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                                   </a>
                               </div>
                           )}
-                          {projectId && (
+                          {behanceUrl && (
                               <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 hidden lg:flex items-center justify-center pointer-events-none backdrop-blur-md bg-black/40">
                                   <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="pointer-events-auto bg-primary text-on-primary text-center py-3 px-6 flex items-center justify-center gap-[10px] text-[.95rem] tracking-tight hover:bg-on-primary hover:text-primary transition-all duration-300">
                                       <span class="leading-none mt-[1px]">View on Behance</span>
@@ -366,15 +372,9 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                   const title = lang === 'en' ? work.data.titleEn : work.data.titleEs;
                   const category = lang === 'en' ? work.data.categoryEn : work.data.categoryEs;
                   const behanceUrl = lang === 'en' ? work.data.behanceUrlEn : work.data.behanceUrlEs;
-                  const projectId = extractBehanceProjectId(behanceUrl);
-                  const LinkTag = projectId ? 'div' : 'a';
-                  const linkProps = projectId ? {
-                      class: "col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group relative overflow-hidden",
-                  } : {
-                      href: behanceUrl,
-                      target: "_blank",
-                      rel: "noopener noreferrer",
-                      class: "col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:bg-surface-variant transition-colors group relative overflow-hidden"
+                  const LinkTag = 'div';
+                  const linkProps = {
+                      class: "col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:border-primary transition-all duration-300 group relative overflow-hidden"
                   };
                   return (
                       <LinkTag {...linkProps}>
@@ -383,7 +383,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                                   <img 
                                       src={work.data.image} 
                                       alt={title} 
-                                      class="w-full h-full object-cover grayscale opacity-20 group-hover:grayscale-0 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" 
+                                      class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
                                   />
                               </div>
                           )}
@@ -391,7 +391,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                           <div class="relative z-10">
                               <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors font-bold">{title}</h4>
                           </div>
-                          {projectId && (
+                          {behanceUrl && (
                               <div class="mt-4 lg:hidden mt-auto">
                                   <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="pointer-events-auto bg-primary text-on-primary text-center py-3 px-6 flex items-center justify-center gap-[10px] text-[.95rem] tracking-tight hover:bg-on-primary hover:text-primary transition-all duration-300">
                                       <span class="leading-none mt-[1px]">View on Behance</span>
@@ -399,7 +399,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                                   </a>
                               </div>
                           )}
-                          {projectId && (
+                          {behanceUrl && (
                               <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 hidden lg:flex items-center justify-center pointer-events-none backdrop-blur-md bg-black/40">
                                   <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="pointer-events-auto bg-primary text-on-primary text-center py-3 px-6 flex items-center justify-center gap-[10px] text-[.95rem] tracking-tight hover:bg-on-primary hover:text-primary transition-all duration-300">
                                       <span class="leading-none mt-[1px]">View on Behance</span>
@@ -458,7 +458,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                       <span class="w-2 h-2 rounded-full bg-primary"></span>
                       <span class="font-label-technical text-label-technical uppercase text-on-surface-variant">{config.tag}</span>
                     </div>
-                    <h3 class="font-headline-md text-headline-md text-primary group-hover:underline">{post.data.title}</h3>
+                    <h3 class="font-headline-md text-headline-md text-primary group-hover:underline">{toPhraseCase(post.data.title)}</h3>
                   </div>
                   <div class="mt-8 font-label-technical text-label-technical text-primary flex items-center gap-2 uppercase tracking-widest">
                     {lang === 'en' ? 'Read Article' : 'Leer Artículo'} <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
@@ -472,7 +472,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container-low border border-outline-variant p-8 hover:bg-surface-container hover:border-white transition-all duration-300 flex flex-col justify-between">
                 <div>
                   <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{config.label}</span>
-                  <h3 class="font-headline-md text-headline-md text-primary mb-4 leading-tight">{post.data.title}</h3>
+                  <h3 class="font-headline-md text-headline-md text-primary mb-4 leading-tight">{toPhraseCase(post.data.title)}</h3>
                 </div>
                 <div class="flex flex-wrap gap-2 mt-auto">
                   {config.pills?.map((pill: string) => (
@@ -503,7 +503,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-6 bg-surface-container border border-outline-variant aspect-square md:aspect-auto p-8 flex flex-col justify-end relative mt-12 overflow-hidden hover:border-white transition-colors duration-300 group min-h-[320px]">
                 <div class="absolute inset-0 bg-cover bg-center opacity-30 grayscale group-hover:scale-105 transition-transform duration-700" style={`background-image: url('${config.image}');`}></div>
                 <div class="relative z-10">
-                  <h3 class="font-headline-md text-headline-md text-primary">{post.data.title}</h3>
+                  <h3 class="font-headline-md text-headline-md text-primary">{toPhraseCase(post.data.title)}</h3>
                   <span class="mt-4 font-label-technical text-label-technical text-primary flex items-center gap-2 uppercase tracking-widest">{lang === 'en' ? 'Learn More' : 'Aprender Más'} <span class="material-symbols-outlined text-[14px]">north_east</span></span>
                 </div>
               </a>
@@ -512,7 +512,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
             return (
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container-high border border-outline-variant p-8 flex flex-col justify-between hover:border-white transition-colors duration-300">
                 <div>
-                  <h3 class="font-headline-md text-headline-md text-primary">{post.data.title}</h3>
+                  <h3 class="font-headline-md text-headline-md text-primary">{toPhraseCase(post.data.title)}</h3>
                   <p class="font-body-md text-body-md text-on-surface-variant mt-4">{config.description}</p>
                 </div>
                 <div class="mt-8 border-t border-outline-variant pt-4 font-label-technical text-label-technical text-primary uppercase">{config.refLabel}</div>
@@ -525,14 +525,14 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                   <span class="material-symbols-outlined text-primary text-[32px]">{config.icon}</span>
                   <span class="font-label-technical text-label-technical text-on-surface-variant">{config.label}</span>
                 </div>
-                <h3 class="font-headline-md text-headline-md text-primary mb-2">{post.data.title}</h3>
+                <h3 class="font-headline-md text-headline-md text-primary mb-2">{toPhraseCase(post.data.title)}</h3>
               </a>
             );
           } else if (config.type === 'hover-translate') {
             return (
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container-high border border-outline-variant p-8 group cursor-pointer hover:border-white transition-colors duration-300 flex flex-col justify-between">
                 <div>
-                  <h3 class="font-headline-md text-headline-md text-primary transition-all group-hover:translate-x-2">{post.data.title}</h3>
+                  <h3 class="font-headline-md text-headline-md text-primary transition-all group-hover:translate-x-2">{toPhraseCase(post.data.title)}</h3>
                   <p class="font-body-md text-body-md text-on-surface-variant mt-2 text-sm">{config.description}</p>
                 </div>
               </a>
@@ -541,7 +541,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
             return (
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 bg-surface-container border border-outline-variant p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-12 group hover:border-white transition-colors duration-300">
                 <div class="max-w-xl">
-                  <h3 class="font-display text-headline-lg text-primary mb-6 italic">{post.data.title}</h3>
+                  <h3 class="font-display text-headline-lg text-primary mb-6 italic">{toPhraseCase(post.data.title)}</h3>
                   <p class="font-body-lg text-body-lg text-on-surface-variant">{config.description}</p>
                 </div>
                 <div class="w-full md:w-48 aspect-video bg-surface-container-highest border border-outline-variant flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-700">
@@ -571,7 +571,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
               <div class="col-span-12 md:col-span-6 bg-surface-container border border-outline-variant p-8 flex flex-col md:flex-row gap-8 mt-12">
                 <div class="flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 class="font-headline-md text-headline-md text-primary mb-4">{post.data.title}</h3>
+                    <h3 class="font-headline-md text-headline-md text-primary mb-4">{toPhraseCase(post.data.title)}</h3>
                     <p class="font-body-md text-body-md text-on-surface-variant">{config.description}</p>
                   </div>
                   <a href={`${pagePathPrefix}${postSlug}`} class="mt-8 border border-primary px-4 py-2 text-primary font-label-technical text-label-technical hover:bg-primary hover:text-on-primary transition-all text-center max-w-[180px] inline-block">{config.btnText}</a>
@@ -586,7 +586,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-3 bg-surface-container border border-outline-variant p-6 hover:border-white transition-colors duration-300 flex flex-col justify-between">
                 <div>
                   <code class="block text-primary font-label-technical mb-6 font-geist">{config.code}</code>
-                  <h3 class="font-headline-md text-headline-md text-primary mb-2">{post.data.title}</h3>
+                  <h3 class="font-headline-md text-headline-md text-primary mb-2">{toPhraseCase(post.data.title)}</h3>
                   <p class="font-body-md text-body-md text-on-surface-variant mb-4 text-sm">{config.description}</p>
                 </div>
                 <span class="font-label-technical text-[10px] text-primary/40 uppercase tracking-tighter block mt-auto">{config.bottomLabel}</span>
@@ -596,7 +596,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
             return (
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-6 bg-surface-container-high border border-outline-variant p-12 flex flex-col md:flex-row items-center justify-between gap-12 group hover:border-white transition-colors duration-300">
                 <div class="max-w-xl">
-                  <h3 class="font-display text-headline-lg text-primary mb-6 italic">{post.data.title}</h3>
+                  <h3 class="font-display text-headline-lg text-primary mb-6 italic">{toPhraseCase(post.data.title)}</h3>
                   <p class="font-body-lg text-body-lg text-on-surface-variant">{config.description}</p>
                 </div>
                 <div class="w-full md:w-48 aspect-video bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 border border-outline-variant" style={`background-image: url('${config.image}');`}></div>
