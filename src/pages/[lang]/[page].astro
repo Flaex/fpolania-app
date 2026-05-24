@@ -541,7 +541,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
             return (
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 bg-surface-container border border-outline-variant p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-12 group hover:border-white transition-colors duration-300">
                 <div class="max-w-xl">
-                  <h3 class="font-display text-headline-lg text-primary mb-6 italic">{toPhraseCase(post.data.title)}</h3>
+                  <h3 class="font-headline-md text-headline-md text-primary mb-6">{toPhraseCase(post.data.title)}</h3>
                   <p class="font-body-lg text-body-lg text-on-surface-variant">{config.description}</p>
                 </div>
                 <div class="w-full md:w-48 aspect-video bg-surface-container-highest border border-outline-variant flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-700">
@@ -596,7 +596,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
             return (
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-6 bg-surface-container-high border border-outline-variant p-12 flex flex-col md:flex-row items-center justify-between gap-12 group hover:border-white transition-colors duration-300">
                 <div class="max-w-xl">
-                  <h3 class="font-display text-headline-lg text-primary mb-6 italic">{toPhraseCase(post.data.title)}</h3>
+                  <h3 class="font-headline-md text-headline-md text-primary mb-6">{toPhraseCase(post.data.title)}</h3>
                   <p class="font-body-lg text-body-lg text-on-surface-variant">{config.description}</p>
                 </div>
                 <div class="w-full md:w-48 aspect-video bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 border border-outline-variant" style={`background-image: url('${config.image}');`}></div>
