@@ -2,6 +2,7 @@
 
 title: "WHAT IS THE UTILITY OF LEARNING HTML?"
 lens: "builder_lens"
+image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCNWsRtL31KvRmnCaczzSpovZf6gL2ZBRty6IB8kNqtHKO7EUHsU2ITSub61rb_yX84YF2ScKz2wRovzI4kVbEzjKnOQEMVlTlHy3cgYmt9b6-59YM6wPt55payy_QYS3DMwRV_DT9yz_GTxLRF1XRxUKcVe4IKne7pmCyyHN7oofSw9YPotglYHb2653cdZFxDs2KX8qrz3AJTK4MLbinRH9K2-i_RnBUBPntL_Ruurlqtn2KHfCqI_yWYpwflcXhykiQofUMs-o4_"
 language: "en"
 pillar: "Technical Alchemy (The Builder Lens)"
 originalLanguage: "Spanish"
@@ -16,5 +17,37 @@ Professionals from various fields can gain a competitive advantage by mastering 
 *   **Graphic Designers:** To understand the feasibility of their web views and speak the same language as the technical team.
 *   **Researchers and Virtual Assistants:** To handle data and publications with autonomy.
 
-## 2. The Added Value of Technical Knowledge
-In my case, complementing visual communication with web page design allowed me to better understand the medium. HTML allows you to give your work added value due to the importance of the internet in daily life. In the near future, mastery of this language will be an indispensable requirement for any digital work.
+There are common mental barriers, such as thinking that learning something new is only for certain ages or that, because it is technology, it requires an overwhelming amount of effort and dedication. Explained simply, HTML consists of a set of specific tags that allow us to organize and give hierarchy to any information to be published on the web.
+
+Some of the most common elements of the language allow us to organize:
+*   Titles or headings
+*   Paragraphs
+*   Lists
+*   Tables
+*   Images
+*   Videos
+*   Audio
+
+![HTML structure of basic elements in code](https://res.cloudinary.com/flaex/image/upload/v1679526275/strapi-v4/cual_es_la_utilidad_de_html_codigo_a5641bb382.webp)
+*HTML structure of basic elements in code*
+
+![HTML view interpreted by a web browser](https://res.cloudinary.com/flaex/image/upload/v1679526285/strapi-v4/cual_es_la_utilidad_de_html_render_b7e689b5de.webp?updated_at=2023-03-22T23:04:46.494Z)
+*HTML view interpreted by a web browser*
+
+## 2. The Programming Debate
+Interestingly, within the programming community, there is an ongoing debate about whether HTML is truly a programming language, since it cannot perform the logic tasks that other languages typically handle. Regardless of the outcome of this debate, knowing and using HTML has become essential knowledge, providing professional added value because of how central the internet is to daily life.
+
+## 3. The Value of Technical Knowledge in Production
+In my case, complementing visual communication with web page design allowed me to better understand the digital medium and know what is feasible when designing user interfaces. This enables me to collaborate effectively in development projects, designing and implementing interfaces directly into web pages.
+
+In the near future, this language will become an indispensable requirement for content creation using digital tools. Fortunately, there is a wealth of guides and courses to start learning HTML, expand our skills, and increase our professional opportunities.
+
+## 4. Resources and Further Reading
+
+### You May Also Like:
+*   [What is HTML? The Structure of Information](/blog/en/what-is-html-the-structure-of-information)
+
+### Useful Resources to Learn HTML:
+*   [HTML Course for Beginners (Video)](https://www.youtube.com/watch?v=rbuYtrNUxg4/)
+*   [MDN Web Docs: HTML Basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics)
+*   [Udemy: Learn HTML5 from Scratch to Expert](https://www.udemy.com/course/aprende-html5-de-cero-a-experto/)

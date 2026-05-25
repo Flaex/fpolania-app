@@ -2,6 +2,7 @@
 
 title: "GRAPHIC DESIGN AND WEB PROGRAMMING: THE STRATEGIC TRANSLATION"
 lens: "builder_lens"
+image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCNWsRtL31KvRmnCaczzSpovZf6gL2ZBRty6IB8kNqtHKO7EUHsU2ITSub61rb_yX84YF2ScKz2wRovzI4kVbEzjKnOQEMVlTlHy3cgYmt9b6-59YM6wPt55payy_QYS3DMwRV_DT9yz_GTxLRF1XRxUKcVe4IKne7pmCyyHN7oofSw9YPotglYHb2653cdZFxDs2KX8qrz3AJTK4MLbinRH9K2-i_RnBUBPntL_Ruurlqtn2KHfCqI_yWYpwflcXhykiQofUMs-o4_"
 language: "en"
 pillar: "Technical Alchemy (The Builder Lens)"
 originalLanguage: "Spanish"
@@ -17,14 +18,18 @@ Approaching web programming from a graphic designer's point of view is a challen
 This fundamental difference is what makes web design a systems architecture and not just an image composition. As an architect, my role is to ensure that this translation is fluid and de-risks the technical implementation.
 
 ## 2. The Purpose of this Space
-This blog aims to create content in Spanish that serves as a bridge between design and programming. It is aimed at designers, programmers, and enthusiasts who seek to learn the fundamentals without losing visual excellence. The central themes are:
+This blog aims to create content that serves as a bridge between design and programming. It is aimed at designers, programmers, and enthusiasts who seek to learn the fundamentals of web design and development without losing visual excellence. The central themes are:
 
 ### I. Web Design and Programming
-*   **Graphic Design:** Fundamentals, Logos, Prints, and Typography.
+*   **Graphic Design:** Fundamentals, [Logos](/blog/en/everything-is-design-the-philosophy-of-utility), print media, and [typography](/blog/en/what-is-typography-the-dna-of-information).
 *   **Web Design:** Types of sites (static, web apps, CMS) and tools.
-*   **Web Programming:** HTML, CSS, JS, and Front-end and Back-end tools.
+*   **Web Programming:** [HTML](/blog/en/what-is-html-the-structure-of-information), CSS, JS, and front-end and back-end tools.
 
 ### II. Technical Guides (The Builder's Toolset)
 *   **Creative Stack:** Illustrator, Photoshop, Animate, Gimp, Inkscape, FontBase.
 *   **Dev Stack:** Visual Studio Code, GitHub, Chrome Dev Tools.
 *   **Modern Frameworks:** Vue, React, Gatsby, Nuxt, Astro, Tailwind, and WindiCSS.
+
+### III. Reviews
+*   Graphic design, web development, and information technologies.
+*   Video games, series, and movies.

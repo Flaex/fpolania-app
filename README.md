@@ -84,6 +84,40 @@ This repository is the **Digital Product HQ** hosting the code, styling, and pro
   - *The Visual Lens* (Design/Typography/Identity)
   - *The Builder Lens* (Web/HTML/CSS/Execution)
 
+#### English Article Directory
+| # | Title (English) | Slug | Language | Lens |
+| :- | :--- | :--- | :--- | :--- |
+| 1 | **Everything is Design: The Philosophy of Utility** | `everything-is-design-the-philosophy-of-utility` | English | `ceo_lens` |
+| 2 | **Graphic Design and Branding: The Authority System** | `graphic-design-and-branding-the-authority-system` | English | `ceo_lens` |
+| 3 | **The Logo and the Company: The Investment in Trust** | `the-logo-and-the-company-the-investment-in-trust` | English | `ceo_lens` |
+| 4 | **The Value of Graphic Design: A Strategic Perspective** | `the-value-of-graphic-design-a-strategic-perspective` | English | `ceo_lens` |
+| 5 | **Illustrator Basics: Precision Tools** | `illustrator-basics-precision-tools` | English | `visual_lens` |
+| 6 | **The Logo Variants: Strategic Adaptability** | `the-logo-variants-strategic-adaptability` | English | `visual_lens` |
+| 7 | **Typographic Classification: The Geometry of Tone** | `typographic-classification-the-geometry-of-tone` | English | `visual_lens` |
+| 8 | **Visual Communication or Graphic Design** | `visual-communication-or-graphic-design` | English | `visual_lens` |
+| 9 | **What is Typography: The DNA of Information** | `what-is-typography-the-dna-of-information` | English | `visual_lens` |
+| 10 | **Graphic Design and Web Programming: The Strategic Translation** | `graphic-design-and-web-programming-the-strategic-translation` | English | `builder_lens` |
+| 11 | **What is CSS: The Visual Style System** | `what-is-css-the-visual-style-system` | English | `builder_lens` |
+| 12 | **What is HTML: The Structure of Information** | `what-is-html-the-structure-of-information` | English | `builder_lens` |
+| 13 | **What is the Utility of Learning HTML** | `what-is-the-utility-of-learning-html` | English | `builder_lens` |
+
+#### Spanish Article Directory
+| # | Title (Spanish) | Slug | Language | Lens |
+| :- | :--- | :--- | :--- | :--- |
+| 1 | **Todo es diseño: La filosofía de la utilidad** | `todo-es-diseno-la-filosofia-de-la-utilidad` | Spanish | `ceo_lens` |
+| 2 | **Diseño Gráfico y Branding: El Sistema de Autoridad** | `diseno-grafico-y-branding-el-sistema-de-autoridad` | Spanish | `ceo_lens` |
+| 3 | **El logotipo y la empresa: La inversión en confianza** | `el-logotipo-y-la-empresa-la-inversion-en-confianza` | Spanish | `ceo_lens` |
+| 4 | **El valor del diseño gráfico** | `el-valor-del-diseno-grafico` | Spanish | `ceo_lens` |
+| 5 | **Illustrator Básico: Herramientas de Precisión** | `illustrator-basico-herramientas-de-precision` | Spanish | `visual_lens` |
+| 6 | **Las variantes del logotipo: Adaptabilidad Estratégica** | `las-variantes-del-logotipo-adaptabilidad-estrategica` | Spanish | `visual_lens` |
+| 7 | **Clasificación Tipográfica: La Geometría del Tono** | `clasificacion-tipografica-la-geometria-del-tono` | Spanish | `visual_lens` |
+| 8 | **Comunicación Visual o Diseño Gráfico** | `comunicacion-visual-o-diseno-grafico` | Spanish | `visual_lens` |
+| 9 | **¿Qué es la tipografía?: El ADN de la civilización** | `que-es-la-tipografia-el-adn-de-la-civilizacion` | Spanish | `visual_lens` |
+| 10 | **Diseño Gráfico y Programación Web: La Traducción Estratégica** | `diseno-grafico-y-programacion-web-la-traduccion-estrategica` | Spanish | `builder_lens` |
+| 11 | **¿Qué es CSS?: El sistema de estilo visual** | `que-es-css-el-sistema-de-estilo-visual` | Spanish | `builder_lens` |
+| 12 | **¿Qué es HTML?: La estructura de la información** | `que-es-html-la-estructura-de-la-informacion` | Spanish | `builder_lens` |
+| 13 | **¿Cuál es la utilidad de aprender HTML?** | `cual-es-la-utilidad-de-aprender-html` | Spanish | `builder_lens` |
+
 ### 5. Architectural Blueprints & Workflows
 - Drafted [brand_foundation.md](file:///Users/fpolania/projects/fpolania-app/web_app_blueprint/brand_foundation.md) to define visual colors, fonts, and logos.
 - Documented [bento_grid_structure.md](file:///Users/fpolania/projects/fpolania-app/web_app_blueprint/bento_grid_structure.md) listing the exact layout grids for the homepage, portfolio pages, sitemaps, and categorical lenses.

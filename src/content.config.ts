@@ -9,6 +9,7 @@ const blog = defineCollection({
         language: z.string(),
         pillar: z.string().optional(),
         originalLanguage: z.string().optional(),
+        image: z.string().optional(),
     })
 });
 

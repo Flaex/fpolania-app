@@ -147,7 +147,6 @@ const getCardConfig = (postSlug: string) => {
     'everything-is-design-the-philosophy-of-utility': {
       type: 'large-bg-split',
       tag: lang === 'en' ? 'Business Strategy' : 'Estrategia de Negocios',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfhcbYM5qiXlLof1n0sO4dLE_AS5id940UYNrPE_WyaoRxPt-8ZWum_5A5z_Sz7uqaahHXwGWLFV7Td9rwFplf-i3QKiPEpH_M_xdH6tfK_452P3OGxYSjJI4KQ0MuhdLiT0vffaQ-RQ9HMBVkGmjzMMN688p-9kHaFL7gNGGJYqos47k8qF8C1dSMHYps9KKLJ9FAIMR7kI9L-FktSxt5cDKu58baZA7yinxYUk7oaB8G4Ri7aBQKgkrezDd6bNw-sxySm5yg-bso',
     },
     'the-logo-and-the-company-the-investment-in-trust': {
       type: 'stat-small',
@@ -167,7 +166,6 @@ const getCardConfig = (postSlug: string) => {
     // Lens 02
     'what-is-typography-the-dna-of-information': {
       type: 'overlay-bg',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAe8tzPO0Df4dIf-YHdLYynUFhhiY_pFbukGsD5ykeH3YzD7tab_sz97jZsYfyJu6RPFE_E0yLkCQATHRkZGgsDwmrmaNwDccVqewSR86GTyCQKJE32vg7mAucrk77IKEvBTVRnsnWXkGrm6D_XuR5UvfxS13a1lPY_oA-JwEwmboVdTi-eIk4kaiK1HJVVhNxBoHKjWy1XUfmT8E_2NyMEZSS4qjEiSC2XrCMObTHiwv7NWWtICe0JYNMH3Bnd0EF2jAQIUqQRF2DH',
     },
     'typographic-classification-the-geometry-of-tone': {
       type: 'taxonomy-card',
@@ -223,7 +221,6 @@ const getCardConfig = (postSlug: string) => {
       description: lang === 'en' 
         ? 'Explore the methodology of code-driven design. Where aesthetics meet algorithmic precision.' 
         : 'Explore la metodología del diseño orientado por código. Donde la estética se encuentra con la precisión algorítmica.',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNWsRtL31KvRmnCaczzSpovZf6gL2ZBRty6IB8kNqtHKO7EUHsU2ITSub61rb_yX84YF2ScKz2wRovzI4kVbEzjKnOQEMVlTlHy3cgYmt9b6-59YM6wPt55payy_QYS3DMwRV_DT9yz_GTxLRF1XRxUKcVe4IKne7pmCyyHN7oofSw9YPotglYHb2653cdZFxDs2KX8qrz3AJTK4MLbinRH9K2-i_RnBUBPntL_Ruurlqtn2KHfCqI_yWYpwflcXhykiQofUMs-o4_',
     },
   };
 
@@ -464,7 +461,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                     {lang === 'en' ? 'Read Article' : 'Leer Artículo'} <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
                   </div>
                 </div>
-                <div class="w-full md:w-1/2 min-h-[240px] bg-cover bg-center grayscale contrast-125 group-hover:scale-105 transition-transform duration-700" style={`background-image: url('${config.image}');`}></div>
+                <div class="w-full md:w-1/2 min-h-[240px] bg-cover bg-center grayscale contrast-125 group-hover:scale-105 transition-transform duration-700" style={`background-image: url('${post.data.image}');`}></div>
               </a>
             );
           } else {
@@ -501,7 +498,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
           if (config.type === 'overlay-bg') {
             return (
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-6 bg-surface-container border border-outline-variant aspect-square md:aspect-auto p-8 flex flex-col justify-end relative mt-12 overflow-hidden hover:border-white transition-colors duration-300 group min-h-[320px]">
-                <div class="absolute inset-0 bg-cover bg-center opacity-30 grayscale group-hover:scale-105 transition-transform duration-700" style={`background-image: url('${config.image}');`}></div>
+                <div class="absolute inset-0 bg-cover bg-center opacity-30 grayscale group-hover:scale-105 transition-transform duration-700" style={`background-image: url('${post.data.image}');`}></div>
                 <div class="relative z-10">
                   <h3 class="font-headline-md text-headline-md text-primary">{toPhraseCase(post.data.title)}</h3>
                   <span class="mt-4 font-label-technical text-label-technical text-primary flex items-center gap-2 uppercase tracking-widest">{lang === 'en' ? 'Learn More' : 'Aprender Más'} <span class="material-symbols-outlined text-[14px]">north_east</span></span>
@@ -599,7 +596,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                   <h3 class="font-headline-md text-headline-md text-primary mb-6">{toPhraseCase(post.data.title)}</h3>
                   <p class="font-body-lg text-body-lg text-on-surface-variant">{config.description}</p>
                 </div>
-                <div class="w-full md:w-48 aspect-video bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 border border-outline-variant" style={`background-image: url('${config.image}');`}></div>
+                <div class="w-full md:w-48 aspect-video bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 border border-outline-variant" style={`background-image: url('${post.data.image}');`}></div>
               </a>
             );
           }

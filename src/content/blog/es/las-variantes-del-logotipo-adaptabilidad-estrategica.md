@@ -2,6 +2,7 @@
 
 title: "LAS VARIANTES DEL LOGOTIPO: ADAPTABILIDAD ESTRATÉGICA"
 lens: "visual_lens"
+image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAe8tzPO0Df4dIf-YHdLYynUFhhiY_pFbukGsD5ykeH3YzD7tab_sz97jZsYfyJu6RPFE_E0yLkCQATHRkZGgsDwmrmaNwDccVqewSR86GTyCQKJE32vg7mAucrk77IKEvBTVRnsnWXkGrm6D_XuR5UvfxS13a1lPY_oA-JwEwmboVdTi-eIk4kaiK1HJVVhNxBoHKjWy1XUfmT8E_2NyMEZSS4qjEiSC2XrCMObTHiwv7NWWtICe0JYNMH3Bnd0EF2jAQIUqQRF2DH"
 language: "es"
 pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"
@@ -10,12 +11,50 @@ originalLanguage: "Spanish"
 ## La Identidad Visual como Sistema Líquido
 En la era digital, un logotipo estático es un activo limitado. Como fundador, veo las variantes del logo como la **infraestructura líquida** de la marca, permitiendo que la identidad sea coherente en cualquier soporte, desde un favicon de 16px hasta una valla publicitaria.
 
-## 1. El Diccionario de la Identidad Visual
-Es vital conocer las diferentes formas que puede tomar la marca para garantizar su versatilidad:
-*   **Logotipo:** Compuesto exclusivamente por palabras o tipografía. Es la firma textual de la autoridad.
-*   **Isotipo:** La parte simbólica o icónica (el "dibujo"). Es el badge que se reconoce instantáneamente sin necesidad de texto.
-*   **Imagotipo:** La combinación equilibrada de símbolo y texto. Ambos pueden funcionar por separado sin perder su esencia.
-*   **Isologo:** La unión indivisible de texto y símbolo. Es un sello de calidad que no permite fragmentación.
+## ¿Logo o logotipo?
 
-## 2. La Importancia de las Variantes
-Tener variantes no es un capricho estético; es una necesidad operativa. Cada soporte (redes sociales, perfiles, aplicaciones, impresos) exige una configuración distinta. Diseñar pensando en estas variantes desde el inicio es lo que permite que una marca escale sin que su imagen se degrade.
+El origen de la palabra [logos](https://www.britannica.com/topic/logos) proviene del griego y significa razón o plan. En la filosofía griega antigua y la teología cristiana primitiva, la razón divina implícita en el cosmos, ordenándolo y dándole forma y significado.
+
+En el diseño gráfico "logo" es utilizada para referirnos al identificador visual o [logotipo](https://es.wikipedia.org/wiki/Logotipo); esta definido como como el visual que identifica a una actividad comercial. Cada compañía tiene una serie de rasgos que la hacen diferente a las demás, por esto [la importancia del logotipo](https://flaex.netlify.app/blog/importancia-logotipo-emprendimiento) se hace más evidente y saber las posibles variantes que existen para el diseño de nuestra identidad nos permitirá transmitir de forma clara sus valores.
+
+Desde mucho antes de los inicios del diseño gráfico como profesión, los seres humanos hemos venido desarrollando un lenguaje visual que nos permite relacionar las formas y figuras  para representan una idea, un evento o una acción entre muchas otras cosas. Con la formalización del diseño en la academia, se han generado convenciones para el diseño de logotipos. A continuación se presentan las más utilizadas:
+
+## Emblemas
+
+Llamados también símbolos de identificación, son marcas sin tipografía con un nivel de complejidad sencillo y de rápido impacto:
+
+![Logo de Nike Air y la Cruz roja](https://res.cloudinary.com/flaex/image/upload/v1675005869/strapi-v4/flaex_logotipo_variantes_emblema_bc5392917e.webp)
+*Logo de Nike Air y la Cruz Roja*
+
+## Monogramas
+
+Están compuestos por las iniciales del nombre de la compañía cuando este es muy largo como para utilizarlo completo. La tipografía es tratada para adquirir cualidades de expresión próximas al símbolo:
+
+![Logotipos de IBM y FIFA](https://res.cloudinary.com/flaex/image/upload/v1675005869/strapi-v4/flaex_logotipo_variantes_monogramas_7f7be021a7.webp)
+*Logos de Industrial Bussiness Machines y la Fédération Internationale de Football Association*
+
+## Logos
+
+Esta variante, se caracteriza por estar formada únicamente por el nombre de la actividad comercial. Los logos o logotipos se refieren al diseño a partir del uso exclusivo de tipografía; no a la identidad gráfica en sí, como se piensa comúnmente:
+
+![Logos de Alphabet y Sony](https://res.cloudinary.com/flaex/image/upload/v1675005869/strapi-v4/flaex_logotipo_variantes_logo_3febd75ab4.webp)
+*Logos de Alphabet y Sony*
+
+## Marca combinada
+
+Tal y como sugiere el nombre, son combinaciones realizadas entre emblemas, logotipos o monogramas. Al tratarse de una composición con más de un elemento, el impacto visual que generan es mucho mayor.
+
+![Logotipos de Red Hat y Microsoft](https://res.cloudinary.com/flaex/image/upload/v1675005869/strapi-v4/flaex_logotipo_variantes_marca_combinada_b4a746e0b5.webp)
+*Logos de Red Hat y Microsoft*
+
+## ¿Cuál variante de identidad gráfica elegir?
+
+La elección del tipo de identidad visual no depende de alguna regla existente o  norma preestablecida. Un factor que puede orientar para tomar esta decisión es el nombre de la marca corporativa:
+
+* Si está compuesto por más de 2 palabras, un *monograma* podría ser una buena alternativa. Las siglas pueden ser más fáciles de recordar que un nombre largo.
+
+* Si está constituido menos de 2 palabras (nombres propios, entre otros casos) un *logo* podría representar gráficamente de manera eficaz.
+
+* Si se desea una identidad visual de características globales, una *marca combinada* brinda la posibilidad de acentuar el sistema de diseño al emplear de igual manera sus elementos por separado.
+
+Indistintamente de la manera que seleccionemos para el diseño del logotipo, hay que tener presente que el nombre del emprendimiento juega un papel fundamental porque nos permitirá decidir cual variante es la que mejor se adapta para proyectar de manera efectiva los valores de la empresa.

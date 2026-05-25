@@ -50,8 +50,8 @@ const alternatePath = getAlternatePath(Astro.url.pathname, alternateLang);
 		</script>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<link rel="alternate" hreflang={lang} href={Astro.url.pathname} />
-		<link rel="alternate" hreflang={alternateLang} href={alternatePath} />
+		<link rel="alternate" hreflang={lang} href={`https://flaex.design${Astro.url.pathname}`} />
+		<link rel="alternate" hreflang={alternateLang} href={`https://flaex.design${alternatePath}`} />
 
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">

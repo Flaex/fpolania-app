@@ -2,6 +2,7 @@
 
 title: "EL VALOR DEL DISEÑO GRÁFICO"
 lens: "ceo_lens"
+image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDfhcbYM5qiXlLof1n0sO4dLE_AS5id940UYNrPE_WyaoRxPt-8ZWum_5A5z_Sz7uqaahHXwGWLFV7Td9rwFplf-i3QKiPEpH_M_xdH6tfK_452P3OGxYSjJI4KQ0MuhdLiT0vffaQ-RQ9HMBVkGmjzMMN688p-9kHaFL7gNGGJYqos47k8qF8C1dSMHYps9KKLJ9FAIMR7kI9L-FktSxt5cDKu58baZA7yinxYUk7oaB8G4Ri7aBQKgkrezDd6bNw-sxySm5yg-bso"
 language: "es"
 pillar: "Strategic Foundership (The CEO Lens)"
 originalLanguage: "Spanish"
@@ -10,46 +11,56 @@ originalLanguage: "Spanish"
 ## Introducción: El Diseño en la Era de la Automatización
 Como Estratega de producto y Fundador de Novanet Studio, he sido testigo de la transformación radical de nuestra industria. El diseño gráfico ha pasado de ser un oficio manual y tedioso a una disciplina potenciada por computadoras. Sin embargo, esta agilidad técnica ha traído consigo una confusión peligrosa: confundir la velocidad con el **valor**. En este análisis, exploraremos por qué el diseño, cuando se entiende como una inversión estratégica, es uno de los activos más valiosos de cualquier empresa.
 
-## 1. ¿Qué es el Valor? (La Perspectiva Económica)
-Para hablar de diseño, primero debemos hablar de economía. El valor, según lo define Carl Menger en su obra fundamental *Principios de Economía Política*, no es algo intrínseco al objeto, sino:
+## ¿Que es el valor?
 
-> "La significación que unos concretos bienes o cantidades parciales de bienes adquieren para nosotros, cuando somos conscientes de que dependemos de ellos para la satisfacción de nuestras necesidades."
+![Carl Menger y portada libro Principios de economía política](https://res.cloudinary.com/flaex/image/upload/v1674939516/strapi-v4/flaex_valor_diseno_grafico_carl_menger_7309c60e3f.webp)
+*Carl Menger y portada libro Principios de economía política*
 
-In más palabras, el valor es el significado que tienen los bienes específicos cuando sabemos que satisfacen nuestras necesidades. 
+El valor según lo define [Carl Menger](https://es.wikipedia.org/wiki/Carl_Menger) en el libro [Principios de Economía Política](https://www.amazon.com/Principios-Economia-Politica-Carl-Menger/dp/8472098095), "es la significación que unos concretos bienes o cantidades parciales de bienes adquieren para nosotros, cuando somos conscientes de que dependemos de ellos para la satisfacción de nuestras necesidades." Dicho de otra manera y tomándome la libertad de parafrasear la cita de Menger, podríamos decir que *el valor es el significado que tienen los bienes específicos cuando sabemos que satisfacen nuestras necesidades*.
 
-### La Ley de la Escasez y la Utilidad
-El valor de un bien aumenta cuando somos conscientes de su utilidad y sus cantidades disminuyen. Tomemos el ejemplo del agua:
-*   **Agua Potable:** Es esencial para nuestra supervivencia. Aunque el 71% de la superficie del planeta está cubierta por agua, solo el 4.5% es dulce (y gran parte es inaccesible en glaciares). Su escasez relativa, sumada a su utilidad vital, hace que su valoración sea altísima.
-*   **Agua Salada:** Representa el 96.5% del total. Aunque es abundante, su utilidad directa para las necesidades humanas básicas es mucho más reducida, por lo que su valoración individual es menor.
+En este mismo orden de ideas, sería válido añadir que el valor de un bien aumenta cuando después que somos conscientes de que satisface una necesidad concreta y sus cantidades disminuyen. Un ejemplo que nos puede servir para ilustrar este concepto, lo podemos encontrar en la valoración que los humanos hacemos del agua potable; es de conocimiento general la gran importancia y utilidad que esta tiene en varios aspectos de nuestra vida diaria, básicamente es esencial para nuestra supervivencia.
 
-En el branding, los "gráficos" son abundantes (agua salada), pero la **estrategia que resuelve necesidades de negocio** es el recurso escaso (agua potable). Mi rol como arquitecto es asegurar que su inversión se dirija a este último.
+En contraste, el agua salada por su misma naturaleza no satisface tantas necesidades por lo que su utilidad es mucho más reducida. Para ampliar la idea del valor con las cantidades disponibles de un bien, recordemos que el [71% de la superficie del planeta](https://www.usgs.gov/special-topics/water-science-school/science/how-much-water-there-earth) esta cubierta por agua. De ese total, el 96.5% es agua salada disponible en océanos, mares y bahías, el 4.5% restante se encuentra distribuido en capas de hielo, glaciares, nieve permanente, lagos y ríos. Honestamente debo decir que ahora con el conocimiento de la cantidad de agua potable en el planeta y que gran parte está congelada y es inaccesible, mi valoración del agua dulce ha aumentado bastante.
 
-## 2. El Acceso al Diseño en la Actualidad
-Los últimos 30 años han democratizado el aspecto operativo del diseño. La inmediatez de la era digital ha puesto a disposición de cualquier persona herramientas que permiten:
-*   Realizar fotomontajes y edición general de imágenes con precisión quirúrgica.
-*   Hacer ilustraciones que emulan técnicas tradicionales como la acuarela, el óleo o el pastel.
-*   Diseñar familias tipográficas enteras y maquetar piezas impresas complejas.
+## El acceso al diseño en la actualidad
 
-Esta democratización es positiva, pero ha creado una brecha entre quienes *operan* un software y quienes *diseñan* una solución.
+El uso de las computadoras ha ido en aumento de forma radical los últimos 30 años, los procesos manuales que formaron parte de la enseñanza en las primeras escuelas de diseño se han transformado y adaptado a la inmediatez de la era digital. Esto ha colocado a disposición de muchas personas programas y herramientas de computación que nos permiten, entre otras actividades:
 
-## 3. Los Elementos del Diseño: La Ciencia del Orden
-La habilidad para ejecutar en Photoshop o Illustrator no convierte automáticamente a alguien en diseñador. El diseño real se rige por los elementos que Wicius Wong menciona en sus *Fundamentos del Diseño*:
+* Realizar fotomontaje y edición general de imágenes.
 
-*   **Elementos Conceptuales:** El punto, la línea y el plano. Son la intención pura antes de hacerse visibles.
-*   **Elementos Visuales:** Forma, medida, color y textura. La manifestación concreta de la idea.
-*   **Elementos de Relación:** Dirección, posición, espacio y gravedad. Cómo las formas interactúan entre sí.
-*   **Elementos Prácticos:** Representación, significado y función. El propósito final que sirve al negocio.
+* Hacer ilustraciones con la capacidad de emular los materiales tradicionales como la acuarela, óleo o pastel.
 
-Estos elementos están vinculados sistemáticamente: los conceptuales dan paso a los visuales, estos a los de relación y finalmente a los prácticos. Abordar el diseño desde este pensamiento sistemático nos permite trabajar con **objetividad máxima y ambigüedad mínima**.
+* Diseñar tipos y familias tipográficas enteras.
 
-## 4. ¿Operar o Diseñar? (De-risking the Strategy)
-Es vital distinguir entre la operación y el diseño estratégico:
-*   **Un Operador de Diseño:** Se integra en flujos de trabajo donde los sistemas ya están afianzados. Su valor es la ejecución impecable de lo ya establecido.
-*   **Un Diseñador Gráfico (Arquitecto):** Es consciente de los elementos conceptuales y los complementa con el conocimiento técnico. Es quien construye los cimientos de la autoridad visual.
+* Diseñar libros y otra gran cantidad de piezas impresas.
 
-## 5. Un Requerimiento para Cada Etapa
-Cada empresa realiza una valoración distinta según sus circunstancias:
-1.  **Mantenimiento:** Si su sistema de diseño y branding tienen bases sólidas, un operador puede satisfacer sus requerimientos con eficiencia.
-2.  **Construcción:** Si necesita diseñar una identidad visual nueva, realizar un análisis de branding a un logotipo existente o preparar la marca para aplicaciones futuras complejas, un diseñador gráfico es el arquitecto indicado.
+## Los elementos del diseño
 
-Identificar la naturaleza de sus actividades es el primer paso para asignar el talento humano adecuado y maximizar el valor de su inversión.
+El aspecto operativo del diseño, es decir, la habilidad para ejecutar con los mencionados programas y herramientas de diseño digitales; no convierten automáticamente a una persona en diseñador gráfico. Existen otros conceptos de mayor peso que define otro aspecto importante: Los elementos del diseño tal y como los menciona [Wicius Wong](https://ocula.com/artists/wucius-wong) en el libro [Fundamentos del diseño](https://www.amazon.com/Fundamentos-Diseno-Spanish-Wucius-Womg/dp/8425216435):
+
+* Elementos conceptuales.
+
+* Elementos visuales.
+
+* Elementos de relación.
+
+* Elementos prácticos.
+
+Podemos afirmar que dichos elementos están vinculados de tal manera que la existencia del primer grupo da paso al segundo, éste al tercero y así sucesivamente: Los elementos conceptuales como el punto, la línea y el plano dan paso a los elementos visuales como lo son la forma, medida, color y textura que, a su vez, hacen posible la composición de figuras concretas como el cuadrado, el triángulo y el círculo. Estas figuras geométricas hacen posible establecer entre ellas los elementos de relación como la dirección, posición, espacio y gravedad. Finalmente los elementos prácticos vienen dados por la representación, significado y función que tienen las figuras de un diseño.
+
+![Wicius Wong y portada del libro Fundamentos del diseño](https://res.cloudinary.com/flaex/image/upload/v1674939516/strapi-v4/flaex_valor_diseno_grafico_wicius_wong_d65085e28f.webp)
+*Wicius Wong y portada del libro Fundamentos del diseño*
+
+A pesar de que estás interpretaciones, como lo señala el mismo autor, parecen rígidas y simplificadas porque se abordan desde el pensamiento sistemático; son útiles para enfrentar los principios del diseño gráfico en términos precisos y concretos, con objetividad máxima y una ambigüedad mínima.
+
+## ¿Operar o diseñar?
+
+Aunque el aspecto operativo y la aplicación de los elementos conceptuales pudieran complementarse y formar parte de las habilidades de un diseñador, es una realidad que muchas personas deciden adentrarse en la práctica sin comprender los elementos del diseño gráfico. A pesar de esto, no es impedimento para cualquiera que tenga la disposición, trabaje con diseño conociendo dicho aspecto operativo, lo importante es conocer la capacidad de actuar consecuentemente con las actividades a llevar a cabo.
+
+Un operador de diseño puede integrarse en un flujo de trabajo donde las piezas a realizar y los sistemas de diseño estén lo suficientemente afianzados. Un diseñador gráfico es consciente de los elementos conceptuales y los complementa con el conocimiento técnico del software y herramientas hechas para este fin.
+
+## Un requerimiento para cada persona
+
+Cada persona realiza un valoración distinta del diseño gráfico, las necesidades de una empresa o individuo dependerán de las circunstancias en las que se desenvuelve y las actividades con las que se relacione. En la actualidad existen una gran cantidad de personas ofreciendo los servicios de diseño gráfico, las plataformas de trabajo remoto y las redes sociales han elevado este número dramáticamente; algunas personas necesitarán los servicios de un operador y otras los de un diseñador gráfico.
+
+Identificar el tipo de requerimiento de diseño y la naturaleza de las actividades a realizar, ayudaría a darnos una idea de cuál tipo de talento humano es que el necesitamos: Si el sistema de diseño y el branding en general tienen bases sólidas y están bien establecido un operador de diseño podría satisfacer dichos requerimientos. En el caso de ser necesario diseñar una identidad visual nueva, hacer un análisis de branding a un logotipo existente y hacer mejoras de cara a futuras aplicaciones de marca, un diseñador gráfico sería el indicado para esta tarea.

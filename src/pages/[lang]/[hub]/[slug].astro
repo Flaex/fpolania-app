@@ -43,89 +43,76 @@ const wordCount = post.body ? post.body.split(/\s+/).length : 0;
 const readTime = Math.ceil(wordCount / 200) || 5;
 
 // Article metadata config mapping in both English & Spanish dynamically
-const articleMetadata: Record<string, { index: string, date: string, category: string, image: string }> = {
+const articleMetadata: Record<string, { index: string, date: string, category: string }> = {
   'everything-is-design-the-philosophy-of-utility': {
     index: '01',
     date: lang === 'en' ? 'May 10, 2026' : '10 de mayo de 2026',
-    category: lang === 'en' ? 'Strategy / Business' : 'Estrategia / Negocios',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfhcbYM5qiXlLof1n0sO4dLE_AS5id940UYNrPE_WyaoRxPt-8ZWum_5A5z_Sz7uqaahHXwGWLFV7Td9rwFplf-i3QKiPEpH_M_xdH6tfK_452P3OGxYSjJI4KQ0MuhdLiT0vffaQ-RQ9HMBVkGmjzMMN688p-9kHaFL7gNGGJYqos47k8qF8C1dSMHYps9KKLJ9FAIMR7kI9L-FktSxt5cDKu58baZA7yinxYUk7oaB8G4Ri7aBQKgkrezDd6bNw-sxySm5yg-bso'
+    category: lang === 'en' ? 'Strategy / Business' : 'Estrategia / Negocios'
   },
   'the-logo-and-the-company-the-investment-in-trust': {
     index: '02',
     date: lang === 'en' ? 'May 12, 2026' : '12 de mayo de 2026',
-    category: lang === 'en' ? 'Strategy / ROI' : 'Estrategia / ROI',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfhcbYM5qiXlLof1n0sO4dLE_AS5id940UYNrPE_WyaoRxPt-8ZWum_5A5z_Sz7uqaahHXwGWLFV7Td9rwFplf-i3QKiPEpH_M_xdH6tfK_452P3OGxYSjJI4KQ0MuhdLiT0vffaQ-RQ9HMBVkGmjzMMN688p-9kHaFL7gNGGJYqos47k8qF8C1dSMHYps9KKLJ9FAIMR7kI9L-FktSxt5cDKu58baZA7yinxYUk7oaB8G4Ri7aBQKgkrezDd6bNw-sxySm5yg-bso'
+    category: lang === 'en' ? 'Strategy / ROI' : 'Estrategia / ROI'
   },
   'the-value-of-graphic-design-a-strategic-perspective': {
     index: '03',
     date: lang === 'en' ? 'May 15, 2026' : '15 de mayo de 2026',
-    category: lang === 'en' ? 'Strategy / Economics' : 'Estrategia / Economía',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfhcbYM5qiXlLof1n0sO4dLE_AS5id940UYNrPE_WyaoRxPt-8ZWum_5A5z_Sz7uqaahHXwGWLFV7Td9rwFplf-i3QKiPEpH_M_xdH6tfK_452P3OGxYSjJI4KQ0MuhdLiT0vffaQ-RQ9HMBVkGmjzMMN688p-9kHaFL7gNGGJYqos47k8qF8C1dSMHYps9KKLJ9FAIMR7kI9L-FktSxt5cDKu58baZA7yinxYUk7oaB8G4Ri7aBQKgkrezDd6bNw-sxySm5yg-bso'
+    category: lang === 'en' ? 'Strategy / Economics' : 'Estrategia / Economía'
   },
   'graphic-design-and-branding-the-authority-system': {
     index: '04',
     date: lang === 'en' ? 'May 18, 2026' : '18 de mayo de 2026',
-    category: lang === 'en' ? 'Strategy / Brand' : 'Estrategia / Marca',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfhcbYM5qiXlLof1n0sO4dLE_AS5id940UYNrPE_WyaoRxPt-8ZWum_5A5z_Sz7uqaahHXwGWLFV7Td9rwFplf-i3QKiPEpH_M_xdH6tfK_452P3OGxYSjJI4KQ0MuhdLiT0vffaQ-RQ9HMBVkGmjzMMN688p-9kHaFL7gNGGJYqos47k8qF8C1dSMHYps9KKLJ9FAIMR7kI9L-FktSxt5cDKu58baZA7yinxYUk7oaB8G4Ri7aBQKgkrezDd6bNw-sxySm5yg-bso'
+    category: lang === 'en' ? 'Strategy / Brand' : 'Estrategia / Marca'
   },
   'what-is-typography-the-dna-of-information': {
     index: '05',
     date: lang === 'en' ? 'May 20, 2026' : '20 de mayo de 2026',
-    category: lang === 'en' ? 'Visual / Identity' : 'Visual / Identidad',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAe8tzPO0Df4dIf-YHdLYynUFhhiY_pFbukGsD5ykeH3YzD7tab_sz97jZsYfyJu6RPFE_E0yLkCQATHRkZGgsDwmrmaNwDccVqewSR86GTyCQKJE32vg7mAucrk77IKEvBTVRnsnWXkGrm6D_XuR5UvfxS13a1lPY_oA-JwEwmboVdTi-eIk4kaiK1HJVVhNxBoHKjWy1XUfmT8E_2NyMEZSS4qjEiSC2XrCMObTHiwv7NWWtICe0JYNMH3Bnd0EF2jAQIUqQRF2DH'
+    category: lang === 'en' ? 'Visual / Identity' : 'Visual / Identidad'
   },
   'typographic-classification-the-geometry-of-tone': {
     index: '06',
     date: lang === 'en' ? 'May 22, 2026' : '22 de mayo de 2026',
-    category: lang === 'en' ? 'Visual / Reference' : 'Visual / Referencia',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAe8tzPO0Df4dIf-YHdLYynUFhhiY_pFbukGsD5ykeH3YzD7tab_sz97jZsYfyJu6RPFE_E0yLkCQATHRkZGgsDwmrmaNwDccVqewSR86GTyCQKJE32vg7mAucrk77IKEvBTVRnsnWXkGrm6D_XuR5UvfxS13a1lPY_oA-JwEwmboVdTi-eIk4kaiK1HJVVhNxBoHKjWy1XUfmT8E_2NyMEZSS4qjEiSC2XrCMObTHiwv7NWWtICe0JYNMH3Bnd0EF2jAQIUqQRF2DH'
+    category: lang === 'en' ? 'Visual / Reference' : 'Visual / Referencia'
   },
   'the-logo-variants-strategic-adaptability': {
     index: '07',
     date: lang === 'en' ? 'May 24, 2026' : '24 de mayo de 2026',
-    category: lang === 'en' ? 'Visual / System' : 'Visual / Sistema',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAe8tzPO0Df4dIf-YHdLYynUFhhiY_pFbukGsD5ykeH3YzD7tab_sz97jZsYfyJu6RPFE_E0yLkCQATHRkZGgsDwmrmaNwDccVqewSR86GTyCQKJE32vg7mAucrk77IKEvBTVRnsnWXkGrm6D_XuR5UvfxS13a1lPY_oA-JwEwmboVdTi-eIk4kaiK1HJVVhNxBoHKjWy1XUfmT8E_2NyMEZSS4qjEiSC2XrCMObTHiwv7NWWtICe0JYNMH3Bnd0EF2jAQIUqQRF2DH'
+    category: lang === 'en' ? 'Visual / System' : 'Visual / Sistema'
   },
   'visual-communication-or-graphic-design': {
     index: '08',
     date: lang === 'en' ? 'May 26, 2026' : '26 de mayo de 2026',
-    category: lang === 'en' ? 'Visual / Philosophy' : 'Visual / Filosofía',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAe8tzPO0Df4dIf-YHdLYynUFhhiY_pFbukGsD5ykeH3YzD7tab_sz97jZsYfyJu6RPFE_E0yLkCQATHRkZGgsDwmrmaNwDccVqewSR86GTyCQKJE32vg7mAucrk77IKEvBTVRnsnWXkGrm6D_XuR5UvfxS13a1lPY_oA-JwEwmboVdTi-eIk4kaiK1HJVVhNxBoHKjWy1XUfmT8E_2NyMEZSS4qjEiSC2XrCMObTHiwv7NWWtICe0JYNMH3Bnd0EF2jAQIUqQRF2DH'
+    category: lang === 'en' ? 'Visual / Philosophy' : 'Visual / Filosofía'
   },
   'illustrator-basics-precision-tools': {
     index: '09',
     date: lang === 'en' ? 'May 28, 2026' : '28 de mayo de 2026',
-    category: lang === 'en' ? 'Visual / Mastery' : 'Visual / Maestría',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAe8tzPO0Df4dIf-YHdLYynUFhhiY_pFbukGsD5ykeH3YzD7tab_sz97jZsYfyJu6RPFE_E0yLkCQATHRkZGgsDwmrmaNwDccVqewSR86GTyCQKJE32vg7mAucrk77IKEvBTVRnsnWXkGrm6D_XuR5UvfxS13a1lPY_oA-JwEwmboVdTi-eIk4kaiK1HJVVhNxBoHKjWy1XUfmT8E_2NyMEZSS4qjEiSC2XrCMObTHiwv7NWWtICe0JYNMH3Bnd0EF2jAQIUqQRF2DH'
+    category: lang === 'en' ? 'Visual / Mastery' : 'Visual / Maestría'
   },
   'what-is-the-utility-of-learning-html': {
     index: '10',
     date: lang === 'en' ? 'June 01, 2026' : '01 de junio de 2026',
-    category: lang === 'en' ? 'Builder / Foundations' : 'Builder / Fundamentos',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNWsRtL31KvRmnCaczzSpovZf6gL2ZBRty6IB8kNqtHKO7EUHsU2ITSub61rb_yX84YF2ScKz2wRovzI4kVbEzjKnOQEMVlTlHy3cgYmt9b6-59YM6wPt55payy_QYS3DMwRV_DT9yz_GTxLRF1XRxUKcVe4IKne7pmCyyHN7oofSw9YPotglYHb2653cdZFxDs2KX8qrz3AJTK4MLbinRH9K2-i_RnBUBPntL_Ruurlqtn2KHfCqI_yWYpwflcXhykiQofUMs-o4_'
+    category: lang === 'en' ? 'Builder / Foundations' : 'Builder / Fundamentos'
   },
   'what-is-html-the-structure-of-information': {
     index: '11',
     date: lang === 'en' ? 'June 03, 2026' : '03 de junio de 2026',
-    category: lang === 'en' ? 'Builder / HTML' : 'Builder / HTML',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNWsRtL31KvRmnCaczzSpovZf6gL2ZBRty6IB8kNqtHKO7EUHsU2ITSub61rb_yX84YF2ScKz2wRovzI4kVbEzjKnOQEMVlTlHy3cgYmt9b6-59YM6wPt55payy_QYS3DMwRV_DT9yz_GTxLRF1XRxUKcVe4IKne7pmCyyHN7oofSw9YPotglYHb2653cdZFxDs2KX8qrz3AJTK4MLbinRH9K2-i_RnBUBPntL_Ruurlqtn2KHfCqI_yWYpwflcXhykiQofUMs-o4_'
+    category: lang === 'en' ? 'Builder / HTML' : 'Builder / HTML'
   },
   'what-is-css-the-visual-style-system': {
     index: '12',
     date: lang === 'en' ? 'June 05, 2026' : '05 de junio de 2026',
-    category: lang === 'en' ? 'Builder / CSS' : 'Builder / CSS',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNWsRtL31KvRmnCaczzSpovZf6gL2ZBRty6IB8kNqtHKO7EUHsU2ITSub61rb_yX84YF2ScKz2wRovzI4kVbEzjKnOQEMVlTlHy3cgYmt9b6-59YM6wPt55payy_QYS3DMwRV_DT9yz_GTxLRF1XRxUKcVe4IKne7pmCyyHN7oofSw9YPotglYHb2653cdZFxDs2KX8qrz3AJTK4MLbinRH9K2-i_RnBUBPntL_Ruurlqtn2KHfCqI_yWYpwflcXhykiQofUMs-o4_'
+    category: lang === 'en' ? 'Builder / CSS' : 'Builder / CSS'
   },
   'graphic-design-and-web-programming-the-strategic-translation': {
     index: '13',
     date: lang === 'en' ? 'June 08, 2026' : '08 de junio de 2026',
-    category: lang === 'en' ? 'Builder / Execution' : 'Builder / Ejecución',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNWsRtL31KvRmnCaczzSpovZf6gL2ZBRty6IB8kNqtHKO7EUHsU2ITSub61rb_yX84YF2ScKz2wRovzI4kVbEzjKnOQEMVlTlHy3cgYmt9b6-59YM6wPt55payy_QYS3DMwRV_DT9yz_GTxLRF1XRxUKcVe4IKne7pmCyyHN7oofSw9YPotglYHb2653cdZFxDs2KX8qrz3AJTK4MLbinRH9K2-i_RnBUBPntL_Ruurlqtn2KHfCqI_yWYpwflcXhykiQofUMs-o4_'
+    category: lang === 'en' ? 'Builder / Execution' : 'Builder / Ejecución'
   }
 };
 
 const enSlugKey = lang === 'es' ? reverseSlugMap[slug] : slug;
-const meta = articleMetadata[enSlugKey] || { index: '00', date: lang === 'en' ? 'May 2026' : 'Mayo 2026', category: lang === 'en' ? 'Insight' : 'Perspectiva', image: '' };
+const meta = articleMetadata[enSlugKey] || { index: '00', date: lang === 'en' ? 'May 2026' : 'Mayo 2026', category: lang === 'en' ? 'Insight' : 'Perspectiva' };
 
 // Fetch related posts (excluding the current one)
 const allPosts = await getCollection('blog', ({ data }) => data.language === lang);
@@ -149,11 +136,11 @@ const metaTitleSuffix = t('article.metaSuffix');
         <span class="font-label-technical text-label-technical text-secondary px-2 py-1 border border-outline-variant uppercase">
           {lang === 'en' ? 'Insight' : 'Perspectiva'} / {meta.index}
         </span>
-        <span class="font-label-technical text-label-technical text-secondary uppercase tracking-widest">
+        <span class="font-label-technical text-label-technical text-secondary uppercase tracking-widest text-xs">
           {meta.date} — {readTime} {t('article.readTimeSuffix')}
         </span>
       </div>
-      <h1 class="font-display text-headline-lg-mobile md:text-display mb-8 text-primary font-fraunces">
+      <h1 class="font-display text-headline-lg-mobile md:text-display mb-8 text-primary font-fraunces leading-tight">
         {toPhraseCase(post.data.title)}
       </h1>
       <div class="flex items-center pt-8 border-t border-outline-variant">
@@ -169,8 +156,22 @@ const metaTitleSuffix = t('article.metaSuffix');
       </div>
     </header>
 
+    <!-- Framed High-Density Image Card -->
+    {post.data.image && (
+      <div class="w-full border border-outline-variant bg-surface-container-low p-6 md:p-10 mb-16 flex justify-center items-center">
+        <div class="max-w-[500px] w-full border border-outline bg-surface-container-lowest overflow-hidden relative group">
+          <img 
+            alt={post.data.title} 
+            class="w-full h-auto object-contain opacity-90 transition-all duration-1000 group-hover:scale-[1.01] group-hover:opacity-100" 
+            src={post.data.image}
+          />
+          <div class="absolute inset-0 bg-carbon/5 pointer-events-none"></div>
+        </div>
+      </div>
+    )}
+
     <!-- Body Content -->
-    <div class="markdown-body space-y-12 text-on-surface">
+    <div class="markdown-body space-y-12 text-on-surface relative">
       <Content />
     </div>
 
@@ -189,7 +190,7 @@ const metaTitleSuffix = t('article.metaSuffix');
         {relatedPosts.map(relatedPost => {
           const rSlug = getSlug(relatedPost.id);
           const rEnSlugKey = lang === 'es' ? reverseSlugMap[rSlug] : rSlug;
-          const rMeta = articleMetadata[rEnSlugKey] || { category: lang === 'en' ? 'Insight' : 'Perspectiva', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfhcbYM5qiXlLof1n0sO4dLE_AS5id940UYNrPE_WyaoRxPt-8ZWum_5A5z_Sz7uqaahHXwGWLFV7Td9rwFplf-i3QKiPEpH_M_xdH6tfK_452P3OGxYSjJI4KQ0MuhdLiT0vffaQ-RQ9HMBVkGmjzMMN688p-9kHaFL7gNGGJYqos47k8qF8C1dSMHYps9KKLJ9FAIMR7kI9L-FktSxt5cDKu58baZA7yinxYUk7oaB8G4Ri7aBQKgkrezDd6bNw-sxySm5yg-bso' };
+          const rMeta = articleMetadata[rEnSlugKey] || { category: lang === 'en' ? 'Insight' : 'Perspectiva' };
           const rLink = `/${lang}/${lang === 'en' ? 'insight' : 'perspectivas'}/${rSlug}`;
           
           return (
@@ -197,8 +198,8 @@ const metaTitleSuffix = t('article.metaSuffix');
               <div class="aspect-[16/9] bg-surface-container overflow-hidden border border-outline-variant">
                 <img 
                   alt={relatedPost.data.title} 
-                  class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" 
-                  src={rMeta.image}
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                  src={relatedPost.data.image}
                 />
               </div>
               <div>
@@ -228,10 +229,10 @@ const metaTitleSuffix = t('article.metaSuffix');
   }
 
   /* Style overrides for rendered markdown */
-  .markdown-body :global(p:first-of-type) {
+  .markdown-body > :global(p:first-of-type) {
     @apply font-body-lg text-body-lg leading-relaxed;
   }
-  .markdown-body :global(p:first-of-type::first-letter) {
+  .markdown-body > :global(p:first-of-type::first-letter) {
     float: left;
     font-family: var(--font-fraunces), serif;
     font-size: 5rem;
@@ -250,13 +251,16 @@ const metaTitleSuffix = t('article.metaSuffix');
     @apply font-headline-md text-lg text-primary mb-4 mt-8;
   }
   .markdown-body :global(ul) {
-    @apply list-disc list-inside space-y-2 mb-6 opacity-90;
+    @apply list-disc list-outside pl-6 space-y-2 mb-6 opacity-90;
   }
   .markdown-body :global(ol) {
-    @apply list-decimal list-inside space-y-2 mb-6 opacity-90;
+    @apply list-decimal list-outside pl-6 space-y-2 mb-6 opacity-90;
   }
   .markdown-body :global(li) {
     @apply font-body-md text-body-md leading-relaxed;
+  }
+  .markdown-body :global(li p) {
+    display: inline;
   }
 </style>
 

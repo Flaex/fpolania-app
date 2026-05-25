@@ -2,6 +2,7 @@
 
 title: "EL LOGOTIPO Y LA EMPRESA: LA INVERSIÓN EN CONFIANZA"
 lens: "ceo_lens"
+image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDfhcbYM5qiXlLof1n0sO4dLE_AS5id940UYNrPE_WyaoRxPt-8ZWum_5A5z_Sz7uqaahHXwGWLFV7Td9rwFplf-i3QKiPEpH_M_xdH6tfK_452P3OGxYSjJI4KQ0MuhdLiT0vffaQ-RQ9HMBVkGmjzMMN688p-9kHaFL7gNGGJYqos47k8qF8C1dSMHYps9KKLJ9FAIMR7kI9L-FktSxt5cDKu58baZA7yinxYUk7oaB8G4Ri7aBQKgkrezDd6bNw-sxySm5yg-bso"
 language: "es"
 pillar: "Strategic Foundership (The CEO Lens)"
 originalLanguage: "Spanish"
@@ -10,23 +11,17 @@ originalLanguage: "Spanish"
 ## El Logotipo como Activo Estratégico
 Los emprendimientos están orientados a producir bienestar para sus clientes. Sin embargo, en el fragor de la operación diaria, muchos fundadores olvidan un componente crítico: cómo un logotipo bien diseñado impacta positivamente en la **imagen de marca**. El diseño no es un lujo; es una herramienta de diferenciación.
 
-## 1. La Identidad como Diferenciador
-Diseñar un logotipo para cualquier actividad comercial ayuda a mejorar su imagen porque permite transmitir aquello que hace único al emprendimiento. En un mercado competitivo, el logo es lo que nos separa del ruido.
+Tal y como he mencionado un el artículo anterior, el [diseño está presente](https://flaex.design/blog/todo-es-diseno) en gran parte de nuestras vidas, por lo que diseñar un logotipo para cualquier actividad comercial, ayudará a mejorar su imagen porque podemos transmitir aquello que hace único al emprendimiento y así, diferenciarnos de la competencia, dentro de otras cosas.
 
-### La Lección de los Gigantes de la Industria
-Las grandes compañías invierten masivamente en la creación de activos digitales e impresos:
-*   **Manuales de Marca:** Para garantizar consistencia.
-*   **Papelería y Redes Sociales:** Para presencia constante.
-*   **Aplicaciones Web:** Para interacción de alto nivel.
+Es muy común ver como las grandes compañías invierten dinero en la creación de piezas digitales e impresas (manuales de marca, piezas de papelería comercial, diseños para redes sociales, aplicaciones web) con el objetivo de construir una imagen que le permita a sus usuarios reconocer sus productos; es por esto que en el presente existen marcas que de solo verlas las relacionamos con objetos:
 
-El objetivo es construir una imagen que permita al usuario reconocer sus productos al instante. Al ver el emblema de **Nike**, pensamos en deporte; al ver el logo de **Apple**, pensamos en computadoras e innovación. Esta práctica no es exclusiva de las multinacionales; es un modelo de gestión de autoridad que todo fundador debe aplicar.
+![Logotipos de en blanco y negro de Nike y Apple](https://res.cloudinary.com/flaex/image/upload/v1675005481/strapi-v4/flaex_logotipo_y_la_empresa_dca04d34a7.webp)
+*Logos de Nike y Apple*
 
-## 2. Inversión de Tiempo y Dinero: El Mito de la Barrera
-No son necesarias inversiones astronómicas para empezar a posicionar una marca. Sin embargo, desestimar la importancia de un logotipo que comunique efectivamente los valores de la empresa es un riesgo de negocio. Proyectar una imagen errada debido a un diseño empírico y hecho al azar puede alejar al cliente ideal.
+Al ver el emblema de Nike lo asociamos con zapatos y ropa para hacer deporte; el logo de Apple nos recuerda a computadoras y al IPhone. Ver como los grandes de la industria tratan el tema de la imagen corporativa, no significa que sea una práctica exclusiva: son compañías con muchos años operando que tienen el reconocimiento de sus usuarios.
 
-## 3. El Momento Ideal para la Identidad
-*   **Empresas Nuevas:** Es el momento ideal. La cultura corporativa está en desarrollo y es más sencillo reflejar los valores de la compañía en el logo.
-*   **Empresas Operativas:** No es un proceso más complejo, pero requiere tomar en cuenta los valores ya establecidos y la cultura constituida para asegurar una evolución coherente.
+Es importante que como emprendedores tengamos en cuenta que no son necesarias grandes inversiones de tiempo y dinero para posicionar nuestra propia marca; desestimar la importancia de un logotipo que comunique efectivamente los valores de la empresa podría hacer que proyectemos una imagen errada de la compañía y del producto a los usuarios. No es aconsejable dejar que la identidad corporativa sea un resultado empírico y hecho al azar.
 
-## Conclusión: Proyectar una Imagen Sólida
-El diseño de un logotipo es importante para cualquier actividad económica, sea grande o pequeña, individual o colectiva. Nos ayuda a proyectar una imagen sólida ante nuestro equipo y, lo más importante, ante nuestros clientes.
+Cuando una empresa es nueva es el momento ideal para diseñar su identidad gráfica: al tener poco tiempo en operación la cultura corporativa está en desarrollo y reflejar los valores de la compañía en el logo se hace más sencillo. Esto, no quiere decir que los esfuerzos para diseñar la identidad corporativa para una empresa que está operativa sean diferentes o más complejos; a diferencia de los nuevos emprendimientos, este tipo de compañías ya están constituidas, es necesario tomar en cuenta los valores establecidos.
+
+El diseño de un logotipo es importante para cualquier tipo de empresa o actividad económica, grande o pequeña, individual o con un grupo de personas. Nos ayudará a proyectar una imagen sólida para las personas que trabajan en la empresa y más importante, para los que adquieren nuestros productos.

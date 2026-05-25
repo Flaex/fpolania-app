@@ -2,6 +2,7 @@
 
 title: "THE VALUE OF GRAPHIC DESIGN: A STRATEGIC PERSPECTIVE"
 lens: "ceo_lens"
+image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDfhcbYM5qiXlLof1n0sO4dLE_AS5id940UYNrPE_WyaoRxPt-8ZWum_5A5z_Sz7uqaahHXwGWLFV7Td9rwFplf-i3QKiPEpH_M_xdH6tfK_452P3OGxYSjJI4KQ0MuhdLiT0vffaQ-RQ9HMBVkGmjzMMN688p-9kHaFL7gNGGJYqos47k8qF8C1dSMHYps9KKLJ9FAIMR7kI9L-FktSxt5cDKu58baZA7yinxYUk7oaB8G4Ri7aBQKgkrezDd6bNw-sxySm5yg-bso"
 language: "en"
 pillar: "Strategic Foundership (The CEO Lens)"
 originalLanguage: "Spanish"
@@ -12,6 +13,9 @@ As a Product Strategist and Founder of Novanet Studio, I have witnessed the radi
 
 ## 1. What is Value? (The Economic Perspective)
 To talk about design, we must first talk about economics. Value, as defined by Carl Menger in his fundamental work *Principles of Political Economy*, is not something intrinsic to the object, but rather:
+
+![Carl Menger and cover of Principles of Political Economy](https://res.cloudinary.com/flaex/image/upload/v1674939516/strapi-v4/flaex_valor_diseno_grafico_carl_menger_7309c60e3f.webp)
+*Carl Menger and the cover of Principles of Political Economy*
 
 > "The significance that specific goods or partial quantities of goods acquire for us when we are conscious that we depend on them for the satisfaction of our needs."
 
@@ -40,15 +44,18 @@ The ability to execute in Photoshop or Illustrator does not automatically make s
 *   **Relational Elements:** Direction, position, space, and gravity. How shapes interact with each other.
 *   **Practical Elements:** Representation, meaning, and function. The final purpose that serves the business.
 
+![Wucius Wong and cover of Foundations of Design](https://res.cloudinary.com/flaex/image/upload/v1674939516/strapi-v4/flaex_valor_diseno_grafico_wicius_wong_d65085e28f.webp)
+*Wucius Wong and the cover of Foundations of Design*
+
 These elements are systematically linked: conceptual elements give way to visual ones, these to relational ones, and finally to practical ones. Approaching design from this systematic thinking allows us to work with **maximum objectivity and minimum ambiguity**.
 
 ## 4. To Operate or to Design? (De-risking the Strategy)
-It is vital to distinguish between operation and strategic design:
+Although the operational aspect and the application of conceptual elements can complement each other, many enter the field without mastering these foundational principles. However, this is no barrier to entry for those focused solely on execution. What matters is knowing how to match the talent to the task:
 *   **A Design Operator:** Integrates into workflows where systems are already established. Their value is the flawless execution of what is already in place.
 *   **A Graphic Designer (Architect):** Is aware of the conceptual elements and complements them with technical knowledge. They are the one who builds the foundations of visual authority.
 
 ## 5. A Requirement for Each Stage
-Each company places a different value on design according to its circumstances:
+Each company places a different value on design according to its circumstances. In a market saturated with options via remote platforms and social networks, we must clarify our needs:
 1.  **Maintenance:** If your design and branding system have solid foundations, an operator can meet your requirements efficiently.
 2.  **Construction:** If you need to design a new visual identity, conduct a branding analysis of an existing logo, or prepare the brand for complex future applications, a graphic designer is the indicated architect.
 
