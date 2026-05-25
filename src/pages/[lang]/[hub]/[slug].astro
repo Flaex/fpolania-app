@@ -160,11 +160,12 @@ const metaTitleSuffix = t('article.metaSuffix');
     {post.data.image && (
       <div class="w-full border border-outline-variant bg-surface-container-low p-6 md:p-10 mb-16 flex justify-center items-center">
         <div class="max-w-[500px] w-full border border-outline bg-surface-container-lowest overflow-hidden relative group">
-          <img 
-            alt={post.data.title} 
-            class="w-full h-auto object-contain opacity-90 transition-all duration-1000 group-hover:scale-[1.01] group-hover:opacity-100" 
-            src={post.data.image}
-          />
+          <div 
+            class="w-full aspect-[16/9] opacity-90 transition-all duration-1000 group-hover:scale-[1.01] group-hover:opacity-100" 
+            style={`background-image: url('${post.data.image}'); background-repeat: repeat;`}
+            aria-label={post.data.title}
+            role="img"
+          ></div>
           <div class="absolute inset-0 bg-carbon/5 pointer-events-none"></div>
         </div>
       </div>
