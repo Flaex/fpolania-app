@@ -1,22 +1,22 @@
 ---
-
 title: "EL VALOR DEL DISEÑO GRÁFICO"
 lens: "ceo_lens"
-image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDfhcbYM5qiXlLof1n0sO4dLE_AS5id940UYNrPE_WyaoRxPt-8ZWum_5A5z_Sz7uqaahHXwGWLFV7Td9rwFplf-i3QKiPEpH_M_xdH6tfK_452P3OGxYSjJI4KQ0MuhdLiT0vffaQ-RQ9HMBVkGmjzMMN688p-9kHaFL7gNGGJYqos47k8qF8C1dSMHYps9KKLJ9FAIMR7kI9L-FktSxt5cDKu58baZA7yinxYUk7oaB8G4Ri7aBQKgkrezDd6bNw-sxySm5yg-bso"
+image: "https://flaex.netlify.app/static/a7c99e2fd9148a6eac10a6042635b00d/5d10f/flaex_valor_diseno_grafico_fd7a10fb9a.webp"
 language: "es"
 pillar: "Strategic Foundership (The CEO Lens)"
 originalLanguage: "Spanish"
 ---
 
 ## Introducción: El Diseño en la Era de la Automatización
+
 Como Estratega de producto y Fundador de Novanet Studio, he sido testigo de la transformación radical de nuestra industria. El diseño gráfico ha pasado de ser un oficio manual y tedioso a una disciplina potenciada por computadoras. Sin embargo, esta agilidad técnica ha traído consigo una confusión peligrosa: confundir la velocidad con el **valor**. En este análisis, exploraremos por qué el diseño, cuando se entiende como una inversión estratégica, es uno de los activos más valiosos de cualquier empresa.
 
 ## ¿Que es el valor?
 
 ![Carl Menger y portada libro Principios de economía política](https://res.cloudinary.com/flaex/image/upload/v1674939516/strapi-v4/flaex_valor_diseno_grafico_carl_menger_7309c60e3f.webp)
-*Carl Menger y portada libro Principios de economía política*
+_Carl Menger y portada libro Principios de economía política_
 
-El valor según lo define [Carl Menger](https://es.wikipedia.org/wiki/Carl_Menger) en el libro [Principios de Economía Política](https://www.amazon.com/Principios-Economia-Politica-Carl-Menger/dp/8472098095), "es la significación que unos concretos bienes o cantidades parciales de bienes adquieren para nosotros, cuando somos conscientes de que dependemos de ellos para la satisfacción de nuestras necesidades." Dicho de otra manera y tomándome la libertad de parafrasear la cita de Menger, podríamos decir que *el valor es el significado que tienen los bienes específicos cuando sabemos que satisfacen nuestras necesidades*.
+El valor según lo define [Carl Menger](https://es.wikipedia.org/wiki/Carl_Menger) en el libro [Principios de Economía Política](https://www.amazon.com/Principios-Economia-Politica-Carl-Menger/dp/8472098095), "es la significación que unos concretos bienes o cantidades parciales de bienes adquieren para nosotros, cuando somos conscientes de que dependemos de ellos para la satisfacción de nuestras necesidades." Dicho de otra manera y tomándome la libertad de parafrasear la cita de Menger, podríamos decir que _el valor es el significado que tienen los bienes específicos cuando sabemos que satisfacen nuestras necesidades_.
 
 En este mismo orden de ideas, sería válido añadir que el valor de un bien aumenta cuando después que somos conscientes de que satisface una necesidad concreta y sus cantidades disminuyen. Un ejemplo que nos puede servir para ilustrar este concepto, lo podemos encontrar en la valoración que los humanos hacemos del agua potable; es de conocimiento general la gran importancia y utilidad que esta tiene en varios aspectos de nuestra vida diaria, básicamente es esencial para nuestra supervivencia.
 
@@ -26,30 +26,30 @@ En contraste, el agua salada por su misma naturaleza no satisface tantas necesid
 
 El uso de las computadoras ha ido en aumento de forma radical los últimos 30 años, los procesos manuales que formaron parte de la enseñanza en las primeras escuelas de diseño se han transformado y adaptado a la inmediatez de la era digital. Esto ha colocado a disposición de muchas personas programas y herramientas de computación que nos permiten, entre otras actividades:
 
-* Realizar fotomontaje y edición general de imágenes.
+- Realizar fotomontaje y edición general de imágenes.
 
-* Hacer ilustraciones con la capacidad de emular los materiales tradicionales como la acuarela, óleo o pastel.
+- Hacer ilustraciones con la capacidad de emular los materiales tradicionales como la acuarela, óleo o pastel.
 
-* Diseñar tipos y familias tipográficas enteras.
+- Diseñar tipos y familias tipográficas enteras.
 
-* Diseñar libros y otra gran cantidad de piezas impresas.
+- Diseñar libros y otra gran cantidad de piezas impresas.
 
 ## Los elementos del diseño
 
 El aspecto operativo del diseño, es decir, la habilidad para ejecutar con los mencionados programas y herramientas de diseño digitales; no convierten automáticamente a una persona en diseñador gráfico. Existen otros conceptos de mayor peso que define otro aspecto importante: Los elementos del diseño tal y como los menciona [Wicius Wong](https://ocula.com/artists/wucius-wong) en el libro [Fundamentos del diseño](https://www.amazon.com/Fundamentos-Diseno-Spanish-Wucius-Womg/dp/8425216435):
 
-* Elementos conceptuales.
+- Elementos conceptuales.
 
-* Elementos visuales.
+- Elementos visuales.
 
-* Elementos de relación.
+- Elementos de relación.
 
-* Elementos prácticos.
+- Elementos prácticos.
 
 Podemos afirmar que dichos elementos están vinculados de tal manera que la existencia del primer grupo da paso al segundo, éste al tercero y así sucesivamente: Los elementos conceptuales como el punto, la línea y el plano dan paso a los elementos visuales como lo son la forma, medida, color y textura que, a su vez, hacen posible la composición de figuras concretas como el cuadrado, el triángulo y el círculo. Estas figuras geométricas hacen posible establecer entre ellas los elementos de relación como la dirección, posición, espacio y gravedad. Finalmente los elementos prácticos vienen dados por la representación, significado y función que tienen las figuras de un diseño.
 
 ![Wicius Wong y portada del libro Fundamentos del diseño](https://res.cloudinary.com/flaex/image/upload/v1674939516/strapi-v4/flaex_valor_diseno_grafico_wicius_wong_d65085e28f.webp)
-*Wicius Wong y portada del libro Fundamentos del diseño*
+_Wicius Wong y portada del libro Fundamentos del diseño_
 
 A pesar de que estás interpretaciones, como lo señala el mismo autor, parecen rígidas y simplificadas porque se abordan desde el pensamiento sistemático; son útiles para enfrentar los principios del diseño gráfico en términos precisos y concretos, con objetividad máxima y una ambigüedad mínima.
 

@@ -1,14 +1,14 @@
 ---
-
 title: "EL LOGOTIPO Y LA EMPRESA: LA INVERSIÓN EN CONFIANZA"
 lens: "ceo_lens"
-image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDfhcbYM5qiXlLof1n0sO4dLE_AS5id940UYNrPE_WyaoRxPt-8ZWum_5A5z_Sz7uqaahHXwGWLFV7Td9rwFplf-i3QKiPEpH_M_xdH6tfK_452P3OGxYSjJI4KQ0MuhdLiT0vffaQ-RQ9HMBVkGmjzMMN688p-9kHaFL7gNGGJYqos47k8qF8C1dSMHYps9KKLJ9FAIMR7kI9L-FktSxt5cDKu58baZA7yinxYUk7oaB8G4Ri7aBQKgkrezDd6bNw-sxySm5yg-bso"
+image: "https://flaex.netlify.app/static/bb1602e057bcaa2d89b3083f6b8a1b67/5d10f/flaex_importancia_logotipo_emprendimiento_289edc213c.webp"
 language: "es"
 pillar: "Strategic Foundership (The CEO Lens)"
 originalLanguage: "Spanish"
 ---
 
 ## El Logotipo como Activo Estratégico
+
 Los emprendimientos están orientados a producir bienestar para sus clientes. Sin embargo, en el fragor de la operación diaria, muchos fundadores olvidan un componente crítico: cómo un logotipo bien diseñado impacta positivamente en la **imagen de marca**. El diseño no es un lujo; es una herramienta de diferenciación.
 
 Tal y como he mencionado un el artículo anterior, el [diseño está presente](https://flaex.design/blog/todo-es-diseno) en gran parte de nuestras vidas, por lo que diseñar un logotipo para cualquier actividad comercial, ayudará a mejorar su imagen porque podemos transmitir aquello que hace único al emprendimiento y así, diferenciarnos de la competencia, dentro de otras cosas.
@@ -16,7 +16,7 @@ Tal y como he mencionado un el artículo anterior, el [diseño está presente](h
 Es muy común ver como las grandes compañías invierten dinero en la creación de piezas digitales e impresas (manuales de marca, piezas de papelería comercial, diseños para redes sociales, aplicaciones web) con el objetivo de construir una imagen que le permita a sus usuarios reconocer sus productos; es por esto que en el presente existen marcas que de solo verlas las relacionamos con objetos:
 
 ![Logotipos de en blanco y negro de Nike y Apple](https://res.cloudinary.com/flaex/image/upload/v1675005481/strapi-v4/flaex_logotipo_y_la_empresa_dca04d34a7.webp)
-*Logos de Nike y Apple*
+_Logos de Nike y Apple_
 
 Al ver el emblema de Nike lo asociamos con zapatos y ropa para hacer deporte; el logo de Apple nos recuerda a computadoras y al IPhone. Ver como los grandes de la industria tratan el tema de la imagen corporativa, no significa que sea una práctica exclusiva: son compañías con muchos años operando que tienen el reconocimiento de sus usuarios.
 
