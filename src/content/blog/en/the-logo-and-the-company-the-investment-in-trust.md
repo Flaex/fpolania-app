@@ -1,7 +1,7 @@
 ---
 title: "THE LOGO AND THE COMPANY: THE INVESTMENT IN TRUST"
 lens: "ceo_lens"
-image: "https://flaex.netlify.app/static/bb1602e057bcaa2d89b3083f6b8a1b67/5d10f/flaex_importancia_logotipo_emprendimiento_289edc213c.webp"
+image: "https://res.cloudinary.com/flaex/image/upload/v1674939510/strapi-v4/flaex_importancia_logotipo_emprendimiento_289edc213c.webp"
 language: "en"
 pillar: "Strategic Foundership (The CEO Lens)"
 originalLanguage: "Spanish"

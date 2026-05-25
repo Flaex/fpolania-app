@@ -1,60 +1,59 @@
 ---
-
 title: "¿QUÉ ES HTML? LA ESTRUCTURA DE LA INFORMACIÓN"
 lens: "builder_lens"
-image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCNWsRtL31KvRmnCaczzSpovZf6gL2ZBRty6IB8kNqtHKO7EUHsU2ITSub61rb_yX84YF2ScKz2wRovzI4kVbEzjKnOQEMVlTlHy3cgYmt9b6-59YM6wPt55payy_QYS3DMwRV_DT9yz_GTxLRF1XRxUKcVe4IKne7pmCyyHN7oofSw9YPotglYHb2653cdZFxDs2KX8qrz3AJTK4MLbinRH9K2-i_RnBUBPntL_Ruurlqtn2KHfCqI_yWYpwflcXhykiQofUMs-o4_"
+image: "https://res.cloudinary.com/flaex/image/upload/v1627500628/strapi/flaex_partes_de_un_html_335be98ff9.jpg"
 language: "es"
 pillar: "Technical Alchemy (The Builder Lens)"
 originalLanguage: "Spanish"
 ---
 
 ## Definición y Especificación
+
 HTML (HyperText Markup Language) es el componente principal de la web. Según el **World Wide Web Consortium (W3C)**, es el lenguaje para describir la **estructura** de las páginas web. Provee a los autores los medios para:
-*   Publicar documentos con encabezados, texto, tablas, listas y multimedia.
-*   Conectar información mediante enlaces de hipertexto.
-*   Diseñar formularios para transacciones remotas, búsquedas y reservas.
-*   Incluir aplicaciones directamente en los documentos (hojas de cálculo, video, sonido).
+
+- Publicar documentos con encabezados, texto, tablas, listas y multimedia.
+- Conectar información mediante enlaces de hipertexto.
+- Diseñar formularios para transacciones remotas, búsquedas y reservas.
+- Incluir aplicaciones directamente en los documentos (hojas de cálculo, video, sonido).
 
 Como bien define **MDN Web Docs**, HTML no es un lenguaje de programación; es un lenguaje de marcado que encapsula partes del contenido para que se comporten de forma determinada (poner en cursiva, agrandar fuentes, redireccionar a otras páginas).
 
-> 
-*HTML es el lenguaje para describir la estructura de las páginas web, brinda a los autores los medios para:*
+> _HTML es el lenguaje para describir la estructura de las páginas web, brinda a los autores los medios para:_
 
-*- Publicar documentos en línea con encabezados, texto, tablas, listas, fotos, entre otros elementos.*
+_- Publicar documentos en línea con encabezados, texto, tablas, listas, fotos, entre otros elementos._
 
-*- Obtener información en línea a través de enlaces de hipertexto, con el clic de un botón.*
+_- Obtener información en línea a través de enlaces de hipertexto, con el clic de un botón._
 
-*- Diseñar formularios para realizar transacciones con servicios remotos, buscar información, hacer reservas, ordenar productos, entre otras tareas.*
-*- Incluir hojas de cálculo, videoclips, clips de sonido y otras aplicaciones directamente en sus documentos.*
+_- Diseñar formularios para realizar transacciones con servicios remotos, buscar información, hacer reservas, ordenar productos, entre otras tareas._
+_- Incluir hojas de cálculo, videoclips, clips de sonido y otras aplicaciones directamente en sus documentos._
 
-*Con HTML, los autores describen la estructura de las páginas mediante etiquetas de marcado. Los elementos del idioma etiquetan piezas de contenido como "títulos", "párrafos", "listas", "tablas", "imágenes", entre otros elementos.*
+_Con HTML, los autores describen la estructura de las páginas mediante etiquetas de marcado. Los elementos del idioma etiquetan piezas de contenido como "títulos", "párrafos", "listas", "tablas", "imágenes", entre otros elementos._
 
-Además del W3C[1](#fn1), existen otros sitios web que ofrecen información de tecnologías web como MDN Web Docs[2](#fn2) de Mozilla;  lo define de la siguiente manera:
+Además del W3C[1](#fn1), existen otros sitios web que ofrecen información de tecnologías web como MDN Web Docs[2](#fn2) de Mozilla; lo define de la siguiente manera:
 
-> 
-*HTML no es un lenguaje de programación; Es un lenguaje de marcado que define la estructura de un contenido. HTML consiste en una serie de elementos, usados para encapsular diferentes partes del contenido y hacer que se comporten de forma determinada. Las etiquetas que rodean el contenido pueden redireccionar palabras o imagenes a otra página web, poner en cursiva los textos, hacer que la fuente sea más grande o más pequeña, entre otras opciones.*
+> _HTML no es un lenguaje de programación; Es un lenguaje de marcado que define la estructura de un contenido. HTML consiste en una serie de elementos, usados para encapsular diferentes partes del contenido y hacer que se comporten de forma determinada. Las etiquetas que rodean el contenido pueden redireccionar palabras o imagenes a otra página web, poner en cursiva los textos, hacer que la fuente sea más grande o más pequeña, entre otras opciones._
 
 ## Anatomía de un elemento HTML
 
 El lenguaje consiste en una serie de etiquetas predeterminadas destinadas a darle jerarquía al contenido de los documentos. Antes de mostrar ejemplos de algunas de sus etiquetas básicas, es importante entender su anatomía :
 
-* Exceptuando algunos casos, gran parte de las etiquetas están conformadas por una etiqueta de apertura <etiqueta>.
+- Exceptuando algunos casos, gran parte de las etiquetas están conformadas por una etiqueta de apertura <etiqueta>.
 
-* Para completar la declaración del contenido, es necesaria una etiqueta de cierre </etiqueta>.
+- Para completar la declaración del contenido, es necesaria una etiqueta de cierre </etiqueta>.
 
 Por lo tanto, la forma general para declarar un contenido en HTML, sigue la siguiente regla: <h1>Este es un título</h1>. La siguiente imagen ilustra estos conceptos:
 
 ![Estructura de una etiqueta html](https://res.cloudinary.com/flaex/image/upload/v1676245108/strapi-v4/anatomia_1_bee5bca92f.webp)
-*Estructura de una etiqueta html*
+_Estructura de una etiqueta html_
 
 Los elementos HTML pueden tener atributos, la imagen demuestra esta característica:
 
 ![Atributo de una etiqueta html](https://res.cloudinary.com/flaex/image/upload/v1676245108/strapi-v4/anatomia_2_8942981442.webp)
-*Atributo de una etiqueta html*
+_Atributo de una etiqueta html_
 
-Los atributos contienen información adicional sobre los elementos. En la imagen de arriba, *class* es el nombre del atributo y la *nota*, su valor. El atributo *class* permite dar al elemento un identificador que se puede usar para incluir información de estilos *CSS*.
+Los atributos contienen información adicional sobre los elementos. En la imagen de arriba, _class_ es el nombre del atributo y la _nota_, su valor. El atributo _class_ permite dar al elemento un identificador que se puede usar para incluir información de estilos _CSS_.
 
-*Las imágenes y su descripción en "Anatomía de un elemento HTML", fueron extraídas de MDN Web Docs [3](#fn3) .*
+_Las imágenes y su descripción en "Anatomía de un elemento HTML", fueron extraídas de MDN Web Docs [3](#fn3) ._
 
 A su vez, es posible declarar etiquetas dentro de otras etiquetas siguiendo la misma regla, como se puede ver en la estructura de ejemplo, en donde las etiquetas h1 y p, están anidadas dentro de body:
 
@@ -89,15 +88,17 @@ Todo documento HTML necesita una estructura base que aporte información a los n
 
 <head>: Esta etiqueta está destinada a contener otras con meta información del documento, por ejemplo:
 
-* <title>: título de la página.
+- <title>: título de la página.
 
-* <meta>: descripciones cortas que informan a los buscadores el tópico del documento.
+- <meta>: descripciones cortas que informan a los buscadores el tópico del documento.
 
-* <style>: declaraciones de estilos CSS para dar atributos gráficos.
+- <style>: declaraciones de estilos CSS para dar atributos gráficos.
 
-* <script>: rutinas de código en otros lenguajes del lado del cliente (navegador del usuario).
 
-* <link>: conexión a otros recursos relacionados con el documento.
+- <script>: rutinas de código en otros lenguajes del lado del cliente (navegador del usuario).
+
+
+- <link>: conexión a otros recursos relacionados con el documento.
 
 <head>
    <title>Título de la página</title>
@@ -114,7 +115,7 @@ Todo documento HTML necesita una estructura base que aporte información a los n
    </script>
 </head>
 
-*La información de <head> fue tomada de htmlquick.com [4](#fn4) *
+_La información de <head> fue tomada de htmlquick.com [4](#fn4) _
 
 Las etiquetas descritas hasta el momento sirven para dar información general de la página e incluir otros recursos relacionados con el documento HTML. Gran parte de los elementos relacionados con los elementos visibles por los navegadores están contenidos en la etiqueta <body>.
 

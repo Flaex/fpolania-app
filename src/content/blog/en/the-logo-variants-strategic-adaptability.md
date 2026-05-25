@@ -1,7 +1,7 @@
 ---
 title: "THE LOGO VARIANTS: STRATEGIC ADAPTABILITY"
 lens: "visual_lens"
-image: "https://flaex.netlify.app/static/a66b6831dc36c26f8c592b41f9ad1991/5d10f/flaex_logotipo_variantes_0ec884cbf7.webp"
+image: "https://res.cloudinary.com/flaex/image/upload/v1674939511/strapi-v4/flaex_logotipo_variantes_0ec884cbf7.webp"
 language: "en"
 pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"

@@ -1,7 +1,7 @@
 ---
 title: "ILLUSTRATOR BÁSICO: HERRAMIENTAS DE PRECISIÓN"
 lens: "visual_lens"
-image: "https://flaex.netlify.app/static/a85c90682da1f7d09f97ac459a5351aa/30a1f/flaex_illustrator_cover_1fc7f6c4b7.webp"
+image: "https://res.cloudinary.com/flaex/image/upload/v1697042312/strapi-v4/flaex_illustrator_cover_1fc7f6c4b7.png"
 language: "es"
 pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"

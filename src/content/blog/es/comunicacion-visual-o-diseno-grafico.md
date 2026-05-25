@@ -1,20 +1,20 @@
 ---
-
 title: "¿COMUNICACIÓN VISUAL O DISEÑO GRÁFICO?"
 lens: "visual_lens"
-image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAe8tzPO0Df4dIf-YHdLYynUFhhiY_pFbukGsD5ykeH3YzD7tab_sz97jZsYfyJu6RPFE_E0yLkCQATHRkZGgsDwmrmaNwDccVqewSR86GTyCQKJE32vg7mAucrk77IKEvBTVRnsnWXkGrm6D_XuR5UvfxS13a1lPY_oA-JwEwmboVdTi-eIk4kaiK1HJVVhNxBoHKjWy1XUfmT8E_2NyMEZSS4qjEiSC2XrCMObTHiwv7NWWtICe0JYNMH3Bnd0EF2jAQIUqQRF2DH"
+image: "https://res.cloudinary.com/flaex/image/upload/v1648842848/strapi/diseno_grafico_o_comunicacion_visual_b093dbfaa0.jpg"
 language: "es"
 pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"
 ---
 
 ## Introducción: El Mensaje vs. La Herramienta
+
 En el mundo de los negocios, la terminología a menudo se utiliza de forma intercambiable, lo que diluye la importancia estratégica de cada disciplina. Confundir la comunicación con el diseño es un error común. Para un arquitecto de producto, entender la distinción es clave para una ejecución impecable.
 
 ## Diseño gráfico
 
 ![Origen del término "Diseño gráfico".](https://res.cloudinary.com/flaex/image/upload/v1674939505/strapi-v4/diseno_grafico_o_comunicacion_visual_diseno_grafico_1_b8b21d1e84.webp)
-*Origen del término "Diseño gráfico".*
+_Origen del término "Diseño gráfico"._
 
 Tomando los sigificados literales de las palabras diseño y gráfico, podríamos decir que significa "Darle sentido a las representaciones pictóricas" que vienen usualmente en forma de ilustraciones, infografías, [tipografías](https://www.flaex.design/blog/que-es-la-tipografia), fotografías en impresos, grabados entre otros medios 2D.
 
@@ -23,11 +23,11 @@ Es bien sabido que [Diseño gráfico](https://es.wikipedia.org/wiki/Dise%C3%B1o_
 ## Comunicación Visual
 
 ![Origen del término "Comunicación visual".](https://res.cloudinary.com/flaex/image/upload/v1674939505/strapi-v4/diseno_grafico_o_comunicacion_visual_diseno_grafico_2_32e2a4a1b8.webp)
-*Origen del término "Comunicación visual".*
+_Origen del término "Comunicación visual"._
 
 Si repetimos el ejercicio que hicimos anteriormente y combinamos los significados de comunicación y visual, es posible afirmar que se trata de "difundir información" en medios digitales, impresos y audiovisuales.
 
-[Comunicación visual](https://es.wikipedia.org/wiki/Comunicaci%C3%B3n_visual) se refiere al uso de elementos gráficos para transmitir ideas e infomación por medio de  la señalética, tipografía, dibujo, diseño gráfico, ilustración, diseño industrial, publicidad, animación e interacción con dispositivos electrónicos.
+[Comunicación visual](https://es.wikipedia.org/wiki/Comunicaci%C3%B3n_visual) se refiere al uso de elementos gráficos para transmitir ideas e infomación por medio de la señalética, tipografía, dibujo, diseño gráfico, ilustración, diseño industrial, publicidad, animación e interacción con dispositivos electrónicos.
 
 ## ¿Cuál es el correcto?
 
