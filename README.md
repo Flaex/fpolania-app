@@ -2,7 +2,11 @@
 > **Brand Anthem:** *Reliable Visionary Execution*  
 > **Core Value Proposition:** *"Business Strategy. Design Vision. Technologic craft."* — Bridging 15+ years of CEO experience with deep design and front-end craftsmanship.
 
-This repository hosts the code and content for Fredy Polania's personal digital command center. It is structured as an **"Executive Monolith" Bento Grid** system, demonstrating the high-precision intersection of strategic thinking, visual design, and software engineering.
+This repository is the **Digital Product HQ** hosting the code, styling, and production content collections for Fredy Polania's personal digital command center. It is structured as an **"Executive Monolith" Bento Grid** system, demonstrating the high-precision intersection of strategic thinking, visual design, and software engineering.
+
+> [!NOTE]
+> This repository acts as the active implementation source of truth. For platform-neutral brand strategy, marketing planning, LinkedIn publishing batches, and Behance case study drafts, refer to the [perfil-profesional](file:///Users/fpolania/projects/perfil-profesional) repository.
+
 
 ---
 
