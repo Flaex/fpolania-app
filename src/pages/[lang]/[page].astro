@@ -259,7 +259,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
               {worksAlpha.map((work) => {
                   const title = lang === 'en' ? work.data.titleEn : work.data.titleEs;
                   const category = lang === 'en' ? work.data.categoryEn : work.data.categoryEs;
-                  const behanceUrl = lang === 'en' ? work.data.behanceUrlEn : work.data.behanceUrlEs;
+                  const behanceUrl = work.data.behanceUrl;
                   const LinkTag = 'div';
                   const linkProps = {
                       class: "col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:border-primary transition-all duration-300 group relative overflow-hidden"
@@ -313,7 +313,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
               {worksBeta.map((work, index) => {
                   const title = lang === 'en' ? work.data.titleEn : work.data.titleEs;
                   const category = lang === 'en' ? work.data.categoryEn : work.data.categoryEs;
-                  const behanceUrl = lang === 'en' ? work.data.behanceUrlEn : work.data.behanceUrlEs;
+                  const behanceUrl = work.data.behanceUrl;
                   const cardClass = getBetaCardClass(index, worksBeta.length);
                   const LinkTag = 'div';
                   const linkProps = {
@@ -368,7 +368,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
               {worksGamma.map((work) => {
                   const title = lang === 'en' ? work.data.titleEn : work.data.titleEs;
                   const category = lang === 'en' ? work.data.categoryEn : work.data.categoryEs;
-                  const behanceUrl = lang === 'en' ? work.data.behanceUrlEn : work.data.behanceUrlEs;
+                  const behanceUrl = work.data.behanceUrl;
                   const LinkTag = 'div';
                   const linkProps = {
                       class: "col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:border-primary transition-all duration-300 group relative overflow-hidden"

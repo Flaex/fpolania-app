@@ -129,7 +129,7 @@ const worksPath = lang === 'en' ? '/en/works' : '/es/trabajos';
                 {featuredWorks.map((project) => {
                     const title = lang === 'en' ? project.data.titleEn : project.data.titleEs;
                     const desc = lang === 'en' ? project.data.descriptionEn : project.data.descriptionEs;
-                    const behanceUrl = lang === 'en' ? project.data.behanceUrlEn : project.data.behanceUrlEs;
+                    const behanceUrl = project.data.behanceUrl;
                     const spanClass = `bento-card ${project.data.featuredSpan || "col-span-1 md:col-span-2 lg:col-span-6 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[240px]"}`;
                     const projectId = extractBehanceProjectId(behanceUrl);
                     
