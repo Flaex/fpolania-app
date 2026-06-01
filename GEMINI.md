@@ -49,6 +49,8 @@ This section maps out the completed activities aligning with the branding direct
 - **Executive Monolith Home Hub:** Developed [index.astro](file:///Users/fpolania/projects/fpolania-app/src/pages/index.astro) as a responsive 12-column Bento Grid structure using native Tailwind CSS utility classes matching the theme configuration.
 - **Navigation & Footer Layout:** Integrated persistent branding headers with the logo and the signature `Fredy Polania` command center aesthetics in [Navigation.astro](file:///Users/fpolania/projects/fpolania-app/src/components/Navigation.astro) and [Footer.astro](file:///Users/fpolania/projects/fpolania-app/src/components/Footer.astro).
 - **Works Grid Local Image System:** Migrated the portfolio cover images database into the local `/public/images/works/` directory, updated the Works Collection schema in `src/content.config.ts` to support root-relative paths, and implemented responsive high-contrast, hover-animated background cover images on all cards across the Works Hub.
+- **PWA & Offline Capability (Magician Archetype Integration):** Configured the web app manifest (`manifest.webmanifest`), registered a custom service worker (`sw.js`) implementing the Stale-While-Revalidate caching pattern for offline reliability, and built a script (`scripts/generate-pwa-assets.js`) utilizing `sharp` to automatically scale high-resolution PNG icons (`192x192`, `512x512`, `180x180` for Apple devices) from the brand vector `favicon.svg`.
+
 
 ### Communication & Content Strategy
 - **Thought Leadership Database:** Completed migration of 26 thought leadership articles (13 English, 13 Spanish) inside [src/content/blog/](file:///Users/fpolania/projects/fpolania-app/src/content/blog/).

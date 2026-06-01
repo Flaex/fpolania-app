@@ -53,6 +53,24 @@ const alternatePath = getAlternatePath(Astro.url.pathname, alternateLang);
 		<link rel="alternate" hreflang={lang} href={`https://flaex.design${Astro.url.pathname}`} />
 		<link rel="alternate" hreflang={alternateLang} href={`https://flaex.design${alternatePath}`} />
 
+		<!-- PWA & Mobile Web App Capabilities -->
+		<link rel="manifest" href="/manifest.webmanifest" />
+		<meta name="theme-color" content="#1A1B1A" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<script>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', () => {
+					navigator.serviceWorker.register('/sw.js')
+						.then(reg => {
+							console.log('ServiceWorker registered with scope: ', reg.scope);
+						})
+						.catch(err => {
+							console.error('ServiceWorker registration failed: ', err);
+						});
+				});
+			}
+		</script>
+
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
