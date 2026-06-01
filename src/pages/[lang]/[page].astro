@@ -498,9 +498,9 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
           if (config.type === 'overlay-bg') {
             return (
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-6 bg-surface-container border border-outline-variant aspect-square md:aspect-auto p-8 flex flex-col justify-end relative mt-12 overflow-hidden hover:border-white transition-colors duration-300 group min-h-[320px]">
-                <div class="absolute inset-0 bg-cover bg-center opacity-30 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`}></div>
+                <div class="absolute inset-0 bg-cover bg-center opacity-40 group-hover:opacity-80 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`}></div>
                 <div class="relative z-10">
-                  <h3 class="font-headline-md text-headline-md text-primary">{toPhraseCase(post.data.title)}</h3>
+                  <h3 class="font-headline-md text-headline-md text-primary group-hover:underline">{toPhraseCase(post.data.title)}</h3>
                   <span class="mt-4 font-label-technical text-label-technical text-primary flex items-center gap-2 uppercase tracking-widest">{lang === 'en' ? 'Learn More' : 'Aprender Más'} <span class="material-symbols-outlined text-[14px]">north_east</span></span>
                 </div>
               </a>
