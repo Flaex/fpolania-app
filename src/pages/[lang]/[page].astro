@@ -541,9 +541,15 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                   <h3 class="font-headline-md text-headline-md text-primary mb-6">{toPhraseCase(post.data.title)}</h3>
                   <p class="font-body-lg text-body-lg text-on-surface-variant">{config.description}</p>
                 </div>
-                <div class="w-full md:w-48 aspect-video bg-surface-container-highest border border-outline-variant flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-700">
-                  <span class="material-symbols-outlined text-[64px] text-primary/20">architecture</span>
-                </div>
+                {post.data.image ? (
+                  <div class="w-full md:w-48 aspect-video overflow-hidden border border-outline-variant">
+                    <div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`}></div>
+                  </div>
+                ) : (
+                  <div class="w-full md:w-48 aspect-video bg-surface-container-highest border border-outline-variant flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-700">
+                    <span class="material-symbols-outlined text-[64px] text-primary/20">architecture</span>
+                  </div>
+                )}
               </a>
             );
           }
