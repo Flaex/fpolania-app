@@ -56,7 +56,7 @@ export const slugMap: Record<string, string> = {
   'what-is-the-utility-of-learning-html': 'cual-es-la-utilidad-de-aprender-html',
   'what-is-html-the-structure-of-information': 'que-es-html-la-estructura-de-la-informacion',
   'what-is-css-the-visual-style-system': 'que-es-css-el-sistema-de-estilo-visual',
-  'graphic-design-and-web-programming-the-strategic-translation': 'diseno-grafico-y-programacion-web-la-traduccion-estrategica',
+  'the-translation-gap-in-digital-products': 'el-desfase-en-la-alineacion-en-productos-digitales',
 };
 
 export const reverseSlugMap: Record<string, string> = Object.fromEntries(

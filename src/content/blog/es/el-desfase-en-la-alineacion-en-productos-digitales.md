@@ -1,5 +1,5 @@
 ---
-title: "DISEÑO GRÁFICO Y PROGRAMACIÓN WEB: LA TRADUCCIÓN ESTRATÉGICA"
+title: "EL DESFASE EN LA ALINEACIÓN EN PRODUCTOS DIGITALES"
 lens: "builder_lens"
 image: "https://res.cloudinary.com/flaex/image/upload/v1678052762/strapi-v4/flaex_blog_de_diseno_y_desarrollo_web_e26598dd39.webp"
 language: "es"
@@ -13,7 +13,7 @@ Abordar la programación web desde el punto de vista de un diseñador gráfico e
 
 Conectar estos dos mundos no es una simple cuestión de herramientas; es una **traducción estratégica**. Es la disciplina de convertir los principios visuales del diseño en un sustrato web optimizado, limpio y escalable sin comprometer la intención creativa ni los objetivos de negocio.
 
-## El Problema: El Abismo (La Brecha de Traducción)
+## El Problema: El Abismo (El Desfase en la Alineación)
 
 En el desarrollo de productos modernos, existe una brecha sistemática que separa las tres disciplinas centrales de cualquier lanzamiento digital:
 1. **Estrategia de Negocios:** Impulsada por el ROI, el time-to-market y las tasas de conversión.
@@ -24,15 +24,15 @@ La mayoría de los fallos de producto ocurren en el traspaso. Los diseñadores c
 
 ## La Fricción: El Costo de la Desalineación
 
-Durante mis años liderando y escalando **Novanet Studio**, presencié diariamente el costo operativo y financiero de esta brecha de traducción.
+Durante mis años liderando y escalando **Novanet Studio**, presencié diariamente el costo operativo y financiero de este desfase en la alineación.
 
 En una implementación clave para una gran empresa, nuestro equipo de diseño creó una interfaz visual impresionante para un panel de datos complejos. En las maquetas lucía perfecto. Sin embargo, dado que los diseñadores no comprendían los ciclos de renderizado del DOM ni las restricciones técnicas, la propuesta exigía árboles DOM masivos y componentes pesados que destruyeron el rendimiento de carga inicial.
 
-Cuando el equipo de desarrollo recibió los diseños, tuvieron que reconstruirlos desde cero para alcanzar las métricas de rendimiento. ¿El resultado? Tres meses de retraso en el lanzamiento (GTM), presupuestos inflados y una profunda fricción entre los equipos. El conflicto no fue falta de talento; fue la brecha de traducción: la ausencia de un orquestador que hablara simultáneamente el lenguaje del diseño, del código y de la estrategia de negocios.
+Cuando el equipo de desarrollo recibió los diseños, tuvieron que reconstruirlos desde cero para alcanzar las métricas de rendimiento. ¿El resultado? Tres meses de retraso en el lanzamiento (GTM), presupuestos inflados y una profunda fricción entre los equipos. El conflicto no fue falta de talento; fue el desfase en la alineación: la ausencia de un orquestador que hablara simultáneamente el lenguaje del diseño, del código y de la estrategia de negocios.
 
 ## La Solución: Unificar Diseño y Código
 
-Para resolver la brecha de traducción, debemos unificar el diseño gráfico y la programación web en un único flujo de trabajo cohesionado. El diseñador debe comprender el medio (el navegador, las cuadrículas responsivas, el HTML semántico) y el desarrollador debe respetar la jerarquía visual (los tokens de diseño, los ritmos espaciales y la tipografía personalizada).
+Para resolver este desfase en la alineación, debemos unificar el diseño gráfico y la programación web en un único flujo de trabajo cohesionado. El diseñador debe comprender el medio (el navegador, las cuadrículas responsivas, el HTML semántico) y el desarrollador debe respetar la jerarquía visual (los tokens de diseño, los ritmos espaciales y la tipografía personalizada).
 
 ### 1. Sistemas de Diseño Codificados
 En lugar de pasar archivos de imagen estáticos, construimos tokens de diseño vivos. Las restricciones del sistema, como las tipografías del proyecto ([Fraunces](/blog/es/que-es-la-tipografia-el-adn-de-la-civilizacion) y [Geist Sans](/blog/es/que-es-la-tipografia-el-adn-de-la-civilizacion)) y las paletas cromáticas monocromáticas, se codifican directamente en el archivo de configuración de Tailwind CSS desde el primer día. Esto garantiza precisión de pixel absoluta y elimina errores de interpretación.

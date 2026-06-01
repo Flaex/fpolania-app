@@ -35,8 +35,8 @@ featuredWorks.sort((a, b) => (a.data.featuredOrder || 0) - (b.data.featuredOrder
 
 // Find the primary strategic translation article or default to first
 const targetIdPart = lang === 'en' 
-  ? 'graphic-design-and-web-programming-the-strategic-translation' 
-  : 'diseno-grafico-y-programacion-web-la-traduccion-estrategica';
+  ? 'the-translation-gap-in-digital-products' 
+  : 'el-desfase-en-la-alineacion-en-productos-digitales';
 
 const latestPost = posts.find(p => p.id.includes(targetIdPart)) || posts[0];
 const slug = latestPost ? latestPost.id.split('/').pop().replace(/\.md$/, '') : '';
