@@ -461,7 +461,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                     {lang === 'en' ? 'Read Article' : 'Leer Artículo'} <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
                   </div>
                 </div>
-                <div class="w-full md:w-1/2 min-h-[240px] bg-cover bg-center grayscale contrast-125 group-hover:scale-105 transition-transform duration-700" style={`background-image: url('${post.data.image}');`}></div>
+                <div class="w-full md:w-1/2 min-h-[240px] bg-cover bg-center grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`}></div>
               </a>
             );
           } else {
@@ -498,7 +498,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
           if (config.type === 'overlay-bg') {
             return (
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-6 bg-surface-container border border-outline-variant aspect-square md:aspect-auto p-8 flex flex-col justify-end relative mt-12 overflow-hidden hover:border-white transition-colors duration-300 group min-h-[320px]">
-                <div class="absolute inset-0 bg-cover bg-center opacity-30 grayscale group-hover:scale-105 transition-transform duration-700" style={`background-image: url('${post.data.image}');`}></div>
+                <div class="absolute inset-0 bg-cover bg-center opacity-30 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`}></div>
                 <div class="relative z-10">
                   <h3 class="font-headline-md text-headline-md text-primary">{toPhraseCase(post.data.title)}</h3>
                   <span class="mt-4 font-label-technical text-label-technical text-primary flex items-center gap-2 uppercase tracking-widest">{lang === 'en' ? 'Learn More' : 'Aprender Más'} <span class="material-symbols-outlined text-[14px]">north_east</span></span>
@@ -596,7 +596,9 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                   <h3 class="font-headline-md text-headline-md text-primary mb-6">{toPhraseCase(post.data.title)}</h3>
                   <p class="font-body-lg text-body-lg text-on-surface-variant">{config.description}</p>
                 </div>
-                <div class="w-full md:w-48 aspect-video bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 border border-outline-variant" style={`background-image: url('${post.data.image}');`}></div>
+                <div class="w-full md:w-48 aspect-video overflow-hidden border border-outline-variant">
+                  <div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`}></div>
+                </div>
               </a>
             );
           }
