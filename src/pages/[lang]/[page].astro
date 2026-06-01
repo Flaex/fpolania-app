@@ -536,17 +536,17 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
             );
           } else if (config.type === 'banner-wide-split') {
             return (
-              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 bg-surface-container border border-outline-variant p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-12 group hover:border-white transition-colors duration-300">
-                <div class="max-w-xl">
+              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 bg-surface-container border border-outline-variant flex flex-col md:flex-row items-stretch justify-between group hover:border-white transition-colors duration-300 relative overflow-hidden min-h-[280px]">
+                <div class="flex-1 p-8 md:p-12 flex flex-col justify-center">
                   <h3 class="font-headline-md text-headline-md text-primary mb-6">{toPhraseCase(post.data.title)}</h3>
-                  <p class="font-body-lg text-body-lg text-on-surface-variant">{config.description}</p>
+                  <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">{config.description}</p>
                 </div>
                 {post.data.image ? (
-                  <div class="w-full md:w-80 aspect-video overflow-hidden border border-outline-variant">
-                    <div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`}></div>
+                  <div class="w-full md:w-80 overflow-hidden relative border-t md:border-t-0 md:border-l border-outline-variant">
+                    <div class="w-full h-full min-h-[240px] md:min-h-0 bg-cover bg-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`}></div>
                   </div>
                 ) : (
-                  <div class="w-full md:w-80 aspect-video bg-surface-container-highest border border-outline-variant flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-700">
+                  <div class="w-full md:w-80 bg-surface-container-highest flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-700 border-t md:border-t-0 md:border-l border-outline-variant min-h-[240px] md:min-h-0">
                     <span class="material-symbols-outlined text-[64px] text-primary/20">architecture</span>
                   </div>
                 )}
