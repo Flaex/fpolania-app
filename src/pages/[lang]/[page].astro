@@ -603,13 +603,13 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
             );
           } else if (config.type === 'banner-right-image') {
             return (
-              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-6 bg-surface-container-high border border-outline-variant p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 group hover:border-white transition-colors duration-300">
+              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-6 bg-surface-container-high border border-outline-variant p-8 md:p-12 flex flex-col justify-between group hover:border-white transition-colors duration-300 min-h-[320px]">
                 <div class="max-w-xl">
                   <h3 class="font-headline-md text-headline-md text-primary mb-6 group-hover:underline">{toPhraseCase(post.data.title)}</h3>
                   <p class="font-body-lg text-body-lg text-on-surface-variant">{config.description}</p>
                 </div>
-                <div class="w-full md:w-64 md:shrink-0 aspect-video overflow-hidden border border-outline-variant">
-                  <div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`}></div>
+                <div class="mt-8 font-label-technical text-label-technical text-primary flex items-center gap-2 uppercase tracking-widest">
+                  {lang === 'en' ? 'Read Article' : 'Leer Artículo'} <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
                 </div>
               </a>
             );
