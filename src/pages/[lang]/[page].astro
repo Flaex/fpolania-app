@@ -542,11 +542,11 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                   <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">{config.description}</p>
                 </div>
                 {post.data.image ? (
-                  <div class="w-full md:w-80 overflow-hidden relative border-t md:border-t-0 md:border-l border-outline-variant">
+                  <div class="w-full md:w-auto md:aspect-video overflow-hidden relative border-t md:border-t-0 md:border-l border-outline-variant">
                     <div class="w-full h-full min-h-[240px] md:min-h-0 bg-cover bg-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`}></div>
                   </div>
                 ) : (
-                  <div class="w-full md:w-80 bg-surface-container-highest flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-700 border-t md:border-t-0 md:border-l border-outline-variant min-h-[240px] md:min-h-0">
+                  <div class="w-full md:w-auto md:aspect-video bg-surface-container-highest flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-700 border-t md:border-t-0 md:border-l border-outline-variant min-h-[240px] md:min-h-0">
                     <span class="material-symbols-outlined text-[64px] text-primary/20">architecture</span>
                   </div>
                 )}
