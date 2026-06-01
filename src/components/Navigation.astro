@@ -80,10 +80,80 @@ const inactiveClass = "font-body-md text-on-surface-variant hover:text-primary t
                         ES
                     </a>
                 </div>
+                
+                <!-- Hamburger Menu Toggle Button -->
+                <button
+                    id="mobile-menu-toggle"
+                    aria-label="Toggle Menu"
+                    aria-expanded="false"
+                    class="md:hidden w-9 h-9 flex items-center justify-center border border-outline-variant rounded-full text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-200 cursor-pointer ml-2"
+                >
+                    <span class="material-symbols-outlined text-lg">menu</span>
+                </button>
             </div>
         </div>
     </div>
 </nav>
+
+<!-- Mobile Drawer Backdrop Overlay -->
+<div 
+    id="mobile-menu-backdrop" 
+    class="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
+></div>
+
+<!-- Mobile Navigation Drawer -->
+<div 
+    id="mobile-menu-drawer" 
+    class="fixed inset-y-0 right-0 z-50 w-full max-w-[320px] bg-surface border-l border-outline-variant p-6 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col"
+>
+    <div>
+        <!-- Drawer Header -->
+        <div class="flex justify-between items-center mb-12">
+            <span class="font-label-technical text-label-technical uppercase tracking-widest text-primary/60 text-xs">Menu</span>
+            <button 
+                id="mobile-menu-close" 
+                aria-label="Close Menu"
+                class="w-9 h-9 flex items-center justify-center border border-outline-variant rounded-full text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-200 cursor-pointer"
+            >
+                <span class="material-symbols-outlined text-lg">close</span>
+            </button>
+        </div>
+
+        <!-- Navigation Links Stack -->
+        <div class="flex flex-col space-y-6">
+            <a 
+                href={homePath} 
+                class="flex flex-col group py-2"
+            >
+                <span class="font-label-technical text-[10px] text-primary/40 uppercase tracking-wider mb-1">01</span>
+                <span class={`font-display text-2xl font-bold font-fraunces transition-colors ${isStrategy ? 'text-primary' : 'text-primary/60 hover:text-primary'}`}>{t('nav.strategy')}</span>
+            </a>
+            <a 
+                href={worksPath} 
+                class="flex flex-col group py-2"
+            >
+                <span class="font-label-technical text-[10px] text-primary/40 uppercase tracking-wider mb-1">02</span>
+                <span class={`font-display text-2xl font-bold font-fraunces transition-colors ${isWork ? 'text-primary' : 'text-primary/60 hover:text-primary'}`}>{t('nav.work')}</span>
+            </a>
+            <a 
+                href={insightPath} 
+                class="flex flex-col group py-2"
+            >
+                <span class="font-label-technical text-[10px] text-primary/40 uppercase tracking-wider mb-1">03</span>
+                <span class={`font-display text-2xl font-bold font-fraunces transition-colors ${isInsight ? 'text-primary' : 'text-primary/60 hover:text-primary'}`}>{t('nav.insight')}</span>
+            </a>
+            
+            <div class="pt-6 border-t border-outline-variant/50">
+                <a 
+                    href="mailto:fpolania@gmail.com" 
+                    class="block w-full text-center font-body-md bg-primary text-on-primary py-3.5 px-6 text-xs font-bold uppercase tracking-widest hover:opacity-85 transition-all rounded-sm"
+                >
+                    {t('nav.connect')}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
     const setupThemeToggle = () => {
@@ -130,10 +200,49 @@ const inactiveClass = "font-body-md text-on-surface-variant hover:text-primary t
         });
     };
 
+    const setupMobileMenu = () => {
+        const toggleBtn = document.getElementById('mobile-menu-toggle');
+        const closeBtn = document.getElementById('mobile-menu-close');
+        const drawer = document.getElementById('mobile-menu-drawer');
+        const backdrop = document.getElementById('mobile-menu-backdrop');
+        
+        if (!toggleBtn || !drawer || !backdrop || !closeBtn) return;
+        
+        const openMenu = () => {
+            drawer.classList.remove('translate-x-full');
+            backdrop.classList.remove('pointer-events-none', 'opacity-0');
+            backdrop.classList.add('opacity-100');
+            toggleBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        };
+        
+        const closeMenu = () => {
+            drawer.classList.add('translate-x-full');
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('opacity-0', 'pointer-events-none');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        };
+        
+        toggleBtn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        backdrop.addEventListener('click', closeMenu);
+        
+        // Handle Escape key
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') closeMenu();
+        };
+        document.addEventListener('keydown', handleKeyDown);
+    };
+
     // Run setup immediately
     setupThemeToggle();
+    setupMobileMenu();
     // Re-bind on Astro page transitions
-    document.addEventListener('astro:after-swap', setupThemeToggle);
+    document.addEventListener('astro:after-swap', () => {
+        setupThemeToggle();
+        setupMobileMenu();
+    });
 
     // Language preference persistence
     document.querySelectorAll('.lang-btn').forEach(btn => {
