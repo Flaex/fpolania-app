@@ -22,7 +22,7 @@ In modern product development, a systemic gap separates the three core disciplin
 
 Most product failures occur in the handoff. Designers create high-fidelity design files in visual isolation, ignoring the browser substrate. Developers, handed static mocks, write code that misses the visual nuances, grid rhythms, and typographic details. The result is a compromised product that satisfies neither the business goals nor the user experience.
 
-## The Agitation: The Cost of Misalignment
+## The Friction: The Cost of Misalignment
 
 During my years building and scaling **Novanet Studio**, I witnessed the financial and operational cost of this translation gap daily. 
 

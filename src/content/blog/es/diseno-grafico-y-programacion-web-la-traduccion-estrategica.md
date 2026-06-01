@@ -22,7 +22,7 @@ En el desarrollo de productos modernos, existe una brecha sistemática que separ
 
 La mayoría de los fallos de producto ocurren en el traspaso. Los diseñadores crean interfaces de alta fidelidad en aislamiento visual, ignorando el sustrato del navegador. Los desarrolladores, al recibir maquetas estáticas, escriben código que omite los matices visuales, los ritmos de cuadrícula y los detalles tipográficos. El resultado es un producto comprometido que no satisface ni los objetivos del negocio ni la experiencia del usuario.
 
-## La Agitación: El Costo de la Desalineación
+## La Fricción: El Costo de la Desalineación
 
 Durante mis años liderando y escalando **Novanet Studio**, presencié diariamente el costo operativo y financiero de esta brecha de traducción.
 
