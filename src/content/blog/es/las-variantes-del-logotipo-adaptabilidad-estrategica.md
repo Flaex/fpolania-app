@@ -1,5 +1,5 @@
 ---
-title: "LAS VARIANTES DEL LOGOTIPO: ADAPTABILIDAD ESTRATÉGICA"
+title: "Las variantes del logotipo: adaptabilidad estratégica"
 lens: "visual_lens"
 image: "https://res.cloudinary.com/flaex/image/upload/v1674939511/strapi-v4/flaex_logotipo_variantes_0ec884cbf7.webp"
 language: "es"

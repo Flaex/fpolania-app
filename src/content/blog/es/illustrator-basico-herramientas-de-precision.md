@@ -1,5 +1,5 @@
 ---
-title: "ILLUSTRATOR BÁSICO: HERRAMIENTAS DE PRECISIÓN"
+title: "Illustrator básico: herramientas de precisión"
 lens: "visual_lens"
 image: "https://res.cloudinary.com/flaex/image/upload/v1697042312/strapi-v4/flaex_illustrator_cover_1fc7f6c4b7.png"
 language: "es"
@@ -16,6 +16,8 @@ Illustrator, es un programa desarrollado por Adobe y es un editor de gráficos v
 Son muy frecuentes los requerimentos de hacer promoción a eventos, actividades, invitaciones, entre otros, por lo que la elaboración de estas piezas gráficas quedan en nuestras manos y a pesar de que existen algunos programas de “fácil" uso, los resultados no son iguales a los que se obtienen con Illustrator.
 
 ## Contenido del video
+
+<iframe style="width: 100%; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/fjhD8UIR6T0" title="Illustrator básico: Herramientas y paneles comunes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 - Interfaz de usuario y espacios de trabajo [00:33](https://youtu.be/fjhD8UIR6T0?t=33)
 

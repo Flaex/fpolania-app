@@ -1,5 +1,5 @@
 ---
-title: "¿QUÉ ES HTML? LA ESTRUCTURA DE LA INFORMACIÓN"
+title: "¿Qué es HTML? La estructura de la información"
 lens: "builder_lens"
 image: "https://res.cloudinary.com/flaex/image/upload/v1627500628/strapi/flaex_partes_de_un_html_335be98ff9.jpg"
 language: "es"

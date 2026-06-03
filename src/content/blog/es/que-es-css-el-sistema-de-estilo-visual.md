@@ -1,5 +1,5 @@
 ---
-title: "¿QUÉ ES CSS? EL SISTEMA DE ESTILO VISUAL"
+title: "¿Qué es CSS? El sistema de estilo visual"
 lens: "builder_lens"
 image: "https://res.cloudinary.com/flaex/image/upload/v1682536096/strapi-v4/flaex_que_es_css_d462946d27.webp"
 language: "es"

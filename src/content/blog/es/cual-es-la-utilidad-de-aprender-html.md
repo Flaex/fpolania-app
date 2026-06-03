@@ -1,5 +1,5 @@
 ---
-title: "¿CUÁL ES LA UTILIDAD DE APRENDER HTML?"
+title: "¿Cuál es la utilidad de aprender HTML?"
 lens: "builder_lens"
 image: "https://res.cloudinary.com/flaex/image/upload/v1679511745/strapi-v4/flaex_para_que_sirve_html_afb9efafad.webp"
 language: "es"

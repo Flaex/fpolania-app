@@ -35,7 +35,7 @@ When the front-end team received the designs, they had to rebuild them from scra
 To solve this translation gap, we must unify graphic design and web programming into a single, cohesive workflow. The designer must understand the medium (the browser, responsive grids, semantic HTML), and the developer must respect the visual hierarchy (design tokens, layout ratios, custom typography).
 
 ### 1. Codified Design Systems
-Instead of passing static image files, we build living design tokens. System constraints—such as custom typography fonts ([Fraunces](/blog/en/what-is-typography-the-dna-of-information) and [Geist Sans](/blog/en/what-is-typography-the-dna-of-information)) and monochromatic color palettes—are codified directly into the Tailwind configuration file from day one. This ensures absolute pixel precision and eliminates interpretation errors.
+Instead of passing static image files, we build living design tokens. System constraints—such as custom typography fonts ([Fraunces](https://fonts.google.com/specimen/Fraunces) and [Geist Sans](https://fonts.google.com/specimen/Geist)) and monochromatic color palettes—are codified directly into the Tailwind configuration file from day one. This ensures absolute pixel precision and eliminates interpretation errors.
 
 ### 2. High-Performance Front-End Implementations
 We replace bloated third-party code and heavy rendering stacks with content-first frameworks like [Astro](/blog/en/what-is-html-the-structure-of-information) combined with modern styling engines like Tailwind CSS. By keeping the structure semantic and lightweight, we achieve fast load times (Core Web Vitals) while retaining a premium design aesthetic.

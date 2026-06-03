@@ -1,5 +1,5 @@
 ---
-title: "EL LOGOTIPO Y LA EMPRESA: LA INVERSIÓN EN CONFIANZA"
+title: "El logotipo y la empresa: la inversión en confianza"
 lens: "ceo_lens"
 image: "https://res.cloudinary.com/flaex/image/upload/v1674939510/strapi-v4/flaex_importancia_logotipo_emprendimiento_289edc213c.webp"
 language: "es"

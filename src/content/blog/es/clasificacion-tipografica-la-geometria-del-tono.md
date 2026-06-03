@@ -1,5 +1,5 @@
 ---
-title: "CLASIFICACIÓN TIPOGRÁFICA: LA GEOMETRÍA DEL TONO"
+title: "Clasificación tipográfica: la geometría del tono"
 lens: "visual_lens"
 image: "https://res.cloudinary.com/flaex/image/upload/v1674939507/strapi-v4/flaex_clasificacion_tipografica_principal_a0ce61551c.webp"
 language: "es"

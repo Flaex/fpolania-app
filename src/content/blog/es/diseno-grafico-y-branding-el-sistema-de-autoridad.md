@@ -1,5 +1,5 @@
 ---
-title: "DISEÑO GRÁFICO Y BRANDING: EL SISTEMA DE AUTORIDAD"
+title: "Diseño gráfico y branding: el sistema de autoridad"
 lens: "ceo_lens"
 image: "https://res.cloudinary.com/flaex/image/upload/v1639430851/strapi/flaex_diseno_grafico_branding_c3afc391dd.jpg"
 language: "es"

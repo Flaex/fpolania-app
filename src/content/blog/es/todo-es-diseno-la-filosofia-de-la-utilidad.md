@@ -1,5 +1,5 @@
 ---
-title: "TODO ES DISEÑO: LA FILOSOFÍA DE LA UTILIDAD"
+title: "Todo es diseño: la filosofía de la utilidad"
 lens: "ceo_lens"
 image: "https://res.cloudinary.com/flaex/image/upload/v1674939516/strapi-v4/small_flaex_todo_es_diseno_20031516da.webp"
 language: "es"

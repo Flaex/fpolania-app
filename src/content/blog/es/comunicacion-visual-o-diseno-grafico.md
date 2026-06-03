@@ -1,5 +1,5 @@
 ---
-title: "¿COMUNICACIÓN VISUAL O DISEÑO GRÁFICO?"
+title: "¿Comunicación visual o diseño gráfico?"
 lens: "visual_lens"
 image: "https://res.cloudinary.com/flaex/image/upload/v1648842848/strapi/diseno_grafico_o_comunicacion_visual_b093dbfaa0.jpg"
 language: "es"

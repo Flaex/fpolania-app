@@ -1,5 +1,5 @@
 ---
-title: "¿QUÉ ES LA TIPOGRAFÍA? EL ADN DE LA CIVILIZACIÓN"
+title: "¿Qué es la tipografía? El ADN de la civilización"
 lens: "visual_lens"
 image: "https://res.cloudinary.com/flaex/image/upload/v1674939512/strapi-v4/flaex_que_es_la_tipografia_eee989b282.webp"
 language: "es"
