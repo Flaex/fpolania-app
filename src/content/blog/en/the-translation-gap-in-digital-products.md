@@ -13,31 +13,31 @@ Approaching web programming from a graphic designer’s perspective is a journey
 
 Bridging these two worlds is not a simple choice of tools; it is a **strategic translation**. It is the discipline of converting visual design principles into performant, clean, and scalable web substrates without compromising creative intent or business outcomes.
 
-## The Disconnect (The Translation Gap)
+## The Gap (The Translation Gap)
 
 In modern product development, a systemic gap separates the three core disciplines of any digital launch:
 1. **Business Strategy:** Driven by ROI, time-to-market, and conversions.
 2. **Design Vision:** Driven by user empathy, visual flow, and brand authority.
-3. **Technologic Craft:** Driven by scalability, clean code, and load performance.
+3. **Technologic Craft:** Driven by scalability, best practices, and load performance.
 
-Most product failures occur in the handoff. Designers create high-fidelity design files in visual isolation, ignoring the browser substrate. Developers, handed static mocks, write code that misses the visual nuances, grid rhythms, and typographic details. The result is a compromised product that satisfies neither the business goals nor the user experience.
+Most product failures occur in the transition between stages. Designers create high-fidelity design files in visual isolation, ignoring the technological requirements. Developers, handed static mocks, write code that misses the visual nuances, grid rhythms, and typographic details. The result is a compromised product that satisfies neither the business goals nor the user experience.
 
 ## The Cost of Misalignment
 
-During my years building and scaling **Novanet Studio**, I witnessed the financial and operational cost of this translation gap daily. 
+During the time I have been working at [**_Novanet Studio_**](https://novanet.studio), I often witnessed the operational and financial cost of this translation gap. 
 
-On one key enterprise deployment, our design team created a stunning visual interface for a data-heavy dashboard. It looked perfect on mockups. However, because the designers did not understand DOM rendering paths or technical constraints, the design required massive DOM trees and custom components that tanked the initial load speed. 
+On one key enterprise deployment, a third-party design team created a stunning visual interface for a data-heavy dashboard. It looked perfect on mockups. However, because the designers did not understand DOM rendering paths or technical constraints, the design required massive DOM trees and custom components that tanked the initial load speed. 
 
 When the front-end team received the designs, they had to rebuild them from scratch to hit performance metrics. The result was three months of delayed GTM, bloated budgets, and deep friction between teams. The conflict wasn't a lack of talent; it was the translation gap—the lack of an orchestrator who spoke design, code, and business strategy simultaneously.
 
 ## Bridging Design and Code
 
-To solve this translation gap, we must unify graphic design and web programming into a single, cohesive workflow. The designer must understand the medium (the browser, responsive grids, semantic HTML), and the developer must respect the visual hierarchy (design tokens, layout ratios, custom typography).
+To solve this translation gap, we must unify product strategy, graphic design, and web programming into a single, cohesive workflow. The project leader must establish an aligned strategy, the designer must understand the medium (the browser, responsive grids, semantic HTML), and the developer must respect the visual hierarchy (design tokens, layout ratios, custom typography).
 
 ### 1. Codified Design Systems
-Instead of passing static image files, we build living design tokens. System constraints—such as custom typography fonts ([Fraunces](https://fonts.google.com/specimen/Fraunces) and [Geist Sans](https://fonts.google.com/specimen/Geist)) and monochromatic color palettes—are codified directly into the Tailwind configuration file from day one. This ensures absolute pixel precision and eliminates interpretation errors.
+Instead of passing static image files, we build living design tokens. System conditions—such as custom typography fonts of this website ([Fraunces](https://fonts.google.com/specimen/Fraunces) and [Geist Sans](https://fonts.google.com/specimen/Geist)) and monochromatic color palettes—are codified directly into the CSS styles configuration file from day one. This ensures absolute pixel precision and eliminates interpretation errors.
 
 ### 2. High-Performance Front-End Implementations
-We replace bloated third-party code and heavy rendering stacks with content-first frameworks like [Astro](/blog/en/what-is-html-the-structure-of-information) combined with modern styling engines like Tailwind CSS. By keeping the structure semantic and lightweight, we achieve fast load times (Core Web Vitals) while retaining a premium design aesthetic.
+We replace bloated third-party code and heavy rendering stacks with content-first frameworks like [Astro](/blog/en/what-is-html-the-structure-of-information) combined with modern style utilities like Tailwind CSS. By keeping the structure semantic and lightweight, we achieve fast load times (Core Web Vitals) while retaining a clean aesthetic.
 
-By acting as the translator between business outcomes, design craft, and clean code, we cut delivery timelines by 40% at Novanet and delivered products that not only looked outstanding but performed flawlessly under load. True technical alchemy occurs when the visual and the code operate as one unified language.
+By acting as the translator between business outcomes, design craft, and clean code, we cut delivery timelines by 40% at [**_Novanet_**](https://novanet.studio) and delivered products that not only looked outstanding but performed flawlessly under load. True technical alchemy occurs when the visual and the code operate as one unified language.
