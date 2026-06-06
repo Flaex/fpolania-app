@@ -7,7 +7,7 @@ pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"
 ---
 
-## Introduction: Visual Engineering with Adobe Illustrator
+## Visual Engineering with Adobe Illustrator
 
 Adobe Illustrator is the industry standard for vector graphics creation. In this tutorial, we address the most basic aspects of the program from a **professional production** perspective, focusing on the work environment and the tools that allow you to take the first steps with technical mastery.
 

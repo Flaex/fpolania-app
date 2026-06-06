@@ -7,7 +7,7 @@ pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"
 ---
 
-## Introduction: Much More Than "Letters"
+## Much More Than "Letters"
 
 Typography is another name for the letters of the alphabet, but its real weight is incalculable. It is one of the fundamental elements not only in visual communication but also in the development of human civilization.
 

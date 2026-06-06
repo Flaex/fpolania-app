@@ -7,7 +7,7 @@ pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"
 ---
 
-## Introducción: La Ingeniería Visual con Adobe Illustrator
+## La Ingeniería Visual con Adobe Illustrator
 
 Adobe Illustrator es el estándar de la industria para el diseño vectorial. En este tutorial, abordamos los aspectos más básicos del programa desde una perspectiva de **producción profesional**, enfocándonos en el entorno de trabajo y las herramientas que permiten dar los primeros pasos con maestría técnica.
 

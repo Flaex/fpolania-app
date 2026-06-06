@@ -7,7 +7,7 @@ pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"
 ---
 
-## Introducción: Mucho más que "Letras"
+## Mucho más que "Letras"
 
 La tipografía es otro nombre para referirse a las letras del alfabeto, pero su peso real es incalculable. Es uno de los elementos fundamentales no sólo en la comunicación visual, sino también en el desarrollo de la civilización humana.
 

@@ -7,7 +7,7 @@ pillar: "Technical Alchemy (The Builder Lens)"
 originalLanguage: "Spanish"
 ---
 
-## Introduction: The Core of Strategic Translation
+## The Core of Strategic Translation
 
 Approaching web programming from a graphic designer’s perspective is a journey of cognitive adaptation. In traditional graphic design, elements are visible and fixed. In web development, we operate in an abstract environment of dynamic states, system architectures, and rendering engines. 
 

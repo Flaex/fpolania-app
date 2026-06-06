@@ -7,7 +7,7 @@ pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"
 ---
 
-## Introduction: The Message vs. The Tool
+## The Message vs. The Tool
 
 In the business world, terminology is often used interchangeably, which dilutes the strategic importance of each discipline. Confusing communication with design is a common mistake. For a product architect, understanding the distinction is key to flawless execution.
 
