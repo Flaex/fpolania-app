@@ -4,7 +4,7 @@ This document records the research process, user inputs, and strategic iteration
 
 ## 1. Initial Research Phase (May 2026 Trends)
 ### Key Findings:
-*   **LinkedIn 2026:** Shifted from digital resumes to "GTM (Go-To-Market) Engines." Priority on dwell time, intent clarity, and PAS (Problem-Agitate-Solution) copy.
+*   **LinkedIn 2026:** Shifted from digital resumes to "GTM (Go-To-Market) Engines." Priority on dwell time, intent clarity, and PFS (Problem-Friction-Solution) copy.
 *   **Website Trends:** Rise of "Bento Grid" layouts, kinetic typography, and "human-first" imperfections to counter AI-generated perfection.
 *   **Branding Philosophy:** "Trust-Building" over "Clout-Chasing." Reputation is now built on sharing the "Messy Middle" and contrarian industry views.
 

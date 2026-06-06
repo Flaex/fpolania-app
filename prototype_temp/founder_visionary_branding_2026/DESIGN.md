@@ -129,7 +129,7 @@ This document contains the foundational mandates for the "Founder-Visionary" bra
 - **Tone:** Authoritative, direct, and outcome-oriented.
 - **Narrative Focus (Outcome Stories > Resume Metrics):** Avoid redundant experience metrics (e.g., "15+ years CEO experience"). Instead, frame experience through actionable stories and insights (e.g., "Building and scaling Novanet Studio taught me...").
 - **The Core Conflict (The Translation Gap):** Consistently highlight the disconnect between business (ROI), design (empathy), and development (scalability). Position yourself as the bridge who speaks all three languages.
-- **Content Framework:** Always use PAS (Problem-Agitate-Solution).
+- **Content Framework:** Always use PFS (Problem-Friction-Solution).
 - **Perspective:** Focus on the "Messy Middle"—show the decision-making process, not just the final result. Every piece of content should ideally touch on at least two of your three pillars: Business Strategy, Design Vision, or Technologic craft.
 
 ## 4. Workflows
