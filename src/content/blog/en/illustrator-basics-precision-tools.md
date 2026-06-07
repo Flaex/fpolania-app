@@ -1,5 +1,5 @@
 ---
-title: "ILLUSTRATOR BASICS: PRECISION TOOLS"
+title: "Illustrator basics: precision tools"
 lens: "visual_lens"
 image: "https://res.cloudinary.com/flaex/image/upload/v1697042312/strapi-v4/flaex_illustrator_cover_1fc7f6c4b7.png"
 language: "en"
@@ -17,19 +17,38 @@ It is common to receive requests for promoting events, activities, and invitatio
 
 ## Video Contents
 
+<iframe style="width: 100%; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/fjhD8UIR6T0" title="Illustrator basics: precision tools" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 - User Interface and Workspace [00:33](https://youtu.be/fjhD8UIR6T0?t=33)
+
 - Create a New Document [1:19](https://youtu.be/fjhD8UIR6T0?t=82)
+
+Tools
+
 - Selection Tool [3:05](https://youtu.be/fjhD8UIR6T0?t=186)
+
 - Direct Selection Tool [3:34](https://youtu.be/fjhD8UIR6T0?t=215)
+
 - Bézier (Pen Tool) [4:16](https://youtu.be/fjhD8UIR6T0?t=257)
+
 - Type Tool [4:52](https://youtu.be/fjhD8UIR6T0?t=293)
+
 - Zoom Tool [6:12](https://youtu.be/fjhD8UIR6T0?t=372)
+
+Panels
+
 - Swatches Panel [8:23](https://youtu.be/fjhD8UIR6T0?t=504)
+
 - Stroke Panel [10:00](https://youtu.be/fjhD8UIR6T0?t=601)
+
 - Layers Panel [11:43](https://youtu.be/fjhD8UIR6T0?t=703)
+
 - Character Panel [14:35](https://youtu.be/fjhD8UIR6T0?t=875)
+
 - Paragraph Panel [16:38](https://youtu.be/fjhD8UIR6T0?t=998)
+
 - Combined Tool Usage [19:46](https://youtu.be/fjhD8UIR6T0?t=1186)
+
 - Summary and Conclusion [24:02](https://youtu.be/fjhD8UIR6T0?t=1442)
 
 ## 1. Interface and Workspace
