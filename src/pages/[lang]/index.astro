@@ -97,10 +97,19 @@ const worksPath = lang === 'en' ? '/en/works' : '/es/trabajos';
                 <div class="bento-card col-span-1 md:col-span-1 lg:col-span-3 p-8 flex flex-col justify-between rounded-lg group hover:border-silver transition-colors">
                     <div>
                         <h3 class="font-headline-md text-headline-md mb-3 text-primary font-bold">{t('home.worksCardTitle')}</h3>
-                        <ul class="space-y-1 font-body-md text-body-md text-on-surface-variant list-none pl-0">
-                            <li>• {t('home.worksCardItem1')}</li>
-                            <li>• {t('home.worksCardItem2')}</li>
-                            <li>• {t('home.worksCardItem3')}</li>
+                        <ul class="space-y-1.5 font-body-md text-body-md text-on-surface-variant list-none pl-0">
+                            <li class="flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-[14px] text-primary">chevron_right</span>
+                                <span>{t('home.worksCardItem1')}</span>
+                            </li>
+                            <li class="flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-[14px] text-primary">chevron_right</span>
+                                <span>{t('home.worksCardItem2')}</span>
+                            </li>
+                            <li class="flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-[14px] text-primary">chevron_right</span>
+                                <span>{t('home.worksCardItem3')}</span>
+                            </li>
                         </ul>
                     </div>
                     <div class="mt-6">
