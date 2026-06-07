@@ -15,6 +15,31 @@ function toPhraseCase(str: string) {
     return lower;
 }
 
+function formatDate(dateStr: string, lang: string) {
+  if (!dateStr) return '';
+  const parts = dateStr.split('-');
+  if (parts.length !== 3) return dateStr;
+  const [year, month, day] = parts;
+  const dayNum = parseInt(day, 10);
+  const monthNum = parseInt(month, 10) - 1;
+
+  const monthsEs = [
+    'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+    'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
+  ];
+  const monthsEn = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+
+  if (lang === 'es') {
+    const formattedDay = dayNum.toString().padStart(2, '0');
+    return `${formattedDay} de ${monthsEs[monthNum]} de ${year}`;
+  } else {
+    return `${monthsEn[monthNum]} ${dayNum}, ${year}`;
+  }
+}
+
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   
@@ -137,7 +162,7 @@ const metaTitleSuffix = t('article.metaSuffix');
           {lang === 'en' ? 'Insight' : 'Perspectiva'} / {meta.index}
         </span>
         <span class="font-label-technical text-label-technical text-secondary uppercase tracking-widest text-xs">
-          {meta.date} — {readTime} {t('article.readTimeSuffix')}
+          {formatDate(post.data.date, lang)} — {readTime} {t('article.readTimeSuffix')}
         </span>
       </div>
       <h1 class="font-display text-[40px] md:text-display mb-8 text-primary font-fraunces leading-tight">

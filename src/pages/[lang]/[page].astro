@@ -16,6 +16,31 @@ function toPhraseCase(str: string) {
     return lower;
 }
 
+function formatDate(dateStr: string, lang: string) {
+  if (!dateStr) return '';
+  const parts = dateStr.split('-');
+  if (parts.length !== 3) return dateStr;
+  const [year, month, day] = parts;
+  const dayNum = parseInt(day, 10);
+  const monthNum = parseInt(month, 10) - 1;
+
+  const monthsEs = [
+    'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+    'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
+  ];
+  const monthsEn = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+
+  if (lang === 'es') {
+    const formattedDay = dayNum.toString().padStart(2, '0');
+    return `${formattedDay} de ${monthsEs[monthNum]} de ${year}`;
+  } else {
+    return `${monthsEn[monthNum]} ${dayNum}, ${year}`;
+  }
+}
+
 export async function getStaticPaths() {
   return [
     { params: { lang: 'en', page: 'works' } },
@@ -432,7 +457,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                   <div>
                     <div class="flex items-center gap-2 mb-4">
                       <span class="w-2 h-2 rounded-full bg-primary"></span>
-                      <span class="font-label-technical text-label-technical uppercase text-on-surface-variant">{config.tag}</span>
+                      <span class="font-label-technical text-label-technical uppercase text-on-surface-variant">{config.tag} — {formatDate(post.data.date, lang)}</span>
                     </div>
                     <h3 class="font-headline-md text-headline-md text-primary group-hover:underline">{toPhraseCase(post.data.title)}</h3>
                   </div>
@@ -447,7 +472,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
             return (
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container-low border border-outline-variant p-8 hover:bg-surface-container hover:border-white transition-all duration-300 flex flex-col justify-between">
                 <div>
-                  <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{config.label}</span>
+                  <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{config.label} — {formatDate(post.data.date, lang)}</span>
                   <h3 class="font-headline-md text-headline-md text-primary mb-4 leading-tight">{toPhraseCase(post.data.title)}</h3>
                 </div>
                 <div class="flex flex-wrap gap-2 mt-auto">
@@ -479,6 +504,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-6 bg-surface-container border border-outline-variant aspect-square md:aspect-auto p-8 flex flex-col justify-end relative mt-12 overflow-hidden hover:border-white transition-colors duration-300 group min-h-[320px]">
                 <div class="absolute inset-0 bg-cover bg-center opacity-40 group-hover:opacity-80 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`}></div>
                 <div class="relative z-10">
+                  <span class="font-label-technical text-label-technical text-primary/80 mb-2 block uppercase">{formatDate(post.data.date, lang)}</span>
                   <h3 class="font-headline-md text-headline-md text-primary group-hover:underline">{toPhraseCase(post.data.title)}</h3>
                   <span class="mt-4 font-label-technical text-label-technical text-primary flex items-center gap-2 uppercase tracking-widest">{lang === 'en' ? 'Learn More' : 'Aprender Más'} <span class="material-symbols-outlined text-[14px]">north_east</span></span>
                 </div>
@@ -488,6 +514,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
             return (
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container-high border border-outline-variant p-8 flex flex-col justify-between hover:border-white transition-colors duration-300">
                 <div>
+                  <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{formatDate(post.data.date, lang)}</span>
                   <h3 class="font-headline-md text-headline-md text-primary">{toPhraseCase(post.data.title)}</h3>
                   <p class="font-body-md text-body-md text-on-surface-variant mt-4">{config.description}</p>
                 </div>
@@ -499,7 +526,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container border border-outline-variant p-8 flex flex-col justify-between hover:border-white transition-colors duration-300">
                 <div class="flex justify-between items-start mb-6">
                   <span class="material-symbols-outlined text-primary text-[32px]">{config.icon}</span>
-                  <span class="font-label-technical text-label-technical text-on-surface-variant">{config.label}</span>
+                  <span class="font-label-technical text-label-technical text-on-surface-variant">{config.label} — {formatDate(post.data.date, lang)}</span>
                 </div>
                 <h3 class="font-headline-md text-headline-md text-primary mb-2">{toPhraseCase(post.data.title)}</h3>
               </a>
@@ -508,6 +535,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
             return (
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container-high border border-outline-variant p-8 group cursor-pointer hover:border-white transition-colors duration-300 flex flex-col justify-between">
                 <div>
+                  <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{formatDate(post.data.date, lang)}</span>
                   <h3 class="font-headline-md text-headline-md text-primary transition-all group-hover:translate-x-2">{toPhraseCase(post.data.title)}</h3>
                   <p class="font-body-md text-body-md text-on-surface-variant mt-2 text-sm">{config.description}</p>
                 </div>
@@ -517,6 +545,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
             return (
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 bg-surface-container border border-outline-variant flex flex-col md:flex-row items-stretch justify-between group hover:border-white transition-colors duration-300 relative overflow-hidden min-h-[280px]">
                 <div class="flex-1 p-8 md:p-12 flex flex-col justify-center">
+                  <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{formatDate(post.data.date, lang)}</span>
                   <h3 class="font-headline-md text-headline-md text-primary mb-6">{toPhraseCase(post.data.title)}</h3>
                   <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">{config.description}</p>
                 </div>
@@ -553,6 +582,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
               <div class="col-span-12 md:col-span-6 bg-surface-container border border-outline-variant flex flex-col md:flex-row items-stretch justify-between group hover:border-white transition-colors duration-300 relative overflow-hidden mt-12 min-h-[320px]">
                 <div class="flex-1 p-8 flex flex-col justify-between">
                   <div>
+                    <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{formatDate(post.data.date, lang)}</span>
                     <h3 class="font-headline-md text-headline-md text-primary mb-4 group-hover:underline">{toPhraseCase(post.data.title)}</h3>
                     <p class="font-body-md text-body-md text-on-surface-variant">{config.description}</p>
                   </div>
@@ -577,13 +607,14 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                   <h3 class="font-headline-md text-headline-md text-primary mb-2">{toPhraseCase(post.data.title)}</h3>
                   <p class="font-body-md text-body-md text-on-surface-variant mb-4 text-sm">{config.description}</p>
                 </div>
-                <span class="font-label-technical text-[10px] text-primary/40 uppercase tracking-tighter block mt-auto">{config.bottomLabel}</span>
+                <span class="font-label-technical text-[10px] text-primary/40 uppercase tracking-tighter block mt-auto">{config.bottomLabel} — {formatDate(post.data.date, lang)}</span>
               </a>
             );
           } else if (config.type === 'banner-right-image') {
             return (
               <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-6 bg-surface-container-high border border-outline-variant p-8 md:p-12 flex flex-col justify-between group hover:border-white transition-colors duration-300 min-h-[320px]">
                 <div class="max-w-xl">
+                  <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{formatDate(post.data.date, lang)}</span>
                   <h3 class="font-headline-md text-headline-md text-primary mb-6 group-hover:underline">{toPhraseCase(post.data.title)}</h3>
                   <p class="font-body-lg text-body-lg text-on-surface-variant">{config.description}</p>
                 </div>
