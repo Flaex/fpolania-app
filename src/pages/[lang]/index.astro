@@ -94,15 +94,21 @@ const worksPath = lang === 'en' ? '/en/works' : '/es/trabajos';
 
                 <!-- Strategic Cards Row -->
                 <!-- Case Studies Portal (1x1 equivalent) -->
-                <a 
-                    class="bento-card col-span-1 md:col-span-1 lg:col-span-3 p-8 flex flex-col justify-center rounded-lg group hover:border-silver transition-colors focus:outline-none focus:border-primary" 
-                    href={worksPath}
-                >
-                    <h3 class="font-headline-md text-headline-md mb-3 text-primary font-bold group-hover:text-silver transition-colors">{t('home.worksCardTitle')}</h3>
-                    <p class="font-body-md text-body-md text-on-surface-variant">
-                        {t('home.worksCardDesc')}
-                    </p>
-                </a>
+                <div class="bento-card col-span-1 md:col-span-1 lg:col-span-3 p-8 flex flex-col justify-between rounded-lg group hover:border-silver transition-colors">
+                    <div>
+                        <h3 class="font-headline-md text-headline-md mb-3 text-primary font-bold">{t('home.worksCardTitle')}</h3>
+                        <ul class="space-y-1 font-body-md text-body-md text-on-surface-variant list-none pl-0">
+                            <li>• {t('home.worksCardItem1')}</li>
+                            <li>• {t('home.worksCardItem2')}</li>
+                            <li>• {t('home.worksCardItem3')}</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6">
+                        <a class="text-primary border-b border-primary pb-1 inline-flex items-center font-medium hover:text-silver transition-colors" href={worksPath}>
+                            {t('home.worksCardCta')} <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
 
                 <!-- Card 1 (2x1 equivalent) -->
                 <div class="bento-card col-span-1 md:col-span-3 lg:col-span-5 p-8 flex flex-col justify-center rounded-lg">
