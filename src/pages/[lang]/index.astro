@@ -93,6 +93,14 @@ const worksPath = lang === 'en' ? '/en/works' : '/es/trabajos';
                 )}
 
                 <!-- Strategic Cards Row -->
+                <!-- Card 3 (Manifesto - 1x1 equivalent) -->
+                <div class="bento-card col-span-1 md:col-span-4 lg:col-span-4 p-8 flex flex-col justify-center rounded-lg">
+                    <h3 class="font-headline-md text-headline-md mb-3 text-primary font-bold">{t('home.manifestoTitle')}</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant italic">
+                        "{t('home.manifestoDesc')}"
+                    </p>
+                </div>
+
                 <!-- Card 1 (1x1 equivalent) -->
                 <div class="bento-card col-span-1 md:col-span-2 lg:col-span-4 p-8 flex flex-col justify-center rounded-lg">
                     <h3 class="font-headline-md text-headline-md mb-3 text-primary font-bold">{t('home.messyMiddleTitle')}</h3>
@@ -106,14 +114,6 @@ const worksPath = lang === 'en' ? '/en/works' : '/es/trabajos';
                     <h3 class="font-headline-md text-headline-md mb-3 text-primary font-bold">{t('home.aiTitle')}</h3>
                     <p class="font-body-md text-body-md text-on-surface-variant">
                         {t('home.aiDesc')}
-                    </p>
-                </div>
-
-                <!-- Card 3 (Manifesto - 1x1 equivalent) -->
-                <div class="bento-card col-span-1 md:col-span-4 lg:col-span-4 p-8 flex flex-col justify-center rounded-lg">
-                    <h3 class="font-headline-md text-headline-md mb-3 text-primary font-bold">{t('home.manifestoTitle')}</h3>
-                    <p class="font-body-md text-body-md text-on-surface-variant italic">
-                        "{t('home.manifestoDesc')}"
                     </p>
                 </div>
             </div>
