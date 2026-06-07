@@ -1,7 +1,7 @@
 ---
 title: "THE TRANSLATION GAP IN DIGITAL PRODUCTS"
 lens: "builder_lens"
-image: "https://res.cloudinary.com/flaex/image/upload/v1678052762/strapi-v4/flaex_blog_de_diseno_y_desarrollo_web_e26598dd39.webp"
+image: "https://res.cloudinary.com/flaex/image/upload/v1780798194/fpolania-app/blog/flaex_blog_de_diseno_y_desarrollo_web_e26598dd39.webp"
 language: "en"
 pillar: "Technical Alchemy (The Builder Lens)"
 originalLanguage: "Spanish"
