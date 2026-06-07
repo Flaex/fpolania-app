@@ -159,8 +159,8 @@ const metaTitleSuffix = t('article.metaSuffix');
     <!-- Framed High-Density Image Card -->
     {post.data.image && (
       <div 
-        class="w-full border border-outline-variant bg-surface-container-low mb-16 h-[320px] overflow-hidden relative group"
-        style={`background-image: url('${post.data.image}'); background-repeat: repeat;`}
+        class="w-full border border-outline-variant bg-surface-container-low mb-16 h-[320px] overflow-hidden relative group bg-cover bg-center bg-no-repeat"
+        style={`background-image: url('${post.data.image}');`}
         aria-label={post.data.title}
         role="img"
       >
