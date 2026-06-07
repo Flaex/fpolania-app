@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1697042312/strapi-v4/flae
 language: "es"
 pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"
+date: "2023-10-11"
 ---
-
 ## La Ingeniería Visual con Adobe Illustrator
 
 Adobe Illustrator es el estándar de la industria para el diseño vectorial. En este tutorial, abordamos los aspectos más básicos del programa desde una perspectiva de **producción profesional**, enfocándonos en el entorno de trabajo y las herramientas que permiten dar los primeros pasos con maestría técnica.

@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1648842848/strapi/diseno_
 language: "es"
 pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"
+date: "2022-04-01"
 ---
-
 ## El Mensaje vs. La Herramienta
 
 En el mundo de los negocios, la terminología a menudo se utiliza de forma intercambiable, lo que diluye la importancia estratégica de cada disciplina. Confundir la comunicación con el diseño es un error común. Para un arquitecto de producto, entender la distinción es clave para una ejecución impecable.

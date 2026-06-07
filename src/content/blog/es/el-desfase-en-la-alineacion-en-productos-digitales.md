@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1780798327/fpolania-app/b
 language: "es"
 pillar: "Technical Alchemy (The Builder Lens)"
 originalLanguage: "Spanish"
+date: "2023-03-05"
 ---
-
 ## El núcleo de la traducción estratégica
 
 Abordar la programación web desde el punto de vista de un diseñador gráfico es un proceso de adaptación cognitiva. En el diseño gráfico tradicional, los elementos son estáticos, visibles y controlables. En el desarrollo web, operamos en un entorno abstracto de estados dinámicos, arquitecturas de sistemas y motores de renderizado.

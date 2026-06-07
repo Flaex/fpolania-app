@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1674939507/strapi-v4/flae
 language: "es"
 pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"
+date: "2022-01-10"
 ---
-
 ## La Técnica de la Selección Intencionada
 
 La tipografía se define como el arte y la técnica de seleccionar familias de letras, tamaños, longitudes y espaciados de línea. No es una elección decorativa; es una decisión de **arquitectura de información**.

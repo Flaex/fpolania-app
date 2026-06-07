@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1674939510/strapi-v4/flae
 language: "en"
 pillar: "Strategic Foundership (The CEO Lens)"
 originalLanguage: "Spanish"
+date: "2021-11-15"
 ---
-
 ## The Logo as a Strategic Asset
 
 Startups are oriented towards producing well-being for their clients. However, in the heat of daily operations, many founders forget a critical component: how a well-designed logo positively impacts the **brand image**. Design is not a luxury; it is a tool for differentiation.

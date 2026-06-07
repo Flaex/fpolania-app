@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1674939516/strapi-v4/smal
 language: "es"
 pillar: "Strategic Foundership (The CEO Lens)"
 originalLanguage: "Spanish"
+date: "2021-11-05"
 ---
-
 ## "Everything is Design"
 
 La frase de Paul Rand, "Todo es diseño", resume la realidad de nuestra interacción con el mundo. Casi todos los objetos que nos rodean han sido, en algún punto, procesados por la mente de un diseñador.

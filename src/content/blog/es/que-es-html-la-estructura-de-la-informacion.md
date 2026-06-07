@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1627500628/strapi/flaex_p
 language: "es"
 pillar: "Technical Alchemy (The Builder Lens)"
 originalLanguage: "Spanish"
+date: "2023-02-12"
 ---
-
 ## Definición y Especificación
 
 HTML (HyperText Markup Language) es el componente principal de la web. Según el **World Wide Web Consortium (W3C)**, es el lenguaje para describir la **estructura** de las páginas web. Provee a los autores los medios para:

@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1639430851/strapi/flaex_d
 language: "en"
 pillar: "Strategic Foundership (The CEO Lens)"
 originalLanguage: "Spanish"
+date: "2021-12-13"
 ---
-
 ## Definition and Scope of Branding
 
 Branding is the term that describes the practices used to differentiate one company from another. It is achieved through the design of graphics, stories, messages, and images. It is fundamental to understand that **designing a logo is not branding in itself**; it is only one of the components of a complex system.

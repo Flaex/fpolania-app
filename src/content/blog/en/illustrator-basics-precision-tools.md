@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1697042312/strapi-v4/flae
 language: "en"
 pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"
+date: "2023-10-11"
 ---
-
 ## Visual Engineering with Adobe Illustrator
 
 Adobe Illustrator is the industry standard for vector graphics creation. In this tutorial, we address the most basic aspects of the program from a **professional production** perspective, focusing on the work environment and the tools that allow you to take the first steps with technical mastery.

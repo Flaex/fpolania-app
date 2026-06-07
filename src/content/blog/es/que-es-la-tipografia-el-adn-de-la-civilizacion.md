@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1674939512/strapi-v4/flae
 language: "es"
 pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"
+date: "2022-01-03"
 ---
-
 ## Mucho más que "Letras"
 
 La tipografía es otro nombre para referirse a las letras del alfabeto, pero su peso real es incalculable. Es uno de los elementos fundamentales no sólo en la comunicación visual, sino también en el desarrollo de la civilización humana.

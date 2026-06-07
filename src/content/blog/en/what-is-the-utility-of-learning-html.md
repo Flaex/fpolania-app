@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1679511745/strapi-v4/flae
 language: "en"
 pillar: "Technical Alchemy (The Builder Lens)"
 originalLanguage: "Spanish"
+date: "2023-03-22"
 ---
-
 ## HTML as a Universal Standard
 
 Web programming is one of the most in-demand professions, and HTML is its undisputed foundation. All internet sites are built, at some point, with this language. However, learning HTML is not just for engineers.

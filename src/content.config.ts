@@ -10,6 +10,7 @@ const blog = defineCollection({
         pillar: z.string().optional(),
         originalLanguage: z.string().optional(),
         image: z.string().optional(),
+        date: z.string(),
     })
 });
 

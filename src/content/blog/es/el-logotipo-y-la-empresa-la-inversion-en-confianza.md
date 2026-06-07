@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1674939510/strapi-v4/flae
 language: "es"
 pillar: "Strategic Foundership (The CEO Lens)"
 originalLanguage: "Spanish"
+date: "2021-11-15"
 ---
-
 ## El Logotipo como Activo Estratégico
 
 Los emprendimientos están orientados a producir bienestar para sus clientes. Sin embargo, en el fragor de la operación diaria, muchos fundadores olvidan un componente crítico: cómo un logotipo bien diseñado impacta positivamente en la **imagen de marca**. El diseño no es un lujo; es una herramienta de diferenciación.

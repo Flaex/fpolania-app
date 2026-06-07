@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1674939516/strapi-v4/flae
 language: "es"
 pillar: "Strategic Foundership (The CEO Lens)"
 originalLanguage: "Spanish"
+date: "2022-02-01"
 ---
-
 ## El Diseño en la Era de la Automatización
 
 Como Estratega de producto y Fundador de Novanet Studio, he sido testigo de la transformación radical de nuestra industria. El diseño gráfico ha pasado de ser un oficio manual y tedioso a una disciplina potenciada por computadoras. Sin embargo, esta agilidad técnica ha traído consigo una confusión peligrosa: confundir la velocidad con el **valor**. En este análisis, exploraremos por qué el diseño, cuando se entiende como una inversión estratégica, es uno de los activos más valiosos de cualquier empresa.

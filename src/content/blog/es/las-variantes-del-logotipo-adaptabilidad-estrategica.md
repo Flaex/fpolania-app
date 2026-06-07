@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1674939511/strapi-v4/flae
 language: "es"
 pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"
+date: "2021-11-22"
 ---
-
 ## La Identidad Visual como Sistema Líquido
 
 En la era digital, un logotipo estático es un activo limitado. Como fundador, veo las variantes del logo como la **infraestructura líquida** de la marca, permitiendo que la identidad sea coherente en cualquier soporte, desde un favicon de 16px hasta una valla publicitaria.

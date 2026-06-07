@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1674939511/strapi-v4/flae
 language: "en"
 pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"
+date: "2021-11-22"
 ---
-
 ## The Visual Identity as a Liquid System
 
 In the digital age, a static logo is a limited asset. As a founder, I see the logo variants as the **liquid infrastructure** of the brand, allowing the identity to be coherent on any medium, from a 16px favicon to a billboard.

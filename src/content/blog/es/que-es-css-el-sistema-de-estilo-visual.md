@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1682536096/strapi-v4/flae
 language: "es"
 pillar: "Technical Alchemy (The Builder Lens)"
 originalLanguage: "Spanish"
+date: "2023-04-26"
 ---
-
 ## Definición y Función
 
 CSS (Cascading Style Sheets) es el lenguaje estándar que permite dar atributos visuales a los elementos HTML. El **W3C** lo define como un mecanismo simple para agregar estilo (fuentes, colores, espaciado) a los documentos. **MDN Web Docs** añade que es el lenguaje que describe cómo se deben representar los elementos en pantalla, papel o asistentes de voz.

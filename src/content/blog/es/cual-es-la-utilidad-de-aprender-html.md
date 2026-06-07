@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1679511745/strapi-v4/flae
 language: "es"
 pillar: "Technical Alchemy (The Builder Lens)"
 originalLanguage: "Spanish"
+date: "2023-03-22"
 ---
-
 ## HTML como Estándar Universal
 
 La programación web es una de las profesiones más solicitadas, y el HTML es su base indiscutible. Todos los sitios de internet están construidos, en algún punto, con este lenguaje. Sin embargo, aprender HTML no es solo para ingenieros.

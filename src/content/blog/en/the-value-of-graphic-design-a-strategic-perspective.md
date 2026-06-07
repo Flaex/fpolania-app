@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1674939516/strapi-v4/flae
 language: "en"
 pillar: "Strategic Foundership (The CEO Lens)"
 originalLanguage: "Spanish"
+date: "2022-02-01"
 ---
-
 ## Design in the Age of Automation
 
 As a Product Strategist and Founder of Novanet Studio, I have witnessed the radical transformation of our industry. Graphic design has evolved from a manual, tedious craft into a discipline empowered by computers. However, this technical agility has brought with it a dangerous confusion: mistaking speed for **value**. In this analysis, we will explore why design, when understood as a strategic investment, is one of the most valuable assets of any company.

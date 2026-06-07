@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1674939507/strapi-v4/flae
 language: "en"
 pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"
+date: "2022-01-10"
 ---
-
 ## The Technique of Intentional Selection
 
 Typography is defined as the art and technique of selecting font families, sizes, lengths, and line spacings. It is not a decorative choice; it is a decision of **information architecture**.

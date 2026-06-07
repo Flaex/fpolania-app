@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1674939512/strapi-v4/flae
 language: "en"
 pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"
+date: "2022-01-03"
 ---
-
 ## Much More Than "Letters"
 
 Typography is another name for the letters of the alphabet, but its real weight is incalculable. It is one of the fundamental elements not only in visual communication but also in the development of human civilization.

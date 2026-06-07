@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1648842848/strapi/diseno_
 language: "en"
 pillar: "Integrated Design (The Visual Lens)"
 originalLanguage: "Spanish"
+date: "2022-04-01"
 ---
-
 ## The Message vs. The Tool
 
 In the business world, terminology is often used interchangeably, which dilutes the strategic importance of each discipline. Confusing communication with design is a common mistake. For a product architect, understanding the distinction is key to flawless execution.

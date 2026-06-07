@@ -5,8 +5,8 @@ image: "https://res.cloudinary.com/flaex/image/upload/v1639430851/strapi/flaex_d
 language: "es"
 pillar: "Strategic Foundership (The CEO Lens)"
 originalLanguage: "Spanish"
+date: "2021-12-13"
 ---
-
 ## Definición y Alcance del Branding
 
 Branding es el término que describe las prácticas utilizadas para diferenciar una empresa de otra. Se logra a través del diseño de gráficos, historias, mensajes e imágenes. Es fundamental entender que **diseñar un logo no es hacer branding en sí mismo**; es solo uno de los componentes de un sistema complejo.
