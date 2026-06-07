@@ -94,7 +94,7 @@ const worksPath = lang === 'en' ? '/en/works' : '/es/trabajos';
 
                 <!-- Strategic Cards Row -->
                 <!-- Case Studies Portal (1x1 equivalent) -->
-                <div class="bento-card col-span-1 md:col-span-1 lg:col-span-3 p-8 flex flex-col justify-between rounded-lg group hover:border-silver transition-colors">
+                <div class="bento-card col-span-1 md:col-span-2 lg:col-span-3 p-8 flex flex-col justify-between rounded-lg group hover:border-silver transition-colors">
                     <div>
                         <h3 class="font-headline-md text-headline-md mb-3 text-primary font-bold">{t('home.worksCardTitle')}</h3>
                         <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -108,19 +108,27 @@ const worksPath = lang === 'en' ? '/en/works' : '/es/trabajos';
                     </div>
                 </div>
 
-                <!-- Card 1 (2x1 equivalent) -->
-                <div class="bento-card col-span-1 md:col-span-3 lg:col-span-5 p-8 flex flex-col justify-center rounded-lg">
+                <!-- Card 1 (1x1 equivalent) -->
+                <div class="bento-card col-span-1 md:col-span-2 lg:col-span-3 p-8 flex flex-col justify-center rounded-lg">
                     <h3 class="font-headline-md text-headline-md mb-3 text-primary font-bold">{t('home.messyMiddleTitle')}</h3>
                     <p class="font-body-md text-body-md text-on-surface-variant">
                         {t('home.messyMiddleDesc')}
                     </p>
                 </div>
 
-                <!-- Card 2 (2x1 equivalent) -->
-                <div class="bento-card col-span-1 md:col-span-4 lg:col-span-4 p-8 flex flex-col justify-center rounded-lg">
+                <!-- Card 2 (1x1 equivalent) -->
+                <div class="bento-card col-span-1 md:col-span-2 lg:col-span-3 p-8 flex flex-col justify-center rounded-lg">
                     <h3 class="font-headline-md text-headline-md mb-3 text-primary font-bold">{t('home.aiTitle')}</h3>
                     <p class="font-body-md text-body-md text-on-surface-variant">
                         {t('home.aiDesc')}
+                    </p>
+                </div>
+
+                <!-- Card 3 (Manifesto - 1x1 equivalent) -->
+                <div class="bento-card col-span-1 md:col-span-2 lg:col-span-3 p-8 flex flex-col justify-center rounded-lg">
+                    <h3 class="font-headline-md text-headline-md mb-3 text-primary font-bold">{t('home.manifestoTitle')}</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant italic">
+                        "{t('home.manifestoDesc')}"
                     </p>
                 </div>
             </div>

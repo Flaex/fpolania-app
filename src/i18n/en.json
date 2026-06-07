@@ -26,7 +26,9 @@
     "ctaTitle": "Let's Build Together.",
     "ctaDesc": "Available for strategic product audits and technology consulting.",
     "ctaButton": "Request an Audit",
-    "ctaSubject": "Strategic Product Audit Request"
+    "ctaSubject": "Strategic Product Audit Request",
+    "manifestoTitle": "How I Work / What I Believe",
+    "manifestoDesc": "I don't build MVPs to check a box. I build digital architectures designed to scale. If you want a quick template thrown together in a weekend, I am not your strategist."
   },
   "works": {
     "metaTitle": "WORKS | Fredy Polania",

@@ -26,7 +26,9 @@
     "ctaTitle": "Construyamos juntos.",
     "ctaDesc": "Disponible para auditorías estratégicas de producto y consultoría tecnológica.",
     "ctaButton": "Solicitar una auditoría",
-    "ctaSubject": "Solicitud de Auditoría de Producto"
+    "ctaSubject": "Solicitud de Auditoría de Producto",
+    "manifestoTitle": "Cómo trabajo / En qué creo",
+    "manifestoDesc": "No construyo MVPs para cumplir con un requisito. Creo arquitecturas digitales diseñadas para escalar. Si busca una plantilla rápida hecha en un fin de semana, no soy su estratega."
   },
   "works": {
     "metaTitle": "TRABAJOS | Fredy Polania",
