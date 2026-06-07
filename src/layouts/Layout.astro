@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { getAlternatePath } from '../utils/i18n';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
 	title: string;
@@ -50,6 +51,7 @@ const alternatePath = getAlternatePath(Astro.url.pathname, alternateLang);
 		</script>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ClientRouter />
 		<link rel="alternate" hreflang={lang} href={`https://flaex.design${Astro.url.pathname}`} />
 		<link rel="alternate" hreflang={alternateLang} href={`https://flaex.design${alternatePath}`} />
 
