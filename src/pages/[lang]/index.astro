@@ -93,11 +93,16 @@ const worksPath = lang === 'en' ? '/en/works' : '/es/trabajos';
                 )}
 
                 <!-- Strategic Cards Row -->
-                <!-- Authority Stat (1x1 equivalent) -->
-                <div class="bento-card col-span-1 md:col-span-1 lg:col-span-3 p-8 flex flex-col justify-center items-center text-center rounded-lg">
-                    <h3 class="font-display text-display text-primary mb-2 font-black">15+</h3>
-                    <p class="font-body-md text-body-md text-on-surface-variant">{t('home.yearsLeadership')}</p>
-                </div>
+                <!-- Case Studies Portal (1x1 equivalent) -->
+                <a 
+                    class="bento-card col-span-1 md:col-span-1 lg:col-span-3 p-8 flex flex-col justify-center rounded-lg group hover:border-silver transition-colors focus:outline-none focus:border-primary" 
+                    href={worksPath}
+                >
+                    <h3 class="font-headline-md text-headline-md mb-3 text-primary font-bold group-hover:text-silver transition-colors">{t('home.worksCardTitle')}</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                        {t('home.worksCardDesc')}
+                    </p>
+                </a>
 
                 <!-- Card 1 (2x1 equivalent) -->
                 <div class="bento-card col-span-1 md:col-span-3 lg:col-span-5 p-8 flex flex-col justify-center rounded-lg">

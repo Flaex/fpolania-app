@@ -37,7 +37,7 @@ Para resolver este desfase en la alineación, debemos unificar la estrategia de 
 
 ### 1. Sistemas de diseño codificados
 
-En lugar de pasar archivos de imagen estáticos, construimos tokens de diseño vivos. Las condiciones del sistema, como las tipografías de este sitio web ([Fraunces](https://fonts.google.com/specimen/Fraunces), [Geist Sans](https://fonts.google.com/specimen/Geist)) y las paletas cromáticas monocromáticas, se codifican directamente en el archivo de configuración de los estilos CSS desde el primer día. Esto garantiza precisión de pixel absoluta y elimina errores de interpretación.
+En lugar de pasar archivos de imagen estáticos, construimos tokens de diseño vivos. Las condiciones del sistema, como las tipografías de este sitio web ([Fraunces](https://fonts.google.com/specimen/Fraunces), [Geist Sans](https://fonts.google.com/specimen/Geist)) y las paletas monocromáticas, se codifican directamente en el archivo de configuración de los estilos CSS desde el primer día. Esto garantiza precisión de pixel absoluta y elimina errores de interpretación.
 
 ### 2. Implementaciones front-end de alto rendimiento
 
