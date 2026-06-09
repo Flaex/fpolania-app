@@ -1,7 +1,7 @@
 ---
 title: "El valor del diseño gráfico"
 lens: "ceo_lens"
-image: "https://res.cloudinary.com/flaex/image/upload/v1674939516/strapi-v4/flaex_valor_diseno_grafico_fd7a10fb9a.webp"
+image: "https://res.cloudinary.com/flaex/image/upload/v1781020182/fpolania-app/blog/fpolania-monedas-triquetra-grid-verde_copy.webp"
 language: "es"
 pillar: "Strategic Foundership (The CEO Lens)"
 originalLanguage: "Spanish"
