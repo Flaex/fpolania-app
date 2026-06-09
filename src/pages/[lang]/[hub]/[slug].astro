@@ -147,9 +147,24 @@ const relatedPosts = allPosts
 
 const hubPath = lang === 'en' ? '/en/insight' : '/es/perspectivas';
 const metaTitleSuffix = t('article.metaSuffix');
+
+// Resolve dynamic description / summary from dictionary or fallback to title + default desc
+const summaryKey = `summaries.${slug}`;
+let description = t(summaryKey, "NO_SUMMARY");
+if (description === "NO_SUMMARY" || description === summaryKey) {
+  description = `${toPhraseCase(post.data.title)}. ${t("insight.metaDescription")}`;
+}
+
+const ogImage = post.data.image || "/icon-512.png";
 ---
 
-<Layout title={`${toPhraseCase(post.data.title)} | ${metaTitleSuffix}`} lang={lang}>
+<Layout 
+  title={`${toPhraseCase(post.data.title)} | ${metaTitleSuffix}`} 
+  description={description} 
+  image={ogImage} 
+  type="article" 
+  lang={lang}
+>
   <div class="grain"></div>
   
   <Navigation />

@@ -7,12 +7,24 @@ interface Props {
 	title: string;
 	description?: string;
 	lang?: string;
+	image?: string;
+	type?: 'website' | 'article';
 }
 
-const { title, description = "Business Strategy. Design Vision. Technologic craft.", lang = "en" } = Astro.props;
+const { 
+	title, 
+	description = "Business Strategy. Design Vision. Technologic craft.", 
+	lang = "en",
+	image = "/icon-512.png",
+	type = "website"
+} = Astro.props;
 
 const alternateLang = lang === 'en' ? 'es' : 'en';
 const alternatePath = getAlternatePath(Astro.url.pathname, alternateLang);
+
+const canonicalBase = "https://flaex.design";
+const canonicalUrl = `${canonicalBase}${Astro.url.pathname}`;
+const ogImage = image.startsWith('http') ? image : `${canonicalBase}${image}`;
 ---
 
 <!doctype html>
@@ -21,6 +33,23 @@ const alternatePath = getAlternatePath(Astro.url.pathname, alternateLang);
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content={type} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:site_name" content="Fredy Polania" />
+		<meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+		<meta property="og:locale:alternate" content={lang === 'es' ? 'en_US' : 'es_ES'} />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonicalUrl} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
 		<link id="legacy-favicon" rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="/favicon-dark.svg" />
 		<!-- FOUC Prevention: resolve theme and favicon before first paint -->
