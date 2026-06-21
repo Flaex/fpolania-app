@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fpolania.com/sitemap-index.xml

@@ -22,9 +22,11 @@ const {
 const alternateLang = lang === 'en' ? 'es' : 'en';
 const alternatePath = getAlternatePath(Astro.url.pathname, alternateLang);
 
-const canonicalBase = "https://flaex.design";
+const canonicalBase = "https://fpolania.com";
 const canonicalUrl = `${canonicalBase}${Astro.url.pathname}`;
 const ogImage = image.startsWith('http') ? image : `${canonicalBase}${image}`;
+
+const gaId = import.meta.env.PUBLIC_GA_ID;
 ---
 
 <!doctype html>
@@ -81,8 +83,8 @@ const ogImage = image.startsWith('http') ? image : `${canonicalBase}${image}`;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<ClientRouter />
-		<link rel="alternate" hreflang={lang} href={`https://flaex.design${Astro.url.pathname}`} />
-		<link rel="alternate" hreflang={alternateLang} href={`https://flaex.design${alternatePath}`} />
+		<link rel="alternate" hreflang={lang} href={`https://fpolania.com${Astro.url.pathname}`} />
+		<link rel="alternate" hreflang={alternateLang} href={`https://fpolania.com${alternatePath}`} />
 
 		<!-- PWA & Mobile Web App Capabilities -->
 		<link rel="manifest" href="/manifest.webmanifest" />
@@ -107,6 +109,29 @@ const ogImage = image.startsWith('http') ? image : `${canonicalBase}${image}`;
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Geist:wght@100..900&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+		<!-- Google Analytics (Google Tag) -->
+		{gaId && (
+			<>
+				<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+				<script is:inline set:html={`
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+
+					gtag('config', '${gaId}');
+
+					document.addEventListener('astro:page-load', () => {
+						if (typeof gtag === 'function') {
+							gtag('config', '${gaId}', {
+								page_path: window.location.pathname,
+								page_title: document.title
+							});
+						}
+					});
+				`} />
+			</>
+		)}
 	</head>
 	<body class="bg-background text-on-background selection:bg-silver selection:text-carbon overflow-x-hidden transition-colors duration-300">
 		<slot />

@@ -1,18 +1,21 @@
-# Redirects for https://flaex.design blog migration
-https://flaex.design/blog/                                               https://flaex.design/es/perspectivas/ 301
-https://flaex.design/blog/todo-es-diseno/                                https://flaex.design/es/perspectivas/todo-es-diseno-la-filosofia-de-la-utilidad/ 301
-https://flaex.design/blog/el-logotipo-y-la-empresa/                      https://flaex.design/es/perspectivas/el-logotipo-y-la-empresa-la-inversion-en-confianza/ 301
-https://flaex.design/blog/el-valor-del-diseno-grafico/                   https://flaex.design/es/perspectivas/el-valor-del-diseno-grafico/ 301
-https://flaex.design/blog/diseno-grafico-y-branding/                    https://flaex.design/es/perspectivas/diseno-grafico-y-branding-el-sistema-de-autoridad/ 301
-https://flaex.design/blog/que-es-la-tipografia/                         https://flaex.design/es/perspectivas/que-es-la-tipografia-el-adn-de-la-civilizacion/ 301
-https://flaex.design/blog/clasificacion-tipografica/                    https://flaex.design/es/perspectivas/clasificacion-tipografica-la-geometria-del-tono/ 301
-https://flaex.design/blog/variantes-del-logotipo/                       https://flaex.design/es/perspectivas/las-variantes-del-logotipo-adaptabilidad-estrategica/ 301
-https://flaex.design/blog/comunicacion-visual-o-diseno-grafico/          https://flaex.design/es/perspectivas/comunicacion-visual-o-diseno-grafico/ 301
-https://flaex.design/blog/illustrator-basico-herramientas-y-paneles-comunes/ https://flaex.design/es/perspectivas/illustrator-basico-herramientas-de-precision/ 301
-https://flaex.design/blog/cual-es-la-utilidad-de-aprender-html/          https://flaex.design/es/perspectivas/cual-es-la-utilidad-de-aprender-html/ 301
-https://flaex.design/blog/que-es-html-estructura-de-un-elemento/         https://flaex.design/es/perspectivas/que-es-html-la-estructura-de-la-informacion/ 301
-https://flaex.design/blog/que-es-css/                                    https://flaex.design/es/perspectivas/que-es-css-el-sistema-de-estilo-visual/ 301
-https://flaex.design/blog/diseno-grafico-y-programacion-web/             https://flaex.design/es/perspectivas/diseno-grafico-y-programacion-web-la-traduccion-estrategica/ 301
+# Redirects for legacy Netlify blog migration to the new fpolania.com
+https://flaex.netlify.app/blog/                                               https://fpolania.com/es/perspectivas/ 301
+https://flaex.netlify.app/blog/todo-es-diseno/                                https://fpolania.com/es/perspectivas/todo-es-diseno-la-filosofia-de-la-utilidad/ 301
+https://flaex.netlify.app/blog/el-logotipo-y-la-empresa/                      https://fpolania.com/es/perspectivas/el-logotipo-y-la-empresa-la-inversion-en-confianza/ 301
+https://flaex.netlify.app/blog/el-valor-del-diseno-grafico/                   https://fpolania.com/es/perspectivas/el-valor-del-diseno-grafico/ 301
+https://flaex.netlify.app/blog/diseno-grafico-y-branding/                    https://fpolania.com/es/perspectivas/diseno-grafico-y-branding-el-sistema-de-autoridad/ 301
+https://flaex.netlify.app/blog/que-es-la-tipografia/                         https://fpolania.com/es/perspectivas/que-es-la-tipografia-el-adn-de-la-civilizacion/ 301
+https://flaex.netlify.app/blog/clasificacion-tipografica/                    https://fpolania.com/es/perspectivas/clasificacion-tipografica-la-geometria-del-tono/ 301
+https://flaex.netlify.app/blog/variantes-del-logotipo/                       https://fpolania.com/es/perspectivas/las-variantes-del-logotipo-adaptabilidad-estrategica/ 301
+https://flaex.netlify.app/blog/comunicacion-visual-o-diseno-grafico/          https://fpolania.com/es/perspectivas/comunicacion-visual-o-diseno-grafico/ 301
+https://flaex.netlify.app/blog/illustrator-basico-herramientas-y-paneles-comunes/ https://fpolania.com/es/perspectivas/illustrator-basico-herramientas-de-precision/ 301
+https://flaex.netlify.app/blog/cual-es-la-utilidad-de-aprender-html/          https://fpolania.com/es/perspectivas/cual-es-la-utilidad-de-aprender-html/ 301
+https://flaex.netlify.app/blog/que-es-html-estructura-de-un-elemento/         https://fpolania.com/es/perspectivas/que-es-html-la-estructura-de-la-informacion/ 301
+https://flaex.netlify.app/blog/que-es-css/                                    https://fpolania.com/es/perspectivas/que-es-css-el-sistema-de-estilo-visual/ 301
+https://flaex.netlify.app/blog/diseno-grafico-y-programacion-web/             https://fpolania.com/es/perspectivas/diseno-grafico-y-programacion-web-la-traduccion-estrategica/ 301
 
-# Fallback for any other blog paths
-https://flaex.design/blog/*                                              https://flaex.design/es/perspectivas/ 301
+# Fallback for any other legacy Netlify blog paths
+https://flaex.netlify.app/blog/*                                              https://fpolania.com/es/perspectivas/ 301
+
+# Same-domain fallback for any old relative links requesting /blog/* on fpolania.com
+/blog/*                                                                       /es/perspectivas/ 301
