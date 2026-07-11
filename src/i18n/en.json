@@ -8,27 +8,39 @@
   "home": {
     "metaTitle": "PRODUCT STRATEGY | Fredy Polania",
     "metaDescription": "Business Strategy. Design Vision. Technologic craft.",
-    "executiveSummary": "Executive Summary",
-    "role": "Product Strategist",
-    "roleSubtitle": "Business Strategy. Design Vision. Technologic craft.",
-    "exploreCommand": "Explore Insights",
-    "latestInsight": "Latest Insight",
-    "readArticle": "Read Article",
     "worksCardTitle": "Success Cases",
     "worksCardDesc": "Branding & identity, web ecosystems, and atomic design.",
     "worksCardCta": "View projects",
-    "messyMiddleTitle": "De-risking the 'Messy Middle.'",
-    "messyMiddleDesc": "Products fail in the gap between Business, Design, and Tech. I bridge that gap to ensure results in your product life cycle.",
-    "aiTitle": "Created by People. Refined with AI.",
-    "aiDesc": "Leveraging LLMs and CLI-based orchestration to amplify craft and accelerate speed-to-market.",
     "featuredWorks": "Featured Works",
     "viewAll": "View All",
     "ctaTitle": "Let's Build Together.",
     "ctaDesc": "Available for strategic product audits and technology consulting.",
     "ctaButton": "Request an Audit",
     "ctaSubject": "Strategic Product Audit Request",
-    "manifestoTitle": "Principles & execution",
-    "manifestoDesc": "Creator of digital environments designed to scale. Integrated processes to extend the product lifecycle."
+    "cards": {
+      "hero": {
+        "tag": "Executive Summary",
+        "title": "Product Strategist",
+        "desc": "Business Strategy. Design Vision. Technologic craft.",
+        "cta": "Explore Insights"
+      },
+      "latestInsight": {
+        "tag": "Latest Insight",
+        "cta": "Read Article"
+      },
+      "third": {
+        "title": "Principles & execution",
+        "desc": "Creator of digital environments designed to scale. Integrated processes to extend the product lifecycle."
+      },
+      "fourth": {
+        "title": "De-risking the 'Messy Middle.'",
+        "desc": "Products fail in the gap between Business, Design, and Tech. I bridge that gap to ensure results in your product life cycle."
+      },
+      "fifth": {
+        "title": "Created by People. Refined with AI.",
+        "desc": "Leveraging LLMs and CLI-based orchestration to amplify craft and accelerate speed-to-market."
+      }
+    }
   },
   "works": {
     "metaTitle": "WORKS | Fredy Polania",

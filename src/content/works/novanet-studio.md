@@ -7,9 +7,4 @@ categoryEn: "WEB APP / 2025"
 categoryEs: "WEB APP / 2025"
 behanceUrl: "https://www.behance.net/gallery/240666733/Novanet-studio-web-app"
 image: "https://res.cloudinary.com/flaex/image/upload/f_auto,q_auto,c_fill,g_auto,w_1200/fpolania-app/works/fpolania-novanet-studio-2025.png"
-order: 1
-cluster: "beta"
-featured: true
-featuredOrder: 3
-featuredSpan: "col-span-1 md:col-span-2 lg:col-span-6 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[240px]"
 ---

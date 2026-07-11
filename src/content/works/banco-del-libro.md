@@ -7,9 +7,4 @@ categoryEn: "E-COMMERCE / 2024"
 categoryEs: "E-COMMERCE / 2024"
 behanceUrl: "https://www.behance.net/gallery/28402277/Banco-del-Libro-web-design-anddevelopment"
 image: "https://res.cloudinary.com/flaex/image/upload/f_auto,q_auto,c_fill,g_auto,w_1200/fpolania-app/works/fpolania-banco-del-libro.png"
-order: 3
-cluster: "beta"
-featured: true
-featuredOrder: 1
-featuredSpan: "col-span-1 md:col-span-4 lg:col-span-6 lg:row-span-2 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[400px] lg:h-auto"
 ---

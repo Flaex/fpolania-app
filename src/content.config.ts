@@ -25,11 +25,6 @@ const works = defineCollection({
         categoryEs: z.string(),
         behanceUrl: z.string().url(),
         image: z.string().optional(),
-        order: z.number(),
-        cluster: z.enum(['alpha', 'beta', 'gamma']),
-        featured: z.boolean().default(false),
-        featuredOrder: z.number().optional(),
-        featuredSpan: z.string().optional(),
     })
 });
 

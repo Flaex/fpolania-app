@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import { getCollection } from 'astro:content';
 import { useTranslations, reverseSlugMap } from '../../utils/i18n';
 import { extractBehanceProjectId } from '../../utils/behance';
+import orderingConfig from '../../config/ordering.json';
 
 function toPhraseCase(str: string) {
     if (!str) return '';
@@ -72,16 +73,34 @@ const allPosts = isInsightPage
 const allWorks = isWorksPage ? await getCollection('works') : [];
 
 const worksAlpha = allWorks
-  .filter((w) => w.data.cluster === 'alpha')
-  .sort((a, b) => a.data.order - b.data.order);
+  .filter((w) => orderingConfig.works.alpha.includes(getSlug(w.id)))
+  .sort((a, b) => {
+    const indexA = orderingConfig.works.alpha.indexOf(getSlug(a.id));
+    const indexB = orderingConfig.works.alpha.indexOf(getSlug(b.id));
+    const posA = indexA === -1 ? Infinity : indexA;
+    const posB = indexB === -1 ? Infinity : indexB;
+    return posA - posB;
+  });
 
 const worksBeta = allWorks
-  .filter((w) => w.data.cluster === 'beta')
-  .sort((a, b) => a.data.order - b.data.order);
+  .filter((w) => orderingConfig.works.beta.includes(getSlug(w.id)))
+  .sort((a, b) => {
+    const indexA = orderingConfig.works.beta.indexOf(getSlug(a.id));
+    const indexB = orderingConfig.works.beta.indexOf(getSlug(b.id));
+    const posA = indexA === -1 ? Infinity : indexA;
+    const posB = indexB === -1 ? Infinity : indexB;
+    return posA - posB;
+  });
 
 const worksGamma = allWorks
-  .filter((w) => w.data.cluster === 'gamma')
-  .sort((a, b) => a.data.order - b.data.order);
+  .filter((w) => orderingConfig.works.gamma.includes(getSlug(w.id)))
+  .sort((a, b) => {
+    const indexA = orderingConfig.works.gamma.indexOf(getSlug(a.id));
+    const indexB = orderingConfig.works.gamma.indexOf(getSlug(b.id));
+    const posA = indexA === -1 ? Infinity : indexA;
+    const posB = indexB === -1 ? Infinity : indexB;
+    return posA - posB;
+  });
 
 function getBetaCardClass(index: number, totalCards: number) {
   const isEven = totalCards % 2 === 0;
@@ -100,69 +119,46 @@ function getBetaCardClass(index: number, totalCards: number) {
   return `col-span-4 md:col-span-6 min-h-[150px] ${baseClasses}`;
 }
 
-const getSlug = (id: string) => id.split('/').pop()?.replace(/\.md$/, '') || '';
+function getSlug(id: string) {
+  return id.split('/').pop()?.replace(/\.md$/, '') || '';
+}
 
-// Sort orders
-const ceoOrder = lang === 'en' 
-  ? [
-      'everything-is-design-the-philosophy-of-utility',
-      'the-logo-and-the-company-the-investment-in-trust',
-      'the-value-of-graphic-design-a-strategic-perspective',
-      'graphic-design-and-branding-the-authority-system'
-    ]
-  : [
-      'todo-es-diseno-la-filosofia-de-la-utilidad',
-      'el-logotipo-y-la-empresa-la-inversion-en-confianza',
-      'el-valor-del-diseno-grafico',
-      'diseno-grafico-y-branding-el-sistema-de-autoridad'
-    ];
-
-const visualOrder = lang === 'en'
-  ? [
-      'what-is-typography-the-dna-of-information',
-      'typographic-classification-the-geometry-of-tone',
-      'the-logo-variants-strategic-adaptability',
-      'visual-communication-or-graphic-design',
-      'illustrator-basics-precision-tools'
-    ]
-  : [
-      'que-es-la-tipografia-el-adn-de-la-civilizacion',
-      'clasificacion-tipografica-la-geometria-del-tono',
-      'las-variantes-del-logotipo-adaptabilidad-estrategica',
-      'comunicacion-visual-o-diseno-grafico',
-      'illustrator-basico-herramientas-de-precision'
-    ];
-
-const builderOrder = lang === 'en'
-  ? [
-      'what-is-the-utility-of-learning-html',
-      'what-is-html-the-structure-of-information',
-      'what-is-css-the-visual-style-system',
-      'the-translation-gap-in-digital-products'
-    ]
-  : [
-      'cual-es-la-utilidad-de-aprender-html',
-      'que-es-html-la-estructura-de-la-informacion',
-      'que-es-css-el-sistema-de-estilo-visual',
-      'el-desfase-en-la-alineacion-en-productos-digitales'
-    ];
+const activeInsightsOrder = orderingConfig.insights[lang] || { ceo_lens: [], visual_lens: [], builder_lens: [] };
 
 const ceoPosts = isInsightPage
   ? allPosts
       .filter(p => p.data.lens === 'ceo_lens')
-      .sort((a, b) => ceoOrder.indexOf(getSlug(a.id)) - ceoOrder.indexOf(getSlug(b.id)))
+      .sort((a, b) => {
+        const indexA = activeInsightsOrder.ceo_lens.indexOf(getSlug(a.id));
+        const indexB = activeInsightsOrder.ceo_lens.indexOf(getSlug(b.id));
+        const posA = indexA === -1 ? Infinity : indexA;
+        const posB = indexB === -1 ? Infinity : indexB;
+        return posA - posB;
+      })
   : [];
 
 const visualPosts = isInsightPage
   ? allPosts
       .filter(p => p.data.lens === 'visual_lens')
-      .sort((a, b) => visualOrder.indexOf(getSlug(a.id)) - visualOrder.indexOf(getSlug(b.id)))
+      .sort((a, b) => {
+        const indexA = activeInsightsOrder.visual_lens.indexOf(getSlug(a.id));
+        const indexB = activeInsightsOrder.visual_lens.indexOf(getSlug(b.id));
+        const posA = indexA === -1 ? Infinity : indexA;
+        const posB = indexB === -1 ? Infinity : indexB;
+        return posA - posB;
+      })
   : [];
 
 const builderPosts = isInsightPage
   ? allPosts
       .filter(p => p.data.lens === 'builder_lens')
-      .sort((a, b) => builderOrder.indexOf(getSlug(a.id)) - builderOrder.indexOf(getSlug(b.id)))
+      .sort((a, b) => {
+        const indexA = activeInsightsOrder.builder_lens.indexOf(getSlug(a.id));
+        const indexB = activeInsightsOrder.builder_lens.indexOf(getSlug(b.id));
+        const posA = indexA === -1 ? Infinity : indexA;
+        const posB = indexB === -1 ? Infinity : indexB;
+        return posA - posB;
+      })
   : [];
 
 // Card aesthetic config getter

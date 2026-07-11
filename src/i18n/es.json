@@ -8,27 +8,39 @@
   "home": {
     "metaTitle": "ESTRATEGIA DE PRODUCTO | Fredy Polania",
     "metaDescription": "Estrategia de negocios. Visión de diseño. Experiencia técnica.",
-    "executiveSummary": "Resumen ejecutivo",
-    "role": "Estratega de producto",
-    "roleSubtitle": "Estrategia de negocios. Visión de diseño. Experiencia técnica.",
-    "exploreCommand": "Explorar perspectivas",
-    "latestInsight": "Última perspectiva",
-    "readArticle": "Leer artículo",
     "worksCardTitle": "Casos de éxito",
     "worksCardDesc": "Branding e identidad, ecosistemas web y diseño atómico.",
     "worksCardCta": "Ver proyectos",
-    "messyMiddleTitle": "Minimizando el riesgo en la fase de convergencia.",
-    "messyMiddleDesc": "Los productos fracasan en la brecha entre los negocios, el diseño y la tecnología. Cierro esa brecha para garantizar resultados en el ciclo de vida de su producto.",
-    "aiTitle": "Creado por personas. Optimizados con IA.",
-    "aiDesc": "Aprovechando LLMs y los procesos basados en CLI para amplificar el oficio y acelerar la velocidad de comercialización.",
     "featuredWorks": "Trabajos destacados",
     "viewAll": "Ver todos",
     "ctaTitle": "Construyamos juntos.",
     "ctaDesc": "Disponible para auditorías estratégicas de producto y consultoría tecnológica.",
     "ctaButton": "Solicitar una auditoría",
     "ctaSubject": "Solicitud de Auditoría de Producto",
-    "manifestoTitle": "Principios y ejecución",
-    "manifestoDesc": "Creador de entornos digitales diseñados para escalar. Procesos integrados para alargar el ciclo de vida de los productos."
+    "cards": {
+      "hero": {
+        "tag": "Resumen ejecutivo",
+        "title": "Estratega de producto",
+        "desc": "Estrategia de negocios. Visión de diseño. Experiencia técnica.",
+        "cta": "Explorar perspectivas"
+      },
+      "latestInsight": {
+        "tag": "Última perspectiva",
+        "cta": "Leer artículo"
+      },
+      "third": {
+        "title": "Principios y ejecución",
+        "desc": "Creador de entornos digitales diseñados para escalar. Procesos integrados para alargar el ciclo de vida de los productos."
+      },
+      "fourth": {
+        "title": "Minimizando el riesgo en la fase de convergencia.",
+        "desc": "Los productos fracasan en la brecha entre los negocios, el diseño y la tecnología. Cierro esa brecha para garantizar resultados en el ciclo de vida de su producto."
+      },
+      "fifth": {
+        "title": "Creado por personas. Optimizados con IA.",
+        "desc": "Aprovechando LLMs y los procesos basados en CLI para amplificar el oficio y acelerar la velocidad de comercialización."
+      }
+    }
   },
   "works": {
     "metaTitle": "TRABAJOS | Fredy Polania",
@@ -48,31 +60,31 @@
     "title": "El centro de perspectivas",
     "subtitle": "Una exploración de las intersecciones entre la estrategia de negocios, el lenguaje visual de autoridad y las tecnologías de alto rendimiento.",
     "archiveIntell": "Archivo e Inteligencia",
-    "lens01": "Perspectiva 01",
-    "lens01Title": "Desde la estrategia",
-    "lens01Desc": "Alineación estratégica y el caso de negocio del diseño como motor de gran valor empresarial.",
-    "lens02": "Perspectiva 02",
-    "lens02Title": "Desde lo visual",
-    "lens02Desc": "El lenguaje de la autoridad: dominando la estética de la influencia y la psicología de la forma.",
-    "lens03": "Perspectiva 03",
-    "lens03Title": "Desde la tecnología",
-    "lens03Desc": "La convergencia definitiva. La tecnología no es un paso separado; es una parte vital para la realización final de la visión.",
+    "lens01": "Lens 01",
+    "lens01Title": "Estrategia",
+    "lens01Desc": "La alineación estratégica y el argumento comercial para el diseño como motor de valor.",
+    "lens02": "Lens 02",
+    "lens02Title": "Visual",
+    "lens02Desc": "El lenguaje de la autoridad: El dominio de la estética de la influencia y la psicología de la forma.",
+    "lens03": "Lens 03",
+    "lens03Title": "Tecnología",
+    "lens03Desc": "La convergencia última. La tecnología no es un paso separado; es parte de la realización de la visión.",
     "ctaTitle": "¿Listo para evolucionar tu visión?",
     "ctaButton": "Solicitar una auditoría",
     "ctaSubject": "Solicitud de Auditoría de Producto",
-    "ctaWorks": "Ver casos de éxito"
+    "ctaWorks": "Ver Casos de Éxito"
   },
   "article": {
     "metaSuffix": "ESTRATEGA",
     "readTimeSuffix": "min de lectura",
-    "authorTitle": "Estrategia de Producto • Comunicación Visual • Desarrollo Web",
+    "authorTitle": "Estrategia de producto • Comunicación visual • Desarrollo web",
     "relatedTitle": "Perspectivas relacionadas",
     "seeAll": "Ver todas"
   },
   "summaries": {
-    "todo-es-diseno-la-filosofia-de-la-utilidad": "Por qué el diseño no es un añadido estético, sino la arquitectura principal de la función del producto y la utilidad del usuario.",
-    "diseno-grafico-y-branding-el-sistema-de-autoridad": "Diferenciando la identidad de marca de los logotipos simples. Cómo los sistemas visuales consistentes construyen valor de negocio a largo plazo.",
-    "el-desfase-en-la-alineacion-en-productos-digitales": "Cerrando el desfase en la alineación entre la intención creativa y la ejecución técnica. Por qué el oficio del desarrollador debe alinearse con la visión de diseño.",
-    "el-valor-del-diseno-grafico": "Un análisis económico del valor del diseño basado en la escasez y la utilidad, minimizando el riesgo en la fase de convergencia del desarrollo de productos."
+    "everything-is-design-the-philosophy-of-utility": "Por qué el diseño no es una ocurrencia estética, sino la arquitectura primordial de la función del producto y la utilidad del usuario.",
+    "graphic-design-and-branding-the-authority-system": "Diferenciando la identidad de marca de los logotipos simples. Cómo los sistemas visuales coherentes crean valor empresarial a largo plazo.",
+    "the-translation-gap-in-digital-products": "Cerrando la brecha de traducción entre la intención creativa y la ejecución técnica. Por qué el oficio del desarrollador debe alinearse con la visión de diseño.",
+    "the-value-of-graphic-design-a-strategic-perspective": "Un análisis económico del valor del diseño basado en la escasez y la utilidad, disminuyendo los riesgos de la etapa intermedia en el desarrollo del producto."
   }
 }

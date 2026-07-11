@@ -5,6 +5,7 @@ import Footer from "../../components/Footer.astro";
 import { getCollection } from "astro:content";
 import { useTranslations } from "../../utils/i18n";
 import { extractBehanceProjectId } from "../../utils/behance";
+import orderingConfig from "../../config/ordering.json";
 
 function toPhraseCase(str: string) {
   if (!str) return "";
@@ -30,17 +31,24 @@ const t = useTranslations(lang);
 // Get the blog posts matching the active language
 const posts = await getCollection("blog", ({ data }) => data.language === lang);
 
-// Get the featured works
-const featuredWorks = await getCollection("works", ({ data }) => data.featured);
-featuredWorks.sort(
-  (a, b) => (a.data.featuredOrder || 0) - (b.data.featuredOrder || 0),
-);
+// Helper to extract clean filename slug
+const getSlug = (id: string) => id.split('/').pop()?.replace(/\.md$/, '') || '';
+
+// Get all works from the collection
+const allWorks = await getCollection("works");
+
+// Build and order featured works purely from orderingConfig
+const featuredWorks = orderingConfig.home.featuredWorks.map((cfg) => {
+  const project = allWorks.find((w) => getSlug(w.id) === cfg.slug);
+  if (!project) return null;
+  return {
+    ...project,
+    spanClass: cfg.spanClass
+  };
+}).filter(Boolean);
 
 // Find the primary strategic translation article or default to first
-const targetIdPart =
-  lang === "en"
-    ? "the-value-of-graphic-design-a-strategic-perspective"
-    : "el-valor-del-diseno-grafico";
+const targetIdPart = orderingConfig.home.latestInsight[lang];
 
 const latestPost = posts.find((p) => p.id.includes(targetIdPart)) || posts[0];
 const slug = latestPost
@@ -72,21 +80,21 @@ const worksPath = lang === "en" ? "/en/works" : "/es/trabajos";
       >
         <!-- Hero (4x2 equivalent in a 12 col grid, spans 8 cols, 2 rows) -->
         <div
-          class="bento-card col-span-1 md:col-span-4 lg:col-span-8 lg:row-span-2 p-8 md:p-12 flex flex-col justify-between rounded-lg"
+          class={`bento-card ${orderingConfig.home.mainSectionCards.hero} p-8 md:p-12 flex flex-col justify-between rounded-lg`}
         >
           <div>
             <p
               class="font-label-technical text-label-technical text-on-surface-variant mb-4 uppercase tracking-widest"
             >
-              {t("home.executiveSummary")}
+              {t("home.cards.hero.tag")}
             </p>
             <h1 class="font-display text-display mb-6 text-primary font-black">
-              {t("home.role")}
+              {t("home.cards.hero.title")}
             </h1>
             <p
               class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-8"
             >
-              {t("home.roleSubtitle")}
+              {t("home.cards.hero.desc")}
             </p>
           </div>
           <div class="mt-auto">
@@ -94,7 +102,7 @@ const worksPath = lang === "en" ? "/en/works" : "/es/trabajos";
               class="inline-flex items-center justify-center bg-primary text-on-primary font-body-md text-body-md font-bold px-6 py-3 rounded-lg hover:opacity-85 transition-all animate-fade-in"
               href={explorePath}
             >
-              {t("home.exploreCommand")}
+              {t("home.cards.hero.cta")}
               <span class="material-symbols-outlined ml-2 text-lg"
                 >arrow_forward</span
               >
@@ -105,11 +113,11 @@ const worksPath = lang === "en" ? "/en/works" : "/es/trabajos";
         <!-- Latest Insight (2x2) -->
         {
           latestPost && (
-            <div class="bento-card col-span-1 md:col-span-2 lg:col-span-4 lg:row-span-2 p-8 flex flex-col justify-between rounded-lg group hover:border-silver transition-colors">
+            <div class={`bento-card ${orderingConfig.home.mainSectionCards.latestInsight} p-8 flex flex-col justify-between rounded-lg group hover:border-silver transition-colors`}>
               <div>
                 <div class="flex items-center justify-between mb-4">
                   <span class="font-label-technical text-label-technical text-on-surface-variant uppercase">
-                    {t("home.latestInsight")}
+                    {t("home.cards.latestInsight.tag")}
                   </span>
                   <span class="material-symbols-outlined text-dim-grey group-hover:text-primary transition-colors">
                     north_east
@@ -127,7 +135,7 @@ const worksPath = lang === "en" ? "/en/works" : "/es/trabajos";
                   class="text-primary border-b border-primary pb-1 inline-flex items-center font-medium hover:text-silver transition-colors"
                   href={articlePath}
                 >
-                  {t("home.readArticle")}{" "}
+                  {t("home.cards.latestInsight.cta")}{" "}
                   <span class="material-symbols-outlined ml-1 text-sm">
                     arrow_forward
                   </span>
@@ -140,43 +148,43 @@ const worksPath = lang === "en" ? "/en/works" : "/es/trabajos";
         <!-- Strategic Cards Row -->
         <!-- Card 3 (Manifesto - 1x1 equivalent) -->
         <div
-          class="bento-card col-span-1 md:col-span-4 lg:col-span-4 p-8 flex flex-col justify-center rounded-lg"
+          class={`bento-card ${orderingConfig.home.mainSectionCards.third} p-8 flex flex-col justify-center rounded-lg`}
         >
           <h3
             class="font-headline-md text-headline-md mb-3 text-primary font-bold"
           >
-            {t("home.manifestoTitle")}
+            {t("home.cards.third.title")}
           </h3>
           <p class="font-body-md text-body-md text-on-surface-variant italic">
-            "{t("home.manifestoDesc")}"
+            "{t("home.cards.third.desc")}"
           </p>
         </div>
 
         <!-- Card 1 (1x1 equivalent) -->
         <div
-          class="bento-card col-span-1 md:col-span-2 lg:col-span-4 p-8 flex flex-col justify-center rounded-lg"
+          class={`bento-card ${orderingConfig.home.mainSectionCards.fourth} p-8 flex flex-col justify-center rounded-lg`}
         >
           <h3
             class="font-headline-md text-headline-md mb-3 text-primary font-bold"
           >
-            {t("home.messyMiddleTitle")}
+            {t("home.cards.fourth.title")}
           </h3>
           <p class="font-body-md text-body-md text-on-surface-variant">
-            {t("home.messyMiddleDesc")}
+            {t("home.cards.fourth.desc")}
           </p>
         </div>
 
         <!-- Card 2 (1x1 equivalent) -->
         <div
-          class="bento-card col-span-1 md:col-span-2 lg:col-span-4 p-8 flex flex-col justify-center rounded-lg"
+          class={`bento-card ${orderingConfig.home.mainSectionCards.fifth} p-8 flex flex-col justify-center rounded-lg`}
         >
           <h3
             class="font-headline-md text-headline-md mb-3 text-primary font-bold"
           >
-            {t("home.aiTitle")}
+            {t("home.cards.fifth.title")}
           </h3>
           <p class="font-body-md text-body-md text-on-surface-variant">
-            {t("home.aiDesc")}
+            {t("home.cards.fifth.desc")}
           </p>
         </div>
       </div>
@@ -212,7 +220,7 @@ const worksPath = lang === "en" ? "/en/works" : "/es/trabajos";
                 ? project.data.descriptionEn
                 : project.data.descriptionEs;
             const behanceUrl = project.data.behanceUrl;
-            const spanClass = `bento-card ${project.data.featuredSpan || "col-span-1 md:col-span-2 lg:col-span-6 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[240px]"}`;
+            const spanClass = `bento-card ${project.spanClass || "col-span-1 md:col-span-2 lg:col-span-6 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[240px]"}`;
             const projectId = extractBehanceProjectId(behanceUrl);
 
             const LinkTag = "div";
