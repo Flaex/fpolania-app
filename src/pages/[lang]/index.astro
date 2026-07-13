@@ -5,7 +5,7 @@ import Footer from "../../components/Footer.astro";
 import { getCollection } from "astro:content";
 import { useTranslations } from "../../utils/i18n";
 import { extractBehanceProjectId } from "../../utils/behance";
-import orderingConfig from "../../config/ordering.json";
+import bentoConfig from "../../config/bento.json";
 
 function toPhraseCase(str: string) {
   if (!str) return "";
@@ -37,18 +37,21 @@ const getSlug = (id: string) => id.split('/').pop()?.replace(/\.md$/, '') || '';
 // Get all works from the collection
 const allWorks = await getCollection("works");
 
-// Build and order featured works purely from orderingConfig
-const featuredWorks = orderingConfig.home.featuredWorks.map((cfg) => {
+// Helper to resolve layouts from grid tokens (Strategy A)
+const getGridClass = (tokenName: string) => bentoConfig.gridTokens[tokenName] || "";
+
+// Build and order featured works purely from bentoConfig
+const featuredWorks = bentoConfig.home.featuredWorks.map((cfg) => {
   const project = allWorks.find((w) => getSlug(w.id) === cfg.slug);
   if (!project) return null;
   return {
     ...project,
-    spanClass: cfg.spanClass
+    spanClass: getGridClass(cfg.token)
   };
 }).filter(Boolean);
 
 // Find the primary strategic translation article or default to first
-const targetIdPart = orderingConfig.home.latestInsight[lang];
+const targetIdPart = bentoConfig.home.latestInsight[lang];
 
 const latestPost = posts.find((p) => p.id.includes(targetIdPart)) || posts[0];
 const slug = latestPost
@@ -80,7 +83,7 @@ const worksPath = lang === "en" ? "/en/works" : "/es/trabajos";
       >
         <!-- Hero (4x2 equivalent in a 12 col grid, spans 8 cols, 2 rows) -->
         <div
-          class={`bento-card ${orderingConfig.home.mainSectionCards.hero} p-8 md:p-12 flex flex-col justify-between rounded-lg`}
+          class={`bento-card ${getGridClass(bentoConfig.home.mainSectionCards.hero)} p-8 md:p-12 flex flex-col justify-between rounded-lg`}
         >
           <div>
             <p
@@ -113,7 +116,7 @@ const worksPath = lang === "en" ? "/en/works" : "/es/trabajos";
         <!-- Latest Insight (2x2) -->
         {
           latestPost && (
-            <div class={`bento-card ${orderingConfig.home.mainSectionCards.latestInsight} p-8 flex flex-col justify-between rounded-lg group hover:border-silver transition-colors`}>
+            <div class={`bento-card ${getGridClass(bentoConfig.home.mainSectionCards.latestInsight)} p-8 flex flex-col justify-between rounded-lg group hover:border-silver transition-colors`}>
               <div>
                 <div class="flex items-center justify-between mb-4">
                   <span class="font-label-technical text-label-technical text-on-surface-variant uppercase">
@@ -148,7 +151,7 @@ const worksPath = lang === "en" ? "/en/works" : "/es/trabajos";
         <!-- Strategic Cards Row -->
         <!-- Card 3 (Manifesto - 1x1 equivalent) -->
         <div
-          class={`bento-card ${orderingConfig.home.mainSectionCards.third} p-8 flex flex-col justify-center rounded-lg`}
+          class={`bento-card ${getGridClass(bentoConfig.home.mainSectionCards.third)} p-8 flex flex-col justify-center rounded-lg`}
         >
           <h3
             class="font-headline-md text-headline-md mb-3 text-primary font-bold"
@@ -162,7 +165,7 @@ const worksPath = lang === "en" ? "/en/works" : "/es/trabajos";
 
         <!-- Card 1 (1x1 equivalent) -->
         <div
-          class={`bento-card ${orderingConfig.home.mainSectionCards.fourth} p-8 flex flex-col justify-center rounded-lg`}
+          class={`bento-card ${getGridClass(bentoConfig.home.mainSectionCards.fourth)} p-8 flex flex-col justify-center rounded-lg`}
         >
           <h3
             class="font-headline-md text-headline-md mb-3 text-primary font-bold"
@@ -176,7 +179,7 @@ const worksPath = lang === "en" ? "/en/works" : "/es/trabajos";
 
         <!-- Card 2 (1x1 equivalent) -->
         <div
-          class={`bento-card ${orderingConfig.home.mainSectionCards.fifth} p-8 flex flex-col justify-center rounded-lg`}
+          class={`bento-card ${getGridClass(bentoConfig.home.mainSectionCards.fifth)} p-8 flex flex-col justify-center rounded-lg`}
         >
           <h3
             class="font-headline-md text-headline-md mb-3 text-primary font-bold"

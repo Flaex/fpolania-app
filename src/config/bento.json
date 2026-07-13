@@ -1,0 +1,171 @@
+{
+  "gridTokens": {
+    "hero-double-wide": "col-span-1 md:col-span-4 lg:col-span-8 lg:row-span-2",
+    "square-double-height": "col-span-1 md:col-span-2 lg:col-span-4 lg:row-span-2",
+    "standard-card": "col-span-1 md:col-span-4 lg:col-span-4",
+    "compact-card": "col-span-1 md:col-span-2 lg:col-span-4",
+    "featured-hero": "col-span-1 md:col-span-4 lg:col-span-6 lg:row-span-2 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[400px] lg:h-auto",
+    "featured-split": "col-span-1 md:col-span-2 lg:col-span-6 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[240px]",
+    "works-cluster-header": "col-span-4 md:col-span-6 bg-surface-container-low border border-outline-variant p-8 flex flex-col justify-end min-h-[300px]",
+    "works-cluster-container-first": "col-span-4 md:col-span-12 mb-8 mt-12",
+    "works-cluster-container-next": "col-span-4 md:col-span-12 mb-8 mt-16",
+    "insight-lens-header-first": "p-10 flex items-center justify-between border border-outline-variant col-span-12 md:col-span-6 bg-surface-container-lowest",
+    "insight-lens-header-next": "p-10 flex items-center justify-between border border-outline-variant col-span-12 md:col-span-6 bg-surface-container-lowest mt-12"
+  },
+  "home": {
+    "mainSectionCards": {
+      "hero": "hero-double-wide",
+      "latestInsight": "square-double-height",
+      "third": "standard-card",
+      "fourth": "compact-card",
+      "fifth": "compact-card"
+    },
+    "latestInsight": {
+      "en": "the-translation-gap-in-digital-products",
+      "es": "el-desfase-en-la-alineacion-en-productos-digitales"
+    },
+    "featuredWorks": [
+      {
+        "slug": "come-2025",
+        "token": "featured-hero"
+      },
+      {
+        "slug": "maximiza",
+        "token": "featured-split"
+      },
+      {
+        "slug": "novanet-studio",
+        "token": "featured-split"
+      }
+    ]
+  },
+  "works": {
+    "clusters": [
+      {
+        "id": "alpha",
+        "titleKey": "works.clusterAlpha",
+        "subtitleKey": "works.clusterAlphaSubtitle",
+        "containerToken": "works-cluster-container-first",
+        "headerSpanToken": "works-cluster-header",
+        "layoutStyle": "1x1",
+        "items": [
+          "maximiza",
+          "zuglabs",
+          "agua-fria",
+          "altea",
+          "zaituna-cafe",
+          "take-on-bar",
+          "athlos",
+          "gamma-medical",
+          "ej-supply",
+          "bakery-consortium"
+        ]
+      },
+      {
+        "id": "beta",
+        "titleKey": "works.clusterBeta",
+        "subtitleKey": "works.clusterBetaSubtitle",
+        "containerToken": "works-cluster-container-next",
+        "headerSpanToken": "works-cluster-header",
+        "layoutStyle": "beta",
+        "items": [
+          "novanet-studio",
+          "come-2025",
+          "banco-del-libro",
+          "ccs-multisport",
+          "avila-multisport",
+          "kevinroot-medical",
+          "novanet-evolution"
+        ]
+      },
+      {
+        "id": "gamma",
+        "titleKey": "works.clusterGamma",
+        "subtitleKey": "works.clusterGammaSubtitle",
+        "containerToken": "works-cluster-container-next",
+        "headerSpanToken": "works-cluster-header",
+        "layoutStyle": "1x1",
+        "items": [
+          "novatipo",
+          "novaicons",
+          "barahunda"
+        ]
+      }
+    ]
+  },
+  "insights": {
+    "clusters": [
+      {
+        "id": "ceo_lens",
+        "lensId": "ceo_lens",
+        "titleKey": "insight.lens01",
+        "subtitleKey": "insight.lens01Title",
+        "descKey": "insight.lens01Desc",
+        "icon": "corporate_fare",
+        "headerSpanToken": "insight-lens-header-first",
+        "items": {
+          "en": [
+            "everything-is-design-the-philosophy-of-utility",
+            "the-logo-and-the-company-the-investment-in-trust",
+            "the-value-of-graphic-design-a-strategic-perspective",
+            "graphic-design-and-branding-the-authority-system"
+          ],
+          "es": [
+            "todo-es-diseno-la-filosofia-de-la-utilidad",
+            "el-logotipo-y-la-empresa-la-inversion-en-confianza",
+            "el-valor-del-diseno-grafico",
+            "diseno-grafico-y-branding-el-sistema-de-autoridad"
+          ]
+        }
+      },
+      {
+        "id": "visual_lens",
+        "lensId": "visual_lens",
+        "titleKey": "insight.lens02",
+        "subtitleKey": "insight.lens02Title",
+        "descKey": "insight.lens02Desc",
+        "icon": "architecture",
+        "headerSpanToken": "insight-lens-header-next",
+        "items": {
+          "en": [
+            "what-is-typography-the-dna-of-information",
+            "typographic-classification-the-geometry-of-tone",
+            "the-logo-variants-strategic-adaptability",
+            "visual-communication-or-graphic-design",
+            "illustrator-basics-precision-tools"
+          ],
+          "es": [
+            "que-es-la-tipografia-el-adn-de-la-civilizacion",
+            "clasificacion-tipografica-la-geometria-del-tono",
+            "las-variantes-del-logotipo-adaptabilidad-estrategica",
+            "comunicacion-visual-o-diseno-grafico",
+            "illustrator-basico-herramientas-de-precision"
+          ]
+        }
+      },
+      {
+        "id": "builder_lens",
+        "lensId": "builder_lens",
+        "titleKey": "insight.lens03",
+        "subtitleKey": "insight.lens03Title",
+        "descKey": "insight.lens03Desc",
+        "icon": "terminal",
+        "headerSpanToken": "insight-lens-header-next",
+        "items": {
+          "en": [
+            "what-is-the-utility-of-learning-html",
+            "what-is-html-the-structure-of-information",
+            "what-is-css-the-visual-style-system",
+            "the-translation-gap-in-digital-products"
+          ],
+          "es": [
+            "cual-es-la-utilidad-de-aprender-html",
+            "que-es-html-la-estructura-de-la-informacion",
+            "que-es-css-el-sistema-de-estilo-visual",
+            "el-desfase-en-la-alineacion-en-productos-digitales"
+          ]
+        }
+      }
+    ]
+  }
+}

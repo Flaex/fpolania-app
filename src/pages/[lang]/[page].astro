@@ -5,7 +5,7 @@ import Footer from '../../components/Footer.astro';
 import { getCollection } from 'astro:content';
 import { useTranslations, reverseSlugMap } from '../../utils/i18n';
 import { extractBehanceProjectId } from '../../utils/behance';
-import orderingConfig from '../../config/ordering.json';
+import bentoConfig from '../../config/bento.json';
 
 function toPhraseCase(str: string) {
     if (!str) return '';
@@ -16,6 +16,8 @@ function toPhraseCase(str: string) {
     }
     return lower;
 }
+
+const getGridClass = (tokenName: string) => bentoConfig.gridTokens[tokenName] || "";
 
 function formatDate(dateStr: string, lang: string) {
   if (!dateStr) return '';
@@ -72,36 +74,6 @@ const allPosts = isInsightPage
 // ----------------------------------------
 const allWorks = isWorksPage ? await getCollection('works') : [];
 
-const worksAlpha = allWorks
-  .filter((w) => orderingConfig.works.alpha.includes(getSlug(w.id)))
-  .sort((a, b) => {
-    const indexA = orderingConfig.works.alpha.indexOf(getSlug(a.id));
-    const indexB = orderingConfig.works.alpha.indexOf(getSlug(b.id));
-    const posA = indexA === -1 ? Infinity : indexA;
-    const posB = indexB === -1 ? Infinity : indexB;
-    return posA - posB;
-  });
-
-const worksBeta = allWorks
-  .filter((w) => orderingConfig.works.beta.includes(getSlug(w.id)))
-  .sort((a, b) => {
-    const indexA = orderingConfig.works.beta.indexOf(getSlug(a.id));
-    const indexB = orderingConfig.works.beta.indexOf(getSlug(b.id));
-    const posA = indexA === -1 ? Infinity : indexA;
-    const posB = indexB === -1 ? Infinity : indexB;
-    return posA - posB;
-  });
-
-const worksGamma = allWorks
-  .filter((w) => orderingConfig.works.gamma.includes(getSlug(w.id)))
-  .sort((a, b) => {
-    const indexA = orderingConfig.works.gamma.indexOf(getSlug(a.id));
-    const indexB = orderingConfig.works.gamma.indexOf(getSlug(b.id));
-    const posA = indexA === -1 ? Infinity : indexA;
-    const posB = indexB === -1 ? Infinity : indexB;
-    return posA - posB;
-  });
-
 function getBetaCardClass(index: number, totalCards: number) {
   const isEven = totalCards % 2 === 0;
   const isFullWidth = isEven && index === 0;
@@ -122,44 +94,6 @@ function getBetaCardClass(index: number, totalCards: number) {
 function getSlug(id: string) {
   return id.split('/').pop()?.replace(/\.md$/, '') || '';
 }
-
-const activeInsightsOrder = orderingConfig.insights[lang] || { ceo_lens: [], visual_lens: [], builder_lens: [] };
-
-const ceoPosts = isInsightPage
-  ? allPosts
-      .filter(p => p.data.lens === 'ceo_lens')
-      .sort((a, b) => {
-        const indexA = activeInsightsOrder.ceo_lens.indexOf(getSlug(a.id));
-        const indexB = activeInsightsOrder.ceo_lens.indexOf(getSlug(b.id));
-        const posA = indexA === -1 ? Infinity : indexA;
-        const posB = indexB === -1 ? Infinity : indexB;
-        return posA - posB;
-      })
-  : [];
-
-const visualPosts = isInsightPage
-  ? allPosts
-      .filter(p => p.data.lens === 'visual_lens')
-      .sort((a, b) => {
-        const indexA = activeInsightsOrder.visual_lens.indexOf(getSlug(a.id));
-        const indexB = activeInsightsOrder.visual_lens.indexOf(getSlug(b.id));
-        const posA = indexA === -1 ? Infinity : indexA;
-        const posB = indexB === -1 ? Infinity : indexB;
-        return posA - posB;
-      })
-  : [];
-
-const builderPosts = isInsightPage
-  ? allPosts
-      .filter(p => p.data.lens === 'builder_lens')
-      .sort((a, b) => {
-        const indexA = activeInsightsOrder.builder_lens.indexOf(getSlug(a.id));
-        const indexB = activeInsightsOrder.builder_lens.indexOf(getSlug(b.id));
-        const posA = indexA === -1 ? Infinity : indexA;
-        const posB = indexB === -1 ? Infinity : indexB;
-        return posA - posB;
-      })
-  : [];
 
 // Card aesthetic config getter
 const getCardConfig = (postSlug: string) => {
@@ -265,149 +199,103 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
 
           <!-- Bento Grid System -->
           <div class="grid grid-cols-4 md:grid-cols-12 gap-gutter">
-              
-              <!-- CLUSTER A: BRANDING & IDENTITY -->
-              <div class="col-span-4 md:col-span-12 mb-8 mt-12">
-                  <h2 class="font-label-technical text-label-technical text-outline uppercase tracking-widest border-b border-outline-variant pb-2">{t('works.clusterAlpha')}</h2>
-              </div>
-              
-              <!-- Header Card -->
-              <div class="col-span-4 md:col-span-6 bg-surface-container-low border border-outline-variant p-8 flex flex-col justify-end min-h-[300px]">
-                  <h3 class="font-headline-lg text-[34px] md:text-headline-lg text-primary leading-tight font-bold font-fraunces">{t('works.clusterAlphaSubtitle')}</h3>
-              </div>
-              
-              <!-- 1x1 Grid Items -->
-              {worksAlpha.map((work) => {
-                  const title = lang === 'en' ? work.data.titleEn : work.data.titleEs;
-                  const category = lang === 'en' ? work.data.categoryEn : work.data.categoryEs;
-                  const behanceUrl = work.data.behanceUrl;
-                  const LinkTag = 'div';
-                  const linkProps = {
-                      class: "col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden",
-                      tabindex: 0,
-                  };
+              {bentoConfig.works.clusters.map((cluster) => {
+                  const clusterWorks = allWorks
+                      .filter((w) => cluster.items.includes(getSlug(w.id)))
+                      .sort((a, b) => {
+                          const indexA = cluster.items.indexOf(getSlug(a.id));
+                          const indexB = cluster.items.indexOf(getSlug(b.id));
+                          const posA = indexA === -1 ? Infinity : indexA;
+                          const posB = indexB === -1 ? Infinity : indexB;
+                          return posA - posB;
+                      });
+
                   return (
-                      <LinkTag {...linkProps}>
-                          {work.data.image && (
-                              <div class="absolute inset-0 z-0">
-                                  <img 
-                                      src={work.data.image} 
-                                      alt={title} 
-                                      class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-focus-within:grayscale-0 group-hover:scale-105 group-focus-within:scale-105 transition-all duration-700" 
-                                  />
-                              </div>
-                          )}
-                          <div class="font-label-technical text-label-technical text-outline relative z-10">{category}</div>
-                          <div class="relative z-10">
-                              <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary group-focus-within:text-primary transition-colors font-bold">{title}</h4>
+                      <>
+                          <!-- Cluster Divider/Label -->
+                          <div class={getGridClass(cluster.containerToken)}>
+                              <h2 class="font-label-technical text-label-technical text-outline uppercase tracking-widest border-b border-outline-variant pb-2">{t(cluster.titleKey)}</h2>
                           </div>
-                          {behanceUrl && (
-                              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 z-20 flex items-center justify-center pointer-events-none backdrop-blur-md bg-black/40">
-                                  <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="pointer-events-auto bg-primary text-on-primary text-center py-2.5 px-3 md:py-3 md:px-6 flex items-center justify-center gap-1.5 md:gap-[10px] text-[0.8rem] md:text-[.95rem] tracking-tight hover:bg-on-primary hover:text-primary transition-all duration-300">
-                                      <span class="leading-none mt-[1px]">View on Behance</span>
-                                      <svg viewBox="0 0 24 24" fill="currentColor" class="w-[1rem] h-[1rem] md:w-[1.2rem] md:h-[1.2rem]"><path d="M16.969 16.927a2.561 2.561 0 0 0 1.901.677 2.501 2.501 0 0 0 1.531-.475c.362-.235.636-.584.779-.99h2.585a5.091 5.091 0 0 1-1.9 2.896 5.292 5.292 0 0 1-3.091.88 5.839 5.839 0 0 1-2.284-.433 4.871 4.871 0 0 1-1.723-1.211 5.657 5.657 0 0 1-1.08-1.874 7.057 7.057 0 0 1-.383-2.393c-.005-.8.129-1.595.396-2.349a5.313 5.313 0 0 1 5.088-3.604 4.87 4.87 0 0 1 2.376.563c.661.362 1.231.87 1.668 1.485a6.2 6.2 0 0 1 .943 2.133c.194.821.263 1.666.205 2.508h-7.699c-.063.79.184 1.574.688 2.187ZM6.947 4.084a8.065 8.065 0 0 1 1.928.198 4.29 4.29 0 0 1 1.49.638c.418.303.748.711.958 1.182.241.579.357 1.203.341 1.83a3.506 3.506 0 0 1-.506 1.961 3.726 3.726 0 0 1-1.503 1.287 3.588 3.588 0 0 1 2.027 1.437c.464.747.697 1.615.67 2.494a4.593 4.593 0 0 1-.423 2.032 3.945 3.945 0 0 1-1.163 1.413 5.114 5.114 0 0 1-1.683.807 7.135 7.135 0 0 1-1.928.259H0V4.084h6.947Zm-.235 12.9c.308.004.616-.029.916-.099a2.18 2.18 0 0 0 .766-.332c.228-.158.411-.371.534-.619.142-.317.208-.663.191-1.009a2.08 2.08 0 0 0-.642-1.715 2.618 2.618 0 0 0-1.696-.505h-3.54v4.279h3.471Zm13.635-5.967a2.13 2.13 0 0 0-1.654-.619 2.336 2.336 0 0 0-1.163.259 2.474 2.474 0 0 0-.738.62 2.359 2.359 0 0 0-.396.792c-.074.239-.12.485-.137.734h4.769a3.239 3.239 0 0 0-.679-1.785l-.002-.001Zm-13.813-.648a2.254 2.254 0 0 0 1.423-.433c.399-.355.607-.88.56-1.413a1.916 1.916 0 0 0-.178-.891 1.298 1.298 0 0 0-.495-.533 1.851 1.851 0 0 0-.711-.274 3.966 3.966 0 0 0-.835-.073H3.241v3.631h3.293v-.014ZM21.62 5.122h-5.976v1.527h5.976V5.122Z"/></svg>
-                                  </a>
-                              </div>
-                          )}
-                      </LinkTag>
+                          
+                          <!-- Header Card -->
+                          <div class={getGridClass(cluster.headerSpanToken)}>
+                              <h3 class="font-headline-lg text-[34px] md:text-headline-lg text-primary leading-tight font-bold font-fraunces">{t(cluster.subtitleKey)}</h3>
+                          </div>
+                          
+                          <!-- Grid Items -->
+                          {clusterWorks.map((work, index) => {
+                              const title = lang === 'en' ? work.data.titleEn : work.data.titleEs;
+                              const category = lang === 'en' ? work.data.categoryEn : work.data.categoryEs;
+                              const behanceUrl = work.data.behanceUrl;
+                              
+                              if (cluster.layoutStyle === 'beta') {
+                                  const cardClass = getBetaCardClass(index, clusterWorks.length);
+                                  const LinkTag = 'div';
+                                  const linkProps = {
+                                      class: cardClass,
+                                      tabindex: 0,
+                                  };
+                                  return (
+                                      <LinkTag {...linkProps}>
+                                          {work.data.image && (
+                                              <div class="absolute inset-0 z-0">
+                                                  <img 
+                                                      src={work.data.image} 
+                                                      alt={title} 
+                                                      class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-focus-within:grayscale-0 group-hover:scale-105 group-focus-within:scale-105 transition-all duration-700" 
+                                                  />
+                                              </div>
+                                          )}
+                                          <div class="font-label-technical text-label-technical text-outline relative z-10">{category}</div>
+                                          <div class="relative z-10">
+                                              <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary group-focus-within:text-primary transition-colors font-bold">{title}</h4>
+                                          </div>
+                                          {behanceUrl && (
+                                              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 z-20 flex items-center justify-center pointer-events-none backdrop-blur-md bg-black/40">
+                                                  <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="pointer-events-auto bg-primary text-on-primary text-center py-2.5 px-3 md:py-3 md:px-6 flex items-center justify-center gap-1.5 md:gap-[10px] text-[0.8rem] md:text-[.95rem] tracking-tight hover:bg-on-primary hover:text-primary transition-all duration-300">
+                                                      <span class="leading-none mt-[1px]">View on Behance</span>
+                                                      <svg viewBox="0 0 24 24" fill="currentColor" class="w-[1rem] h-[1rem] md:w-[1.2rem] md:h-[1.2rem]"><path d="M16.969 16.927a2.561 2.561 0 0 0 1.901.677 2.501 2.501 0 0 0 1.531-.475c.362-.235.636-.584.779-.99h2.585a5.091 5.091 0 0 1-1.9 2.896 5.292 5.292 0 0 1-3.091.88 5.839 5.839 0 0 1-2.284-.433 4.871 4.871 0 0 1-1.723-1.211 5.657 5.657 0 0 1-1.08-1.874 7.057 7.057 0 0 1-.383-2.393c-.005-.8.129-1.595.396-2.349a5.313 5.313 0 0 1 5.088-3.604 4.87 4.87 0 0 1 2.376.563c.661.362 1.231.87 1.668 1.485a6.2 6.2 0 0 1 .943 2.133c.194.821.263 1.666.205 2.508h-7.699c-.063.79.184 1.574.688 2.187ZM6.947 4.084a8.065 8.065 0 0 1 1.928.198 4.29 4.29 0 0 1 1.49.638c.418.303.748.711.958 1.182.241.579.357 1.203.341 1.83a3.506 3.506 0 0 1-.506 1.961 3.726 3.726 0 0 1-1.503 1.287 3.588 3.588 0 0 1 2.027 1.437c.464.747.697 1.615.67 2.494a4.593 4.593 0 0 1-.423 2.032 3.945 3.945 0 0 1-1.163 1.413 5.114 5.114 0 0 1-1.683.807 7.135 7.135 0 0 1-1.928.259H0V4.084h6.947Zm-.235 12.9c.308.004.616-.029.916-.099a2.18 2.18 0 0 0 .766-.332c.228-.158.411-.371.534-.619.142-.317.208-.663.191-1.009a2.08 2.08 0 0 0-.642-1.715 2.618 2.618 0 0 0-1.696-.505h-3.54v4.279h3.471Zm13.635-5.967a2.13 2.13 0 0 0-1.654-.619 2.336 2.336 0 0 0-1.163.259 2.474 2.474 0 0 0-.738.62 2.359 2.359 0 0 0-.396.792c-.074.239-.12.485-.137.734h4.769a3.239 3.239 0 0 0-.679-1.785l-.002-.001Zm-13.813-.648a2.254 2.254 0 0 0 1.423-.433c.399-.355.607-.88.56-1.413a1.916 1.916 0 0 0-.178-.891 1.298 1.298 0 0 0-.495-.533 1.851 1.851 0 0 0-.711-.274 3.966 3.966 0 0 0-.835-.073H3.241v3.631h3.293v-.014ZM21.62 5.122h-5.976v1.527h5.976V5.122Z"/></svg>
+                                                  </a>
+                                              </div>
+                                          )}
+                                      </LinkTag>
+                                  );
+                              } else {
+                                  const LinkTag = 'div';
+                                  const linkProps = {
+                                      class: "col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden",
+                                      tabindex: 0,
+                                  };
+                                  return (
+                                      <LinkTag {...linkProps}>
+                                          {work.data.image && (
+                                              <div class="absolute inset-0 z-0">
+                                                  <img 
+                                                      src={work.data.image} 
+                                                      alt={title} 
+                                                      class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-focus-within:grayscale-0 group-hover:scale-105 group-focus-within:scale-105 transition-all duration-700" 
+                                                  />
+                                              </div>
+                                          )}
+                                          <div class="font-label-technical text-label-technical text-outline relative z-10">{category}</div>
+                                          <div class="relative z-10">
+                                              <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary group-focus-within:text-primary transition-colors font-bold">{title}</h4>
+                                          </div>
+                                          {behanceUrl && (
+                                              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 z-20 flex items-center justify-center pointer-events-none backdrop-blur-md bg-black/40">
+                                                  <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="pointer-events-auto bg-primary text-on-primary text-center py-2.5 px-3 md:py-3 md:px-6 flex items-center justify-center gap-1.5 md:gap-[10px] text-[0.8rem] md:text-[.95rem] tracking-tight hover:bg-on-primary hover:text-primary transition-all duration-300">
+                                                      <span class="leading-none mt-[1px]">View on Behance</span>
+                                                      <svg viewBox="0 0 24 24" fill="currentColor" class="w-[1rem] h-[1rem] md:w-[1.2rem] md:h-[1.2rem]"><path d="M16.969 16.927a2.561 2.561 0 0 0 1.901.677 2.501 2.501 0 0 0 1.531-.475c.362-.235.636-.584.779-.99h2.585a5.091 5.091 0 0 1-1.9 2.896 5.292 5.292 0 0 1-3.091.88 5.839 5.839 0 0 1-2.284-.433 4.871 4.871 0 0 1-1.723-1.211 5.657 5.657 0 0 1-1.08-1.874 7.057 7.057 0 0 1-.383-2.393c-.005-.8.129-1.595.396-2.349a5.313 5.313 0 0 1 5.088-3.604 4.87 4.87 0 0 1 2.376.563c.661.362 1.231.87 1.668 1.485a6.2 6.2 0 0 1 .943 2.133c.194.821.263 1.666.205 2.508h-7.699c-.063.79.184 1.574.688 2.187ZM6.947 4.084a8.065 8.065 0 0 1 1.928.198 4.29 4.29 0 0 1 1.49.638c.418.303.748.711.958 1.182.241.579.357 1.203.341 1.83a3.506 3.506 0 0 1-.506 1.961 3.726 3.726 0 0 1-1.503 1.287 3.588 3.588 0 0 1 2.027 1.437c.464.747.697 1.615.67 2.494a4.593 4.593 0 0 1-.423 2.032 3.945 3.945 0 0 1-1.163 1.413 5.114 5.114 0 0 1-1.683.807 7.135 7.135 0 0 1-1.928.259H0V4.084h6.947Zm-.235 12.9c.308.004.616-.029.916-.099a2.18 2.18 0 0 0 .766-.332c.228-.158.411-.371.534-.619.142-.317.208-.663.191-1.009a2.08 2.08 0 0 0-.642-1.715 2.618 2.618 0 0 0-1.696-.505h-3.54v4.279h3.471Zm13.635-5.967a2.13 2.13 0 0 0-1.654-.619 2.336 2.336 0 0 0-1.163.259 2.474 2.474 0 0 0-.738.62 2.359 2.359 0 0 0-.396.792c-.074.239-.12.485-.137.734h4.769a3.239 3.239 0 0 0-.679-1.785l-.002-.001Zm-13.813-.648a2.254 2.254 0 0 0 1.423-.433c.399-.355.607-.88.56-1.413a1.916 1.916 0 0 0-.178-.891 1.298 1.298 0 0 0-.495-.533 1.851 1.851 0 0 0-.711-.274 3.966 3.966 0 0 0-.835-.073H3.241v3.631h3.293v-.014ZM21.62 5.122h-5.976v1.527h5.976V5.122Z"/></svg>
+                                                  </a>
+                                              </div>
+                                          )}
+                                      </LinkTag>
+                                  );
+                              }
+                          })}
+                      </>
                   );
               })}
-              
-              <!-- CLUSTER B: WEB & DIGITAL -->
-              <div class="col-span-4 md:col-span-12 mb-8 mt-16">
-                  <h2 class="font-label-technical text-label-technical text-outline uppercase tracking-widest border-b border-outline-variant pb-2">{t('works.clusterBeta')}</h2>
-              </div>
-              
-              <!-- Header Card -->
-              <div class="col-span-4 md:col-span-6 bg-surface-container-low border border-outline-variant p-8 flex flex-col justify-end min-h-[300px]">
-                  <h3 class="font-headline-lg text-[34px] md:text-headline-lg text-primary leading-tight font-bold font-fraunces">{t('works.clusterBetaSubtitle')}</h3>
-              </div>
-              
-              <!-- 2x1 Grid Items -->
-              {worksBeta.map((work, index) => {
-                  const title = lang === 'en' ? work.data.titleEn : work.data.titleEs;
-                  const category = lang === 'en' ? work.data.categoryEn : work.data.categoryEs;
-                  const behanceUrl = work.data.behanceUrl;
-                  const cardClass = getBetaCardClass(index, worksBeta.length);
-                  const LinkTag = 'div';
-                  const linkProps = {
-                      class: cardClass,
-                      tabindex: 0,
-                  };
-                  return (
-                      <LinkTag {...linkProps}>
-                          {work.data.image && (
-                              <div class="absolute inset-0 z-0">
-                                  <img 
-                                      src={work.data.image} 
-                                      alt={title} 
-                                      class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-focus-within:grayscale-0 group-hover:scale-105 group-focus-within:scale-105 transition-all duration-700" 
-                                  />
-                              </div>
-                          )}
-                          <div class="font-label-technical text-label-technical text-outline relative z-10">{category}</div>
-                          <div class="relative z-10">
-                              <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary group-focus-within:text-primary transition-colors font-bold">{title}</h4>
-                          </div>
-                          {behanceUrl && (
-                              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 z-20 flex items-center justify-center pointer-events-none backdrop-blur-md bg-black/40">
-                                  <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="pointer-events-auto bg-primary text-on-primary text-center py-2.5 px-3 md:py-3 md:px-6 flex items-center justify-center gap-1.5 md:gap-[10px] text-[0.8rem] md:text-[.95rem] tracking-tight hover:bg-on-primary hover:text-primary transition-all duration-300">
-                                      <span class="leading-none mt-[1px]">View on Behance</span>
-                                      <svg viewBox="0 0 24 24" fill="currentColor" class="w-[1rem] h-[1rem] md:w-[1.2rem] md:h-[1.2rem]"><path d="M16.969 16.927a2.561 2.561 0 0 0 1.901.677 2.501 2.501 0 0 0 1.531-.475c.362-.235.636-.584.779-.99h2.585a5.091 5.091 0 0 1-1.9 2.896 5.292 5.292 0 0 1-3.091.88 5.839 5.839 0 0 1-2.284-.433 4.871 4.871 0 0 1-1.723-1.211 5.657 5.657 0 0 1-1.08-1.874 7.057 7.057 0 0 1-.383-2.393c-.005-.8.129-1.595.396-2.349a5.313 5.313 0 0 1 5.088-3.604 4.87 4.87 0 0 1 2.376.563c.661.362 1.231.87 1.668 1.485a6.2 6.2 0 0 1 .943 2.133c.194.821.263 1.666.205 2.508h-7.699c-.063.79.184 1.574.688 2.187ZM6.947 4.084a8.065 8.065 0 0 1 1.928.198 4.29 4.29 0 0 1 1.49.638c.418.303.748.711.958 1.182.241.579.357 1.203.341 1.83a3.506 3.506 0 0 1-.506 1.961 3.726 3.726 0 0 1-1.503 1.287 3.588 3.588 0 0 1 2.027 1.437c.464.747.697 1.615.67 2.494a4.593 4.593 0 0 1-.423 2.032 3.945 3.945 0 0 1-1.163 1.413 5.114 5.114 0 0 1-1.683.807 7.135 7.135 0 0 1-1.928.259H0V4.084h6.947Zm-.235 12.9c.308.004.616-.029.916-.099a2.18 2.18 0 0 0 .766-.332c.228-.158.411-.371.534-.619.142-.317.208-.663.191-1.009a2.08 2.08 0 0 0-.642-1.715 2.618 2.618 0 0 0-1.696-.505h-3.54v4.279h3.471Zm13.635-5.967a2.13 2.13 0 0 0-1.654-.619 2.336 2.336 0 0 0-1.163.259 2.474 2.474 0 0 0-.738.62 2.359 2.359 0 0 0-.396.792c-.074.239-.12.485-.137.734h4.769a3.239 3.239 0 0 0-.679-1.785l-.002-.001Zm-13.813-.648a2.254 2.254 0 0 0 1.423-.433c.399-.355.607-.88.56-1.413a1.916 1.916 0 0 0-.178-.891 1.298 1.298 0 0 0-.495-.533 1.851 1.851 0 0 0-.711-.274 3.966 3.966 0 0 0-.835-.073H3.241v3.631h3.293v-.014ZM21.62 5.122h-5.976v1.527h5.976V5.122Z"/></svg>
-                                  </a>
-                              </div>
-                          )}
-                      </LinkTag>
-                  );
-              })}
-              
-              <!-- CLUSTER C: ATOMIC DESIGN -->
-              <div class="col-span-4 md:col-span-12 mb-8 mt-16">
-                  <h2 class="font-label-technical text-label-technical text-outline uppercase tracking-widest border-b border-outline-variant pb-2">{t('works.clusterGamma')}</h2>
-              </div>
-              
-              <!-- Header Card -->
-              <div class="col-span-4 md:col-span-6 bg-surface-container-low border border-outline-variant p-8 flex flex-col justify-end min-h-[300px]">
-                  <h3 class="font-headline-lg text-[34px] md:text-headline-lg text-primary leading-tight font-bold font-fraunces">{t('works.clusterGammaSubtitle')}</h3>
-              </div>
-              
-              <!-- 1x1 Grid Items -->
-              {worksGamma.map((work) => {
-                  const title = lang === 'en' ? work.data.titleEn : work.data.titleEs;
-                  const category = lang === 'en' ? work.data.categoryEn : work.data.categoryEs;
-                  const behanceUrl = work.data.behanceUrl;
-                  const LinkTag = 'div';
-                  const linkProps = {
-                      class: "col-span-2 md:col-span-3 bg-surface border border-outline-variant p-6 flex flex-col justify-between aspect-square hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden",
-                      tabindex: 0,
-                  };
-                  return (
-                      <LinkTag {...linkProps}>
-                          {work.data.image && (
-                              <div class="absolute inset-0 z-0">
-                                  <img 
-                                      src={work.data.image} 
-                                      alt={title} 
-                                      class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-focus-within:grayscale-0 group-hover:scale-105 group-focus-within:scale-105 transition-all duration-700" 
-                                  />
-                              </div>
-                          )}
-                          <div class="font-label-technical text-label-technical text-outline relative z-10">{category}</div>
-                          <div class="relative z-10">
-                              <h4 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary group-focus-within:text-primary transition-colors font-bold">{title}</h4>
-                          </div>
-                          {behanceUrl && (
-                              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 z-20 flex items-center justify-center pointer-events-none backdrop-blur-md bg-black/40">
-                                  <a href={behanceUrl} target="_blank" rel="noopener noreferrer" class="pointer-events-auto bg-primary text-on-primary text-center py-2.5 px-3 md:py-3 md:px-6 flex items-center justify-center gap-1.5 md:gap-[10px] text-[0.8rem] md:text-[.95rem] tracking-tight hover:bg-on-primary hover:text-primary transition-all duration-300">
-                                      <span class="leading-none mt-[1px]">View on Behance</span>
-                                      <svg viewBox="0 0 24 24" fill="currentColor" class="w-[1rem] h-[1rem] md:w-[1.2rem] md:h-[1.2rem]"><path d="M16.969 16.927a2.561 2.561 0 0 0 1.901.677 2.501 2.501 0 0 0 1.531-.475c.362-.235.636-.584.779-.99h2.585a5.091 5.091 0 0 1-1.9 2.896 5.292 5.292 0 0 1-3.091.88 5.839 5.839 0 0 1-2.284-.433 4.871 4.871 0 0 1-1.723-1.211 5.657 5.657 0 0 1-1.08-1.874 7.057 7.057 0 0 1-.383-2.393c-.005-.8.129-1.595.396-2.349a5.313 5.313 0 0 1 5.088-3.604 4.87 4.87 0 0 1 2.376.563c.661.362 1.231.87 1.668 1.485a6.2 6.2 0 0 1 .943 2.133c.194.821.263 1.666.205 2.508h-7.699c-.063.79.184 1.574.688 2.187ZM6.947 4.084a8.065 8.065 0 0 1 1.928.198 4.29 4.29 0 0 1 1.49.638c.418.303.748.711.958 1.182.241.579.357 1.203.341 1.83a3.506 3.506 0 0 1-.506 1.961 3.726 3.726 0 0 1-1.503 1.287 3.588 3.588 0 0 1 2.027 1.437c.464.747.697 1.615.67 2.494a4.593 4.593 0 0 1-.423 2.032 3.945 3.945 0 0 1-1.163 1.413 5.114 5.114 0 0 1-1.683.807 7.135 7.135 0 0 1-1.928.259H0V4.084h6.947Zm-.235 12.9c.308.004.616-.029.916-.099a2.18 2.18 0 0 0 .766-.332c.228-.158.411-.371.534-.619.142-.317.208-.663.191-1.009a2.08 2.08 0 0 0-.642-1.715 2.618 2.618 0 0 0-1.696-.505h-3.54v4.279h3.471Zm13.635-5.967a2.13 2.13 0 0 0-1.654-.619 2.336 2.336 0 0 0-1.163.259 2.474 2.474 0 0 0-.738.62 2.359 2.359 0 0 0-.396.792c-.074.239-.12.485-.137.734h4.769a3.239 3.239 0 0 0-.679-1.785l-.002-.001Zm-13.813-.648a2.254 2.254 0 0 0 1.423-.433c.399-.355.607-.88.56-1.413a1.916 1.916 0 0 0-.178-.891 1.298 1.298 0 0 0-.495-.533 1.851 1.851 0 0 0-.711-.274 3.966 3.966 0 0 0-.835-.073H3.241v3.631h3.293v-.014ZM21.62 5.122h-5.976v1.527h5.976V5.122Z"/></svg>
-                                  </a>
-                              </div>
-                          )}
-                      </LinkTag>
-                  );
-              })}
-              
           </div>
       </main>
       
@@ -431,197 +319,181 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
 
       <!-- Bento Grid Structure -->
       <div class="grid grid-cols-12 gap-gutter">
-        
-        <!-- ================= LENS 01 GROUP: CEO ================= -->
-        <div class="p-10 flex items-center justify-between border border-outline-variant col-span-12 md:col-span-6 bg-surface-container-lowest">
-          <div class="max-w-xl">
-            <span class="font-label-technical text-label-technical mb-2 block uppercase text-primary/60">{t('insight.lens01')}</span>
-            <h2 class="font-display text-display mb-4 text-primary font-fraunces">{t('insight.lens01Title')}</h2>
-            <p class="font-body-lg text-body-lg text-on-surface-variant">{t('insight.lens01Desc')}</p>
-          </div>
-          <div class="hidden md:block material-symbols-outlined text-[120px] text-primary/10" style="font-variation-settings: 'wght' 200;">corporate_fare</div>
-        </div>
+        {bentoConfig.insights.clusters.map((cluster) => {
+          const clusterPosts = allPosts
+            .filter(p => p.data.lens === cluster.lensId)
+            .sort((a, b) => {
+              const indexA = cluster.items[lang].indexOf(getSlug(a.id));
+              const indexB = cluster.items[lang].indexOf(getSlug(b.id));
+              const posA = indexA === -1 ? Infinity : indexA;
+              const posB = indexB === -1 ? Infinity : indexB;
+              return posA - posB;
+            });
 
-        {ceoPosts.map(post => {
-          const postSlug = getSlug(post.id);
-          const config = getCardConfig(postSlug);
-          
-          if (config.type === 'large-bg-split') {
-            return (
-              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-6 group relative overflow-hidden bg-surface-container border border-outline-variant flex flex-col md:flex-row min-h-[320px] hover:border-white transition-colors duration-300">
-                <div class="w-full md:w-1/2 p-8 flex flex-col justify-between h-full">
-                  <div>
-                    <div class="flex items-center gap-2 mb-4">
-                      <span class="w-2 h-2 rounded-full bg-primary"></span>
-                      <span class="font-label-technical text-label-technical uppercase text-on-surface-variant">{config.tag} — {formatDate(post.data.date, lang)}</span>
-                    </div>
-                    <h3 class="font-headline-md text-headline-md text-primary group-hover:underline">{toPhraseCase(post.data.title)}</h3>
-                  </div>
-                  <div class="mt-8 font-label-technical text-label-technical text-primary flex items-center gap-2 uppercase tracking-widest">
-                    {lang === 'en' ? 'Read Article' : 'Leer Artículo'} <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                  </div>
+          return (
+            <>
+              <!-- Header Block -->
+              <div class={getGridClass(cluster.headerSpanToken)}>
+                <div class="max-w-xl">
+                  <span class="font-label-technical text-label-technical mb-2 block uppercase text-primary/60">{t(cluster.titleKey)}</span>
+                  <h2 class="font-display text-display mb-4 text-primary font-fraunces">{t(cluster.subtitleKey)}</h2>
+                  <p class="font-body-lg text-body-lg text-on-surface-variant">{t(cluster.descKey)}</p>
                 </div>
-                <div class="w-full md:w-1/2 min-h-[240px] bg-cover bg-center grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`}></div>
-              </a>
-            );
-          } else {
-            return (
-              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container-low border border-outline-variant p-8 hover:bg-surface-container hover:border-white transition-all duration-300 flex flex-col justify-between">
-                <div>
-                  <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{config.label} — {formatDate(post.data.date, lang)}</span>
-                  <h3 class="font-headline-md text-headline-md text-primary mb-4 leading-tight">{toPhraseCase(post.data.title)}</h3>
-                </div>
-                <div class="flex flex-wrap gap-2 mt-auto">
-                  {config.pills?.map((pill: string) => (
-                    <span class="bg-outline-variant/20 px-3 py-1 font-label-technical text-label-technical text-on-surface-variant">{pill}</span>
-                  ))}
-                </div>
-              </a>
-            );
-          }
-        })}
-
-        <!-- ================= LENS 02 GROUP: VISUAL ================= -->
-        <div class="p-10 flex items-center justify-between border border-outline-variant col-span-12 md:col-span-6 bg-surface-container-lowest mt-12">
-          <div class="max-w-xl">
-            <span class="font-label-technical text-label-technical mb-2 block uppercase text-primary/60">{t('insight.lens02')}</span>
-            <h2 class="font-display text-display mb-4 text-primary font-fraunces">{t('insight.lens02Title')}</h2>
-            <p class="font-body-lg text-body-lg text-on-surface-variant">{t('insight.lens02Desc')}</p>
-          </div>
-          <div class="hidden md:block material-symbols-outlined text-[120px] text-primary/10" style="font-variation-settings: 'wght' 200;">architecture</div>
-        </div>
-
-        {visualPosts.map(post => {
-          const postSlug = getSlug(post.id);
-          const config = getCardConfig(postSlug);
-          
-          if (config.type === 'overlay-bg') {
-            return (
-              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-6 bg-surface-container border border-outline-variant aspect-square md:aspect-auto p-8 flex flex-col justify-end relative mt-12 overflow-hidden hover:border-white transition-colors duration-300 group min-h-[320px]">
-                <div class="absolute inset-0 bg-cover bg-center opacity-40 group-hover:opacity-80 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`}></div>
-                <div class="relative z-10">
-                  <span class="font-label-technical text-label-technical text-primary/80 mb-2 block uppercase">{formatDate(post.data.date, lang)}</span>
-                  <h3 class="font-headline-md text-headline-md text-primary group-hover:underline">{toPhraseCase(post.data.title)}</h3>
-                  <span class="mt-4 font-label-technical text-label-technical text-primary flex items-center gap-2 uppercase tracking-widest">{lang === 'en' ? 'Learn More' : 'Aprender Más'} <span class="material-symbols-outlined text-[14px]">north_east</span></span>
-                </div>
-              </a>
-            );
-          } else if (config.type === 'taxonomy-card') {
-            return (
-              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container-high border border-outline-variant p-8 flex flex-col justify-between hover:border-white transition-colors duration-300">
-                <div>
-                  <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{formatDate(post.data.date, lang)}</span>
-                  <h3 class="font-headline-md text-headline-md text-primary">{toPhraseCase(post.data.title)}</h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant mt-4">{config.description}</p>
-                </div>
-                <div class="mt-8 border-t border-outline-variant pt-4 font-label-technical text-label-technical text-primary uppercase">{config.refLabel}</div>
-              </a>
-            );
-          } else if (config.type === 'icon-card') {
-            return (
-              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container border border-outline-variant p-8 flex flex-col justify-between hover:border-white transition-colors duration-300">
-                <div class="flex justify-between items-start mb-6">
-                  <span class="material-symbols-outlined text-primary text-[32px]">{config.icon}</span>
-                  <span class="font-label-technical text-label-technical text-on-surface-variant">{config.label} — {formatDate(post.data.date, lang)}</span>
-                </div>
-                <h3 class="font-headline-md text-headline-md text-primary mb-2">{toPhraseCase(post.data.title)}</h3>
-              </a>
-            );
-          } else if (config.type === 'hover-translate') {
-            return (
-              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container-high border border-outline-variant p-8 group cursor-pointer hover:border-white transition-colors duration-300 flex flex-col justify-between">
-                <div>
-                  <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{formatDate(post.data.date, lang)}</span>
-                  <h3 class="font-headline-md text-headline-md text-primary transition-all group-hover:translate-x-2">{toPhraseCase(post.data.title)}</h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant mt-2 text-sm">{config.description}</p>
-                </div>
-              </a>
-            );
-          } else if (config.type === 'banner-wide-split') {
-            return (
-              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 bg-surface-container border border-outline-variant flex flex-col md:flex-row items-stretch justify-between group hover:border-white transition-colors duration-300 relative overflow-hidden min-h-[280px]">
-                <div class="flex-1 p-8 md:p-12 flex flex-col justify-center">
-                  <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{formatDate(post.data.date, lang)}</span>
-                  <h3 class="font-headline-md text-headline-md text-primary mb-6">{toPhraseCase(post.data.title)}</h3>
-                  <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">{config.description}</p>
-                </div>
-                {post.data.image ? (
-                  <div class="w-full md:w-auto md:aspect-video overflow-hidden relative border-t md:border-t-0 md:border-l border-outline-variant">
-                    <div class="w-full h-full min-h-[240px] md:min-h-0 bg-cover bg-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`}></div>
-                  </div>
-                ) : (
-                  <div class="w-full md:w-auto md:aspect-video bg-surface-container-highest flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-700 border-t md:border-t-0 md:border-l border-outline-variant min-h-[240px] md:min-h-0">
-                    <span class="material-symbols-outlined text-[64px] text-primary/20">architecture</span>
-                  </div>
-                )}
-              </a>
-            );
-          }
-        })}
-
-        <!-- ================= LENS 03 GROUP: BUILDER ================= -->
-        <div class="p-10 flex items-center justify-between border border-outline-variant col-span-12 md:col-span-6 bg-surface-container-lowest mt-12">
-          <div class="max-w-xl">
-            <span class="font-label-technical text-label-technical mb-2 block uppercase text-primary/60">{t('insight.lens03')}</span>
-            <h2 class="font-display text-display mb-4 text-primary font-fraunces">{t('insight.lens03Title')}</h2>
-            <p class="font-body-lg text-body-lg text-on-surface-variant">{t('insight.lens03Desc')}</p>
-          </div>
-          <div class="hidden md:block material-symbols-outlined text-[120px] text-primary/10" style="font-variation-settings: 'wght' 200;">terminal</div>
-        </div>
-
-        {builderPosts.map(post => {
-          const postSlug = getSlug(post.id);
-          const config = getCardConfig(postSlug);
-          
-          if (config.type === 'action-card') {
-            return (
-              <div class="col-span-12 md:col-span-6 bg-surface-container border border-outline-variant flex flex-col md:flex-row items-stretch justify-between group hover:border-white transition-colors duration-300 relative overflow-hidden mt-12 min-h-[320px]">
-                <div class="flex-1 p-8 flex flex-col justify-between">
-                  <div>
-                    <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{formatDate(post.data.date, lang)}</span>
-                    <h3 class="font-headline-md text-headline-md text-primary mb-4 group-hover:underline">{toPhraseCase(post.data.title)}</h3>
-                    <p class="font-body-md text-body-md text-on-surface-variant">{config.description}</p>
-                  </div>
-                  <a href={`${pagePathPrefix}${postSlug}`} class="mt-8 border border-primary px-4 py-2 text-primary font-label-technical text-label-technical hover:bg-primary hover:text-on-primary transition-all text-center max-w-[180px] inline-block">{config.btnText}</a>
-                </div>
-                {post.data.image ? (
-                  <div class="w-full md:w-1/3 min-h-[240px] md:min-h-0 overflow-hidden relative border-t md:border-t-0 md:border-l border-outline-variant">
-                    <div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`}></div>
-                  </div>
-                ) : (
-                  <div class="hidden lg:flex w-1/3 bg-surface-container-highest border-l border-outline-variant items-center justify-center">
-                    <span class="material-symbols-outlined text-[64px] text-primary/20">{config.icon}</span>
-                  </div>
+                {cluster.icon && (
+                  <div class="hidden md:block material-symbols-outlined text-[120px] text-primary/10" style="font-variation-settings: 'wght' 200;">{cluster.icon}</div>
                 )}
               </div>
-            );
-          } else if (config.type === 'code-snippet') {
-            return (
-              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-3 bg-surface-container border border-outline-variant p-6 hover:border-white transition-colors duration-300 flex flex-col justify-between">
-                <div>
-                  <code class="block text-primary font-label-technical mb-6 font-geist">{config.code}</code>
-                  <h3 class="font-headline-md text-headline-md text-primary mb-2">{toPhraseCase(post.data.title)}</h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant mb-4 text-sm">{config.description}</p>
-                </div>
-                <span class="font-label-technical text-[10px] text-primary/40 uppercase tracking-tighter block mt-auto">{config.bottomLabel} — {formatDate(post.data.date, lang)}</span>
-              </a>
-            );
-          } else if (config.type === 'banner-right-image') {
-            return (
-              <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-6 bg-surface-container-high border border-outline-variant p-8 md:p-12 flex flex-col justify-between group hover:border-white transition-colors duration-300 min-h-[320px]">
-                <div class="max-w-xl">
-                  <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{formatDate(post.data.date, lang)}</span>
-                  <h3 class="font-headline-md text-headline-md text-primary mb-6 group-hover:underline">{toPhraseCase(post.data.title)}</h3>
-                  <p class="font-body-lg text-body-lg text-on-surface-variant">{config.description}</p>
-                </div>
-                <div class="mt-8 font-label-technical text-label-technical text-primary flex items-center gap-2 uppercase tracking-widest">
-                  {lang === 'en' ? 'Read Article' : 'Leer Artículo'} <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-                </div>
-              </a>
-            );
-          }
-        })}
 
+              {clusterPosts.map((post, postIndex) => {
+                const postSlug = getSlug(post.id);
+                const config = getCardConfig(postSlug);
+                const isFirstCard = postIndex === 0 && cluster.id !== 'ceo_lens';
+                const mtClass = isFirstCard ? 'mt-12' : '';
+
+                if (config.type === 'large-bg-split') {
+                  return (
+                    <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-6 group relative overflow-hidden bg-surface-container border border-outline-variant flex flex-col md:flex-row min-h-[320px] hover:border-white transition-colors duration-300">
+                      <div class="w-full md:w-1/2 p-8 flex flex-col justify-between h-full">
+                        <div>
+                          <div class="flex items-center gap-2 mb-4">
+                            <span class="w-2 h-2 rounded-full bg-primary"></span>
+                            <span class="font-label-technical text-label-technical uppercase text-on-surface-variant">{config.tag} — {formatDate(post.data.date, lang)}</span>
+                          </div>
+                          <h3 class="font-headline-md text-headline-md text-primary group-hover:underline">{toPhraseCase(post.data.title)}</h3>
+                        </div>
+                        <div class="mt-8 font-label-technical text-label-technical text-primary flex items-center gap-2 uppercase tracking-widest">
+                          {lang === 'en' ? 'Read Article' : 'Leer Artículo'} <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                        </div>
+                      </div>
+                      <div class="w-full md:w-1/2 min-h-[240px] bg-cover bg-center grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`} />
+                    </a>
+                  );
+                } else if (config.type === 'overlay-bg') {
+                  return (
+                    <a href={`${pagePathPrefix}${postSlug}`} class={`col-span-12 md:col-span-6 bg-surface-container border border-outline-variant aspect-square md:aspect-auto p-8 flex flex-col justify-end relative ${mtClass} overflow-hidden hover:border-white transition-colors duration-300 group min-h-[320px]`}>
+                      <div class="absolute inset-0 bg-cover bg-center opacity-40 group-hover:opacity-80 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`} />
+                      <div class="relative z-10">
+                        <span class="font-label-technical text-label-technical text-primary/80 mb-2 block uppercase">{formatDate(post.data.date, lang)}</span>
+                        <h3 class="font-headline-md text-headline-md text-primary group-hover:underline">{toPhraseCase(post.data.title)}</h3>
+                        <span class="mt-4 font-label-technical text-label-technical text-primary flex items-center gap-2 uppercase tracking-widest">{lang === 'en' ? 'Learn More' : 'Aprender Más'} <span class="material-symbols-outlined text-[14px]">north_east</span></span>
+                      </div>
+                    </a>
+                  );
+                } else if (config.type === 'taxonomy-card') {
+                  return (
+                    <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container-high border border-outline-variant p-8 flex flex-col justify-between hover:border-white transition-colors duration-300">
+                      <div>
+                        <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{formatDate(post.data.date, lang)}</span>
+                        <h3 class="font-headline-md text-headline-md text-primary">{toPhraseCase(post.data.title)}</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mt-4">{config.description}</p>
+                      </div>
+                      <div class="mt-8 border-t border-outline-variant pt-4 font-label-technical text-label-technical text-primary uppercase">{config.refLabel}</div>
+                    </a>
+                  );
+                } else if (config.type === 'icon-card') {
+                  return (
+                    <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container border border-outline-variant p-8 flex flex-col justify-between hover:border-white transition-colors duration-300">
+                      <div class="flex justify-between items-start mb-6">
+                        <span class="material-symbols-outlined text-primary text-[32px]">{config.icon}</span>
+                        <span class="font-label-technical text-label-technical text-on-surface-variant">{config.label} — {formatDate(post.data.date, lang)}</span>
+                      </div>
+                      <h3 class="font-headline-md text-headline-md text-primary mb-2">{toPhraseCase(post.data.title)}</h3>
+                    </a>
+                  );
+                } else if (config.type === 'hover-translate') {
+                  return (
+                    <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container-high border border-outline-variant p-8 group cursor-pointer hover:border-white transition-colors duration-300 flex flex-col justify-between">
+                      <div>
+                        <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{formatDate(post.data.date, lang)}</span>
+                        <h3 class="font-headline-md text-headline-md text-primary transition-all group-hover:translate-x-2">{toPhraseCase(post.data.title)}</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mt-2 text-sm">{config.description}</p>
+                      </div>
+                    </a>
+                  );
+                } else if (config.type === 'banner-wide-split') {
+                  return (
+                    <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 bg-surface-container border border-outline-variant flex flex-col md:flex-row items-stretch justify-between group hover:border-white transition-colors duration-300 relative overflow-hidden min-h-[280px]">
+                      <div class="flex-1 p-8 md:p-12 flex flex-col justify-center">
+                        <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{formatDate(post.data.date, lang)}</span>
+                        <h3 class="font-headline-md text-headline-md text-primary mb-6">{toPhraseCase(post.data.title)}</h3>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">{config.description}</p>
+                      </div>
+                      {post.data.image ? (
+                        <div class="w-full md:w-auto md:aspect-video overflow-hidden relative border-t md:border-t-0 md:border-l border-outline-variant">
+                          <div class="w-full h-full min-h-[240px] md:min-h-0 bg-cover bg-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`} />
+                        </div>
+                      ) : (
+                        <div class="w-full md:w-auto md:aspect-video bg-surface-container-highest flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-700 border-t md:border-t-0 md:border-l border-outline-variant min-h-[240px] md:min-h-0">
+                          <span class="material-symbols-outlined text-[64px] text-primary/20">architecture</span>
+                        </div>
+                      )}
+                    </a>
+                  );
+                } else if (config.type === 'action-card') {
+                  return (
+                    <div class={`col-span-12 md:col-span-6 bg-surface-container border border-outline-variant flex flex-col md:flex-row items-stretch justify-between group hover:border-white transition-colors duration-300 relative overflow-hidden ${mtClass} min-h-[320px]`}>
+                      <div class="flex-1 p-8 flex flex-col justify-between">
+                        <div>
+                          <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{formatDate(post.data.date, lang)}</span>
+                          <h3 class="font-headline-md text-headline-md text-primary mb-4 group-hover:underline">{toPhraseCase(post.data.title)}</h3>
+                          <p class="font-body-md text-body-md text-on-surface-variant">{config.description}</p>
+                        </div>
+                        <a href={`${pagePathPrefix}${postSlug}`} class="mt-8 border border-primary px-4 py-2 text-primary font-label-technical text-label-technical hover:bg-primary hover:text-on-primary transition-all text-center max-w-[180px] inline-block">{config.btnText}</a>
+                      </div>
+                      {post.data.image ? (
+                        <div class="w-full md:w-1/3 min-h-[240px] md:min-h-0 overflow-hidden relative border-t md:border-t-0 md:border-l border-outline-variant">
+                          <div class="w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" style={`background-image: url('${post.data.image}');`} />
+                        </div>
+                      ) : (
+                        <div class="hidden lg:flex w-1/3 bg-surface-container-highest border-l border-outline-variant items-center justify-center">
+                          <span class="material-symbols-outlined text-[64px] text-primary/20">{config.icon}</span>
+                        </div>
+                      )}
+                    </div>
+                  );
+                } else if (config.type === 'code-snippet') {
+                  return (
+                    <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-3 bg-surface-container border border-outline-variant p-6 hover:border-white transition-colors duration-300 flex flex-col justify-between">
+                      <div>
+                        <code class="block text-primary font-label-technical mb-6 font-geist">{config.code}</code>
+                        <h3 class="font-headline-md text-headline-md text-primary mb-2">{toPhraseCase(post.data.title)}</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-4 text-sm">{config.description}</p>
+                      </div>
+                      <span class="font-label-technical text-[10px] text-primary/40 uppercase tracking-tighter block mt-auto">{config.bottomLabel} — {formatDate(post.data.date, lang)}</span>
+                    </a>
+                  );
+                } else if (config.type === 'banner-right-image') {
+                  return (
+                    <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-6 bg-surface-container-high border border-outline-variant p-8 md:p-12 flex flex-col justify-between group hover:border-white transition-colors duration-300 min-h-[320px]">
+                      <div class="max-w-xl">
+                        <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{formatDate(post.data.date, lang)}</span>
+                        <h3 class="font-headline-md text-headline-md text-primary mb-6 group-hover:underline">{toPhraseCase(post.data.title)}</h3>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant">{config.description}</p>
+                      </div>
+                      <div class="mt-8 font-label-technical text-label-technical text-primary flex items-center gap-2 uppercase tracking-widest">
+                        {lang === 'en' ? 'Read Article' : 'Leer Artículo'} <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                      </div>
+                    </a>
+                  );
+                } else {
+                  return (
+                    <a href={`${pagePathPrefix}${postSlug}`} class="col-span-12 md:col-span-4 bg-surface-container-low border border-outline-variant p-8 hover:bg-surface-container hover:border-white transition-all duration-300 flex flex-col justify-between">
+                      <div>
+                        <span class="font-label-technical text-label-technical text-on-surface-variant mb-4 block">{config.label} — {formatDate(post.data.date, lang)}</span>
+                        <h3 class="font-headline-md text-headline-md text-primary mb-4 leading-tight">{toPhraseCase(post.data.title)}</h3>
+                      </div>
+                      <div class="flex flex-wrap gap-2 mt-auto">
+                        {config.pills?.map((pill: string) => (
+                          <span class="bg-outline-variant/20 px-3 py-1 font-label-technical text-label-technical text-on-surface-variant">{pill}</span>
+                        ))}
+                      </div>
+                    </a>
+                  );
+                }
+              })}
+            </>
+          );
+        })}
       </div>
 
       <!-- Call to Action -->
