@@ -1,28 +1,28 @@
 {
   "gridTokens": {
-    "hero-double-wide": "col-span-1 md:col-span-4 lg:col-span-8 lg:row-span-2",
-    "square-double-height": "col-span-1 md:col-span-2 lg:col-span-4 lg:row-span-2",
-    "standard-card": "col-span-1 md:col-span-4 lg:col-span-4",
-    "compact-card": "col-span-1 md:col-span-2 lg:col-span-4",
-    "featured-hero": "col-span-1 md:col-span-4 lg:col-span-6 lg:row-span-2 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[400px] lg:h-auto",
-    "featured-split": "col-span-1 md:col-span-2 lg:col-span-6 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[240px]",
+    "home-4x2": "col-span-1 md:col-span-4 lg:col-span-8 lg:row-span-2",
+    "home-2x2": "col-span-1 md:col-span-2 lg:col-span-4 lg:row-span-2",
+    "home-2x1": "col-span-1 md:col-span-4 lg:col-span-4",
+    "home-compact-2x1": "col-span-1 md:col-span-2 lg:col-span-4",
+    "home-featured-3x2": "col-span-1 md:col-span-4 lg:col-span-6 lg:row-span-2 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[400px] lg:h-auto",
+    "home-featured-3x1": "col-span-1 md:col-span-2 lg:col-span-6 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[240px]",
     "works-cluster-header": "col-span-4 md:col-span-6 bg-surface-container-low border border-outline-variant p-8 flex flex-col justify-end min-h-[300px]",
     "works-cluster-container-first": "col-span-4 md:col-span-12 mb-8 mt-12",
     "works-cluster-container-next": "col-span-4 md:col-span-12 mb-8 mt-16",
     "insight-lens-header-first": "p-10 flex items-center justify-between border border-outline-variant col-span-12 md:col-span-6 bg-surface-container-lowest",
     "insight-lens-header-next": "p-10 flex items-center justify-between border border-outline-variant col-span-12 md:col-span-6 bg-surface-container-lowest mt-12",
-    "works-card-square": "col-span-2 md:col-span-3 aspect-square bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden",
-    "works-card-large": "col-span-4 md:col-span-6 min-h-[300px] bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden",
-    "works-card-compact": "col-span-4 md:col-span-6 min-h-[150px] bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden",
-    "works-card-full-width": "col-span-4 md:col-span-12 min-h-[200px] bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden"
+    "1x1": "col-span-2 md:col-span-3 aspect-square bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden",
+    "2x2": "col-span-4 md:col-span-6 min-h-[300px] bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden",
+    "2x1": "col-span-4 md:col-span-6 min-h-[150px] bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden",
+    "4x2": "col-span-4 md:col-span-12 min-h-[200px] bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden"
   },
   "home": {
     "mainSectionCards": {
-      "hero": "hero-double-wide",
-      "latestInsight": "square-double-height",
-      "third": "standard-card",
-      "fourth": "compact-card",
-      "fifth": "compact-card"
+      "hero": "home-4x2",
+      "latestInsight": "home-2x2",
+      "third": "home-2x1",
+      "fourth": "home-compact-2x1",
+      "fifth": "home-compact-2x1"
     },
     "latestInsight": {
       "en": "the-translation-gap-in-digital-products",
@@ -31,15 +31,15 @@
     "featuredWorks": [
       {
         "slug": "come-2025",
-        "token": "featured-hero"
+        "token": "home-featured-3x2"
       },
       {
         "slug": "maximiza",
-        "token": "featured-split"
+        "token": "home-featured-3x1"
       },
       {
         "slug": "novanet-studio",
-        "token": "featured-split"
+        "token": "home-featured-3x1"
       }
     ]
   },
@@ -52,16 +52,16 @@
         "containerToken": "works-cluster-container-first",
         "headerSpanToken": "works-cluster-header",
         "items": [
-          { "slug": "maximiza", "token": "works-card-square" },
-          { "slug": "zuglabs", "token": "works-card-square" },
-          { "slug": "agua-fria", "token": "works-card-square" },
-          { "slug": "altea", "token": "works-card-square" },
-          { "slug": "zaituna-cafe", "token": "works-card-square" },
-          { "slug": "take-on-bar", "token": "works-card-square" },
-          { "slug": "athlos", "token": "works-card-square" },
-          { "slug": "gamma-medical", "token": "works-card-square" },
-          { "slug": "ej-supply", "token": "works-card-square" },
-          { "slug": "bakery-consortium", "token": "works-card-square" }
+          { "slug": "maximiza", "token": "1x1" },
+          { "slug": "zuglabs", "token": "1x1" },
+          { "slug": "agua-fria", "token": "1x1" },
+          { "slug": "altea", "token": "1x1" },
+          { "slug": "zaituna-cafe", "token": "1x1" },
+          { "slug": "take-on-bar", "token": "1x1" },
+          { "slug": "athlos", "token": "1x1" },
+          { "slug": "gamma-medical", "token": "1x1" },
+          { "slug": "ej-supply", "token": "1x1" },
+          { "slug": "bakery-consortium", "token": "1x1" }
         ]
       },
       {
@@ -71,13 +71,13 @@
         "containerToken": "works-cluster-container-next",
         "headerSpanToken": "works-cluster-header",
         "items": [
-          { "slug": "novanet-studio", "token": "works-card-large" },
-          { "slug": "come-2025", "token": "works-card-large" },
-          { "slug": "banco-del-libro", "token": "works-card-compact" },
-          { "slug": "ccs-multisport", "token": "works-card-compact" },
-          { "slug": "avila-multisport", "token": "works-card-compact" },
-          { "slug": "kevinroot-medical", "token": "works-card-compact" },
-          { "slug": "novanet-evolution", "token": "works-card-compact" }
+          { "slug": "novanet-studio", "token": "2x2" },
+          { "slug": "come-2025", "token": "2x2" },
+          { "slug": "banco-del-libro", "token": "2x1" },
+          { "slug": "ccs-multisport", "token": "2x1" },
+          { "slug": "avila-multisport", "token": "2x1" },
+          { "slug": "kevinroot-medical", "token": "2x1" },
+          { "slug": "novanet-evolution", "token": "2x1" }
         ]
       },
       {
@@ -87,9 +87,9 @@
         "containerToken": "works-cluster-container-next",
         "headerSpanToken": "works-cluster-header",
         "items": [
-          { "slug": "novatipo", "token": "works-card-square" },
-          { "slug": "novaicons", "token": "works-card-square" },
-          { "slug": "barahunda", "token": "works-card-square" }
+          { "slug": "novatipo", "token": "1x1" },
+          { "slug": "novaicons", "token": "1x1" },
+          { "slug": "barahunda", "token": "1x1" }
         ]
       }
     ]
