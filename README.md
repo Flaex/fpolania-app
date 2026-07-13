@@ -30,6 +30,10 @@ This repository is the **Digital Product HQ** hosting the code, styling, and pro
 │   │   ├── Navigation.astro    # Persistent monochromatic header
 │   │   ├── Footer.astro        # Persistent monochromatic footer
 │   │   └── Welcome.astro       # Default welcome components
+│   ├── config/                 # Master Layout Engine Configs
+│   │   ├── bento.json          # Grid and sequence layout control file
+│   │   ├── bento.schema.json   # JSON validation schema for bento.json
+│   │   └── BENTO.md            # Rich Markdown layout and dimensions guide
 │   ├── content/                # Bilingual thought leadership database
 │   │   └── blog/
 │   │       ├── en/             # 13 articles in English (CEO, Visual, Builder)
@@ -119,17 +123,15 @@ This repository is the **Digital Product HQ** hosting the code, styling, and pro
 | 13 | **¿Cuál es la utilidad de aprender HTML?** | `cual-es-la-utilidad-de-aprender-html` | Spanish | `builder_lens` |
 
 ### 5. Architectural Blueprints & Workflows
-- Drafted [brand_foundation.md](file:///Users/fpolania/projects/fpolania-app/web_app_blueprint/brand_foundation.md) to define visual colors, fonts, and logos.
-- Documented [bento_grid_structure.md](file:///Users/fpolania/projects/fpolania-app/web_app_blueprint/bento_grid_structure.md) listing the exact layout grids for the homepage, portfolio pages, sitemaps, and categorical lenses.
-- Authored [STITCH_WORKFLOW.md](file:///Users/fpolania/projects/fpolania-app/web_app_blueprint/STITCH_WORKFLOW.md) outlining the design-to-code export workflow using the Google Stitch web tool.
+- Drafted [brand_foundation.md](file:///home/flaex/projects/fpolania-app/web_app_blueprint/brand_foundation.md) to define visual colors, fonts, and logos.
+- Documented [bento_grid_structure.md](file:///home/flaex/projects/fpolania-app/web_app_blueprint/bento_grid_structure.md) listing the exact layout grids for the homepage, portfolio pages, sitemaps, and categorical lenses.
+- Authored [STITCH_WORKFLOW.md](file:///home/flaex/projects/fpolania-app/web_app_blueprint/STITCH_WORKFLOW.md) outlining the design-to-code export workflow using the Google Stitch web tool.
 
-### 6. Development Roadmap & Pending Work
-- **Works Hub Implementation:** Create `/works` (English) and `/trabajos` (Spanish) pages to display the full portfolio Bento Grid mapped to legacy projects from [projects_index.md](file:///Users/fpolania/projects/fpolania-app/web_app_blueprint/portfolio/projects_index.md).
-- **Insight Hub Implementation:** Build `/insight` (English) and `/perspectivas` (Spanish) pages to list blog articles grouped by their CEO, Visual, and Builder lenses.
-- **Dynamic Routing:** Create dynamic routes (`/insight/[slug]` and `/perspectivas/[slug]`) to render individual articles from content collections.
-- **Homepage Expansion (Zone 3):** Implement the "Featured Insights" card cluster on the homepage [index.astro](file:///Users/fpolania/projects/fpolania-app/src/pages/index.astro) as specified in the blueprint.
-- **Bilingual Localization Logic:** Implement routing subfolders, active language detection/toggling, and localized components.
-- **Visual Polish & Micro-interactions:** Add monochromatic transition states, hover states, icons, and background grid/question-mark patterns.
+### 6. Master Bento Layout Control System (Strategy A)
+- **Decoupled Configuration (`bento.json`):** Created a master layout control file that isolates bento positioning rules from page rendering logic.
+- **JSON Schema-backed Verification (`bento.schema.json`):** Implemented strict schema validation providing VS Code autocompletion and hover descriptions for all layout dimensions (e.g., `1x1`, `2x2`, `2x1`, `4x2`).
+- **Comprehensive Documentation ([BENTO.md](file:///home/flaex/projects/fpolania-app/src/config/BENTO.md)):** Detailed the responsive scaling schema and 12-column grid tracks with ASCII illustrations.
+- **Dynamic Layout Refactoring:** Fully refactored `[page].astro` and `index.astro` to dynamically resolve styles using the centralized config schema, completely removing redundant branch code.
 
 ---
 
