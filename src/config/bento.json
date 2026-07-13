@@ -10,7 +10,11 @@
     "works-cluster-container-first": "col-span-4 md:col-span-12 mb-8 mt-12",
     "works-cluster-container-next": "col-span-4 md:col-span-12 mb-8 mt-16",
     "insight-lens-header-first": "p-10 flex items-center justify-between border border-outline-variant col-span-12 md:col-span-6 bg-surface-container-lowest",
-    "insight-lens-header-next": "p-10 flex items-center justify-between border border-outline-variant col-span-12 md:col-span-6 bg-surface-container-lowest mt-12"
+    "insight-lens-header-next": "p-10 flex items-center justify-between border border-outline-variant col-span-12 md:col-span-6 bg-surface-container-lowest mt-12",
+    "works-card-square": "col-span-2 md:col-span-3 aspect-square bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden",
+    "works-card-large": "col-span-4 md:col-span-6 min-h-[300px] bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden",
+    "works-card-compact": "col-span-4 md:col-span-6 min-h-[150px] bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden",
+    "works-card-full-width": "col-span-4 md:col-span-12 min-h-[200px] bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden"
   },
   "home": {
     "mainSectionCards": {
@@ -47,18 +51,17 @@
         "subtitleKey": "works.clusterAlphaSubtitle",
         "containerToken": "works-cluster-container-first",
         "headerSpanToken": "works-cluster-header",
-        "layoutStyle": "1x1",
         "items": [
-          "maximiza",
-          "zuglabs",
-          "agua-fria",
-          "altea",
-          "zaituna-cafe",
-          "take-on-bar",
-          "athlos",
-          "gamma-medical",
-          "ej-supply",
-          "bakery-consortium"
+          { "slug": "maximiza", "token": "works-card-square" },
+          { "slug": "zuglabs", "token": "works-card-square" },
+          { "slug": "agua-fria", "token": "works-card-square" },
+          { "slug": "altea", "token": "works-card-square" },
+          { "slug": "zaituna-cafe", "token": "works-card-square" },
+          { "slug": "take-on-bar", "token": "works-card-square" },
+          { "slug": "athlos", "token": "works-card-square" },
+          { "slug": "gamma-medical", "token": "works-card-square" },
+          { "slug": "ej-supply", "token": "works-card-square" },
+          { "slug": "bakery-consortium", "token": "works-card-square" }
         ]
       },
       {
@@ -67,15 +70,14 @@
         "subtitleKey": "works.clusterBetaSubtitle",
         "containerToken": "works-cluster-container-next",
         "headerSpanToken": "works-cluster-header",
-        "layoutStyle": "beta",
         "items": [
-          "novanet-studio",
-          "come-2025",
-          "banco-del-libro",
-          "ccs-multisport",
-          "avila-multisport",
-          "kevinroot-medical",
-          "novanet-evolution"
+          { "slug": "novanet-studio", "token": "works-card-large" },
+          { "slug": "come-2025", "token": "works-card-large" },
+          { "slug": "banco-del-libro", "token": "works-card-compact" },
+          { "slug": "ccs-multisport", "token": "works-card-compact" },
+          { "slug": "avila-multisport", "token": "works-card-compact" },
+          { "slug": "kevinroot-medical", "token": "works-card-compact" },
+          { "slug": "novanet-evolution", "token": "works-card-compact" }
         ]
       },
       {
@@ -84,11 +86,10 @@
         "subtitleKey": "works.clusterGammaSubtitle",
         "containerToken": "works-cluster-container-next",
         "headerSpanToken": "works-cluster-header",
-        "layoutStyle": "1x1",
         "items": [
-          "novatipo",
-          "novaicons",
-          "barahunda"
+          { "slug": "novatipo", "token": "works-card-square" },
+          { "slug": "novaicons", "token": "works-card-square" },
+          { "slug": "barahunda", "token": "works-card-square" }
         ]
       }
     ]
