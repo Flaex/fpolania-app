@@ -1,0 +1,296 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BentoLayoutConfig",
+  "description": "JSON Schema for the Master Bento Grid layout and content control configuration.",
+  "type": "OBJECT",
+  "required": [
+    "gridTokens",
+    "home",
+    "works",
+    "insights"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "STRING",
+      "description": "Path to the validation schema file."
+    },
+    "gridTokens": {
+      "type": "OBJECT",
+      "description": "Responsive layout classes mapped to semantic bento dimensions and components.",
+      "properties": {
+        "home-4x2": {
+          "type": "STRING",
+          "description": "Double-wide double-height layout token for homepage strategic hero (Spans 8 columns, 2 grid rows)."
+        },
+        "home-2x2": {
+          "type": "STRING",
+          "description": "Bento unit block for homepage latest insight (Spans 4 columns, 2 grid rows)."
+        },
+        "home-2x1": {
+          "type": "STRING",
+          "description": "Bento unit block for homepage strategic blocks (Spans 4 columns, 1 row)."
+        },
+        "home-compact-2x1": {
+          "type": "STRING",
+          "description": "Compact bento unit block for homepage elements (Spans 4 columns on large screens)."
+        },
+        "1x1": {
+          "type": "STRING",
+          "description": "Standard square bento card unit (Spans 3 columns on large screens, square aspect ratio)."
+        },
+        "2x2": {
+          "type": "STRING",
+          "description": "Standard large bento card unit (Spans 6 columns on large screens, min-height 300px)."
+        },
+        "2x1": {
+          "type": "STRING",
+          "description": "Standard compact horizontal bento card unit (Spans 6 columns on large screens, min-height 150px)."
+        },
+        "4x2": {
+          "type": "STRING",
+          "description": "Full-row wide double-height layout track container (Spans 12 columns, min-height 200px)."
+        }
+      },
+      "additionalProperties": {
+        "type": "STRING"
+      }
+    },
+    "home": {
+      "type": "OBJECT",
+      "description": "Homepage bento grid configuration.",
+      "required": [
+        "mainSectionCards",
+        "latestInsight",
+        "featuredWorks"
+      ],
+      "properties": {
+        "mainSectionCards": {
+          "type": "OBJECT",
+          "description": "Direct layout mapping for main section cards on home grid.",
+          "properties": {
+            "hero": {
+              "type": "STRING",
+              "description": "Hero card dimension token.",
+              "enum": ["home-4x2", "home-2x2", "home-2x1", "home-compact-2x1"]
+            },
+            "latestInsight": {
+              "type": "STRING",
+              "description": "Latest Insight block dimension token.",
+              "enum": ["home-4x2", "home-2x2", "home-2x1", "home-compact-2x1"]
+            },
+            "third": {
+              "type": "STRING",
+              "description": "Third section card dimension token.",
+              "enum": ["home-4x2", "home-2x2", "home-2x1", "home-compact-2x1"]
+            },
+            "fourth": {
+              "type": "STRING",
+              "description": "Fourth section card dimension token.",
+              "enum": ["home-4x2", "home-2x2", "home-2x1", "home-compact-2x1"]
+            },
+            "fifth": {
+              "type": "STRING",
+              "description": "Fifth section card dimension token.",
+              "enum": ["home-4x2", "home-2x2", "home-2x1", "home-compact-2x1"]
+            }
+          }
+        },
+        "latestInsight": {
+          "type": "OBJECT",
+          "description": "Target article identifiers for latest insight preview card per language.",
+          "required": [
+            "en",
+            "es"
+          ],
+          "properties": {
+            "en": {
+              "type": "STRING",
+              "description": "Slug of the featured English insight article."
+            },
+            "es": {
+              "type": "STRING",
+              "description": "Slug of the featured Spanish insight article."
+            }
+          }
+        },
+        "featuredWorks": {
+          "type": "ARRAY",
+          "description": "Ordered list of spotlight works on the homepage.",
+          "items": {
+            "type": "OBJECT",
+            "required": [
+              "slug",
+              "token"
+            ],
+            "properties": {
+              "slug": {
+                "type": "STRING",
+                "description": "The unique filename slug of the project item."
+              },
+              "token": {
+                "type": "STRING",
+                "description": "Target grid token mapping for this card.",
+                "enum": ["home-featured-3x2", "home-featured-3x1", "1x1", "2x2", "2x1", "4x2"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "works": {
+      "type": "OBJECT",
+      "description": "Works catalog sections & clusters configuration.",
+      "required": [
+        "clusters"
+      ],
+      "properties": {
+        "clusters": {
+          "type": "ARRAY",
+          "description": "Array of project thematic group clusters.",
+          "items": {
+            "type": "OBJECT",
+            "required": [
+              "id",
+              "titleKey",
+              "subtitleKey",
+              "containerToken",
+              "headerSpanToken",
+              "items"
+            ],
+            "properties": {
+              "id": {
+                "type": "STRING",
+                "description": "Unique identifier for the cluster."
+              },
+              "titleKey": {
+                "type": "STRING",
+                "description": "Translations key for cluster label/header (e.g. works.clusterAlpha)."
+              },
+              "subtitleKey": {
+                "type": "STRING",
+                "description": "Translations key for cluster title/purpose."
+              },
+              "containerToken": {
+                "type": "STRING",
+                "description": "Grid token regulating top/bottom offsets for this cluster.",
+                "enum": ["works-cluster-container-first", "works-cluster-container-next"]
+              },
+              "headerSpanToken": {
+                "type": "STRING",
+                "description": "Grid token regulating column width of cluster descriptive block."
+              },
+              "items": {
+                "type": "ARRAY",
+                "description": "Ordered lists of project cards inside this cluster, mapped with exact bento sizing tokens.",
+                "items": {
+                  "type": "OBJECT",
+                  "required": [
+                    "slug",
+                    "token"
+                  ],
+                  "properties": {
+                    "slug": {
+                      "type": "STRING",
+                      "description": "The unique filename slug of the project."
+                    },
+                    "token": {
+                      "type": "STRING",
+                      "description": "Sizing and spacing dimension token.",
+                      "enum": [
+                        "1x1",
+                        "2x2",
+                        "2x1",
+                        "4x2"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "insights": {
+      "type": "OBJECT",
+      "description": "Insights lens collections configuration.",
+      "required": [
+        "clusters"
+      ],
+      "properties": {
+        "clusters": {
+          "type": "ARRAY",
+          "description": "Thematic group clusters for professional perspectives.",
+          "items": {
+            "type": "OBJECT",
+            "required": [
+              "id",
+              "lensId",
+              "titleKey",
+              "subtitleKey",
+              "descKey",
+              "icon",
+              "headerSpanToken",
+              "items"
+            ],
+            "properties": {
+              "id": {
+                "type": "STRING",
+                "description": "Unique identifier of the insight category."
+              },
+              "lensId": {
+                "type": "STRING",
+                "description": "Target lens filter identifier matching article metadata."
+              },
+              "titleKey": {
+                "type": "STRING",
+                "description": "Translation key for lens title."
+              },
+              "subtitleKey": {
+                "type": "STRING",
+                "description": "Translation key for lens subtitle description."
+              },
+              "descKey": {
+                "type": "STRING",
+                "description": "Translation key for lens description."
+              },
+              "icon": {
+                "type": "STRING",
+                "description": "Icon class identifier or material icon ID."
+              },
+              "headerSpanToken": {
+                "type": "STRING",
+                "description": "Grid token mapping for lens header cards.",
+                "enum": ["insight-lens-header-first", "insight-lens-header-next"]
+              },
+              "items": {
+                "type": "OBJECT",
+                "description": "Multilingual featured articles lists.",
+                "required": [
+                  "en",
+                  "es"
+                ],
+                "properties": {
+                  "en": {
+                    "type": "ARRAY",
+                    "description": "Ordered English article slugs.",
+                    "items": {
+                      "type": "STRING"
+                    }
+                  },
+                  "es": {
+                    "type": "ARRAY",
+                    "description": "Ordered Spanish article slugs.",
+                    "items": {
+                      "type": "STRING"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
