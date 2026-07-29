@@ -198,12 +198,14 @@ const ogImage = post.data.image || "/icon-512.png";
 
     <!-- Framed High-Density Image Card -->
     {post.data.image && (
-      <div 
-        class="w-full border border-outline-variant bg-surface-container-low mb-16 h-[320px] overflow-hidden relative group bg-cover bg-top bg-no-repeat"
-        style={`background-image: url('${post.data.image}');`}
-        aria-label={post.data.title}
-        role="img"
-      >
+      <div class="w-full border border-outline-variant bg-surface-container-low mb-16 aspect-[1376/768] overflow-hidden relative group">
+        <img 
+          src={post.data.image} 
+          alt={post.data.title} 
+          width="1376"
+          height="768"
+          class="w-full h-full object-cover"
+        />
         <div class="absolute inset-0 bg-carbon/5 pointer-events-none"></div>
       </div>
     )}
@@ -233,9 +235,11 @@ const ogImage = post.data.image || "/icon-512.png";
           
           return (
             <a class="group block space-y-4" href={rLink}>
-              <div class="aspect-[16/9] bg-surface-container overflow-hidden border border-outline-variant">
+              <div class="aspect-[1376/768] bg-surface-container overflow-hidden border border-outline-variant">
                 <img 
                   alt={relatedPost.data.title} 
+                  width="1376"
+                  height="768"
                   class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" 
                   src={relatedPost.data.image}
                 />
@@ -300,9 +304,173 @@ const ogImage = post.data.image || "/icon-512.png";
   .markdown-body :global(li p) {
     display: inline;
   }
-  .markdown-body :global(pre) {
-    padding: 10px;
+  /* Code Blocks & Inline Code Badges */
+  .markdown-body :global(.code-block-card) {
+    @apply my-8 border overflow-hidden rounded-sm shadow-xl transition-all duration-300 font-mono text-sm;
   }
+  .markdown-body :global(code) {
+    font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+  }
+
+  .markdown-body :global(pre),
+  .markdown-body :global(pre.astro-code),
+  .markdown-body :global(.code-block-card pre) {
+    font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+    letter-spacing: -0.01em !important;
+    font-weight: 400 !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow-x: auto !important;
+  }
+
+  /* Light Mode DevTools Code Block Theme */
+  html.light .markdown-body :global(.code-block-card) {
+    background-color: #ffffff !important;
+    border-color: #e0e0e0 !important;
+  }
+  html.light .markdown-body :global(.code-titlebar) {
+    background-color: #f5f5f5 !important;
+    color: #1a1b1a !important;
+    border-bottom-color: #e0e0e0 !important;
+  }
+  html.light .markdown-body :global(pre),
+  html.light .markdown-body :global(pre.astro-code),
+  html.light .markdown-body :global(.code-block-card pre) {
+    background-color: #ffffff !important;
+    color: #1a1b1a !important;
+    padding: 1.25rem 1.5rem !important;
+  }
+
+  /* Dark Mode DevTools Code Block Theme */
+  html:not(.light) .markdown-body :global(.code-block-card) {
+    background-color: #141313 !important;
+    border-color: #444748 !important;
+  }
+  html:not(.light) .markdown-body :global(.code-titlebar) {
+    background-color: #2a2a2a !important;
+    color: #e5e2e1 !important;
+    border-bottom-color: #444748 !important;
+  }
+  html:not(.light) .markdown-body :global(pre),
+  html:not(.light) .markdown-body :global(pre.astro-code),
+  html:not(.light) .markdown-body :global(.code-block-card pre) {
+    background-color: #141313 !important;
+    color: #e5e2e1 !important;
+    padding: 1.25rem 1.5rem !important;
+  }
+  
+  /* Non-pre Inline Code Tags (e.g. inside table cells, lists, paragraphs) */
+  .markdown-body :global(code:not(pre code)),
+  .markdown-body :global(td code),
+  .markdown-body :global(th code) {
+    font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    padding: 0.15rem 0.4rem !important;
+    border-radius: 2px !important;
+    display: inline-block !important;
+  }
+
+  html.light .markdown-body :global(code:not(pre code)),
+  html.light .markdown-body :global(td code),
+  html.light .markdown-body :global(th code) {
+    background-color: #ededed !important;
+    color: #1a1b1a !important;
+    border-color: #c0c0c0 !important;
+  }
+
+  html:not(.light) .markdown-body :global(code:not(pre code)),
+  html:not(.light) .markdown-body :global(td code),
+  html:not(.light) .markdown-body :global(th code) {
+    background-color: #2a2a2a !important;
+    color: #e5e2e1 !important;
+    border-color: #444748 !important;
+  }
+
+  .markdown-body :global(strong) {
+    @apply font-bold;
+  }
+  html.light .markdown-body :global(strong) {
+    color: #1a1b1a !important;
+  }
+  html:not(.light) .markdown-body :global(strong) {
+    color: #e5e2e1 !important;
+  }
+
+  /* Markdown Tables Styling */
+  .markdown-body :global(table) {
+    @apply w-full my-8 border-collapse border text-body-md overflow-hidden rounded-sm shadow-sm;
+  }
+  .markdown-body :global(th) {
+    @apply font-bold font-fraunces p-3.5 border text-left text-sm uppercase tracking-wider;
+  }
+  .markdown-body :global(td) {
+    @apply p-3.5 border text-sm leading-relaxed;
+  }
+
+  /* Light Mode Table Theme */
+  html.light .markdown-body :global(table) {
+    background-color: #ffffff !important;
+    color: #1a1b1a !important;
+    border-color: #e0e0e0 !important;
+  }
+  html.light .markdown-body :global(th) {
+    background-color: #f5f5f5 !important;
+    color: #1a1b1a !important;
+    border-color: #e0e0e0 !important;
+  }
+  html.light .markdown-body :global(td) {
+    background-color: #ffffff !important;
+    color: #1a1b1a !important;
+    border-color: #e0e0e0 !important;
+  }
+  html.light .markdown-body :global(tr:nth-child(even) td) {
+    background-color: #f9f9f9 !important;
+  }
+  html.light .markdown-body :global(tr:hover td) {
+    background-color: #f0f0f0 !important;
+  }
+
+  /* Dark Mode Table Theme */
+  html:not(.light) .markdown-body :global(table) {
+    background-color: #141313 !important;
+    color: #e5e2e1 !important;
+    border-color: #444748 !important;
+  }
+  html:not(.light) .markdown-body :global(th) {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+    border-color: #444748 !important;
+  }
+  html:not(.light) .markdown-body :global(td) {
+    background-color: #141313 !important;
+    color: #e5e2e1 !important;
+    border-color: #444748 !important;
+  }
+  html:not(.light) .markdown-body :global(tr:nth-child(even) td) {
+    background-color: #1c1b1b !important;
+  }
+  html:not(.light) .markdown-body :global(tr:hover td) {
+    background-color: #252424 !important;
+  }
+  /* DevTools Token Syntax Colors */
+  html.light .markdown-body :global(.devtools-token-tag) { color: #001199 !important; font-weight: 600; }
+  html.light .markdown-body :global(.devtools-token-attr) { color: #990000 !important; }
+  html.light .markdown-body :global(.devtools-token-string) { color: #116600 !important; }
+  html.light .markdown-body :global(.devtools-token-bracket) { color: #666666 !important; }
+  html.light .markdown-body :global(.devtools-token-comment) { color: #556677 !important; font-style: italic; }
+  html.light .markdown-body :global(.devtools-token-plain) { color: #1a1b1a !important; }
+
+  html:not(.light) .markdown-body :global(.devtools-token-tag) { color: #5DB0D7 !important; font-weight: 600; }
+  html:not(.light) .markdown-body :global(.devtools-token-attr) { color: #9CDCFE !important; }
+  html:not(.light) .markdown-body :global(.devtools-token-string) { color: #F29766 !important; }
+  html:not(.light) .markdown-body :global(.devtools-token-bracket) { color: #808080 !important; }
+  html:not(.light) .markdown-body :global(.devtools-token-comment) { color: #6A9955 !important; font-style: italic; }
+  html:not(.light) .markdown-body :global(.devtools-token-plain) { color: #e5e2e1 !important; }
 </style>
 
 <script>
@@ -324,4 +492,67 @@ const ogImage = post.data.image || "/icon-512.png";
     el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
     observer.observe(el);
   });
+</script>
+
+<script>
+  import "../../../scripts/html-playground.ts";
+
+  // Decorate standard markdown code blocks with Chrome DevTools window titlebar across all articles
+  const decorateDevToolsCodeBlocks = () => {
+    document.querySelectorAll('.markdown-body pre').forEach((pre) => {
+      if (pre.closest('html-playground')) return;
+      
+      // Strip Shiki inline background and color attributes
+      pre.removeAttribute('style');
+
+      if (!pre.closest('.code-block-card')) {
+        const langAttr = pre.getAttribute('data-language') || 'html';
+        const filename = langAttr.toUpperCase();
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'code-block-card border border-outline-variant bg-surface-container-lowest overflow-hidden my-8 shadow-xl rounded-sm font-mono text-sm transition-all duration-300';
+        
+        const titlebar = document.createElement('div');
+        titlebar.className = 'code-titlebar bg-surface-container-high px-4 py-2 border-b border-outline-variant flex items-center justify-between flex-wrap gap-2 text-on-surface shrink-0';
+        titlebar.innerHTML = `
+          <div class="flex items-center space-x-2">
+            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+            <span class="text-xs text-on-surface-variant font-mono ml-2">${filename}</span>
+          </div>
+        `;
+
+        pre.parentNode?.insertBefore(wrapper, pre);
+        wrapper.appendChild(titlebar);
+        wrapper.appendChild(pre);
+      }
+
+      // Strip Shiki inline token colors and apply Chrome DevTools syntax highlighting classes
+      pre.querySelectorAll('span').forEach((span) => {
+        if (span.classList.contains('line') && span.children.length > 0) return;
+
+        span.removeAttribute('style');
+        const text = span.textContent || '';
+        const trimmed = text.trim();
+
+        if (/^<\/?!?[a-zA-Z0-9]+>?$/i.test(trimmed) || /^(html|head|title|meta|style|script|link|body|h1|h2|h3|h4|h5|h6|p|ul|ol|li|table|tr|td|th|img|video|audio|div|span|a|button|DOCTYPE|doctype)$/i.test(trimmed)) {
+          span.classList.add('devtools-token-tag');
+        } else if (/^[a-zA-Z0-9_-]+=$/i.test(trimmed) || /^(name|content|class|src|href|alt|title|type|rel|id|lang|charset|style)$/i.test(trimmed)) {
+          span.classList.add('devtools-token-attr');
+        } else if (/^"[^"]*"$|^'[^']*'$/i.test(trimmed)) {
+          span.classList.add('devtools-token-string');
+        } else if (/^[<>\/={};:]+$/.test(trimmed)) {
+          span.classList.add('devtools-token-bracket');
+        } else if (trimmed.startsWith('/*') || trimmed.startsWith('//') || trimmed.startsWith('<!--')) {
+          span.classList.add('devtools-token-comment');
+        } else {
+          span.classList.add('devtools-token-plain');
+        }
+      });
+    });
+  };
+
+  decorateDevToolsCodeBlocks();
+  document.addEventListener('DOMContentLoaded', decorateDevToolsCodeBlocks);
 </script>

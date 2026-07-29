@@ -20,15 +20,13 @@ HTML (HyperText Markup Language) es el componente principal de la web. Según el
 Como bien define **MDN Web Docs**, HTML no es un lenguaje de programación; es un lenguaje de marcado que encapsula partes del contenido para que se comporten de forma determinada (poner en cursiva, agrandar fuentes, redireccionar a otras páginas).
 
 > _HTML es el lenguaje para describir la estructura de las páginas web, brinda a los autores los medios para:_
-
-_- Publicar documentos en línea con encabezados, texto, tablas, listas, fotos, entre otros elementos._
-
-_- Obtener información en línea a través de enlaces de hipertexto, con el clic de un botón._
-
-_- Diseñar formularios para realizar transacciones con servicios remotos, buscar información, hacer reservas, ordenar productos, entre otras tareas._
-_- Incluir hojas de cálculo, videoclips, clips de sonido y otras aplicaciones directamente en sus documentos._
-
-_Con HTML, los autores describen la estructura de las páginas mediante etiquetas de marcado. Los elementos del idioma etiquetan piezas de contenido como "títulos", "párrafos", "listas", "tablas", "imágenes", entre otros elementos._
+> 
+> - _Publicar documentos en línea con encabezados, texto, tablas, listas, fotos, entre otros elementos._
+> - _Obtener información en línea a través de enlaces de hipertexto, con el clic de un botón._
+> - _Diseñar formularios para realizar transacciones con servicios remotos, buscar información, hacer reservas, ordenar productos, entre otras tareas._
+> - _Incluir hojas de cálculo, videoclips, clips de sonido y otras aplicaciones directamente en sus documentos._
+> 
+> _Con HTML, los autores describen la estructura de las páginas mediante etiquetas de marcado. Los elementos del idioma etiquetan piezas de contenido como "títulos", "párrafos", "listas", "tablas", "imágenes", entre otros elementos._
 
 Además del W3C[1](#fn1), existen otros sitios web que ofrecen información de tecnologías web como MDN Web Docs[2](#fn2) de Mozilla; lo define de la siguiente manera:
 
@@ -36,7 +34,7 @@ Además del W3C[1](#fn1), existen otros sitios web que ofrecen información de t
 
 ## Anatomía de un elemento HTML
 
-El lenguaje consiste en una serie de etiquetas predeterminadas destinadas a darle jerarquía al contenido de los documentos. Antes de mostrar ejemplos de algunas de sus etiquetas básicas, es importante entender su anatomía :
+El lenguaje consiste en una serie de etiquetas predeterminadas destinadas a darle jerarquía al contenido de los documentos. Antes de mostrar ejemplos de algunas de sus etiquetas básicas, es importante entender su anatomía:
 
 - Exceptuando algunos casos, gran parte de las etiquetas están conformadas por una etiqueta de apertura `<etiqueta>`.
 
@@ -52,9 +50,9 @@ Los elementos HTML pueden tener atributos, la imagen demuestra esta característ
 ![Atributo de una etiqueta html](https://res.cloudinary.com/flaex/image/upload/v1676245108/strapi-v4/anatomia_2_8942981442.webp)
 _Atributo de una etiqueta html_
 
-Los atributos contienen información adicional sobre los elementos. En la imagen de arriba, _class_ es el nombre del atributo y la _nota_, su valor. El atributo _class_ permite dar al elemento un identificador que se puede usar para incluir información de estilos _CSS_.
+Los atributos contienen información adicional sobre los elementos. En la imagen de arriba, `class` es el nombre del atributo y `nota`, su valor. El atributo `class` permite dar al elemento un identificador que se puede usar para incluir información de estilos CSS.
 
-_Las imágenes y su descripción en "Anatomía de un elemento HTML", fueron extraídas de MDN Web Docs [3](#fn3) ._
+_Las imágenes y su descripción en "Anatomía de un elemento HTML", fueron extraídas de MDN Web Docs [3](#fn3)._
 
 A su vez, es posible declarar etiquetas dentro de otras etiquetas siguiendo la misma regla, como se puede ver en la estructura de ejemplo, en donde las etiquetas `<h1>` y `<p>`, están anidadas dentro de `<body>`:
 
@@ -82,16 +80,19 @@ Las etiquetas nos permiten organizar nuestros documentos de manera estructurada,
 </html>
 ```
 
-Todo documento HTML necesita una estructura base que aporte información a los navegadores web sobre como procesar dicho documento. A continuación describiremos el propósito de las etiquetas que conforman la estructura dada en el primer ejemplo:
+Todo documento HTML necesita una estructura base que aporte información a los navegadores web sobre como procesar dicho documento. A continuación describiremos el propósito de las etiquetas que conforman la estructura dada:
 
-- `<!DOCTYPE html>`: Indica la versión en la que se presenta el documento, en este caso, es la 5ta versión de HTML. Anteriormente, en esta etiqueta se podían definir diferentes variaciones de HTML; desde que la W3C definió a HTML5 cómo el estándar a seguir, esta forma de declaración es la más usada. Como se puede observar, esta etiqueta no requiere cierre.
-- `<html>`: Esta etiqueta es la que contiene todos los elementos de nuestro documento, uno de sus atributos más comunes sirve para declarar el idioma del contenido del HTML.
-- `<head>`: Esta etiqueta está destinada a contener otras con meta información del documento, por ejemplo:
-  - `<title>`: Título de la página.
-  - `<meta>`: Descripciones cortas que informan a los buscadores el tópico del documento.
-  - `<style>`: Declaraciones de estilos CSS para dar atributos gráficos.
-  - `<script>`: Rutinas de código en otros lenguajes del lado del cliente (navegador del usuario).
-  - `<link>`: Conexión a otros recursos relacionados con el documento.
+| Etiqueta | Propósito / Descripción |
+| :--- | :--- |
+| `<!DOCTYPE html>` | Indica la versión del documento (HTML5). No requiere etiqueta de cierre. |
+| `<html>` | Etiqueta raíz que envuelve todo el contenido del documento HTML. |
+| `<head>` | Sección que contiene metadatos del documento (título, estilos, scripts, enlaces). |
+| `<title>` | Título de la página mostrado en la pestaña del navegador. |
+| `<meta>` | Información sobre codificación, descripción y adaptabilidad web. |
+| `<style>` | Reglas de estilo CSS embebidas para dar diseño gráfico. |
+| `<script>` | Bloques de código ejecutable del lado del cliente (JavaScript). |
+| `<link>` | Conexiones con recursos externos como hojas de estilo o faviconos. |
+| `<body>` | Sección principal que contiene todos los elementos visibles por los visitantes. |
 
 ```html
 <head>

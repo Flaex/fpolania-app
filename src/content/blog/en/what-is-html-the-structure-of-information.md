@@ -74,14 +74,17 @@ Every HTML document requires a boilerplate structure to inform web browsers how 
 
 Here is the purpose of the tags that make up this base structure:
 
-- `<!DOCTYPE html>`: Declares the document type and version (in this case, HTML5). Historically, different HTML variations were declared here; since the W3C defined HTML5 as the standard, this simple declaration has become the norm. This tag does not require a closing tag.
-- `<html>`: The root element that wraps all the content of the document. One of its most common attributes is `lang`, used to declare the document's language.
-- `<head>`: Contains metadata about the document that is not displayed directly in the viewport. Common elements inside the `<head>` include:
-  - `<title>`: The page title displayed in the browser tab.
-  - `<meta>`: Short descriptions that inform search engines and browsers about the page's metadata (charset, description, keywords, viewport).
-  - `<style>`: Declares embedded CSS styles to apply visual attributes.
-  - `<script>`: Client-side executable code (usually JavaScript).
-  - `<link>`: Links the document to external resources, such as style sheets or icons.
+| Tag | Purpose / Description |
+| :--- | :--- |
+| `<!DOCTYPE html>` | Declares the document type and version (HTML5). Does not require a closing tag. |
+| `<html>` | Root element wrapping all the document content. |
+| `<head>` | Section containing document metadata (title, styles, scripts, links). |
+| `<title>` | Page title displayed in the browser tab. |
+| `<meta>` | Metadata for character set, page description, and viewport configuration. |
+| `<style>` | Embedded CSS rules to apply visual styling. |
+| `<script>` | Client-side executable code (usually JavaScript). |
+| `<link>` | Connections to external resources like stylesheets or icons. |
+| `<body>` | Section containing all visible elements rendered in the browser viewport. |
 
 ```html
 <head>

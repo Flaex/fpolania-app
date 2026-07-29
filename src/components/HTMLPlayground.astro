@@ -1,0 +1,56 @@
+---
+interface Props {
+  code?: string;
+  filename?: string;
+}
+
+const { 
+  code = `<h1>Hola Mundo</h1>\n<p>Este es un editor HTML interactivo con CodeMirror.</p>\n<ul>\n  <li>Aprende HTML</li>\n  <li>Edita el código</li>\n</ul>`,
+  filename = "index.html"
+} = Astro.props;
+---
+
+<html-playground data-code={code} data-filename={filename}>
+  <div class="playground-card border border-outline-variant bg-surface-container-lowest text-on-surface overflow-hidden font-mono text-sm my-8 shadow-xl rounded-sm transition-all duration-300">
+    <div class="bg-surface-container-high px-4 py-2 border-b border-outline-variant flex items-center justify-between flex-wrap gap-2 text-on-surface shrink-0">
+      <div class="flex items-center space-x-2">
+        <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+        <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+        <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+        <span class="text-xs text-on-surface-variant font-mono ml-2">{filename}</span>
+      </div>
+      <div class="flex items-center space-x-3">
+        <button type="button" class="fullscreen-btn text-xs text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider flex items-center gap-1 cursor-pointer" title="Expand to Full Screen Modal Window">
+          <span class="material-symbols-outlined text-sm fullscreen-icon">open_in_full</span> <span class="fullscreen-label hidden sm:inline">Pop-up Editor</span>
+        </button>
+        <button type="button" class="reset-btn text-xs text-on-surface-variant hover:text-primary transition-colors uppercase tracking-wider flex items-center gap-1 cursor-pointer">
+          <span class="material-symbols-outlined text-sm">refresh</span> Reset
+        </button>
+        <span class="text-xs text-emerald-500 font-mono flex items-center gap-1 font-semibold">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Live
+        </span>
+      </div>
+    </div>
+
+    <!-- Side-by-Side 600px High Panels Container -->
+    <div class="panels-container grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-outline-variant h-[600px] min-h-[600px] flex-1">
+      <!-- Left Panel: CodeMirror HTML Editor -->
+      <div class="relative bg-surface-container-lowest p-0 flex flex-col h-full overflow-hidden">
+        <div class="bg-surface-container-high/80 px-3 py-1.5 text-[11px] text-on-surface-variant border-b border-outline-variant uppercase tracking-wider font-mono flex justify-between items-center shrink-0">
+          <span>HTML Editor (DevTools Style)</span>
+          <span class="text-[10px] opacity-70">Syntax Highlighted & Line Numbers</span>
+        </div>
+        <div class="editor-container w-full flex-1 bg-surface-container-lowest text-on-surface font-mono text-xs md:text-sm h-full overflow-hidden flex flex-col"></div>
+      </div>
+
+      <!-- Right Panel: Browser Render Output -->
+      <div class="relative bg-white flex flex-col h-full overflow-hidden">
+        <div class="bg-surface-container-high/80 px-3 py-1.5 text-[11px] text-on-surface-variant border-b border-outline-variant uppercase tracking-wider font-mono flex justify-between items-center shrink-0">
+          <span>Browser Output</span>
+          <span class="text-[10px] opacity-70">Real-time render</span>
+        </div>
+        <iframe class="preview-iframe w-full flex-1 border-0 bg-white h-full" title="HTML Live Preview"></iframe>
+      </div>
+    </div>
+  </div>
+</html-playground>
