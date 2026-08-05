@@ -182,7 +182,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
 
           <!-- Bento Grid System -->
           <div class="grid grid-cols-4 md:grid-cols-12 gap-gutter">
-              {bentoConfig.works.clusters.map((cluster) => {
+              {bentoConfig.works.clusters.map((cluster, index) => {
                   const clusterWorks = cluster.items.map((item) => {
                       const project = allWorks.find((w) => getSlug(w.id) === item.slug);
                       if (!project) return null;
@@ -195,12 +195,12 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                   return (
                       <>
                           <!-- Cluster Divider/Label -->
-                          <div class={getGridClass(cluster.containerToken)}>
+                          <div class={`${getGridClass(cluster.containerToken)} ${index === 0 ? 'mt-12' : 'mt-16'}`}>
                               <h2 class="font-label-technical text-label-technical text-outline uppercase tracking-widest border-b border-outline-variant pb-2">{t(cluster.titleKey)}</h2>
                           </div>
                           
                           <!-- Header Card -->
-                          <div class={getGridClass(cluster.headerSpanToken)}>
+                           <div class={`bento-cluster-header ${getGridClass(cluster.headerSpanToken)}`}>
                               <h3 class="font-headline-lg text-[34px] md:text-headline-lg text-primary leading-tight font-bold font-fraunces">{t(cluster.subtitleKey)}</h3>
                           </div>
                           
@@ -212,7 +212,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
                               
                               const LinkTag = 'div';
                               const linkProps = {
-                                  class: getGridClass(work.token),
+                                  class: `bento-card-interactive group ${getGridClass(work.token)}`,
                                   tabindex: 0,
                               };
                               return (
@@ -267,7 +267,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
 
       <!-- Bento Grid Structure -->
       <div class="grid grid-cols-12 gap-gutter">
-        {bentoConfig.insights.clusters.map((cluster) => {
+        {bentoConfig.insights.clusters.map((cluster, index) => {
           const clusterPosts = allPosts
             .filter(p => p.data.lens === cluster.lensId)
             .sort((a, b) => {
@@ -281,7 +281,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
           return (
             <>
               <!-- Header Block -->
-              <div class={getGridClass(cluster.headerSpanToken)}>
+              <div class={`bento-lens-header ${getGridClass(cluster.headerSpanToken)} ${index > 0 ? 'mt-12' : ''}`}>
                 <div class="max-w-xl">
                   <span class="font-label-technical text-label-technical mb-2 block uppercase text-primary/60">{t(cluster.titleKey)}</span>
                   <h2 class="font-display text-display mb-4 text-primary font-fraunces">{t(cluster.subtitleKey)}</h2>

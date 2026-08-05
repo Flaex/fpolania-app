@@ -1,29 +1,27 @@
 {
   "$schema": "./bento.schema.json",
   "gridTokens": {
-    "home-4x2": "col-span-1 md:col-span-4 lg:col-span-8 lg:row-span-2",
-    "home-2x2": "col-span-1 md:col-span-2 lg:col-span-4 lg:row-span-2",
-    "home-2x1": "col-span-1 md:col-span-4 lg:col-span-4",
-    "home-compact-2x1": "col-span-1 md:col-span-2 lg:col-span-4",
-    "home-featured-3x2": "col-span-1 md:col-span-4 lg:col-span-6 lg:row-span-2 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[400px] lg:h-auto",
-    "home-featured-3x1": "col-span-1 md:col-span-2 lg:col-span-6 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[240px]",
-    "works-cluster-header": "col-span-4 md:col-span-6 bg-surface-container-low border border-outline-variant p-8 flex flex-col justify-end min-h-[300px]",
-    "works-cluster-container-first": "col-span-4 md:col-span-12 mb-8 mt-12",
-    "works-cluster-container-next": "col-span-4 md:col-span-12 mb-8 mt-16",
-    "insight-lens-header-first": "p-10 flex items-center justify-between border border-outline-variant col-span-12 md:col-span-6 bg-surface-container-lowest",
-    "insight-lens-header-next": "p-10 flex items-center justify-between border border-outline-variant col-span-12 md:col-span-6 bg-surface-container-lowest mt-12",
-    "1x1": "col-span-2 md:col-span-3 aspect-square bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden",
-    "2x2": "col-span-4 md:col-span-6 min-h-[300px] bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden",
-    "2x1": "col-span-4 md:col-span-6 min-h-[150px] bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden",
-    "4x2": "col-span-4 md:col-span-12 min-h-[200px] bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 group relative overflow-hidden"
+    "layout-4x2": "col-span-1 md:col-span-4 lg:col-span-8 lg:row-span-2",
+    "layout-2x2": "col-span-1 md:col-span-2 lg:col-span-4 lg:row-span-2",
+    "layout-2x1": "col-span-1 md:col-span-4 lg:col-span-4",
+    "layout-compact-2x1": "col-span-1 md:col-span-2 lg:col-span-4",
+    "layout-featured-3x2": "col-span-1 md:col-span-4 lg:col-span-6 lg:row-span-2 h-[400px] lg:h-auto",
+    "layout-featured-3x1": "col-span-1 md:col-span-2 lg:col-span-6 h-[240px]",
+    "layout-cluster-header": "col-span-4 md:col-span-6 min-h-[300px]",
+    "layout-cluster-container": "col-span-4 md:col-span-12 mb-8",
+    "layout-lens-header": "col-span-12 md:col-span-6",
+    "1x1": "col-span-2 md:col-span-3 aspect-square",
+    "2x2": "col-span-4 md:col-span-6 min-h-[300px]",
+    "2x1": "col-span-4 md:col-span-6 min-h-[150px]",
+    "4x2": "col-span-4 md:col-span-12 min-h-[200px]"
   },
   "home": {
     "mainSectionCards": {
-      "hero": "home-4x2",
-      "latestInsight": "home-2x2",
-      "third": "home-2x1",
-      "fourth": "home-compact-2x1",
-      "fifth": "home-compact-2x1"
+      "hero": "layout-4x2",
+      "latestInsight": "layout-2x2",
+      "third": "layout-2x1",
+      "fourth": "layout-compact-2x1",
+      "fifth": "layout-compact-2x1"
     },
     "latestInsight": {
       "en": "the-translation-gap-in-digital-products",
@@ -32,15 +30,15 @@
     "featuredWorks": [
       {
         "slug": "come-2025",
-        "token": "home-featured-3x2"
+        "token": "layout-featured-3x2"
       },
       {
         "slug": "maximiza",
-        "token": "home-featured-3x1"
+        "token": "layout-featured-3x1"
       },
       {
         "slug": "novanet-studio",
-        "token": "home-featured-3x1"
+        "token": "layout-featured-3x1"
       }
     ]
   },
@@ -50,8 +48,8 @@
         "id": "alpha",
         "titleKey": "works.clusterAlpha",
         "subtitleKey": "works.clusterAlphaSubtitle",
-        "containerToken": "works-cluster-container-first",
-        "headerSpanToken": "works-cluster-header",
+        "containerToken": "layout-cluster-container",
+        "headerSpanToken": "layout-cluster-header",
         "items": [
           { "slug": "maximiza", "token": "1x1" },
           { "slug": "zuglabs", "token": "1x1" },
@@ -69,8 +67,8 @@
         "id": "beta",
         "titleKey": "works.clusterBeta",
         "subtitleKey": "works.clusterBetaSubtitle",
-        "containerToken": "works-cluster-container-next",
-        "headerSpanToken": "works-cluster-header",
+        "containerToken": "layout-cluster-container",
+        "headerSpanToken": "layout-cluster-header",
         "items": [
           { "slug": "novanet-studio", "token": "2x2" },
           { "slug": "come-2025", "token": "2x2" },
@@ -85,8 +83,8 @@
         "id": "gamma",
         "titleKey": "works.clusterGamma",
         "subtitleKey": "works.clusterGammaSubtitle",
-        "containerToken": "works-cluster-container-next",
-        "headerSpanToken": "works-cluster-header",
+        "containerToken": "layout-cluster-container",
+        "headerSpanToken": "layout-cluster-header",
         "items": [
           { "slug": "novatipo", "token": "1x1" },
           { "slug": "novaicons", "token": "1x1" },
@@ -104,7 +102,7 @@
         "subtitleKey": "insight.lens01Title",
         "descKey": "insight.lens01Desc",
         "icon": "corporate_fare",
-        "headerSpanToken": "insight-lens-header-first",
+        "headerSpanToken": "layout-lens-header",
         "items": {
           "en": [
             "everything-is-design-the-philosophy-of-utility",
@@ -127,7 +125,7 @@
         "subtitleKey": "insight.lens02Title",
         "descKey": "insight.lens02Desc",
         "icon": "architecture",
-        "headerSpanToken": "insight-lens-header-next",
+        "headerSpanToken": "layout-lens-header",
         "items": {
           "en": [
             "what-is-typography-the-dna-of-information",
@@ -152,7 +150,7 @@
         "subtitleKey": "insight.lens03Title",
         "descKey": "insight.lens03Desc",
         "icon": "terminal",
-        "headerSpanToken": "insight-lens-header-next",
+        "headerSpanToken": "layout-lens-header",
         "items": {
           "en": [
             "what-is-the-utility-of-learning-html",

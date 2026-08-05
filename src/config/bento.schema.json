@@ -18,21 +18,21 @@
       "type": "OBJECT",
       "description": "Responsive layout classes mapped to semantic bento dimensions and components.",
       "properties": {
-        "home-4x2": {
+        "layout-4x2": {
           "type": "STRING",
-          "description": "Double-wide double-height layout token for homepage strategic hero (Spans 8 columns, 2 grid rows)."
+          "description": "Double-wide double-height layout token (Spans 8 columns, 2 grid rows)."
         },
-        "home-2x2": {
+        "layout-2x2": {
           "type": "STRING",
-          "description": "Bento unit block for homepage latest insight (Spans 4 columns, 2 grid rows)."
+          "description": "Bento unit block layout token (Spans 4 columns, 2 grid rows)."
         },
-        "home-2x1": {
+        "layout-2x1": {
           "type": "STRING",
-          "description": "Bento unit block for homepage strategic blocks (Spans 4 columns, 1 row)."
+          "description": "Bento unit block layout token (Spans 4 columns, 1 row)."
         },
-        "home-compact-2x1": {
+        "layout-compact-2x1": {
           "type": "STRING",
-          "description": "Compact bento unit block for homepage elements (Spans 4 columns on large screens)."
+          "description": "Compact bento unit block layout token (Spans 4 columns on large screens)."
         },
         "1x1": {
           "type": "STRING",
@@ -71,27 +71,27 @@
             "hero": {
               "type": "STRING",
               "description": "Hero card dimension token.",
-              "enum": ["home-4x2", "home-2x2", "home-2x1", "home-compact-2x1"]
+              "enum": ["layout-4x2", "layout-2x2", "layout-2x1", "layout-compact-2x1"]
             },
             "latestInsight": {
               "type": "STRING",
               "description": "Latest Insight block dimension token.",
-              "enum": ["home-4x2", "home-2x2", "home-2x1", "home-compact-2x1"]
+              "enum": ["layout-4x2", "layout-2x2", "layout-2x1", "layout-compact-2x1"]
             },
             "third": {
               "type": "STRING",
               "description": "Third section card dimension token.",
-              "enum": ["home-4x2", "home-2x2", "home-2x1", "home-compact-2x1"]
+              "enum": ["layout-4x2", "layout-2x2", "layout-2x1", "layout-compact-2x1"]
             },
             "fourth": {
               "type": "STRING",
               "description": "Fourth section card dimension token.",
-              "enum": ["home-4x2", "home-2x2", "home-2x1", "home-compact-2x1"]
+              "enum": ["layout-4x2", "layout-2x2", "layout-2x1", "layout-compact-2x1"]
             },
             "fifth": {
               "type": "STRING",
               "description": "Fifth section card dimension token.",
-              "enum": ["home-4x2", "home-2x2", "home-2x1", "home-compact-2x1"]
+              "enum": ["layout-4x2", "layout-2x2", "layout-2x1", "layout-compact-2x1"]
             }
           }
         },
@@ -130,7 +130,7 @@
               "token": {
                 "type": "STRING",
                 "description": "Target grid token mapping for this card.",
-                "enum": ["home-featured-3x2", "home-featured-3x1", "1x1", "2x2", "2x1", "4x2"]
+                "enum": ["layout-featured-3x2", "layout-featured-3x1", "1x1", "2x2", "2x1", "4x2"]
               }
             }
           }
@@ -173,7 +173,7 @@
               "containerToken": {
                 "type": "STRING",
                 "description": "Grid token regulating top/bottom offsets for this cluster.",
-                "enum": ["works-cluster-container-first", "works-cluster-container-next"]
+                "enum": ["layout-cluster-container"]
               },
               "headerSpanToken": {
                 "type": "STRING",
@@ -261,7 +261,7 @@
               "headerSpanToken": {
                 "type": "STRING",
                 "description": "Grid token mapping for lens header cards.",
-                "enum": ["insight-lens-header-first", "insight-lens-header-next"]
+                "enum": ["layout-lens-header"]
               },
               "items": {
                 "type": "OBJECT",

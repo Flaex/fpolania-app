@@ -223,7 +223,7 @@ const worksPath = lang === "en" ? "/en/works" : "/es/trabajos";
                 ? project.data.descriptionEn
                 : project.data.descriptionEs;
             const behanceUrl = project.data.behanceUrl;
-            const spanClass = `bento-card ${project.spanClass || "col-span-1 md:col-span-2 lg:col-span-6 p-6 flex flex-col justify-end rounded-lg group relative overflow-hidden h-[240px]"}`;
+            const spanClass = `bento-card bento-card-featured group ${project.spanClass || "col-span-1 md:col-span-2 lg:col-span-6 h-[240px]"}`;
             const projectId = extractBehanceProjectId(behanceUrl);
 
             const LinkTag = "div";

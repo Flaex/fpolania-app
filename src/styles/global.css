@@ -214,3 +214,20 @@
 
 html.light .light-only { display: block !important; }
 html.light .dark-only { display: none !important; }
+
+/* Bento Component Utility Styles (Decoupled from Layout) */
+@utility bento-card-interactive {
+  @apply bg-surface border border-outline-variant p-6 flex flex-col justify-between hover:border-primary focus-within:border-primary focus:outline-none transition-all duration-300 relative overflow-hidden;
+}
+
+@utility bento-card-featured {
+  @apply p-6 flex flex-col justify-end rounded-lg relative overflow-hidden;
+}
+
+@utility bento-cluster-header {
+  @apply bg-surface-container-low border border-outline-variant p-8 flex flex-col justify-end;
+}
+
+@utility bento-lens-header {
+  @apply p-10 flex items-center justify-between border border-outline-variant bg-surface-container-lowest;
+}
