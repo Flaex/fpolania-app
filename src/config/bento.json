@@ -29,15 +29,15 @@
     },
     "featuredWorks": [
       {
-        "slug": "come-2025",
+        "slug": "barahunda",
         "token": "layout-featured-3x2"
       },
       {
-        "slug": "maximiza",
+        "slug": "come-2025",
         "token": "layout-featured-3x1"
       },
       {
-        "slug": "novanet-studio",
+        "slug": "maximiza",
         "token": "layout-featured-3x1"
       }
     ]
@@ -51,16 +51,46 @@
         "containerToken": "layout-cluster-container",
         "headerSpanToken": "layout-cluster-header",
         "items": [
-          { "slug": "maximiza", "token": "1x1" },
-          { "slug": "zuglabs", "token": "1x1" },
-          { "slug": "agua-fria", "token": "1x1" },
-          { "slug": "altea", "token": "1x1" },
-          { "slug": "zaituna-cafe", "token": "1x1" },
-          { "slug": "take-on-bar", "token": "1x1" },
-          { "slug": "athlos", "token": "1x1" },
-          { "slug": "gamma-medical", "token": "1x1" },
-          { "slug": "ej-supply", "token": "1x1" },
-          { "slug": "bakery-consortium", "token": "1x1" }
+          {
+            "slug": "maximiza",
+            "token": "1x1"
+          },
+          {
+            "slug": "zuglabs",
+            "token": "1x1"
+          },
+          {
+            "slug": "agua-fria",
+            "token": "1x1"
+          },
+          {
+            "slug": "altea",
+            "token": "1x1"
+          },
+          {
+            "slug": "zaituna-cafe",
+            "token": "1x1"
+          },
+          {
+            "slug": "take-on-bar",
+            "token": "1x1"
+          },
+          {
+            "slug": "athlos",
+            "token": "1x1"
+          },
+          {
+            "slug": "gamma-medical",
+            "token": "1x1"
+          },
+          {
+            "slug": "ej-supply",
+            "token": "1x1"
+          },
+          {
+            "slug": "bakery-consortium",
+            "token": "1x1"
+          }
         ]
       },
       {
@@ -70,13 +100,34 @@
         "containerToken": "layout-cluster-container",
         "headerSpanToken": "layout-cluster-header",
         "items": [
-          { "slug": "novanet-studio", "token": "2x2" },
-          { "slug": "come-2025", "token": "2x2" },
-          { "slug": "banco-del-libro", "token": "2x1" },
-          { "slug": "ccs-multisport", "token": "2x1" },
-          { "slug": "avila-multisport", "token": "2x1" },
-          { "slug": "kevinroot-medical", "token": "2x1" },
-          { "slug": "novanet-evolution", "token": "2x1" }
+          {
+            "slug": "novanet-studio",
+            "token": "2x2"
+          },
+          {
+            "slug": "come-2025",
+            "token": "2x2"
+          },
+          {
+            "slug": "banco-del-libro",
+            "token": "2x1"
+          },
+          {
+            "slug": "ccs-multisport",
+            "token": "2x1"
+          },
+          {
+            "slug": "avila-multisport",
+            "token": "2x1"
+          },
+          {
+            "slug": "kevinroot-medical",
+            "token": "2x1"
+          },
+          {
+            "slug": "novanet-evolution",
+            "token": "2x1"
+          }
         ]
       },
       {
@@ -86,9 +137,18 @@
         "containerToken": "layout-cluster-container",
         "headerSpanToken": "layout-cluster-header",
         "items": [
-          { "slug": "novatipo", "token": "1x1" },
-          { "slug": "novaicons", "token": "1x1" },
-          { "slug": "barahunda", "token": "1x1" }
+          {
+            "slug": "novatipo",
+            "token": "1x1"
+          },
+          {
+            "slug": "novaicons",
+            "token": "1x1"
+          },
+          {
+            "slug": "barahunda",
+            "token": "1x1"
+          }
         ]
       }
     ]
