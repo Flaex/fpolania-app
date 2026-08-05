@@ -50,23 +50,23 @@ A standard bento unit corresponds to column spanning segments of the 12-column l
 
 ---
 
-## 3. Homepage-Specific Bento Grid Cards
+## 3. Reusable Layout-Only Bento Grid Cards
 
-Homepage tokens are prefixed with `home-` and scale dynamically across different viewport breakpoints to maintain professional branding and visual flow:
+Layout-only tokens are prefixed with `layout-` and scale dynamically across different viewport breakpoints to maintain professional branding and visual flow:
 
-*   **`home-2x1`**: Spans 4 columns out of 12 (desktop).
-*   **`home-2x2`**: Spans 4 columns out of 12, across 2 explicit rows.
-*   **`home-4x2`**: Spans 8 columns out of 12, across 2 rows (Main Strategic Brand Hero card).
+*   **`layout-2x1`**: Spans 4 columns out of 12 (desktop).
+*   **`layout-2x2`**: Spans 4 columns out of 12, across 2 explicit rows.
+*   **`layout-4x2`**: Spans 8 columns out of 12, across 2 rows (Main Strategic Brand Hero card).
 
 ### Homepage Layout Composition Diagram
 
 ```
   +-----------------------------------+-----------+  (12 Columns total)
-  |             home-4x2              | home-2x2  |
+  |            layout-4x2             |layout-2x2 |
   |            (8 columns)            | (4 cols)  |
   |                                   |           |
   +-----------+-----------+-----------+-----------+
-  | home-2x1  | home-2x1  | home-2x1  | home-2x1  |
+  |layout-2x1 |layout-2x1 |layout-2x1 |layout-2x1 |
   | (4 cols)  | (4 cols)  | (4 cols)  | (4 cols)  |
   +-----------+-----------+-----------+-----------+
 ```
