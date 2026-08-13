@@ -1,7 +1,7 @@
 ---
 title: "¿Qué es CSS? El sistema de estilo visual"
 lens: "builder_lens"
-image: "https://res.cloudinary.com/flaex/image/upload/v1682536096/strapi-v4/flaex_que_es_css_d462946d27.webp"
+image: "https://res.cloudinary.com/flaex/image/upload/v1786584058/fpolania-app/blog/fpolania_ques-es-css.webp"
 language: "es"
 pillar: "Technical Alchemy (The Builder Lens)"
 originalLanguage: "Spanish"
@@ -67,15 +67,80 @@ Las formas en la que podemos vincular un archivo CSS (u hoja de estilos) con un 
 
 - En una etiqueta <style>dentro del <head>del archivo HTML:
 
-![Código HTML con estilos CSS dentro de etiqueta <head>](https://res.cloudinary.com/flaex/image/upload/v1682358632/strapi-v4/flaex_que_es_css_style_head_efc956a136.webp)
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 2em;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body></body>
+</html>
+```
 
 - En un archivo independiente dentro de nuestro proyecto con extensión .css, por ejemplo:
 
-![Vínculo a hoja de estilo CSS externa](https://res.cloudinary.com/flaex/image/upload/v1682358819/strapi-v4/flaex_que_es_css_style_link_a31ab71fe7.webp)
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="estilos.css">
+  </head>
+  <body>
+  </body>
+</html>
+```
 
 - En estilos _inline_ dentro del atributo style del elemento HTML:
 
-![Estilos CSS dentro de atributo style del elemento HMTL](https://res.cloudinary.com/flaex/image/upload/v1682358782/strapi-v4/flaex_que_es_css_style_inline_eb594f9f3c.webp)
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Esto es un título</h1>
+
+    <table style="font-family: arial, sans-serif;">
+      <tr>
+        <td>Modelo</td>
+        <td>Marca</td>
+        <td>Color</td>
+      </tr>
+
+      <tr>
+        <td>Corolla</td>
+        <td>Toyota</td>
+        <td>Azul</td>
+      </tr>
+    </table>
+
+    <img style="max-width: 100%;" src="toyota-corolla-azul.jpg" />
+
+  </body>
+</html>
+```
 
 La elección de la manera en la que se víncularán los estilos CSS con el HTML, quedará en las personas que participen en el proyecto y el tipo de contenido a publicar.
 

@@ -1,7 +1,7 @@
 ---
 title: "WHAT IS CSS? THE VISUAL STYLE SYSTEM"
 lens: "builder_lens"
-image: "https://res.cloudinary.com/flaex/image/upload/v1682536096/strapi-v4/flaex_que_es_css_d462946d27.webp"
+image: "https://res.cloudinary.com/flaex/image/upload/v1786584058/fpolania-app/blog/fpolania_ques-es-css.webp"
 language: "en"
 pillar: "Technical Alchemy (The Builder Lens)"
 originalLanguage: "Spanish"
@@ -66,18 +66,80 @@ There are three ways to link a CSS stylesheet to an HTML document:
 
 1.  **Inside a `<style>` tag** in the `<head>` of the HTML file:
 
-    ![HTML code with CSS styles inside <head> tag](https://res.cloudinary.com/flaex/image/upload/v1682358632/strapi-v4/flaex_que_es_css_style_head_efc956a136.webp)
-    _HTML code with CSS styles inside <head> tag_
+    ```html
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+          table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 2em;
+          }
+
+          td,
+          th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+          }
+
+          tr:nth-child(even) {
+            background-color: #dddddd;
+          }
+
+          img {
+            max-width: 100%;
+          }
+        </style>
+      </head>
+      <body></body>
+    </html>
+    ```
 
 2.  **In an independent stylesheet** within the project with a `.css` extension, linked with the `<link>` tag. This is the most scalable and professional way:
 
-    ![Link to an external CSS stylesheet](https://res.cloudinary.com/flaex/image/upload/v1682358819/strapi-v4/flaex_que_es_css_style_link_a31ab71fe7.webp)
-    _Link to an external CSS stylesheet_
+    ```html
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <link rel="stylesheet" href="estilos.css">
+      </head>
+      <body>
+      </body>
+    </html>
+    ```
 
 3.  **Inline styles** directly inside the `style` attribute of the HTML element:
 
-    ![Inline CSS styles inside the style attribute of HTML element](https://res.cloudinary.com/flaex/image/upload/v1682358782/strapi-v4/flaex_que_es_css_style_inline_eb594f9f3c.webp)
-    _Inline CSS styles inside the style attribute of HTML element_
+    ```html
+    <!DOCTYPE html>
+    <html>
+      <head>
+      </head>
+      <body>
+        <h1>Esto es un título</h1>
+
+        <table style="font-family: arial, sans-serif;">
+          <tr>
+            <td>Modelo</td>
+            <td>Marca</td>
+            <td>Color</td>
+          </tr>
+
+          <tr>
+            <td>Corolla</td>
+            <td>Toyota</td>
+            <td>Azul</td>
+          </tr>
+        </table>
+
+        <img style="max-width: 100%;" src="toyota-corolla-azul.jpg" />
+
+      </body>
+    </html>
+    ```
 
 The choice of how to link CSS styles with HTML depends on the project's architecture and the content delivery strategy.
 
