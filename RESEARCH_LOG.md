@@ -56,5 +56,20 @@ The core of the brand is solving the "Translation Gap"—the space where product
 *   **Step 7:** Integration of **Human-Led AI Orchestration** (Claude Code, Gemini CLI) into the core value prop and narrative.
 *   **Step 8:** Ported portfolio cover images from external URLs to local `/public/images/works/` assets, modified the content schemas for Zod type safety with local paths, and implemented interactive hover-revealed grayscale-to-color background image transitions on the works Bento Grid.
 *   **Step 9:** Designed and deployed a lightweight PWA system. Added `manifest.webmanifest`, registered a custom service worker (`sw.js`) utilizing the Stale-While-Revalidate caching pattern, and developed a `sharp`-based asset compilation script (`scripts/generate-pwa-assets.js`) to generate platform-specific PNG icons (`192x192`, `512x512`, `180x180` for Apple) from the vector `favicon.svg`.
+*   **Step 10 (September 2026): Comprehensive Technical SEO, Open Graph & Favicon Suite Upgrades:**
+    *   Resolved social card audit warnings by adding exact `og:image:width` (`1200`), `og:image:height` (`630`), `og:image:type` (`image/webp`), and descriptive `og:image:alt` / `twitter:image:alt` attributes.
+    *   Configured self-referential canonical URLs (`<link rel="canonical" ...>`), integrated theme-color meta tags (`#1A1B1A`), and added Twitter/X creator and site attribution (`@Flaex_`).
+    *   Extended asset generation script (`scripts/generate-pwa-assets.js`) to compile `32x32` and `16x16` PNG favicons alongside SVGs and Apple touch icons.
+    *   Standardized HTML document hierarchy by upgrading the entry point title to a semantic `<h1>Fredy Polania</h1>`.
+*   **Step 11 (September 2026): Hybrid Executive Localization Strategy for LATAM/Spanish Target Audience:**
+    *   Analyzed non-JS social link scrapers (LinkedIn, WhatsApp, X, Facebook, Telegram) and established a hybrid localization model for the root domain (`https://fpolania.com/`).
+    *   Maintained globally recognized high-authority tech designations (*"Senior Product Strategist"*, *"Technologic craft"*) combined with native Spanish narrative copy and primary `og:locale` (`es_ES` with `en_US` alternate) to optimize social CTR and search clarity across target Spanish-speaking markets.
+*   **Step 12 (September 2026): Alignment with Master 2026 SEO/AEO/GEO Guidelines:**
+    *   Upgraded `public/robots.txt` with explicit 2026 AI crawler policies: permitting live retrieval bots (`OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `Claude-SearchBot`), granting presence to model training (`GPTBot`, `Google-Extended`), and blocking high-frequency zero-return scrapers (`Bytespider`, `CCBot`).
+    *   Implemented dynamic Schema.org JSON-LD structured data graphs across the application: `WebSite` & `Person` schemas in `Layout.astro` and root `index.astro`, `Article` + `BreadcrumbList` in `[slug].astro`, and `CollectionPage` + `BreadcrumbList` in hub archives `[page].astro`.
+    *   Injected the complete `robots` meta directive (`index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1`) in `Layout.astro`.
+    *   Created `public/llms.txt` defining the executive profile, the three strategic lenses (CEO Lens, Visual Lens, Builder Lens), and the canonical route architecture for LLMs and AI discovery engines.
+    *   Verified 100% compliance with Section 7 (Server-Side / Static Rendering for AI Crawlers) with Astro's pure SSG pre-rendered HTML build output.
+
 
 
