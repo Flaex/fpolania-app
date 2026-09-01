@@ -2,20 +2,30 @@
 // Root page router: redirects to the preferred language route.
 // Includes crawler support and noscript fallbacks.
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Fredy Polania | Product Strategist</title>
-    <meta name="description" content="Business Strategy. Design Vision. Technologic craft. Redirecting to your preferred language..." />
+    <meta
+      name="description"
+      content="Business Strategy. Design Vision. Technologic craft. Redirecting to your preferred language..."
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://fpolania.com/" />
     <meta property="og:title" content="Fredy Polania | Product Strategist" />
-    <meta property="og:description" content="Business Strategy. Design Vision. Technologic craft." />
-    <meta property="og:image" content="https://fpolania.com/icon-512.png" />
+    <meta
+      property="og:description"
+      content="Business Strategy. Design Vision. Technologic craft."
+    />
+    <meta
+      property="og:image"
+      content="https://fpolania.com/fpolania-site-og.webp"
+    />
     <meta property="og:site_name" content="Fredy Polania" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="es_ES" />
@@ -24,101 +34,130 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://fpolania.com/" />
     <meta name="twitter:title" content="Fredy Polania | Product Strategist" />
-    <meta name="twitter:description" content="Business Strategy. Design Vision. Technologic craft." />
-    <meta name="twitter:image" content="https://fpolania.com/icon-512.png" />
-    
+    <meta
+      name="twitter:description"
+      content="Business Strategy. Design Vision. Technologic craft."
+    />
+    <meta
+      name="twitter:image"
+      content="https://fpolania.com/fpolania-site-og.webp"
+    />
+
     <!-- Language & Location Detection Script -->
     <script is:inline>
-        (function() {
-            try {
-                // 1. Check local storage preference
-                const cachedLang = localStorage.getItem('preferred-lang');
-                if (cachedLang === 'en' || cachedLang === 'es') {
-                    window.location.replace('/' + cachedLang + '/');
-                    return;
-                }
+      (function () {
+        try {
+          // 1. Check local storage preference
+          const cachedLang = localStorage.getItem("preferred-lang");
+          if (cachedLang === "en" || cachedLang === "es") {
+            window.location.replace("/" + cachedLang + "/");
+            return;
+          }
 
-                // 2. Check browser language settings
-                const browserLangs = navigator.languages || [navigator.language || navigator.userLanguage];
-                for (let i = 0; i < browserLangs.length; i++) {
-                    const l = browserLangs[i].toLowerCase();
-                    if (l.startsWith('es')) {
-                        window.location.replace('/es/');
-                        return;
-                    }
-                    if (l.startsWith('en')) {
-                        window.location.replace('/en/');
-                        return;
-                    }
-                }
-
-                // 3. Fallback: Timezone-based country locale approximation
-                const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
-                const esCities = [
-                    'Madrid', 'Bogota', 'Mexico', 'Buenos_Aires', 'Caracas', 
-                    'Lima', 'Santiago', 'Quito', 'Montevideo', 'Asuncion', 
-                    'La_Paz', 'Guatemala', 'Tegucigalpa', 'San_Salvador', 
-                    'Managua', 'San_Jose', 'Panama', 'Havana', 'Santo_Domingo', 
-                    'Puerto_Rico'
-                ];
-                
-                const isSpanishTz = esCities.some(city => tz.includes(city));
-                if (isSpanishTz) {
-                    window.location.replace('/es/');
-                    return;
-                }
-            } catch (e) {
-                console.error('Localization routing error:', e);
+          // 2. Check browser language settings
+          const browserLangs = navigator.languages || [
+            navigator.language || navigator.userLanguage,
+          ];
+          for (let i = 0; i < browserLangs.length; i++) {
+            const l = browserLangs[i].toLowerCase();
+            if (l.startsWith("es")) {
+              window.location.replace("/es/");
+              return;
             }
+            if (l.startsWith("en")) {
+              window.location.replace("/en/");
+              return;
+            }
+          }
 
-            // 4. Ultimate default: English
-            window.location.replace('/en/');
-        })();
+          // 3. Fallback: Timezone-based country locale approximation
+          const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+          const esCities = [
+            "Madrid",
+            "Bogota",
+            "Mexico",
+            "Buenos_Aires",
+            "Caracas",
+            "Lima",
+            "Santiago",
+            "Quito",
+            "Montevideo",
+            "Asuncion",
+            "La_Paz",
+            "Guatemala",
+            "Tegucigalpa",
+            "San_Salvador",
+            "Managua",
+            "San_Jose",
+            "Panama",
+            "Havana",
+            "Santo_Domingo",
+            "Puerto_Rico",
+          ];
+
+          const isSpanishTz = esCities.some((city) => tz.includes(city));
+          if (isSpanishTz) {
+            window.location.replace("/es/");
+            return;
+          }
+        } catch (e) {
+          console.error("Localization routing error:", e);
+        }
+
+        // 4. Ultimate default: English
+        window.location.replace("/en/");
+      })();
     </script>
 
     <!-- SEO Indexing Crawlers Helpers -->
     <link rel="alternate" hreflang="en" href="/en/" />
     <link rel="alternate" hreflang="es" href="/es/" />
     <style>
-        body {
-            background-color: #1A1B1A;
-            color: #E0E0E0;
-            font-family: system-ui, -apple-system, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            padding: 2rem;
-            border: 1px solid #666666;
-            border-radius: 8px;
-            max-width: 400px;
-        }
-        a {
-            color: #FFFFFF;
-            text-decoration: none;
-            border-bottom: 1px solid #FFFFFF;
-            margin: 0 10px;
-            font-weight: bold;
-        }
-        a:hover {
-            color: #C0C0C0;
-            border-color: #C0C0C0;
-        }
+      body {
+        background-color: #1a1b1a;
+        color: #e0e0e0;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        text-align: center;
+        padding: 2rem;
+        border: 1px solid #666666;
+        border-radius: 8px;
+        max-width: 400px;
+      }
+      a {
+        color: #ffffff;
+        text-decoration: none;
+        border-bottom: 1px solid #ffffff;
+        margin: 0 10px;
+        font-weight: bold;
+      }
+      a:hover {
+        color: #c0c0c0;
+        border-color: #c0c0c0;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h2>Fredy Polania</h2>
-        <p>Redirecting to your preferred language / Redireccionando a su idioma de preferencia...</p>
-        <noscript>
-            <p>Please select / Por favor seleccione:</p>
-            <a href="/en/">English</a>
-            <a href="/es/">Español</a>
-        </noscript>
+      <h2>Fredy Polania</h2>
+      <p>
+        Redirecting to your preferred language / Redireccionando a su idioma de
+        preferencia...
+      </p>
+      <noscript>
+        <p>Please select / Por favor seleccione:</p>
+        <a href="/en/">English</a>
+        <a href="/es/">Español</a>
+      </noscript>
     </div>
-</body>
+  </body>
 </html>
