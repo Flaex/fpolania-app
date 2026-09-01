@@ -35,6 +35,19 @@ async function generate() {
       .toFile(path.join(publicDir, 'apple-touch-icon.png'));
     console.log('✓ Generated apple-touch-icon.png');
 
+    // Generate 32x32 and 16x16 favicons
+    await sharp(svgPath)
+      .resize(32, 32)
+      .png()
+      .toFile(path.join(publicDir, 'favicon-32x32.png'));
+    console.log('✓ Generated favicon-32x32.png');
+
+    await sharp(svgPath)
+      .resize(16, 16)
+      .png()
+      .toFile(path.join(publicDir, 'favicon-16x16.png'));
+    console.log('✓ Generated favicon-16x16.png');
+
     console.log('All PWA assets generated successfully!');
   } catch (error) {
     console.error('Error generating assets:', error);
@@ -42,3 +55,4 @@ async function generate() {
 }
 
 generate();
+

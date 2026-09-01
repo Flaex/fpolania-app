@@ -13,9 +13,9 @@ interface Props {
 
 const { 
 	title, 
-	description = "Business Strategy. Design Vision. Technologic craft.", 
+	description = "Senior Product Strategist bridging Business Strategy, Design Vision, and Technologic craft. Outcome-driven execution across digital products.", 
 	lang = "en",
-	image = "/icon-512.png",
+	image = "/fpolania-site-og.webp",
 	type = "website"
 } = Astro.props;
 
@@ -35,6 +35,10 @@ const gaId = import.meta.env.PUBLIC_GA_ID;
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#1A1B1A" />
+
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalUrl} />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content={type} />
@@ -42,18 +46,26 @@ const gaId = import.meta.env.PUBLIC_GA_ID;
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content={`${title} — Fredy Polania`} />
 		<meta property="og:site_name" content="Fredy Polania" />
 		<meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
 		<meta property="og:locale:alternate" content={lang === 'es' ? 'en_US' : 'es_ES'} />
 
 		<!-- Twitter -->
 		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@Flaex_" />
+		<meta name="twitter:creator" content="@Flaex_" />
 		<meta name="twitter:url" content={canonicalUrl} />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImage} />
+		<meta name="twitter:image:alt" content={`${title} — Fredy Polania`} />
 		<link id="legacy-favicon" rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<link id="dynamic-favicon" rel="icon" type="image/svg+xml" href="/favicon-dark.svg" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 		<!-- FOUC Prevention: resolve theme and favicon before first paint -->
 		<script is:inline>
 			(function() {
