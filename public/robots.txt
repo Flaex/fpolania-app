@@ -1,4 +1,40 @@
+# --- Buscadores Tradicionales ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# --- Recuperación en Vivo para IA (Citación y Tráfico) ---
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# --- Entrenamiento de Modelos (Permitir presencia) ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# --- Scrapers Masivos sin Retorno ---
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+# --- Regla Base ---
 User-agent: *
 Allow: /
 
 Sitemap: https://fpolania.com/sitemap-index.xml
+

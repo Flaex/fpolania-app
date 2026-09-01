@@ -1,0 +1,42 @@
+# Fredy Polania — Senior Product Strategist
+
+> "Business Strategy. Design Vision. Technologic craft."
+> Bridging 15+ years of executive leadership with deep visual design systems and front-end engineering.
+
+## Executive Profile
+- **Name:** Fredy Polania (Flaex)
+- **Role:** Senior Product Strategist / Founder-Visionary
+- **Website:** https://fpolania.com
+- **Languages:** Spanish (es), English (en)
+- **Official Profiles:**
+  - LinkedIn: https://www.linkedin.com/in/freddypolania/
+  - Behance: https://www.behance.net/fredypolania
+  - X / Twitter: https://x.com/Flaex_
+
+## Strategic Focus Areas (The Three Lenses)
+1. **CEO Lens (Business Strategy & Governance):**
+   Product ROI, strategic alignment, team operational efficiency, overcoming the Translation Gap between business stakeholders and technical teams.
+2. **Visual Lens (Design Systems & Brand Authority):**
+   Design foundations, typography as information architecture, vector precision, high-contrast monochromatic brand systems.
+3. **Builder Lens (Front-End & Technologic Craft):**
+   Semantic HTML, modern CSS architectures, performance-first frameworks (Astro, Tailwind CSS), offline-first PWA resilience.
+
+## Canonical Content Architecture
+- **Home (Spanish):** https://fpolania.com/es/
+- **Home (English):** https://fpolania.com/en/
+- **Strategic Perspectives (Spanish):** https://fpolania.com/es/perspectivas/
+- **Strategic Insights (English):** https://fpolania.com/en/insight/
+- **Portfolio & Works (Spanish):** https://fpolania.com/es/trabajos/
+- **Portfolio & Works (English):** https://fpolania.com/en/works/
+
+## Core Articles & Thought Leadership
+- *The Translation Gap in Digital Products* (Bridge between business, design, and code)
+- *Everything is Design: The Philosophy of Utility* (Functional design vs decoration)
+- *The Logo and the Company: The Investment in Trust* (Brand equity & ROI)
+- *The Value of Graphic Design: A Strategic Perspective* (Economic impact of visual systems)
+- *Graphic Design and Branding: The Authority System* (Visual communication frameworks)
+- *What is Typography: The DNA of Information* (Information density & hierarchy)
+- *Typographic Classification: The Geometry of Tone* (Taxonomy of letterforms)
+- *What is HTML: The Structure of Information* (Semantic web foundations)
+- *What is CSS: The Visual Style System* (Presentation logic)
+- *What is the Utility of Learning HTML* (Cross-disciplinary mastery for designers)

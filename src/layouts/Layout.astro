@@ -9,6 +9,7 @@ interface Props {
 	lang?: string;
 	image?: string;
 	type?: 'website' | 'article';
+	schema?: Record<string, any>;
 }
 
 const { 
@@ -16,7 +17,8 @@ const {
 	description = "Senior Product Strategist bridging Business Strategy, Design Vision, and Technologic craft. Outcome-driven execution across digital products.", 
 	lang = "en",
 	image = "/fpolania-site-og.webp",
-	type = "website"
+	type = "website",
+	schema
 } = Astro.props;
 
 const alternateLang = lang === 'en' ? 'es' : 'en';
@@ -27,6 +29,43 @@ const canonicalUrl = `${canonicalBase}${Astro.url.pathname}`;
 const ogImage = image.startsWith('http') ? image : `${canonicalBase}${image}`;
 
 const gaId = import.meta.env.PUBLIC_GA_ID;
+
+const defaultSchema = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebSite",
+			"@id": "https://fpolania.com/#website",
+			"url": "https://fpolania.com/",
+			"name": "Fredy Polania",
+			"description": lang === 'es' 
+				? "Conectando estrategia de negocio, visión de diseño y technologic craft."
+				: "Senior Product Strategist bridging Business Strategy, Design Vision, and Technologic craft.",
+			"publisher": {
+				"@id": "https://fpolania.com/#person"
+			},
+			"inLanguage": ["es", "en"]
+		},
+		{
+			"@type": "Person",
+			"@id": "https://fpolania.com/#person",
+			"name": "Fredy Polania",
+			"url": "https://fpolania.com/",
+			"jobTitle": "Senior Product Strategist",
+			"sameAs": [
+				"https://www.linkedin.com/in/freddypolania/",
+				"https://www.behance.net/fredypolania",
+				"https://x.com/Flaex_"
+			],
+			"image": `${canonicalBase}/fpolania-site-og.webp`,
+			"description": lang === 'es'
+				? "Conectando estrategia de negocio, visión de diseño y arquitectura frontend."
+				: "Bridging business strategy, design vision, and front-end technologic craft."
+		}
+	]
+};
+
+const finalSchema = schema || defaultSchema;
 ---
 
 <!doctype html>
@@ -36,9 +75,13 @@ const gaId = import.meta.env.PUBLIC_GA_ID;
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#1A1B1A" />
+		<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 
 		<!-- Canonical URL -->
 		<link rel="canonical" href={canonicalUrl} />
+
+		<!-- Structured Data (JSON-LD) -->
+		<script type="application/ld+json" is:inline set:html={JSON.stringify(finalSchema)} />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content={type} />

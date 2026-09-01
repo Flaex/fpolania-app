@@ -156,6 +156,68 @@ if (description === "NO_SUMMARY" || description === summaryKey) {
 }
 
 const ogImage = post.data.image || "/icon-512.png";
+const canonicalUrl = `https://fpolania.com${Astro.url.pathname}`;
+const articleImage = ogImage.startsWith('http') ? ogImage : `https://fpolania.com${ogImage}`;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": lang === 'es' ? "Inicio" : "Home",
+          "item": `https://fpolania.com/${lang}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": lang === 'es' ? "Perspectivas" : "Insight",
+          "item": `https://fpolania.com${hubPath}`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": toPhraseCase(post.data.title),
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": `${canonicalUrl}#article`,
+      "headline": toPhraseCase(post.data.title),
+      "description": description,
+      "image": articleImage,
+      "datePublished": post.data.date,
+      "dateModified": post.data.date,
+      "mainEntityOfPage": canonicalUrl,
+      "inLanguage": lang,
+      "author": {
+        "@type": "Person",
+        "name": "Fredy Polania",
+        "jobTitle": "Senior Product Strategist",
+        "url": "https://fpolania.com/",
+        "sameAs": [
+          "https://www.linkedin.com/in/freddypolania/",
+          "https://www.behance.net/fredypolania",
+          "https://x.com/Flaex_"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fredy Polania",
+        "url": "https://fpolania.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fpolania.com/icon-512.png"
+        }
+      }
+    }
+  ]
+};
 ---
 
 <Layout 
@@ -164,6 +226,7 @@ const ogImage = post.data.image || "/icon-512.png";
   image={ogImage} 
   type="article" 
   lang={lang}
+  schema={articleSchema}
 >
   <div class="grain"></div>
   

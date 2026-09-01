@@ -167,10 +167,48 @@ const getCardConfig = (postSlug: string) => {
 };
 
 const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
+
+const canonicalUrl = `https://fpolania.com${Astro.url.pathname}`;
+const hubTitle = isWorksPage ? t('works.metaTitle') : t('insight.metaTitle');
+const hubName = isWorksPage ? (lang === 'es' ? 'Trabajos' : 'Works') : (lang === 'es' ? 'Perspectivas' : 'Insight');
+
+const hubSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": lang === 'es' ? "Inicio" : "Home",
+          "item": `https://fpolania.com/${lang}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": hubName,
+          "item": canonicalUrl
+        }
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": `${canonicalUrl}#collection`,
+      "url": canonicalUrl,
+      "name": hubTitle,
+      "inLanguage": lang,
+      "isPartOf": {
+        "@type": "WebSite",
+        "url": "https://fpolania.com/"
+      }
+    }
+  ]
+};
 ---
 
 {isWorksPage && (
-  <Layout title={t('works.metaTitle')} description={t('works.metaDescription')} lang={lang}>
+  <Layout title={t('works.metaTitle')} description={t('works.metaDescription')} lang={lang} schema={hubSchema}>
       <Navigation />
       
       <main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-24 animate-fade-in">
@@ -252,7 +290,7 @@ const pagePathPrefix = lang === 'en' ? '/en/insight/' : '/es/perspectivas/';
 )}
 
 {isInsightPage && (
-  <Layout title={t('insight.metaTitle')} description={t('insight.metaDescription')} lang={lang}>
+  <Layout title={t('insight.metaTitle')} description={t('insight.metaDescription')} lang={lang} schema={hubSchema}>
     <Navigation />
     
     <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-6 pb-6 md:pb-12 md:pt-6 animate-fade-in">
